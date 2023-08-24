@@ -1,0 +1,8 @@
+# Descargar desde https://www.debian.org/distrib/ el ISO de 32 o 64 bits 
+#  de instalación mínima "netinst" # para instalar lo mínimo necesario,
+#  y después agregar lo que se haga falta (requiere tener coneión a internet)
+# Grabar un pendrive usando Rufus (mas lento pero mas seguro) de https://rufus.ie/
+#  o Balena Etcher (más rápido pero a veces no bootea) de https://etcher.balena.io/
+  
+# Especificar password para el usuario básico "root" 
+# Especificar el primer usuario además de root (debe ser en minusculas)
