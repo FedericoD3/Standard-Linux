@@ -1,0 +1,36 @@
+# Instalar el framework para GUI:
+  sudo apt install xserver-xorg-core
+# Instalar el manejador de escritorio y de ventanas gráficas, sin más programas
+  sudo apt install lxde-core --no-install-recommends
+
+# Detener la pantalla gráfica local de inicio de sesión:
+	sudo systemctl stop lightdm
+# Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión:
+	sudo systemctl disable lightdm
+# Verificar que está detenido y desactivado el arranque automático de la pantalla gráfica local de inicio de sesión:
+	sudo systemctl disable lightdm
+ 
+# Instalar el servidor de escritorio remoto
+	sudo apt install xrdp
+# Activar el GUI para sesión remota para este usuario
+	echo lxsession -s LXDE -e LXDE > ~/.xsession
+	
+# Cambiar el puerto deseado editando el archivo de configuración
+#  yo uso el puerto 4hhh5, donde hhh es el último byte del IP del host,
+#  igual que en UltraVNC de Windows, para que sea único para ser ruteado via NAT o tunel
+  sudo nano /etc/xrdp/xrdp.ini
+# Reiniciar XRDP
+  sudo service xrdp restart
+# Verificarlo usando Windows Remote Desktop Client
+
+# Programas útiles:
+  sudo apt install gnome-disk-utility
+  sudo apt install gparted
+# Navegadores ligeros:
+	sudo apt install epiphany-browser     # 537 MB of additional disk space will be used.
+	sudo apt install falkon               # 407 MB of additional disk space will be used.
+	sudo apt install midori               # 181 MB of additional disk space will be used.
+	echo "deb [arch=amd64] http://deb.librewolf.net $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/librewolf.list
+   sudo wget http://deb.librewolf.net/keyring.gpg -O /etc/apt/trusted.gpg.d/librewolf.gpg
+   sudo apt update
+   sudo apt install librewolf            # 2,103 kB of additional disk space will be used.

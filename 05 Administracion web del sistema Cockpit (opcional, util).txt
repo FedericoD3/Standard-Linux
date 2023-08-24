@@ -1,0 +1,15 @@
+# COCKPIT
+  sudo apt install cockpit
+  sudo systemctl enable --now cockpit.socket
+# Accesible en aaa.bbb.ccc.ddd:9090 ==> Yo lo cambio a 4xxx0, donde xxx es el último byte del IP
+  sudo nano /lib/systemd/system/cockpit.socket
+  # Cambiar el puerto en la línea 
+  ListenStream=9090
+  # Y recargar el servicio:
+  sudo systemctl daemon-reload
+  sudo systemctl restart cockpit
+
+# Desinstalación, si no interesa:
+  sudo systemctl stop cockpit
+  sudo systemctl disable cockpit
+  sudo apt purge cockpit

@@ -1,0 +1,9 @@
+  Seguir las intrucciones en https://wiki.servarr.com/install-script
+# Sonarr   (series TV) accesible en aaa.bbb.ccc.ddd:8989 ==> Yo lo cambio a 4xxx6, donde xxx es el último byte del IP
+# Radarr   (películas) accesible en aaa.bbb.ccc.ddd:7878 ==> Yo lo cambio a 4xxx5, donde xxx es el último byte del IP
+# Lidarr   (musica)
+# Prowlarr 
+# Readarr
+# Whisparr
+
+# CALIBRE

@@ -1,0 +1,40 @@
+# Desactivar IPv6 si es red casera:
+  sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+	sudo sysctl -p
+# Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
+  sudo systemctl stop NetworkManager
+	sudo systemctl disable NetworkManager
+# Configurar IPs de las interfaces:
+# Primero tomar nota de los nombres de lasinterfaces que hay (común: eth0)
+  ip a
+# Editar el archivo de configuración (usar el nombre determinado antes):
+  sudo nano /etc/network/interfaces
+  # Que contenga:
+    # Interfaz de loopback
+      auto lo
+      iface lo inet loopback
+    # Configuracion de IP estatico en la interfaz cableada
+      auto eth0
+      iface eth0 inet static
+      address 192.168.aaa.hhh
+      netmask 255.255.255.0
+      gateway 192.168.100.ggg
+    dns-nameservers 1.1.1.1
+    # Configuracion de IP dinamico en la interfaz de wifi wlp12s0, con ssid y clave
+      allow-hotplug wlp12s0
+      iface wlp12s0 inet dhcp
+        wpa-ssid DuranFernandez
+        wpa-psk  mayariYguines
+
+  # En un Raspberry Pi es:
+    sudo nano /etc/dhcpcd.conf
+  # Y editarle:
+     interface wlan0
+     static ip_address=192.168.aaaa.hhh/24
+     static routers=192.168.100.ggg
+     static domain_name_servers=1.1.1.1
+
+  # Salvar Ctrl S y salir Ctrl X, y refrescar la red:
+	  sudo systemctl restart networking
+  # Verificar que asumió la configuración:
+	  ip a

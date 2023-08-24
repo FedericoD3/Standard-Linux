@@ -1,0 +1,8 @@
+# CASAOS
+# Descargar el script instalador de casaOS y pasárselo al shell
+  curl -fsSL https://get.casaos.io | sudo bash
+# La interfaz web es accesible por http://aaa.bbb.ccc.ddd:89 
+
+# Desinstalación, si no interesa:
+  casaos-uninstall
+	

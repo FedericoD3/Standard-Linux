@@ -1,0 +1,66 @@
+  sudo apt install ntp curl
+  curl -sSL https://install.pi-hole.net | sudo bash
+#  1 Continuar si el computador tiene IP estático o reservado, configurarlo en otro terminal si no es el caso
+#  2 Selecionar la interfaz por la que se atenderá DNS (la que mira a la red interna!)
+#  3 Aceptar la configuración actual de IP (del paso 1), configurarlo si no se ha hecho, o aceptar el "lo hago luego"
+#  4 Aceptar el recordatorio de asegurarse que el router no asigne el IP del pihole
+#  5 S5eleccionar el proveedor de DNS al pihole (cualquiera, igual se eliminará al final)
+#  6 Aceptar el proveedor de lista negra de páginas de malware y publicidad
+#  7 Aceptar instalar la interfaz web
+#  8 Aceptar instalar webserver con sus dependencias para servir la anterior
+#    Si hay otro webserver que ya esté instalado y en uso, como Apache o Nginx,
+#    habría que instalarle las dependencias php, etc., y configurarlo para que sirva la interfaz de pihole
+#    o desactivar el servicio para que no haya conflicto de puerto web 80
+#  9 Aceptar registro de queries
+# 10 Aceptar que registre y muestre todo
+# Al final tomr nota del password aleatorio, o asignar enseguida uno nuevo:
+  pihole -a -p
+# Accesible en aaa.bbb.ccc.ddd/admin
+# Opcional por último, para no depender de Google, Comcast, OpenDNS, etc.
+#   (https://www.youtube.com/watch?v=FnFtWsZ8IP0 -> https://docs.pi-hole.net/guides/dns/unbound/#setting-up-pi-hole-as-a-recursive-dns-server-solution)
+#   Instalar unbound:
+    sudo apt install unbound
+#   Descargar los "root hints", los IPs de los servidores DNS base
+    sudo wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+#   Configurar unbound:
+    sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+#     Con este contenido:
+      server:
+          # If no logfile is specified, syslog is used
+          # logfile: "/var/log/unbound/unbound.log"
+          verbosity: 0
+          #
+          interface: 127.0.0.1
+          port: 5335
+          do-ip4: yes
+          do-udp: yes
+          do-tcp: yes
+          do-ip6: no
+          prefer-ip6: no
+          #
+          harden-glue: yes
+          harden-dnssec-stripped: yes
+          use-caps-for-id: no
+          #
+          edns-buffer-size: 1232
+          prefetch: yes
+          num-threads: 1
+          so-rcvbuf: 1m
+          #
+          private-address: 192.168.0.0/16
+          private-address: 169.254.0.0/16
+          private-address: 172.16.0.0/12
+          private-address: 10.0.0.0/8
+          private-address: fd00::/8
+          private-address: fe80::/10
+# Reiniciar el servidor unbound:
+  sudo service unbound restart
+# Verificar que atiende por el puerto 5335 (debe devolver un IP válido):
+  dig dnssec.works @127.0.0.1 -p 5335 
+# Verificar una dirección inexistente (debe devolver un IP vacío):
+  dig fail01.dnssec.works @127.0.0.1 -p 5335
+# Configurar que el pihole pida DNS a unbound y no al DNS que se configuró al instalar:
+#  abrir la página en http://pi.hole/admin/settings.php?tab=dns
+#  desmarcar los DNS activos a la izquierda
+#  Ingresar y activar un "Custom DNS" a la derecha, que apunte al puerto de unbound del IP local 127.0.0.1#5335
+#  Click en [Salvar] abajo al final. Ya el pihole no depende de Google, Cloudflare, Quad9 ni del ISP.

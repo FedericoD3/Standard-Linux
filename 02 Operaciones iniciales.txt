@@ -1,0 +1,50 @@
+# Después de iniciar sesión por primera vez, 
+# Hacerse root para preparar la instalación de paquetes:
+  su -
+
+# Usar el editor de texto para asegurarse que existan las fuentes online
+  nano /etc/apt/sources.list
+#  Debe contener las líneas:
+  deb http://deb.debian.org/debian bookworm main contrib non-free-firmware non-free
+  deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware non-free
+  deb http://security.debian.org/debian-security bookworm-security main contrib non-free-firmware non-free
+# (si están presentes, eliminar o comentar las fuentes inexistentes como el CD):
+# Ctrl+s para salvar, Ctrl+x para salir
+
+# Mientras se es root, instalar sudo (ausente si se eligió no instalar ninguna utility)
+  apt update
+  apt install sudo
+  
+# usermod -aG sudo nombreusuario
+
+# OPCIONAL:
+# Editar la configuración de usuarios nuevos para permitir mayúsculas.
+#  Yo lo hago por compatibilidad con los usuarios Windows en la empresa,
+#  y para que sea evidente la diferencia con usuaros default.
+  nano /etc/adduser.conf
+# y agregar al final
+  NAME_REGEX=[A-Z,a-z,0-9]
+# Ctrl+s para salvar, Ctrl+x para salir
+
+# Ahora sí agregar tu usuario (te vuelve a pedir la clave):
+  adduser MiNombreComoEs
+# Agregar el usuario a los autorizados para ejecutar comandos super usuario:
+  nano /etc/sudoers
+# Agregar el usuario al final:
+  comosellame     ALL=(ALL:ALL) ALL
+  MiNombreComoEs  ALL=(ALL:ALL) ALL
+# Ctrl+s para salvar, Ctrl+x para salir
+# Cerrar sesión SSH del usuario original creado en la instalación.
+# Iniciar en el usuario personalizado.
+# Verificar que puede ser root, con un comando inofensivo:
+  sudo ls -Al
+# Si pidió clave y permitió la elevación de privilegios, 
+# se puede eliminar el usuario en minusculas:
+  sudo userdel comosellame
+	
+# Instalar el comando client URL para descarga web
+  sudo apt install curl
+  
+# Para determinar el apodo de la versión del Debian:
+  . /etc/os-release
+  echo ${VERSION_CODENAME}

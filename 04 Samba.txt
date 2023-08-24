@@ -1,0 +1,42 @@
+# Instalar SAMBA, el compartidor de archivos en red:
+  sudo apt install samba
+  sudo apt install smbclient
+# Personalizar la configuración:
+  sudo nano /etc/samba/smb.conf
+# Modificando las lineas:
+  workgroup = FAMILIAR
+  netbios name = Servidor_de_la_casa
+  server string = Deposito de archivos
+# y agregar al final:
+  include = /etc/samba/Includes/0-DirComunes.conf
+  include = /etc/samba/Includes/2-%U.conf
+# Ctrl+s para salvar, Ctrl+x para salir
+# Crear el directorio de configuracion de carpetas y usuarios:
+  sudo mkdir /etc/samba/Includes
+# Crear los archivos de configuracion general y especifico de cada usuario
+  sudo nano /etc/samba/Includes/0-DirComunes.conf
+  # Directorio publico lectura escritura para todos:
+  [Libre]
+    comment = Carpeta comun para todos
+    path = /Dir/A/Compartir
+    public = yes
+    writeable = yes
+    Browseable = yes
+    guest ok = yes
+  # Directorio publico solo lectura para todos:
+  [Protegido]
+    comment = Carpeta comun para todos (solo lectura)
+    path = /Otro/Dir/Compartido
+    public = yes
+    guest ok = yes
+    writeable = No
+    Browseable = yes
+# Ctrl+s para salvar, Ctrl+x para salir
+  sudo nano /etc/samba/Includes/2-algunusuario.conf
+  # Misma sintaxis
+# Agregar a Samba usuarios Linux:
+  sudo smbpasswd -a AlgunUsuario
+  sudo smbpasswd -a OtroUsuario
+
+# Instalar el "Web Service Discovery Daemon", anunciador a la red de PCs Windows
+  sudo apt install wsdd

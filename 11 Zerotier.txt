@@ -1,0 +1,19 @@
+# https://docs.zerotier.com/getting-started/getting-started
+
+# INSTALAR
+  curl -s https://install.zerotier.com | sudo bash
+  # O mas seguro:
+  curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg' | gpg --import && \
+if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
+
+# VERIFICAR INSTALACION
+  zerotier-cli -v
+
+# DETERMINAR EL ID 
+  sudo zerotier-cli info
+
+# AGREGARLO A LA RED EN https://my.zerotier.com/
+  sudo zerotier-cli join 0123456789abcdef
+
+# VERIFICAR CONEXION
+  zerotier-cli listnetworks

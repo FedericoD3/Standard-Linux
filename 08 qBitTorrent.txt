@@ -1,0 +1,28 @@
+# QBITTORRENT https://www.linuxcapable.com/install-qbittorrent-on-debian-linux/
+  sudo apt install qbittorrent-nox
+# 
+  sudo adduser --system --group qbittorrent-nox
+  sudo adduser your-username qbittorrent-nox
+  sudo nano /etc/systemd/system/qbittorrent-nox.service
+# Con el contenido:
+  [Unit]
+    Description=qBittorrent Command Line Client
+    After=network.target
+  [Service]
+    Type=forking
+    User=qbittorrent-nox
+    Group=qbittorrent-nox
+    UMask=007
+    ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8080
+    Restart=on-failure
+  [Install]
+    WantedBy=multi-user.target  
+# Se le puede cambiar el puerto de la interfaz web de 8080 a 4xxx1, dodne xxx es el ultimo byte del IP
+
+# Que el usuario qbittorrent-nox tenga donde escribit:
+  sudo mkhomedir_helper qbittorrent-nox
+
+# Recargar los servicios con el nuevo y arrancarlo:
+  sudo systemctl daemon-reload
+  sudo systemctl restart qbittorrent-nox
+# Accesible en aaa.bbb.ccc.ddd:8080 ==> Yo lo cambio a 4xxx1, donde xxx es el último byte del IP

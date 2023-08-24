@@ -1,0 +1,248 @@
+# Hacerse root para preparar la instalación de paquetes:
+  su -
+  nano /etc/apt/sources.list
+# Asegurarse que existan las fuentes online
+# (si hace falta, eliminar o comentar las fuentes inexistentes como el CD):
+  deb http://deb.debian.org/debian bookworm main contrib non-free-firmware non-free
+  deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware non-free
+  deb http://security.debian.org/debian-security bookworm-security main contrib non-free-firmware non-free
+# Ctrl+s para salvar, Ctrl+x para salir
+
+# Mientras se es root, instalar sudo (ausente si se eligió no instalar ninguna utility)
+  apt update
+  apt install sudo
+  
+# usermod -aG sudo nombreusuario
+
+# OPCIONAL:
+# Permitir usuarios con mayúsculas (yo lo hago por compatibilidad con los usuarios Windows en la empresa):
+  nano /etc/adduser.conf
+# y al final agregar 
+  NAME_REGEX=[A-Z,a-z,0-9]
+# Ctrl+s para salvar, Ctrl+x para salir
+# Ahora sí agregar tu usuario (te vuelve a pedir la clave):
+  adduser MiNombreComoEs
+# Agregar el usuario a los autorizados para ejecutar comandos super usuario:
+  nano /etc/sudoers
+# Agregar el usuario al final:
+  comosellame     ALL=(ALL:ALL) ALL
+  MiNombreComoEs  ALL=(ALL:ALL) ALL
+# Ctrl+s para salvar, Ctrl+x para salir
+# Cerrar sesión SSH del usuario original en minusculas
+# Iniciar en el usuario personalizado.
+# Verificar que puede ser root, con un comando inofensivo:
+  sudo ls -Al
+# Si pidió clave y permitió la elevación de privilegios, 
+# se puede eliminar el usuario en minusculas:
+  sudo userdel comosellame
+	
+<Red>
+# Desactivar IPv6 si es red casera:
+  sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+	sudo sysctl -p
+# Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
+  sudo systemctl stop NetworkManager
+	sudo systemctl disable NetworkManager
+# Configurar IPs de las interfaces:
+# Primero ver cuales interfaces hay
+  ip a
+# Editar el archivo de configuración:
+  sudo nano /etc/network/interfaces
+  # Que contenga:
+    # Interfaz de loopback
+      auto lo
+      iface lo inet loopback
+    # Configuracion de IP estatico en la interfaz cableada eth0
+      auto eth0
+      iface eth0 inet static
+      address 192.168.100.hhh
+      netmask 255.255.255.0
+      gateway 192.168.100.ggg
+    dns-nameservers 1.1.1.1
+    # Configuracion de IP dinamico en la interfaz de wifi wlp12s0, con ssid y clave
+      allow-hotplug wlp12s0
+      iface wlp12s0 inet dhcp
+        wpa-ssid DuranFernandez
+        wpa-psk  mayariYguines
+
+  # En un Raspberry Pi es:
+    sudo nano /etc/dhcpcd.conf
+  # Y editarle:
+     interface wlan0
+     static ip_address=192.168.100.4/24
+     static routers=192.168.100.254
+     static domain_name_servers=192.168.100.1 8.8.8.8
+
+  # Salvar Ctrl S y salir Ctrl X, y refrescar la red:
+	  sudo systemctl restart networking
+  # Verificar que asumió la configuración:
+	  ip a
+
+</Red>
+
+<Samba>
+# Instalar SAMBA, el compartidor de archivos en red:
+  sudo apt get install samba
+# Personalizar la configuración:
+  sudo nano /etc/samba/smb.conf
+# Modificando las lineas:
+  workgroup = FAMILIAR
+  netbios name = Servidor_de_la_casa
+  server string = Deposito de archivos
+# y agregar al final:
+  include = /etc/samba/Includes/0-DirComunes.conf
+  include = /etc/samba/Includes/2-%U.conf
+# Ctrl+s para salvar, Ctrl+x para salir
+# Crear el directorio de configuracion de carpetas y usuarios:
+  sudo mkdir /etc/samba/Includes
+# Crear los archivos de configuracion general y especifico de cada usuario
+  sudo nano /etc/samba/Includes/0-DirComunes.conf
+  # Directorio publico lectura escritura para todos:
+  [Libre]
+    comment = Carpeta comun para todos
+    path = /Dir/A/Compartir
+    public = yes
+    writeable = yes
+    Browseable = yes
+    guest ok = yes
+  # Directorio publico solo lectura para todos:
+  [Protegido]
+    comment = Carpeta comun para todos (solo lectura)
+    path = /Otro/Dir/Compartido
+    public = yes
+    guest ok = yes
+    writeable = No
+    Browseable = yes
+# Ctrl+s para salvar, Ctrl+x para salir
+  sudo nano /etc/samba/Includes/2-algunusuario.conf
+  # Misma sintaxis
+# Agregar a Samba usuarios Linux:
+  sudo smbclient -a AlgunUsuario
+  sudo smbclient -a OtroUsuario
+</Samba>
+
+<wsdd>
+# Instalar el "anunciador" a la red de PCs Windows
+  sudo apt install wsdd
+</wssd>
+
+
+
+# Instalar el comando client URL para descarga web
+  sudo apt install curl
+
+# CASAOS
+# Descargar el script instalador de casaOS y pasárselo al shell
+  curl -fsSL https://get.casaos.io | sudo bash
+# Si no gusta,
+  casaos-uninstall
+
+# COCKPIT
+  sudo apt install cockpit
+  sudo systemctl enable --now cockpit.socket
+# Accesible en aaa.bbb.ccc.ddd:9090 ==> Yo lo cambio a 4xxx0, donde xxx es el último byte del IP
+
+<pihole>
+  sudo apt install ntp curl
+  curl -sSL https://install.pi-hole.net | sudo bash
+#  1 Continuar si el computador tiene IP estático o reservado, configurarlo en otro terminal si no es el caso
+#  2 Selecionar la interfaz por la que se atenderá DNS (la que mira a la red interna!)
+#  3 Aceptar la configuración actual de IP (del paso 1), configurarlo si no se ha hecho, o aceptar el "lo hago luego"
+#  4 Aceptar el recordatorio de asegurarse que el router no asigne el IP del pihole
+#  5 S5eleccionar el proveedor de DNS al pihole (cualquiera, igual se eliminará al final)
+#  6 Aceptar el proveedor de lista negra de páginas de malware y publicidad
+#  7 Aceptar instalar la interfaz web
+#  8 Aceptar instalar webserver con sus dependencias para servir la anterior
+#    Si hay otro webserver que ya esté instalado y en uso, como Apache o Nginx,
+#    habría que instalarle las dependencias php, etc., y configurarlo para que sirva la interfaz de pihole
+#    o desactivar el servicio para que no haya conflicto de puerto web 80
+#  9 Aceptar registro de queries
+# 10 Aceptar que registre y muestre todo
+# Al final tomr nota del password aleatorio, o asignar enseguida uno nuevo:
+  pihole -a -p
+# Accesible en aaa.bbb.ccc.ddd/admin
+# Opcional por último, para no depender de Google, Comcast, OpenDNS, etc.
+#   (https://www.youtube.com/watch?v=FnFtWsZ8IP0 -> https://docs.pi-hole.net/guides/dns/unbound/#setting-up-pi-hole-as-a-recursive-dns-server-solution)
+#   Instalar unbound:
+    sudo apt install unbound
+#   Descargar los "root hints", los IPs de los servidores DNS base
+    sudo wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+#   Configurar unbound:
+    sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+#     Con este contenido:
+      server:
+          # If no logfile is specified, syslog is used
+          # logfile: "/var/log/unbound/unbound.log"
+          verbosity: 0
+          #
+          interface: 127.0.0.1
+          port: 5335
+          do-ip4: yes
+          do-udp: yes
+          do-tcp: yes
+          do-ip6: no
+          prefer-ip6: no
+          #
+          harden-glue: yes
+          harden-dnssec-stripped: yes
+          use-caps-for-id: no
+          #
+          edns-buffer-size: 1232
+          prefetch: yes
+          num-threads: 1
+          so-rcvbuf: 1m
+          #
+          private-address: 192.168.0.0/16
+          private-address: 169.254.0.0/16
+          private-address: 172.16.0.0/12
+          private-address: 10.0.0.0/8
+          private-address: fd00::/8
+          private-address: fe80::/10
+# Reiniciar el servidor unbound:
+  sudo service unbound restart
+# Verificar que atiende por el puerto 5335 (debe devolver un IP válido):
+  dig dnssec.works @127.0.0.1 -p 5335 
+# Verificar una dirección inexistente (debe devolver un IP vacío):
+  dig fail01.dnssec.works @127.0.0.1 -p 5335
+# Configurar que el pihole pida DNS a unbound y no al DNS que se configuró al instalar:
+#  abrir la página en http://pi.hole/admin/settings.php?tab=dns
+#  desmarcar los DNS activos a la izquierda
+#  Ingresar y activar un "Custom DNS" a la derecha, que apunte al puerto de unbound del IP local 127.0.0.1#5335
+#  Click en [Salvar] abajo al final. Ya el pihole no depende de Google, Cloudflare, Quad9 ni del ISP.
+</pihole>
+
+
+<Servarr>
+  Seguir las intrucciones en https://wiki.servarr.com/install-script
+# Sonarr   (series TV) accesible en aaa.bbb.ccc.ddd:8989 ==> Yo lo cambio a 4xxx6, donde xxx es el último byte del IP
+# Radarr   (películas) accesible en aaa.bbb.ccc.ddd:7878 ==> Yo lo cambio a 4xxx5, donde xxx es el último byte del IP
+# Lidarr   (musica)
+# Prowlarr 
+# Readarr
+# Whisparr
+</Servarr>
+
+# CALIBRE
+
+# QBITTORRENT https://www.linuxcapable.com/install-qbittorrent-on-debian-linux/
+  sudo apt install qbittorrent-nox
+# 
+  sudo adduser --system --group qbittorrent-nox
+  sudo adduser your-username qbittorrent-nox
+  sudo nano /etc/systemd/system/qbittorrent-nox.service
+# Con el contenido:
+  [Unit]
+   Description=qBittorrent Command Line Client
+   After=network.target
+  [Service]
+   Type=forking
+   User=qbittorrent-nox
+   Group=qbittorrent-nox
+   UMask=007
+   ExecStart=/usr/bin/qbittorrent-nox -d --webui-port=8080
+   Restart=on-failure
+  [Install]
+   WantedBy=multi-user.target  
+# Recargar los servicios con el nuevo:
+  sudo systemctl daemon-reload
+# Accesible en aaa.bbb.ccc.ddd:8080 ==> Yo lo cambio a 4xxx1, donde xxx es el último byte del IP
