@@ -4,16 +4,16 @@
   sudo apt install lxde-core --no-install-recommends
 
 # Detener la pantalla gráfica local de inicio de sesión:
-	sudo systemctl stop lightdm
+  sudo systemctl stop lightdm
 # Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión:
-	sudo systemctl disable lightdm
+  sudo systemctl disable lightdm
 # Verificar que está detenido y desactivado el arranque automático de la pantalla gráfica local de inicio de sesión:
-	sudo systemctl disable lightdm
+  sudo systemctl disable lightdm
  
 # Instalar el servidor de escritorio remoto
-	sudo apt install xrdp
+  sudo apt install xrdp
 # Activar el GUI para sesión remota para este usuario
-	echo lxsession -s LXDE -e LXDE > ~/.xsession
+  echo lxsession -s LXDE -e LXDE > ~/.xsession
 	
 # Cambiar el puerto deseado editando el archivo de configuración
 #  yo uso el puerto 4hhh5, donde hhh es el último byte del IP del host,
