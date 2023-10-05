@@ -38,6 +38,4 @@
   sudo iptables -t nat -A POSTROUTING -o $RedLocal -j MASQUERADE
   sudo iptables -A FORWARD -i $RedLocal -o $RedZT -m state --state RELATED,ESTABLISHED -j ACCEPT
   sudo iptables -A FORWARD -i $RedZT -o $RedLocal -j ACCEPT
-
-
   sudo apt install iptables-persistent
