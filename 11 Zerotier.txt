@@ -18,3 +18,26 @@
 
 # VERIFICAR CONEXION
   zerotier-cli listnetworks
+
+# CONFIGURAR COMO ROUTER ENTRE ZEROTIER Y EL RESTO DE LA RED
+  Add a managed route to the ZeroTier network (at my.zerotier.com)
+# Determinar el ID de las redes ZT y local entra las cuales rutear y asignarlas a variables por comodidad:
+  sudo zerotier-cli listnetworks
+  ip a
+  RedLocal=eth0; RedZT=ztfp6gdnkb  # O los ID que sean
+# Descomentar la línea de forward: 
+  sudo nano /etc/sysctl.conf
+  net.ipv4.ip_forward=1
+# Activar el forward de una vez:
+  sudo sysctl -w net.ipv4.ip_forward=1
+# Asegurarse que esté instalado el viejo iptables:
+  sudo apt-get update
+  sudo apt -y install iptables
+  sudo apt install iptables-persistent
+# Configurar el reenvío entre las redes:
+  sudo iptables -t nat -A POSTROUTING -o $RedLocal -j MASQUERADE
+  sudo iptables -A FORWARD -i $RedLocal -o $RedZT -m state --state RELATED,ESTABLISHED -j ACCEPT
+  sudo iptables -A FORWARD -i $RedZT -o $RedLocal -j ACCEPT
+
+
+  sudo apt install iptables-persistent
