@@ -38,3 +38,10 @@
 	  sudo systemctl restart networking
   # Verificar que asumió la configuración:
 	  ip a
+
+# Redirigir temporalmente un puerto entrante a otro donde escucha el servicio:
+  iptables -t nat -A PREROUTING -d 192.1.1.99 -p tcp --dport 40990 -j REDIRECT --to-port 8006 || true
+# Redirigir permanentemente un puerto entrante a otro donde escucha el servicio:
+  sudo nano /etc/network/interfaces
+  post-up iptables -t nat -A PREROUTING -d 192.1.1.99 -p tcp --dport 40990 -j REDIRECT --to-port 8006 || true
+  
