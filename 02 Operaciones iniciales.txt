@@ -48,3 +48,10 @@
 # Para determinar el apodo de la versión del Debian:
   . /etc/os-release
   echo ${VERSION_CODENAME}
+
+rm .bashrc && rm .profile && sudo rm /etc/skel/.bashrc && sudo rm /etc/skel/.profile
+sudo nano /etc/profile 
+  # echo -e "\n######## EJECUTANDO /etc/profile"
+  source /Discos/Local/bashStd/.bashrc
+  return
+
