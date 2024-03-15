@@ -1,7 +1,0 @@
-#!/bin/bash
-
-Cfg=$(grep -E '^NAME' /etc/os-release | cut -d '=' -f 2)
-Cfg=$Cfg" "$(grep -E 'VERSION=' /etc/os-release | cut -d '=' -f 2)
-Cfg=$(echo $Cfg | sed 's/\"//g')
-echo $Cfg
-

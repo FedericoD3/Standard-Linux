@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "encendido desde "$(uptime -s)
-# echo $Oper
