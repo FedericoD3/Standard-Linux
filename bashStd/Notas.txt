@@ -1,0 +1,28 @@
+https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile
+
+Shell no interactivo: Sesion invocada por un script o un cron, sin intervencion de ningun usuario, p.e. por cron
+Shell interactivo sin login: Sesion manejada por el usuario iniciada desde otra sesion, grafica o cli, que no pide login usuario+clave
+Shell interactivo con login: Sesion manejada por el usuario presente en consola o remoto por ssh que pide login usuario+clave
+
+Al iniciar un shell:
+  Un shell iniciado desde un script o cron, "non-interactive shell", NO PROCESA NINGUN ARCHIVO DE INICIO
+  Un shell iniciado desde otro shell (gráfico o de texto) que no pide usuario+clave, "interactive non-login shell" EJECUTA SOLO ~/.bashrc
+  Un shell iniciado con usuario+clave (en consola o remoto), "interactive login shell" ejecuta:
+    1: /etc/profile (cualquier usuario)
+    2: ~/.bash_profile del usuario que inició sesion
+    3: ~/.bash_login si no encontro el anterior
+    4: ~/.profile si no encontro el anterior
+
+Mantengo mi configuración personalizada de shell cli en este directorio /Discos/Local/bashStd  (antes en /etc, pero daba problemas de permisos) sincronizada entre todos los computadores via SyncThing (Dropbox se pega en Linux y no es ni gratis ni FOSS. No he intentado GDrive ni git)
+
+Poner al principio de /etc/profile ~/.bashrc y ~/etc/skel/bashrc
+  . /Discos/Local/bashStd/.bashrc
+para que ejecute mi configuración personalizada de bash para cualquier usuario en sesión login (/etc/profile) o non-login (~/bashrc)
+
+El .bashrc inicializa variables, el prompt y activa los aliases
+ definidos en .bash_aliases en el mismo directorio que .bashrc ${0%/*}
+
+Las otras configuraciones son a los scripts dentro de /Discos/Local/bashStd/motd.d
+ Se ejecutan en orden alfabetico, para no eliminar los que no se desee ejecutar
+ se les puede poner un exit 0 al principio, moverlos a otro directorio o hacerlos no ejecutables
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+function color (){
+  echo "\e[$1m$2\e[0m"
+}
+ColorHost="1;33"
+greetingsColor="30;38;5;103"
+userColor="30;48;5;67"
+
+Hoy="$(color $greetingsColor "⮞ $(LC_ALL=es_VE.utf8 date +"%A %d de %B de %Y, %H:%M:%S")")"
+
+me=$me$(color $userColor " $(logname) ")
+me=$me$(color $greetingsColor ", bienvenido a ") 
+me=$me$(color $ColorHost $(hostname))
+
+echo -e $Hoy
+echo -e $me

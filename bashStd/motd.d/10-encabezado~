@@ -1,0 +1,5 @@
+#!/bin/bash
+TZ=":America/Caracas" date +'%Y-%m-%d %H-%M-%S'
+printf '\e[1;33m%-6s\e[m\n' "$(hostname) ($(lsb_release -sd) $(lsb_release -sc) - kernel $(uname -r) $(uname -m))"
+echo " (encendido desde $(uptime -s))"
+return
