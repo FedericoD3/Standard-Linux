@@ -49,9 +49,13 @@
   . /etc/os-release
   echo ${VERSION_CODENAME}
 
-rm .bashrc && rm .profile && sudo rm /etc/skel/.bashrc && sudo rm /etc/skel/.profile
-sudo nano /etc/profile 
-  # echo -e "\n######## EJECUTANDO /etc/profile"
-  source /Discos/Local/bashStd/.bashrc
-  return
+# Borrar la configuracion de terminal para el usuario actual y nuevos:
+  rm .bashrc && rm .profile && sudo rm /etc/skel/.bashrc && sudo rm /etc/skel/.profile
+# Configurar que se cargue siempre la configuracion comun:
+  sudo nano /etc/profile 
+    # echo -e "\n######## EJECUTANDO /etc/profile"
+    source /Discos/Local/bashStd/.bashrc
+    return
+# Eliminar el MOTD standard:
+   sudo mv /etc/motd /etc/motd.ORIG
 
