@@ -29,19 +29,23 @@
 # Ahora sí agregar tu usuario (te vuelve a pedir la clave):
   adduser MiNombreComoEs
 # Agregar el usuario a los autorizados para ejecutar comandos super usuario:
-  nano /etc/sudoers
-# Agregar el usuario al final:
-  comosellame     ALL=(ALL:ALL) ALL
-  MiNombreComoEs  ALL=(ALL:ALL) ALL
-# Ctrl+s para salvar, Ctrl+x para salir
+  # Agregándolo al grupo sudo:
+    sudo adduser FedericoD3 sudo
+  # O editando el archivo sudoers:
+    sudo chmod +w /etc/sudoers
+    sudo nano /etc/sudoers
+  # Agregar el usuario al final:
+    comosellame     ALL=(ALL:ALL) ALL
+    MiNombreComoEs  ALL=(ALL:ALL) ALL
+  # Ctrl+s para salvar, Ctrl+x para salir
 # Cerrar sesión SSH del usuario original creado en la instalación.
 # Iniciar en el usuario personalizado.
-# Verificar que puede ser root, con un comando inofensivo:
+# Verificar que puede ser root, elevando un comando inofensivo:
   sudo ls -Al
 # Si pidió clave y permitió la elevación de privilegios, 
-# se puede eliminar el usuario en minusculas:
+# se puede eliminar el usuario original en minusculas:
   sudo userdel comosellame
-	
+
 # Instalar el comando client URL para descarga web
   sudo apt install curl
   
