@@ -15,6 +15,13 @@
   ... y/o
     sudo apt install kde-plasma-desktop --no-install-recommends 
     #                kde-plasma-desktop sddm qml-module-org-kde-kitemmodels kwin-x11 --no-install-recommends
+    sudo apt install xorg
+    sudo apt install systemsettings
+    sudo apt install libqtspell-qt5-0
+    sudo apt install libqtspell-qt5-data
+    sudo apt install plasma-browser-integration
+    sudo apt install plasma-runners-addons
+
     sudo apt purge konqueror* zutty*. do sudo apt autopurge     # Limpieza opcional (navegador y el terminal default)
   
   # INSTALAR UNO O MAS WINDOWS MANAGER:
