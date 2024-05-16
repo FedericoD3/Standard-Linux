@@ -11,12 +11,16 @@
   LXQT
   ... y/o    
   sudo apt install lxqt-core --no-install-recommends
-  KDE-PLASMA
   ... y/o
+  KDE-PLASMA
+  # https://gist.github.com/pedroarthur/4901a4e30c53ea619b947599740c5a50
     sudo apt install kde-plasma-desktop --no-install-recommends 
     #                kde-plasma-desktop sddm qml-module-org-kde-kitemmodels kwin-x11 --no-install-recommends
     sudo apt install xorg
     sudo apt install systemsettings
+    sudo apt install plasma-discover
+    sudo apt install plasma-systemmonitor
+    sudo apt install kmenuedit
     sudo apt install libqtspell-qt5-0
     sudo apt install libqtspell-qt5-data
     sudo apt install plasma-browser-integration
