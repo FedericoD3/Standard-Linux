@@ -2,8 +2,10 @@
   sudo apt install xserver-xorg-core
 # Instalar el manejador de escritorio y de ventanas gráficas, sin más programas
   sudo apt install lxde-core --no-install-recommends
- ,,, o    
+  ... o    
   sudo apt install lxqt-core --no-install-recommends
+  ... o
+  sudo apt install kde --no-install-recommends
 
 
 # Detener la pantalla gráfica local de inicio de sesión:
