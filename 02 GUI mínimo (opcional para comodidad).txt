@@ -5,7 +5,9 @@
   ... o    
   sudo apt install lxqt-core --no-install-recommends
   ... o
-  sudo apt install kde --no-install-recommends
+  sudo apt install kde-plasma-desktop --no-install-recommends
+  # Opcional: eliminar el navegador y el terminal default:
+    sudo apt purge konqueror* zutty*. do sudo apt autopurge
 
 
 # Detener la pantalla gráfica local de inicio de sesión:
