@@ -15,6 +15,7 @@
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet"
   # por
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+  sudo update-grup
 
 # Detener la pantalla gráfica local de inicio de sesión:
   sudo systemctl stop lightdm
