@@ -1,5 +1,6 @@
 # Instalar el framework para GUI:
   sudo apt install xserver-xorg-core
+
 # Instalar el manejador de escritorio y de ventanas gráficas, sin más programas
   sudo apt install lxde-core --no-install-recommends
   ... o    
@@ -8,7 +9,12 @@
   sudo apt install kde-plasma-desktop --no-install-recommends
   # Opcional: eliminar el navegador y el terminal default:
     sudo apt purge konqueror* zutty*. do sudo apt autopurge
-
+# Configurar la pantalla de login gráfica al booteo:
+  sudo nano /etc/default/grub
+  # y cambiar
+  # GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+  # por
+  # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 
 # Detener la pantalla gráfica local de inicio de sesión:
   sudo systemctl stop lightdm
