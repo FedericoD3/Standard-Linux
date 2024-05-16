@@ -6,3 +6,10 @@
   
 # Especificar password para el usuario básico "root" 
 # Especificar el primer usuario además de root (debe ser en minusculas)
+
+sudo apt update
+sudo apt upgrade
+sudo apt install openssh-server
+sudo systemctl restart sshd
+
+# Y seguir pero por SSH, mas cómodo
