@@ -2,7 +2,10 @@
   sudo apt install xserver-xorg-core
 
 # Instalar el manejador de escritorio y de ventanas gráficas, sin más programas (en orden de más ligero primero)
-  xfce?
+  sudo apt install xfce4 --no-install-recommends	
+  # Opcional:
+    sudo apt install xfce4-goodies
+  ... o
   sudo apt install lxde-core --no-install-recommends	
   ... o    
   sudo apt install lxqt-core --no-install-recommends
@@ -18,6 +21,8 @@
   sudo apt install lightdm --no-install-recommends
   ... o
   sudo apt install sddm --no-install-recommends
+  # Si se instalan varios, después se puede cambiar el default con:
+    sudo dpkg-reconfigure lightdm
   # Configurar la pantalla de login gráfica al booteo:
   sudo nano /etc/default/grub
   # y cambiar
