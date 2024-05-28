@@ -48,7 +48,8 @@
 
 # Instalar el comando client URL para descarga web
   sudo apt install curl
-  
+  sudo apt install wget
+
 # Para determinar el apodo de la versión del Debian:
   . /etc/os-release
   echo ${VERSION_CODENAME}
