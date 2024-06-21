@@ -20,7 +20,7 @@
 sudo apt update
 sudo apt install librewolf -y
 
-$ TOR
+$ THORIUM
   Descargar el paquede DEB desde:
   https://github.com/Alex313031/Thorium/releases
     (Preferible AVX2)
