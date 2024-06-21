@@ -5,14 +5,13 @@
   XFCE: 
     sudo apt install xfce4 --no-install-recommends              
     sudo apt install xfce4-goodies                              # Opcional 
-  ... y/o
-  LXDE
+  ... y/o LXDE:
     sudo apt install lxde-core --no-install-recommends          # 9,2 MB of additional disk space will be used
-  LXQT
-  ... y/o    
-  sudo apt install lxqt-core --no-install-recommends
-  ... y/o
-  KDE-PLASMA
+  ... y/o LXQT:  
+    sudo apt install lxqt-core --no-install-recommends
+  ... y/o CINNAMON:
+    sudo apt install cinnamon --no-install-recommends
+  KDE-PLASMA:
   # https://gist.github.com/pedroarthur/4901a4e30c53ea619b947599740c5a50
     sudo apt install kde-plasma-desktop --no-install-recommends 
     #                kde-plasma-desktop sddm qml-module-org-kde-kitemmodels kwin-x11 --no-install-recommends
