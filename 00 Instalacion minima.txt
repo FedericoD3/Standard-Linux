@@ -4,7 +4,9 @@
 #  Balena Etcher (más rápido pero a veces no bootea) de https://etcher.balena.io/
 #  Ventoy (puede coexistir con otros ISOs)
 
-# Especificar password para el usuario básico "root" 
+# Si NO se especifica password para root, desactivará el usuario root y el primer usuario podrá hacer sudo
+# Si SI se especifica password para root,  activará   el usuario root y el primer usuario no podrá hacer sudo
+
 # Especificar el primer usuario además de root (desechable, debe ser en minusculas)
 
 # Instalar servidor SSH para seguir más cómodo remotamente:
