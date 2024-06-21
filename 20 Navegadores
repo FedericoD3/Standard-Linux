@@ -21,3 +21,6 @@ sudo apt update
 sudo apt install librewolf -y
 
 $ TOR
+  Descargar el paquede DEB desde:
+  https://github.com/Alex313031/Thorium/releases
+  (AMD Ryzen 3 2200G soporta SSE4.2 y AVX2
