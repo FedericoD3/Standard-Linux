@@ -23,3 +23,28 @@
 
   sudo systemctl start syncthing@username.service
   systemctl status syncthing@username.service
+
+2024-06-23 
+
+sudo mkdir -p /etc/apt/keyrings
+sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+sudo apt-get update
+sudo apt-get install syncthing
+
+# Add the release PGP keys:
+  sudo mkdir -p /etc/apt/keyrings
+  sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+
+# Add the channel to your APT sources: 
+# The candidate channel is updated with release candidate builds. These predate the corresponding stable builds by about three weeks.
+  echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
+  echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing candidate" | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+  sudo apt-get update
+  sudo apt-get install syncthing
+
+  sudo systemctl enable syncthing@myuser.service
+  sudo systemctl start syncthing@myuser.service
+  sudo systemctl status syncthing@myuser.service
