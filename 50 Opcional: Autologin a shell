@@ -1,0 +1,6 @@
+# Change the following line in /lib/systemd/system/getty@.service
+
+# Before
+  ExecStart=-/sbin/agetty -o '-p -- \\u' --noclear %I $TERM
+# After
+  ExecStart=-/sbin/agetty --noissue --autologin FulanoDeTal %I $TERM Type=idle
