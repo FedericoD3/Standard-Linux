@@ -1,1 +1,12 @@
-https://motion-project.github.io/motion_config.html#video_device 
+
+# https://motion-project.github.io/motion_config.html#video_device 
+# The camera attributes can be viewed by using the command
+  udevadm info -a -p $(udevadm info -q path -n /dev/video0) 
+# while the camera is attached
+# Once a unique attribute has been identified for each camera,
+# edit or create the file /etc/udev/rules.d/99-local.rules.
+# Assuming that the unique attribute for the camera was ATTR{algo}=="algún_valor_que_no_tenga_otra"
+# you would add the following line to the 99-local.rules file: 
+  KERNEL=="video[0-9]*", ATTR{algo}=="algún_valor_que_no_tenga_otra", SYMLINK+="NombreExplicito"
+# Once the change has been made and saved, reboot the computer and
+# there should now be a "sticky" device called /dev/NombreExplicito
