@@ -51,25 +51,4 @@
   sudo apt-get upgrade
   sudo apt-get autoremove
 
-# Para determinar el apodo de la versión del Debian:
-  . /etc/os-release
-  echo ${VERSION_CODENAME}
-
-# Configurar que se cargue siempre la configuracion comun "non-login":
-  nano ~/.bashrc
-    # echo -e "\n######## EJECUTANDO ~/.bashrc"
-    source /Discos/Local/bashStd/.bashrc 
-# Borrar la configuracion de terminal para el usuario actual:
-  rm .profile 
-# Clonar la configuracion de terminal actual a la configuracion de terminal de usuario nuevo:
-  sudo rm /etc/skel/.profile
-  sudo cp ~/.bashrc /etc/skel/.bashrc
-
-# Configurar que se cargue siempre la configuracion comun:
-  sudo nano /etc/profile 
-    # echo -e "\n######## EJECUTANDO /etc/profile"
-    source /Discos/Local/bashStd/.bashrc
-    return
-# Eliminar el MOTD standard:
-   sudo mv /etc/motd /etc/motd.ORIG
 
