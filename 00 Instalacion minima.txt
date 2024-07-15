@@ -1,18 +1,26 @@
-# Descargar desde https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/ el ...standard.iso (sin GUI) o ...cinnamon.iso, ...kde.iso, ...lxqt.iso (con GUI)
+# Descargar el ISO mínimo desde https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/ 
+#  o uno con utilities desde    https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/ 
+#  standard.iso (sin GUI) o cinnamon.iso, kde.iso, lxqt.iso, xfce.iso, etc (con GUI)
 #  y después agregar lo que se haga falta (requiere tener coneión a internet)
 # Grabar un pendrive usando Rufus (mas lento pero mas seguro) de https://rufus.ie/
 #  Balena Etcher (más rápido pero a veces no bootea) de https://etcher.balena.io/
 #  Ventoy (puede coexistir con otros ISOs)
+
+# Si el instalador se tranca configurando la red, probablemente sea incompatibilidad del DHCP con IPv6:
+#  1- Asegurar que el DHCP asigne IPv6, por ejemplo creando un hotspot con un celular moderno, o
+#  2- Hacer innecesario el IPv6, presionando "e" en el menu de arranque grub, agregar "ipv6.ipv6_disable=1" al final de las opciones de arranquey presionar Ctrl+X para reiniciar.
 
 # Si NO se especifica password para root, desactivará el usuario root y el primer usuario podrá hacer sudo
 # Si SI se especifica password para root,  activará   el usuario root y el primer usuario no podrá hacer sudo
 
 # Especificar el primer usuario además de root (desechable, debe ser en minusculas)
 
-# Instalar servidor SSH para seguir más cómodo remotamente:
-  sudo apt update
-  sudo apt upgrade
-  sudo apt install openssh-server
+# DES-seleccionar "Debian desktop environment" para que no instale ninguno con la cantidad de bloatware.
+# Seleccionar SSH server para poder seguir remoto desde un PC potencialmente más cómodo.
+#  Si no se selecciona SSH server, puede instalarse después con:
+     sudo apt update
+     sudo apt upgrade
+     sudo apt install openssh-server
 # Si hace falta cambiar el puerto standard 22 a otro, editarlo en:
   sudo nano /etc/ssh/ssh_config
 # y reiniciarlo:
