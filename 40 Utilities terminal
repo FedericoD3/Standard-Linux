@@ -1,4 +1,8 @@
 # UTILITIES PARA EL TERMINAL
 
+# Instalar los comandos para descarga web
+  sudo apt install curl
+  sudo apt install wget
+
 # nala
   curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
