@@ -25,3 +25,19 @@
   sudo nano /etc/ssh/ssh_config
 # y reiniciarlo:
   sudo systemctl restart sshd
+
+# Si es dual-boot pero bootea directo a Windows, reinstalar grub
+# Averiguar cual es la partición EFI:
+  fdisk -l
+  grub-install /dev/ElQueSeaTipoEFI
+# Que debe responder:
+#   Installing for x86_64-efi platform.
+#   Installation finished. No error reported.
+# Y después
+  update-grub
+# Que debe responder:
+#   Found linux image: /boot...
+#   Found Windows Boot Manager on /dev/...
+#   Adding boot menu entry ...
+#   done
+
