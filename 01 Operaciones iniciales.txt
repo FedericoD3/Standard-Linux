@@ -45,6 +45,12 @@
 # se puede eliminar el usuario temporal original en minusculas:
   sudo userdel comosellame
 
+# Actualizar repositorios y utilities:
+  sudo apt-get update
+  sudo apt-get dist-upgrade
+  sudo apt-get upgrade
+  sudo apt-get autoremove
+
 # Para determinar el apodo de la versión del Debian:
   . /etc/os-release
   echo ${VERSION_CODENAME}
