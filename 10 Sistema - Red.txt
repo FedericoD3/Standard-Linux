@@ -1,9 +1,12 @@
 # Desactivar IPv6 si es red casera:
+  su -
   sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 	sudo sysctl -p
+
 # Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
   sudo systemctl stop NetworkManager
 	sudo systemctl disable NetworkManager
+
 # Configurar IPs de las interfaces:
 # Primero tomar nota de los nombres de lasinterfaces que hay (común: eth0)
   ip a
