@@ -6,3 +6,6 @@
   sudo apt install gnome-software-plugin-flatpak    # para Gnome
   sudo apt install plasma-discover-backend-flatpak  # para KDE
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+# Acceso remoto (cliente)
+  sudo apt install remmina
