@@ -9,3 +9,9 @@
 
 # Acceso remoto (cliente)
   sudo apt install remmina
+
+# VPN zerotier
+  curl -s https://install.zerotier.com > zt.sh
+  chmod +x zt.sh
+  ./zt.sh
+  
