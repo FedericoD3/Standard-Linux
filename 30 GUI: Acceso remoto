@@ -9,7 +9,7 @@
   sudo nala install x11vnc
 
   # Configurar el password standard alfica1 (queda en /etc/x11vnc.pass):
-    sudo x11vnc -storepasswd /etc/x11vnc.pass
+    sudo x11vnc -storepasswd /etc/x11vnc.pass	# O en cualquier otro archivo, pero anotarlo
     sudo chmod 744 /etc/x11vnc.pass
   
   # Arrancarlo en crontab de root (con systemd service es un rollo)
