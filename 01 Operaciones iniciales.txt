@@ -20,7 +20,7 @@
 #  y para que sea evidente la diferencia con usuaros default.
   nano /etc/adduser.conf
 # y agregar al final
-  NAME_REGEX="[A-Z,a-z,0-9,_]"
+  NAME_REGEX="[A-Z,a-z,0-9,_,-]"
 # Ctrl+s para salvar, Ctrl+x para salir
 
 # Ahora sí agregar tu usuario (vuelve a pedir la clave):
