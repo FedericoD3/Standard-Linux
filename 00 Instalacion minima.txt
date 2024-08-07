@@ -9,7 +9,8 @@
 # Si el instalador se tranca configurando la red, probablemente sea incompatibilidad del DHCP con IPv6:
 #  1- Asegurar que el DHCP asigne IPv6, por ejemplo creando un hotspot con un celular moderno, o
 #  2- Hacer innecesario el IPv6, presionando "e" en el menu de arranque grub:
-      agregar "ipv6.ipv6_disable=1" al final de las opciones de arranque y presionar Ctrl+X para reiniciar.
+      agregar "ipv6.ipv6_disable=1" despues del "quiet " al final de las opciones de arranque
+      y presionar Ctrl+X para continuar el arranque.
 
 # Si NO se especifica password para root, desactivará el usuario root y el primer usuario podrá hacer sudo
 # Si SI se especifica password para root,  activará   el usuario root y el primer usuario no podrá hacer sudo
