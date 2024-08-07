@@ -43,3 +43,13 @@
 #   Adding boot menu entry ...
 #   done
 
+# Si es dual-boot y se desea que el default sea el ultimo OS,
+  sudo nano /etc/default/grub
+  # comentar la linea GRUB_DEFAULT=0 (o el numero que tenga) y cambiar por:
+  # GRUB_DEFAULT=0
+    GRUB_DEFAULT=saved
+    GRUB_SAVEDEFAULT=true
+  # y despues actualizar:
+    sudo update-grub
+  # o si no esta update-grub
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
