@@ -1,0 +1,40 @@
+# Si es dual-boot pero bootea directo a Windows, 
+#  es que no se instaló grub eb la partición de booteo, reinstalarlo
+# Averiguar cual es la partición EFI:
+  sudo fdisk -l
+  sudo grub-install /dev/ElQueSeaTipoEFI
+
+# Si la instalación de grub bootea directo a Debian y no ofrece la opción Windows:
+# Asegurarse que esté instalado os-prober:
+  sudo apt install os-prober
+
+# Reinstalar grub (si hace falta):
+# Averiguar cual es la partición EFI:
+  fdisk -l
+  grub-install /dev/ElQueSeaTipoEFI
+# Que debe responder:
+#   Installing for x86_64-efi platform.
+#   Installation finished. No error reported.
+# Y después
+  update-grub
+# Que debe responder:
+#   Found linux image: /boot...
+#   Found Windows Boot Manager on /dev/...
+#   Adding boot menu entry ...
+#   done
+
+# O si está grub bien instalado, sólo re-detectar los sistemas instalados
+  sudo os-prober
+# Actualizar el menú de grub
+  sudo update-grub
+
+# Si es dual-boot y se desea que el default sea el ultimo OS,
+  sudo nano /etc/default/grub
+  # comentar la linea GRUB_DEFAULT=0 (o el numero que tenga) y cambiar por:
+  # GRUB_DEFAULT=0
+    GRUB_DEFAULT=saved
+    GRUB_SAVEDEFAULT=true
+  # y despues actualizar:
+    sudo update-grub
+  # o si no esta update-grub
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
