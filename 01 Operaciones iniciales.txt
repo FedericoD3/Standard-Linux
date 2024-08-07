@@ -53,5 +53,8 @@
 
 # Pipewire audio (mas moderno que Pulseaudio) https://linuxgenie.net/install-pipewire-debian-12/
   sudo apt install pipewire-audio wireplumber pipewire-pulse pipewire-alsa libspa-0.2-bluetooth
-
+  pipewire --version
+  systemctl --user --now enable wireplumber.service
+  wireplumber --version
+  sudo reboot
 
