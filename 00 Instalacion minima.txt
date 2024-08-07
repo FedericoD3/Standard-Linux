@@ -1,3 +1,6 @@
+# OJO SI VA A SER DUAL BOOT CON WINDOWS INSTALAR ESE PRIMERO
+#  porque la instalación de Windows sobreescribe grub y bootea automático
+
 # Descargar el ISO mínimo desde https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/ 
 #  o uno con utilities desde    https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/ 
 #  standard.iso (sin GUI) o cinnamon.iso, kde.iso, lxqt.iso, xfce.iso, etc (con GUI)
@@ -27,29 +30,3 @@
   sudo nano /etc/ssh/ssh_config
 # y reiniciarlo:
   sudo systemctl restart sshd
-
-# Si es dual-boot pero bootea directo a Windows, reinstalar grub
-# Averiguar cual es la partición EFI:
-  fdisk -l
-  grub-install /dev/ElQueSeaTipoEFI
-# Que debe responder:
-#   Installing for x86_64-efi platform.
-#   Installation finished. No error reported.
-# Y después
-  update-grub
-# Que debe responder:
-#   Found linux image: /boot...
-#   Found Windows Boot Manager on /dev/...
-#   Adding boot menu entry ...
-#   done
-
-# Si es dual-boot y se desea que el default sea el ultimo OS,
-  sudo nano /etc/default/grub
-  # comentar la linea GRUB_DEFAULT=0 (o el numero que tenga) y cambiar por:
-  # GRUB_DEFAULT=0
-    GRUB_DEFAULT=saved
-    GRUB_SAVEDEFAULT=true
-  # y despues actualizar:
-    sudo update-grub
-  # o si no esta update-grub
-    sudo grub-mkconfig -o /boot/grub/grub.cfg
