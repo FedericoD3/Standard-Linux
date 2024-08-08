@@ -4,8 +4,25 @@
   . /etc/os-release
   echo ${VERSION_CODENAME}
 
+# Desactivar los defaults de terminales:
   mv ~/.bashrc ~/.bashrc.orig
   mv ~/.profile ~/.profile.orig
+  sudo mv /etc/profile /etc/profile.orig
+  sudo mv /etc/skel/.bashrc /etc/skel/.bashrc.orig
+  sudo mv /etc/skel/.profile /etc/skel/.profile.orig
+  sudo mv /etc/skel/.bash_logout /etc/skel/.bash_logout.orig
+
+
+# Configurar que se cargue siempre la configuracion comun:
+  sudo nano /etc/profile 
+    # echo -e "\n######## EJECUTANDO /etc/profile"
+    source /Discos/Local/bashStd/.bashrc
+    return
+
+
+# Crear el directorio para configuración standard de terminales:
+  sudo mkdir -p /Discos/Local/bashStd/
+
 
 # Configurar que se cargue siempre la configuracion comun "non-login":
   cp ~/.bashrc ~/.bashrc.orig
