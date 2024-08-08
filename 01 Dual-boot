@@ -28,13 +28,34 @@
 # Actualizar el menú de grub
   sudo update-grub
 
-# Si es dual-boot y se desea que el default sea el ultimo OS,
+# CAMBIO DEL OS DEFAULT
+#  (una vez que ya aparezcan todos los OS en el menú de grub):
+# https://askubuntu.com/questions/148662/how-to-get-grub2-to-remember-last-choice
+# OS default fijo:
+  # Ver el orden y/o los nombres de los OS del menú:
+    sudo grep -e ^menuentry /boot/grub/grub.cfg
+  # Editar el archivo 
+    sudo nano /etc/default/grub
+  # Y cambiar la línea 
+    GRUB_DEFAULT=0
+  # por 
+    GRUB_DEFAULT=n
+  # o por 
+    GRUB_DEFAULT='Etiqueta del OS'
+  # (que no depende de la posición del OS, que puede cambiar)
+  # Y actualizar con:
+    sudo update-grub
+  # o con:
+    sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# OS usado en el booteo previo:
   sudo nano /etc/default/grub
-  # comentar la linea GRUB_DEFAULT=0 (o el numero que tenga) y cambiar por:
+  # comentar la linea GRUB_DEFAULT=LoQueTenga y cambiar por:
   # GRUB_DEFAULT=0
     GRUB_DEFAULT=saved
     GRUB_SAVEDEFAULT=true
-  # y despues actualizar:
+  # Y actualizar con:
     sudo update-grub
-  # o si no esta update-grub
+  # o con:
     sudo grub-mkconfig -o /boot/grub/grub.cfg
+
