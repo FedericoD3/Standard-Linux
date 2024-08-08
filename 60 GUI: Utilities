@@ -7,6 +7,9 @@
   wireplumber --version
   sudo reboot
 
+# Emulador de terminal menos basico que mlterm:
+  sudo nala install xfce4-terminal
+
 # Catálogo de software:
   sudo apt install gnome-software
   sudo apt install flatpak
