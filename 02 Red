@@ -1,3 +1,4 @@
+# https://www.reddit.com/r/debian/comments/152a5jo/so_what_network_manager_does_debian_12_use/
 # Desactivar IPv6 si es red casera:
   su -
   sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
