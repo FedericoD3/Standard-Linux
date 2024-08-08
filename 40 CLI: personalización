@@ -4,7 +4,11 @@
   . /etc/os-release
   echo ${VERSION_CODENAME}
 
+  mv ~/.bashrc ~/.bashrc.orig
+  mv ~/.profile ~/.profile.orig
+
 # Configurar que se cargue siempre la configuracion comun "non-login":
+  cp ~/.bashrc ~/.bashrc.orig
   nano ~/.bashrc
     # echo -e "\n######## EJECUTANDO ~/.bashrc"
     source /Discos/Local/bashStd/.bashrc 
