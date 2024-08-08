@@ -13,8 +13,8 @@
 # Catálogo de software:
   sudo apt install gnome-software
   sudo apt install flatpak
-  sudo apt install gnome-software-plugin-flatpak    # para Gnome
-  sudo apt install plasma-discover-backend-flatpak  # para KDE
+    sudo apt install gnome-software-plugin-flatpak    # para Gnome
+    sudo apt install plasma-discover-backend-flatpak  # para KDE
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Acceso remoto (cliente)
@@ -22,12 +22,3 @@
 
 # Capturador de pantalla
   sudo nala install ksnip
-
-# VPN zerotier
-  # https://www.zerotier.com/download/#entry-5
-    curl -s https://install.zerotier.com > zt.sh
-    chmod +x zt.sh
-    ./zt.sh
-  # If you have GPG installed, a more secure and automated option is available:
-    curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/main/doc/contact%40zerotier.com.gpg' | gpg --import && if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
-  sudo zerotier-cli --help  
