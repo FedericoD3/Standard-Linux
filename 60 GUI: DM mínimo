@@ -1,6 +1,3 @@
-# Instalar el framework para GUI:
-  sudo apt install xserver-xorg-core
-
 # INSTALAR UNO O MAS DESKTOP MANAGER, sin programas extras (en orden de más ligero primero)
   XFCE (ligero, perfecto para servidores): 
     sudo apt install xfce4 --no-install-recommends              
@@ -27,7 +24,7 @@
 
     sudo apt purge konqueror* zutty*. do sudo apt autopurge     # Limpieza opcional (navegador y el terminal default)
   
-  # INSTALAR UNO O MAS WINDOWS MANAGER:
+  # INSTALAR UNO O MAS WINDOWS MANAGER (casi seguro que venga incluido en el DM):
     sudo apt-install xfwm4                                      #  9,2 MB of additional disk space will be used (obsoleto)
     sudo apt install openbox                                    #  9,2 MB of additional disk space will be used
     sudo apt install fluxbox                                    # 27.2 MB of additional disk space will be used
