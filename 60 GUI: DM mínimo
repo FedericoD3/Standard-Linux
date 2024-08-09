@@ -51,9 +51,9 @@
 # Verificar que está detenido y desactivado el arranque automático de la pantalla gráfica local de inicio de sesión:
   sudo systemctl status lightdm     # lxdm, sddm, gdm3, etc
 
-# To disable the GUI:
+# To disable the GUI at boot:
   sudo systemctl set-default multi-user.target
-# To re-enable the GUI:
+# To re-enable the GUI at boot:
   sudo systemctl set-default graphical.target
 
   # Configurar la pantalla de login gráfica al booteo:
