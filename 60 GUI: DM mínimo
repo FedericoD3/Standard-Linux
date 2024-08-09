@@ -44,6 +44,18 @@
   # Si se instalan varios, después se puede cambiar el default con:
     sudo dpkg-reconfigure lightdm
 
+# Detener la pantalla gráfica local de inicio de sesión:
+  sudo systemctl stop lightdm       # lxdm, sddm, gdm3, etc
+# Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión:
+  sudo systemctl disable lightdm    # lxdm, sddm, gdm3, etc
+# Verificar que está detenido y desactivado el arranque automático de la pantalla gráfica local de inicio de sesión:
+  sudo systemctl status lightdm     # lxdm, sddm, gdm3, etc
+
+# To disable the GUI:
+  sudo systemctl set-default multi-user.target
+# To re-enable the GUI:
+  sudo systemctl set-default graphical.target
+
   # Configurar la pantalla de login gráfica al booteo:
   sudo nano /etc/default/grub
   # y cambiar
@@ -52,12 +64,7 @@
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
   sudo update-grup
 
-# Detener la pantalla gráfica local de inicio de sesión:
-  sudo systemctl stop lightdm
-# Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión:
-  sudo systemctl disable lightdm
-# Verificar que está detenido y desactivado el arranque automático de la pantalla gráfica local de inicio de sesión:
-  sudo systemctl status lightdm
+
  
 # Instalar el servidor de escritorio remoto
   sudo apt install xrdp
