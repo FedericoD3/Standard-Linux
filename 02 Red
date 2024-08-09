@@ -4,6 +4,17 @@
   sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 	sudo sysctl -p
 
+# Instalar NetworkManager, mas moderno que ifconfig:
+  sudo apt  install network-manager
+  # o
+  sudo nala install network-manager
+
+# Instalar dnsutils para ayudar diagnosticos
+  sudo apt  install dnsutils
+  # o
+  sudo nala install dnsutils
+
+
 # Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
   sudo systemctl stop NetworkManager
 	sudo systemctl disable NetworkManager
