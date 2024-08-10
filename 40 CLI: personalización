@@ -1,9 +1,5 @@
 # ENTORNO
 
-# Para determinar el apodo de la versión del Debian:
-  . /etc/os-release
-  echo ${VERSION_CODENAME}
-
 # Desactivar los defaults de terminales:
   mv ~/.bashrc ~/.bashrc.orig
   mv ~/.profile ~/.profile.orig
@@ -13,16 +9,31 @@
   sudo mv /etc/skel/.bash_logout /etc/skel/.bash_logout.orig
   sudo mv /etc/motd /etc/motd.orig
 
-
 # Configurar que se cargue siempre la configuracion comun:
   sudo nano /etc/profile 
     # echo -e "\n######## EJECUTANDO /etc/profile"
     source /Discos/Local/bashStd/.bashrc
     return
 
-
 # Crear el directorio para configuración standard de terminales:
-  sudo mkdir -p /Discos/Local/bashStd/
+  sudo mkdir -p /Discos/Local/bashStd/motd.d
+
+
+
+
+
+
+# Para determinar el apodo de la versión del Debian:
+  . /etc/os-release
+  echo ${VERSION_CODENAME}
+
+
+
+
+
+
+
+
 
 ##############################
 
