@@ -1,0 +1,4 @@
+# Para que inicie sesión GUI automaticamente:
+  [Autologin]
+  User=yourusername
+  Session=plasma
