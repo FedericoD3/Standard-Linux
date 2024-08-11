@@ -63,8 +63,6 @@
   # por
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
   sudo update-grup
-
-
  
 # Instalar el servidor de escritorio remoto
   sudo apt install xrdp
