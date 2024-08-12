@@ -9,10 +9,14 @@
   # o
   sudo nala install network-manager
 
-# Instalar dnsutils para ayudar diagnosticos
+# Utilities para ayudar diagnosticos
   sudo apt  install dnsutils
+  sudo apt install nmap
+  sudo apt install net-tools
   # o
   sudo nala install dnsutils
+  sudo nala install nmap
+  sudo nala install net-tools
 
 
 # Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
