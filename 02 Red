@@ -8,6 +8,14 @@
   sudo apt  install network-manager
   # o
   sudo nala install network-manager
+  # editar la configuración de ifconfig para que sólo maneje loopback:
+  sudo mv /etc/network/interfaces /etc/network/interfaces.manual
+  sudo nano /etc/network/interfaces
+    # This file describes the network interfaces available on your system
+    # and how to activate them. For more information, see interfaces(5).
+    # The loopback network interface
+    auto lo
+    iface lo inet loopback
 
 # Utilities para ayudar diagnosticos
   sudo apt  install dnsutils
@@ -19,9 +27,13 @@
   sudo nala install net-tools
 
 
+
+
+
+# SI PREFIERES IFCONFIG:
 # Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
   sudo systemctl stop NetworkManager
-	sudo systemctl disable NetworkManager
+  sudo systemctl disable NetworkManager
 
 # Configurar IPs de las interfaces:
 # Primero tomar nota de los nombres de lasinterfaces que hay (común: eth0)
@@ -38,7 +50,7 @@
       address 192.168.aaa.hhh
       netmask 255.255.255.0
       gateway 192.168.100.ggg
-    dns-nameservers 1.1.1.1
+      dns-nameservers 1.1.1.1
     # Configuracion de IP dinamico en la interfaz de wifi wlp12s0, con ssid y clave
       allow-hotplug wlp12s0
       iface wlp12s0 inet dhcp
@@ -53,10 +65,10 @@
      static routers=192.168.100.ggg
      static domain_name_servers=1.1.1.1
 
-  # Salvar Ctrl S y salir Ctrl X, y refrescar la red:
-	  sudo systemctl restart networking
+  # Refrescar la red:
+    sudo systemctl restart networking
   # Verificar que asumió la configuración:
-	  ip a
+    ip a
 
 # Redirigir temporalmente un puerto entrante a otro donde escucha el servicio:
   iptables -t nat -A PREROUTING -d 192.1.1.99 -p tcp --dport 40990 -j REDIRECT --to-port 8006 || true
