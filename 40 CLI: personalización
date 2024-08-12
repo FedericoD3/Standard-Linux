@@ -25,54 +25,10 @@ ualq# ENTORNO
 # Crear el directorio para configuración standard de terminales:
   sudo mkdir -p /Discos/Local/bashStd/motd.d
 # Descargar los archivos de configuración personalizada:
-  wget --output-document=/Discos/Local/bashStd/.bashrc
-  wget --output-document=/Discos/Local/bashStd/.bash_aliases
-  wget --output-document=/Discos/Local/bashStd/FancyBash.sh
-
-
-
-
-
-# Para determinar el apodo de la versión del Debian:
-  . /etc/os-release
-  echo ${VERSION_CODENAME}
-
-
-
-
-
-
-
-
-
-##############################
-
-# Configurar que se cargue siempre la configuracion comun "non-login":
-  cp ~/.bashrc ~/.bashrc.orig
-  nano ~/.bashrc
-    # echo -e "\n######## EJECUTANDO ~/.bashrc"
-    source /Discos/Local/bashStd/.bashrc 
-# Borrar la configuracion de terminal para el usuario actual:
-  rm .profile 
-# Clonar la configuracion de terminal actual a la configuracion de terminal de usuario nuevo:
-  sudo rm /etc/skel/.profile
-  sudo cp ~/.bashrc /etc/skel/.bashrc
-
-# Configurar que se cargue siempre la configuracion comun:
-  sudo nano /etc/profile 
-    # echo -e "\n######## EJECUTANDO /etc/profile"
-    source /Discos/Local/bashStd/.bashrc
-    return
-# Eliminar el MOTD standard:
-   sudo mv /etc/motd /etc/motd.ORIG
-
-# FORMATEADORES DE INFORMACION DEL EQUIPO:
-# Informacion general:
-  sudo apt-get install neofetch
-# Información del CPU:
-  sudo apt install build-essential
-  git clone https://github.com/Dr-Noob/cpufetch
-  cd cpufetch
-  make
-  sudo mv ~/cpufetch/cpufetch /usr/local/bin/
-# Determinacion de rendimiento:  
+  wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/4mz2cdn2
+  wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/2cycovkw
+  wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/284jmpk2
+  wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2xkkhpuk
+  wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2a6h3elt
+  wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/27zb44l3
+  wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/276lkf2t
