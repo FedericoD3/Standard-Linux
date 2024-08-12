@@ -1,4 +1,4 @@
-# ENTORNO
+ualq# ENTORNO
 
 # Desactivar los defaults de terminales:
   mv ~/.bashrc ~/.bashrc.orig
@@ -24,7 +24,10 @@
 
 # Crear el directorio para configuración standard de terminales:
   sudo mkdir -p /Discos/Local/bashStd/motd.d
-
+# Descargar los archivos de configuración personalizada:
+  wget --output-document=/Discos/Local/bashStd/.bashrc
+  wget --output-document=/Discos/Local/bashStd/.bash_aliases
+  wget --output-document=/Discos/Local/bashStd/FancyBash.sh
 
 
 
