@@ -14,7 +14,7 @@
   
   # Arrancarlo en crontab de root (con systemd service es un rollo)
     sudo crontab -e
-    @reboot /usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.pass -rfbport 40335 -shared
+    @reboot /usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.pass -rfbport 4xxx5 -shared
   
 
 # XRDP para acceso remoto grafico a sesión virtual independiente
