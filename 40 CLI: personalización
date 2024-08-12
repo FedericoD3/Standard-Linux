@@ -11,6 +11,13 @@
 
 # Configurar que se cargue siempre la configuracion comun:
   sudo nano /etc/profile 
+    #!/bin/bash
+    # If not running interactively, don't do anything
+    case $- in
+      *i*) ;;
+        *) return;;
+    esac
+    # Si bash se inicio interactivo (y no un script cron), cargar la configuracion standard
     # echo -e "\n######## EJECUTANDO /etc/profile"
     source /Discos/Local/bashStd/.bashrc
     return
