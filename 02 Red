@@ -1,8 +1,4 @@
 # https://www.reddit.com/r/debian/comments/152a5jo/so_what_network_manager_does_debian_12_use/
-# Desactivar IPv6 si es red casera:
-  su -
-  sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
-  sudo sysctl -p
 
 # Instalar NetworkManager, mas moderno que ifconfig y mas cómodo que netplan:
   sudo apt  install network-manager
@@ -16,6 +12,11 @@
     # The loopback network interface
     auto lo
     iface lo inet loopback
+# Desactivar IPv6 si es red casera:
+  # Identificar los nombres de las interfaces:
+    nmcli connection show
+  # Asignar "disabled" a la propiedad "ipv6.method" de la interfaz deseada
+    nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
 
 # Utilities para ayudar diagnosticos
   sudo apt  install dnsutils
@@ -35,6 +36,10 @@
 # Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
   sudo systemctl stop NetworkManager
   sudo systemctl disable NetworkManager
+
+# Desactivar IPv6 si es red casera:
+  sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+  sudo sysctl -p
 
 # Configurar IPs de las interfaces:
 # Primero tomar nota de los nombres de lasinterfaces que hay (común: eth0)
