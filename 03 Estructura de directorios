@@ -1,0 +1,10 @@
+# Para que los puntos de montaje sean standard entre mis PCs,
+#  conviene que todas las particiones que interesen se monten bajo /Discos
+#  y ese directorio tenga acceso libre para ser usado por cualquiera (salvo excepciones)
+   sudo mkdir /Discos
+
+# Crear un directorio en el que no se monte ninuna particion, 
+#  pero que exista en el disco raiz presente en todas las instalaciones
+  sudo mkdir /Discos/Local
+
+# Y darle acceso a todo:
