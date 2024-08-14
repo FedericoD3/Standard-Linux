@@ -28,3 +28,13 @@ sudo apt install librewolf -y
   https://github.com/Alex313031/Thorium/releases
     (Preferible AVX2)
     (Ver el CPU exacto con cat /proc/cpuinfo y googlear: AMD Ryzen 3 2200G soporta SSE4.2 y AVX2)
+
+# Otros Navegadores ligeros:
+   sudo apt install epiphany-browser     # 537 MB of additional disk space will be used.
+   sudo apt install falkon               # 407 MB of additional disk space will be used.
+   sudo apt install midori               # 181 MB of additional disk space will be used.
+   sudo apt install chromium             # 268 MB of additional disk space will be used.
+   echo "deb [arch=amd64] http://deb.librewolf.net $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/librewolf.list
+    sudo wget http://deb.librewolf.net/keyring.gpg -O /etc/apt/trusted.gpg.d/librewolf.gpg
+    sudo apt update
+    sudo apt install librewolf            # 2,103 kB of additional disk space will be used.
