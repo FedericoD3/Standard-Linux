@@ -8,3 +8,6 @@
   sudo mkdir /Discos/Local
 
 # Y darle acceso a todo:
+  sudo chown -R nobody /Discos 
+  sudo chgrp nogroup -R /Discos 
+  sudo chmod 777 -R /Discos
