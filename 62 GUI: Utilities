@@ -26,5 +26,7 @@
 
 # Capturador de pantalla
   sudo nala install ksnip
+  #  Menu > Preferences > Startup > agregar ksnip para que se active con PrtScn
+  #    En Ksnip configurar 
   #  Menu > Preferences > Keyboard > Screenshots > 
   #   y borrar los hotkeys de captura de pantalla, para que los maneje ksnip
