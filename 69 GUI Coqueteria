@@ -4,6 +4,12 @@
 #  Seleccionar Äuto hide panel"
 #  Reducir la altura de la barra de 40 a 24
 
+# Menu > System Settings > Desktop
+#  Activar los iconos default (en mi caso, todos)
+#  Seleccionar "Show desktop icons on all monitors"
+
+# Menu > System Settings > Applications > Adwaita-dark
+
 # Menu > System Settings > Applets > Download 
 #  Weather
 #  Cinnamenu (es mucho mas configurable que el nativo de Cinnamon)
