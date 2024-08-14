@@ -32,7 +32,7 @@
 
 
 
-# SI PREFIERES IFCONFIG:
+# SI PREFIERES MANUAL CON IFCONFIG (p.e. para servidores que casi nunca cambian de IP):
 # Desactivar NetworkManager, si no se quiere usar herramientras automatizadas / GUI de configuración:
   sudo systemctl stop NetworkManager
   sudo systemctl disable NetworkManager
