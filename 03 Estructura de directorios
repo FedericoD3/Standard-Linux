@@ -11,7 +11,7 @@
   sudo mkdir /Discos/Portatil
   sudo mkdir /Discos/PendriveRojo
 # ... etc
-#  usando la utility "Disks" instalada segun "60 GUI: DM mínimo"
+#  usando la utility "Disks" instalada segun "62 GUI Utilities"
 
 # Y darle acceso a todo:
   sudo chown -R nobody /Discos 
