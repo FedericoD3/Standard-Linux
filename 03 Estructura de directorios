@@ -6,6 +6,11 @@
 # Crear un directorio en el que no se monte ninuna particion, 
 #  pero que exista en el disco raiz presente en todas las instalaciones
   sudo mkdir /Discos/Local
+# Otros podran ser:
+  sudo mkdir /Discos/SeagateGrande
+  sudo mkdir /Discos/Portatil
+  sudo mkdir /Discos/PendriveRojo
+# ... etc
 
 # Y darle acceso a todo:
   sudo chown -R nobody /Discos 
