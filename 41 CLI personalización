@@ -1,4 +1,4 @@
-ualq# ENTORNO
+# ENTORNO
 
 # Desactivar los defaults de terminales:
   mv ~/.bashrc ~/.bashrc.orig
