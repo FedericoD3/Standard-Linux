@@ -78,7 +78,7 @@
 # Verificarlo usando Windows Remote Desktop Client
 
 # Programas útiles:
-  sudo apt install gnome-disk-utility
+  sudo apt install gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "03 Estructura de directorios"
   sudo apt install gparted
 # Navegadores ligeros:
    sudo apt install epiphany-browser     # 537 MB of additional disk space will be used.
