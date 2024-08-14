@@ -15,14 +15,16 @@
   sudo nala install xfce4-terminal
 
 # Catálogo de software:
-  sudo apt install gnome-software
-  sudo apt install flatpak
-    sudo apt install gnome-software-plugin-flatpak    # para Gnome
-    sudo apt install plasma-discover-backend-flatpak  # para KDE
+  sudo nala install gnome-software
+  sudo nala install flatpak
+    sudo nala install gnome-software-plugin-flatpak    # para Gnome
+    sudo nala install plasma-discover-backend-flatpak  # para KDE
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Acceso remoto (cliente)
-  sudo apt install remmina
+  sudo nala install remmina
 
 # Capturador de pantalla
   sudo nala install ksnip
+  #  Menu > Preferences > Keyboard > Screenshots > 
+  #   y borrar los hotkeys de captura de pantalla, para que los maneje ksnip
