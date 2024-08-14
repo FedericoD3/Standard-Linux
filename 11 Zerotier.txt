@@ -19,7 +19,7 @@
 # VERIFICAR CONEXION
   zerotier-cli listnetworks
 
-# CONFIGURAR COMO ROUTER ENTRE ZEROTIER Y EL RESTO DE LA RED
+# EN CASO QUE ESTE EQUIPO VAYA A ACTUAR COMO ROUTER ENTRE ZEROTIER Y EL RESTO DE LA RED
   Add a managed route to the ZeroTier network (at my.zerotier.com)
 # Determinar el ID de las redes ZT y local entra las cuales rutear y asignarlas a variables por comodidad:
   sudo zerotier-cli listnetworks
