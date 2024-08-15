@@ -9,3 +9,6 @@
   make
   sudo mv ~/cpufetch/cpufetch /usr/local/bin/
 # Determinacion de rendimiento:  
+
+# Utilities Android:
+  curl https://dl.google.com/android/repository/platform-tools-latest-linux.zip
