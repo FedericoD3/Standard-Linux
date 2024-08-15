@@ -35,7 +35,7 @@
     source /Discos/Local/bashStd/.bashrc
     return
 
-# Actualizar el .bashrc para el usuario actual:
+# Actualizar el .bashrc para el usuario actual (y a todos los que ya estén creados):
   cp /etc/skel/.bashrc ~/.bashrc
 
 # Crear el directorio para configuración standard de terminales:
