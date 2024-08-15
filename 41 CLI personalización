@@ -3,6 +3,8 @@
 # Desactivar los defaults de terminales:
   mv ~/.bashrc ~/.bashrc.orig
   mv ~/.profile ~/.profile.orig
+  sudo mv /root/.bashrc /root/.bashrc.orig
+  sudo mv /root/.profile /root/.profile.orig
   sudo mv /etc/profile /etc/profile.orig
   sudo mv /etc/skel/.bashrc /etc/skel/.bashrc.orig
   sudo mv /etc/skel/.profile /etc/skel/.profile.orig
@@ -37,6 +39,7 @@
 
 # Actualizar el .bashrc para el usuario actual (y a todos los que ya estén creados):
   cp /etc/skel/.bashrc ~/.bashrc
+  cp /etc/skel/.bashrc /root/.bashrc
 
 # Crear el directorio para configuración standard de terminales:
   sudo mkdir -p /Discos/Local/bashStd/motd.d
