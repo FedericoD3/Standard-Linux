@@ -9,18 +9,34 @@
   sudo mv /etc/skel/.bash_logout /etc/skel/.bash_logout.orig
   sudo mv /etc/motd /etc/motd.orig
 
-# Configurar que se cargue siempre la configuracion comun:
+# Configurar que se cargue siempre la configuracion común con login (cónsola física o remota):
   sudo nano /etc/profile 
     #!/bin/bash
-    # If not running interactively, don't do anything
+    # Si no es sesión interactiva, no hacer nada y salir
     case $- in
       *i*) ;;
         *) return;;
     esac
-    # Si bash se inicio interactivo (y no un script cron), cargar la configuracion standard
-    # echo -e "\n######## EJECUTANDO /etc/profile"
+    # Si es sesión interactiva, cargar la configuracion standard
+    # echo -e "\nSESION CON LOGIN (consola o remota): ejecutando /etc/profile"
     source /Discos/Local/bashStd/.bashrc
     return
+
+# Configurar que se cargue siempre la configuracion común sin login (emulador de terminal en GUI):
+  sudo nano /etc/skel/.bashrc 
+    #!/bin/bash
+    # Si no es sesión interactiva, no hacer nada y salir
+    case $- in
+      *i*) ;;
+        *) return;;
+    esac
+    # Si es sesión interactiva, cargar la configuracion standard
+    # echo -e "\nSESION SIN LOGIN (emulador de terminal): ejecutando ~/.bashrc"
+    source /Discos/Local/bashStd/.bashrc
+    return
+
+# Actualizar el .bashrc para el usuario actual:
+  cp /etc/skel/.bashrc ~/.bashrc
 
 # Crear el directorio para configuración standard de terminales:
   sudo mkdir -p /Discos/Local/bashStd/motd.d
