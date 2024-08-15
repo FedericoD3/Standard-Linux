@@ -12,7 +12,8 @@
 
 # Utilities Android:
   wget --output-document=ADB.zip https://dl.google.com/android/repository/platform-tools-latest-linux.zip
-  unzip ADB.zip 
+  unzip ADB.zip
+  rm ADB.zip
   sudo mv ~/platform-tools /usr/bin/android-tools
   Agregar al path común en /Discos/Local/bashStd/.bashrc
     export PATH=$PATH:/usr/bin/android-tools
