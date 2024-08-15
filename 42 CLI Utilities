@@ -15,5 +15,5 @@
   unzip ADB.zip
   rm ADB.zip
   sudo mv ~/platform-tools /usr/bin/android-tools
-  Agregar al path común en /Discos/Local/bashStd/.bashrc
+# Agregar al path común en /Discos/Local/bashStd/.bashrc
     export PATH=$PATH:/usr/bin/android-tools
