@@ -30,3 +30,9 @@
   #    En Ksnip configurar 
   #  Menu > Preferences > Keyboard > Screenshots > 
   #   y borrar los hotkeys de captura de pantalla, para que los maneje ksnip
+
+# Administrador de Zips:
+  sudo nala install xarchiver
+
+# Block de notas:
+  sudo nala install gedit
