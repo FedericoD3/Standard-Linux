@@ -6,8 +6,3 @@
 
 # nala
   curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
-
-# Utilities de red:
-  sudo nala install dnsutils
-  sudo nala install nmap
-  sudo nala install net-tools
