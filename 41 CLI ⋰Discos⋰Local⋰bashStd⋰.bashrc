@@ -13,7 +13,8 @@ echo "######## EJECUTANDO /Discos/Local/bashStd/.bashrc"
   sleep 2   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
 
 run-parts /Discos/Local/bashStd/motd.d
-export PATH=$PATH:~/.local/bin
+  export PATH=$PATH:~/.local/bin
+# export PATH=$PATH:CualquierOtroPathQueSeUse
 
 echo "Configuracion del command history" >> ~/Arranque_bash.log
 ########## CONFIGURACION DEL HISTORY ##########
