@@ -18,6 +18,9 @@
   # Asignar "disabled" a la propiedad "ipv6.method" de la interfaz deseada
     nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
 
+# Opcional, ponerles nombres descriptivos:
+  nmcli connection modify 'Wired connection 1' con-name RJ45
+
 # Utilities para ayudar diagnosticos
   sudo apt  install dnsutils
   sudo apt install nmap
