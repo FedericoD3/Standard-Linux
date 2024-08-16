@@ -26,6 +26,8 @@
 
 ################################################################
 ##### INTENTANDO QUE CADA ZT TENGA SU DNS
+sudo nano /etc/NetworkManager/system-connections/ # El archivo de la conexión que haga falta
+
 sudo nmcli connection modify ZT-Alfica ipv4.method "auto"
 sudo nmcli connection modify ZT-Alfica ipv4.dns "192.168.1.103"
 sudo nmcli connection modify ZT-Alfica ipv4.dns-search "alfica.red" 
