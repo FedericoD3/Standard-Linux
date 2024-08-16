@@ -140,7 +140,7 @@ red () {
   # Ver el IP de la puerta de enlace, casi seguro que en la red principal:
   Red=$(ip route | grep default | cut -d ' ' -f 3)
   Red=${Red%.*}".0/24"
-  echo '  nmap -sP $Red | grep "scan report for"'
+  echo "  nmap -sP $Red | grep 'scan report for'"
   nmap -sP $Red | grep "scan report for"
   echo '  /usr/sbin/arp | grep ether'
   /usr/sbin/arp | grep ether
