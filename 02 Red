@@ -22,7 +22,7 @@
   nmcli connection modify 'Wired connection 1' con-name RJ45
 
 # Utilities para ayudar diagnosticos
-  sudo apt  install dnsutils
+  sudo apt install dnsutils
   sudo apt install nmap
   sudo apt install net-tools
   sudo apt install gvfs-backends      # Para que el administrador de archivos pueda ver la red
