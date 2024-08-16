@@ -19,6 +19,11 @@
 # VERIFICAR CONEXION
   zerotier-cli listnetworks
 
+# Opcional, ponerles nombres descriptivos:
+  nmcli connection modify 'zt6ovzuv57' con-name ZT-Alfica
+  nmcli connection modify 'ztfp6gdnkb' con-name ZT-ViejasDuran
+  nmcli connection modify 'zth6rcb6jc' con-name ZT-Delray
+
 # EN CASO QUE ESTE EQUIPO VAYA A ACTUAR COMO ROUTER ENTRE ZEROTIER Y EL RESTO DE LA RED
   Add a managed route to the ZeroTier network (at my.zerotier.com)
 # Determinar el ID de las redes ZT y local entra las cuales rutear y asignarlas a variables por comodidad:
