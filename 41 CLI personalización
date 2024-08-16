@@ -39,7 +39,7 @@
 
 # Actualizar el .bashrc para el usuario actual (y a todos los que ya estén creados):
   cp /etc/skel/.bashrc ~/.bashrc
-  cp /etc/skel/.bashrc /root/.bashrc
+  sudo cp /etc/skel/.bashrc /root/.bashrc
 
 # Crear el directorio para configuración standard de terminales:
   sudo mkdir -p /Discos/Local/bashStd/motd.d
