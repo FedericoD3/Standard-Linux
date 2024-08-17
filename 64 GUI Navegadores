@@ -20,6 +20,13 @@
 sudo apt update
 sudo apt install librewolf -y
 
+# A veces no funciona, y es más fácil instalarlo desde la app catálogo "Discover"
+# Para que no cierre sesión en páginas como Facebook:
+# Settings > passwords and security > desmarcar 
+  [ ] Delete cookies and site data when LibreWolf is closed
+# Y marcar:
+  [*] Ask to save passwords
+
 # CHROMIUM
   sudo apt install chromium
 
