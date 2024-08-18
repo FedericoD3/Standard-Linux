@@ -6,3 +6,6 @@
 
 # nala
   curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
+
+fzf        # Buscador de archivos
+atuin      # History mas versatil
