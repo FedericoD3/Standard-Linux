@@ -1,6 +1,7 @@
 # https://www.generateit.net/cron-job/
 # Desactivar el envio de email interno por cada cronjob
 MAILTO=""
+# Agregar  >> /tmp/cron.log 2>&1 al final de cada tarea oara registrar su ejecución
 # .----------------- minute (0 - 59)
 # |  .-------------- hour (0 - 23)
 # |  |   .---------- day of month (1 - 31)
