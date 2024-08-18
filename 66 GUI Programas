@@ -1,4 +1,7 @@
 VSCodium
-LibreOffcice Calc
-LibreOffcice Write
+
+# Office:
+  sudo nala install libreoffice-calc --no-install-recommends
+  sudo nala install libreoffice-write --no-install-recommends
+
 KeePassXC
