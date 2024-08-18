@@ -36,3 +36,7 @@
 
 # Block de notas:
   sudo nala install gedit
+
+# Visores de imagenes:
+  XnView MP  
+  qimgv
