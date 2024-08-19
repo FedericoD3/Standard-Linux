@@ -26,14 +26,24 @@
 
 ################################################################
 ##### INTENTANDO QUE CADA ZT TENGA SU DNS
-sudo nano /etc/NetworkManager/system-connections/ # El archivo de la conexión que haga falta
+# Aparentemente con NetworkManager y /etc/resolv.conf no sirve direccionar el DNS según dominio
+#  así que hay que agregar los servidores DNS de cada dominio de ZeroTier
+#  en la configuración de dnsmasq en el DNS pihole de la LAN:
+  sudo nano /etc/dnsmasq.d/10-DNSsZeroTier.conf
+    server=/alfica.red/192.168.1.103
+    server=/viejasduran.red/192.168.1.6
+# y reiniciar el servicio
+  sudo systemctl restart unbound
+  sudo service pihole-FTL reload
+  sudo pihole restartdns
 
-sudo nmcli connection modify ZT-Alfica ipv4.method "auto"
-sudo nmcli connection modify ZT-Alfica ipv4.dns "192.168.1.103"
-sudo nmcli connection modify ZT-Alfica ipv4.dns-search "alfica.red" 
-
-sudo nmcli device reapply zt6ovzuv57
-sudo nmcli con reload
+# No resultaron:
+#  sudo nano /etc/NetworkManager/system-connections/ # El archivo de la conexión que haga falta
+#  sudo nmcli connection modify ZT-Alfica ipv4.method "auto"
+#  sudo nmcli connection modify ZT-Alfica ipv4.dns "192.168.1.103"
+#  sudo nmcli connection modify ZT-Alfica ipv4.dns-search "alfica.red" 
+#  sudo nmcli device reapply zt6ovzuv57
+#  sudo nmcli con reload
 ################################################################
 
 # EN CASO QUE ESTE EQUIPO VAYA A ACTUAR COMO ROUTER ENTRE ZEROTIER Y EL RESTO DE LA RED
