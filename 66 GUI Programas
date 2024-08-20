@@ -1,7 +1,8 @@
-VSCodium
+VSCodium    # Via el catálogo "Discover"
+KeePassXC   # Via el catálogo "Discover"
+NotepadNext # Via el catálogo "Discover"
+Okular      # Via el catálogo "Discover"
 
 # Office:
   sudo nala install libreoffice-calc --no-install-recommends
   sudo nala install libreoffice-writer --no-install-recommends
-
-KeePassXC
