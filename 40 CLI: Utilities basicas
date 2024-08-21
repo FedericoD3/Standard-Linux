@@ -17,7 +17,7 @@
 # dust (analizador de ocupación de disco, mas informatica que du)
 # Requiere rust, no lo instalé por evitar bloat
 
-# bat (cat, pero con resaltado de sintaxis)
+# bat (cat, pero con resaltado de sintaxis) (despues hay que usar batcat, agregado a los aliases)
   sudo nala install bat
 
 # tldr (Man pages resumido)
