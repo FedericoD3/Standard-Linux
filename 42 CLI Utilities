@@ -30,6 +30,7 @@
   sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
   sudo apt update
   sudo nala install eza
+# https://github.com/eza-community/eza/blob/main/man/eza_colors.5.md
 
 # FORMATEADORES DE INFORMACION DEL EQUIPO:
 # Informacion general:
