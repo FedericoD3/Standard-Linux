@@ -32,6 +32,7 @@
   sudo nano /etc/dnsmasq.d/10-DNSsZeroTier.conf
     server=/alfica.red/192.168.1.103
     server=/viejasduran.red/192.168.1.6
+#   (y que el pihole esté agregado a esos ZT, claro)
 # y reiniciar el servicio
   sudo systemctl restart unbound
   sudo service pihole-FTL reload
