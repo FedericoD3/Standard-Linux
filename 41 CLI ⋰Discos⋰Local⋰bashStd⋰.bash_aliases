@@ -7,7 +7,7 @@ alias ls='ls --color=auto'
 # --sort SORT_FIELD
 # --only-dirs
 # --only-files
-  alias ll='eza --icons=never --time-style=long-iso --absolute -BAl '
+  alias ll='echo "--sort SORT_FIELD, --only-dirs, --only-files"  && eza --icons=never --time-style=long-iso --absolute -BAl --total-size'
 alias ping='ping -c 4 $1'
 alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
