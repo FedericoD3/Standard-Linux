@@ -2,7 +2,12 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ls='ls --color=auto'
-alias ll='echo "-S size, -t time, -X extension" && ls -Al --time-style=long-iso'
+# alias ll='echo "-S size, -t time, -X extension" && ls -Al --time-style=long-iso'  
+
+# --sort SORT_FIELD
+# --only-dirs
+# --only-files
+  alias ll='eza --icons=never --time-style=long-iso --absolute -BAl '
 alias ping='ping -c 4 $1'
 alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
