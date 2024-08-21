@@ -38,5 +38,10 @@
   sudo nala install gedit
 
 # Visores de imagenes:
-  XnView MP  
-  qimgv
+  XnView MP  (instalar por el catálogo "Discover")
+
+# Free42   Emulador de HP-42s
+  sudo nala install free42-nologo
+
+# IPqalc   Calculadora de IPs
+  sudo nala install ipqalc
