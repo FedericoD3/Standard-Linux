@@ -6,6 +6,9 @@ alias ll='echo "-S size, -t time, -X extension" && ls -Al --time-style=long-iso'
 alias ping='ping -c 4 $1'
 alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
+# cat con resaltado de sintaxis (requiere sudo apt install bat)
+alias cat=batcat
+
 alias carpetas='smbclient -L $(hostname) -U '$1
 # alias puertos='sudo netstat -tulpn | grep LISTEN ' 
   alias puertos='sudo lsof -i -P -n | grep LISTEN '
