@@ -4,6 +4,9 @@
   sudo apt install gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "03 Estructura de directorios"
   sudo apt install gparted
 
+# Administrador de credenciales locales
+  sudo nala install seahorse
+
 # Pipewire audio (mas moderno que Pulseaudio) https://linuxgenie.net/install-pipewire-debian-12/
   sudo apt install pipewire-audio wireplumber pipewire-pulse pipewire-alsa libspa-0.2-bluetooth
   pipewire --version
