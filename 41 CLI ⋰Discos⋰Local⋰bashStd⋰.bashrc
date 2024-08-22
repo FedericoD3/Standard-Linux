@@ -14,6 +14,7 @@ echo "######## EJECUTANDO /Discos/Local/bashStd/.bashrc"
 
 run-parts /Discos/Local/bashStd/motd.d
   export PATH=$PATH:~/.local/bin
+  export PATH=$PATH:/usr/bin/android-tools
 # export PATH=$PATH:CualquierOtroPathQueSeUse
 
 # Colores que usa eza para el listado de archivos: 
