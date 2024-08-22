@@ -16,6 +16,17 @@ run-parts /Discos/Local/bashStd/motd.d
   export PATH=$PATH:~/.local/bin
 # export PATH=$PATH:CualquierOtroPathQueSeUse
 
+# Colores que usa eza para el listado de archivos: 
+EZA="reset"                  # Resetear
+EZA=$EZA":da=32"             # Directorios en azul
+EZA=$EZA":*.txt=38;5;223"    # Archivos de texto en beige
+EZA=$EZA":nb=2;3"            # Tamaño menor de 1KB = gris cursiva
+EZA=$EZA":nk=2;3"            # Tamaño entre 1 KB/KiB y 1 MB/MiB = gris cursiva
+EZA=$EZA":nm=2;3"            # Tamaño entre 1 MB/MiB y 1 GB/GiB = gris cursiva
+EZA=$EZA":ng=2;3"            # Tamaño entre 1 GB/GiB y 1 TB/TiB = gris cursiva
+EZA=$EZA":nt=2;3"            # Tamaño mayor a 1 TB/TiB = gris cursiva
+export EZA_COLORS=$EZA
+
 echo "Configuracion del command history" >> ~/Arranque_bash.log
 ########## CONFIGURACION DEL HISTORY ##########
 # Don't put duplicate lines in the history. See bash(1) for more options
