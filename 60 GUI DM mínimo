@@ -12,9 +12,8 @@
   ... KDE-PLASMA (demasiado oconfigurable, un poco pesado):
   # https://gist.github.com/pedroarthur/4901a4e30c53ea619b947599740c5a50
     sudo apt install kde-plasma-desktop --no-install-recommends 
-
   
-  # INSTALAR UNO O MAS WINDOWS MANAGER (casi seguro que venga incluido en el DM):
+  # INSTALAR UNO O MAS WINDOWS MANAGER (en el improbable caso que no venga incluido en el DM):
     sudo apt-install xfwm4                                      #  9,2 MB of additional disk space will be used (obsoleto)
     sudo apt install openbox                                    #  9,2 MB of additional disk space will be used
     sudo apt install fluxbox                                    # 27.2 MB of additional disk space will be used
@@ -30,21 +29,23 @@
     sudo apt install lightdm --no-install-recommends
     ... o
     sudo apt install sddm --no-install-recommends
-
   # Si se instalan varios, después se puede cambiar el default con:
     sudo dpkg-reconfigure lightdm
 
 # Detener la pantalla gráfica local de inicio de sesión:
   sudo systemctl stop lightdm       # lxdm, sddm, gdm3, etc
-# Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión:
+# Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión (p.e. en un servidor):
   sudo systemctl disable lightdm    # lxdm, sddm, gdm3, etc
+  # o
+  sudo systemctl set-default multi-user.target
+# Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión (p.e. en un PC de escritorio):
+  sudo systemctl disable lightdm    # lxdm, sddm, gdm3, etc
+  # o
+  sudo systemctl set-default graphical.target
 # Verificar que está detenido y desactivado el arranque automático de la pantalla gráfica local de inicio de sesión:
   sudo systemctl status lightdm     # lxdm, sddm, gdm3, etc
-
-# To disable the GUI at boot:
-  sudo systemctl set-default multi-user.target
-# To re-enable the GUI at boot:
-  sudo systemctl set-default graphical.target
+# Si se guinda la interfaz gráfica, ir a un terminal (Ctrl+Alt+F2) y ejecutar
+  sudo systemctl restart lightdm     # lxdm, sddm, gdm3, etc
 
   # Configurar la pantalla de login gráfica al booteo:
   sudo nano /etc/default/grub
@@ -53,16 +54,3 @@
   # por
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
   sudo update-grup
- 
-# Instalar el servidor de escritorio remoto
-  sudo apt install xrdp
-# Activar el GUI para sesión remota para este usuario
-  echo lxsession -s LXDE -e LXDE > ~/.xsession
-	
-# Cambiar el puerto deseado editando el archivo de configuración
-#  yo uso el puerto 4hhh5, donde hhh es el último byte del IP del host,
-#  igual que en UltraVNC de Windows, para que sea único para ser ruteado via NAT o tunel
-  sudo nano /etc/xrdp/xrdp.ini
-# Reiniciar XRDP
-  sudo service xrdp restart
-# Verificarlo usando Windows Remote Desktop Client
