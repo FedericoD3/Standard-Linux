@@ -5,26 +5,26 @@
   sudo nala install remmina
 
 # SERVIDORES DE ACCESO REMOTO:
-# XRDP para acceso remoto grafico a sesión virtual independiente
-  https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/
-# Instalarlo:
-  sudo nala install xrdp
-# Agregar xrdp a usuarios de ssl:
-  sudo adduser xrdp ssl-cert
-# Configurar el puerto a uno no standard:
-  sudo nano /etc/xrdp/xrdp.ini
-# Reiniciar xrdp para que tome los cambios en la configuración:
-  sudo systemctl restart xrdp
-# Verificar que quedó habilitado:
-  sudo systemctl status xrdp
-# Probarlo desde otra PC con el cliente de escritorio remoto de Windows
+  # RDP, para sesión gráfica simultánea independiente por usuario:
+    https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/
+    # Instalarlo:
+      sudo nala install xrdp
+    # Agregar xrdp a usuarios de ssl:
+      sudo adduser xrdp ssl-cert
+    # Configurar el puerto a uno no standard:
+      sudo nano /etc/xrdp/xrdp.ini
+    # Reiniciar xrdp para que tome los cambios en la configuración:
+      sudo systemctl restart xrdp
+    # Verificar que quedó habilitado:
+      sudo systemctl status xrdp
+    # Probarlo desde otra PC con el cliente de escritorio remoto de Windows
 
 
   sudo apt  install x11vnc
   o 
   sudo nala install x11vnc
 
-  # Configurar el password standard alfica1 (queda en /etc/x11vnc.pass):
+  # Configurar el password standard (queda en /etc/x11vnc.pass):
     sudo x11vnc -storepasswd /etc/x11vnc.pass	# O en cualquier otro archivo, pero anotarlo
     sudo chmod 744 /etc/x11vnc.pass
   
@@ -32,20 +32,3 @@
     sudo crontab -e
     @reboot /usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.pass -rfbport 4xxx5 -shared
   
-
-
-
-####################################################################
- 
-# Instalar el servidor de escritorio remoto
-  sudo apt install xrdp
-# Activar el GUI para sesión remota para este usuario
-  echo lxsession -s LXDE -e LXDE > ~/.xsession
-	
-# Cambiar el puerto deseado editando el archivo de configuración
-#  yo uso el puerto 4hhh5, donde hhh es el último byte del IP del host,
-#  igual que en UltraVNC de Windows, para que sea único para ser ruteado via NAT o tunel
-  sudo nano /etc/xrdp/xrdp.ini
-# Reiniciar XRDP
-  sudo service xrdp restart
-# Verificarlo usando Windows Remote Desktop Client
