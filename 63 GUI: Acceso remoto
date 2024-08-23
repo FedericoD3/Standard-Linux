@@ -30,3 +30,19 @@
 # Verificar que quedó habilitado:
   sudo systemctl status xrdp
 # Probarlo desde otra PC con el cliente de escritorio remoto de Windows
+
+
+####################################################################
+ 
+# Instalar el servidor de escritorio remoto
+  sudo apt install xrdp
+# Activar el GUI para sesión remota para este usuario
+  echo lxsession -s LXDE -e LXDE > ~/.xsession
+	
+# Cambiar el puerto deseado editando el archivo de configuración
+#  yo uso el puerto 4hhh5, donde hhh es el último byte del IP del host,
+#  igual que en UltraVNC de Windows, para que sea único para ser ruteado via NAT o tunel
+  sudo nano /etc/xrdp/xrdp.ini
+# Reiniciar XRDP
+  sudo service xrdp restart
+# Verificarlo usando Windows Remote Desktop Client
