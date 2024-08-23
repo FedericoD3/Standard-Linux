@@ -17,18 +17,35 @@
       sudo systemctl restart xrdp
     # Verificar que quedó habilitado:
       sudo systemctl status xrdp
-    # Probarlo desde otra PC con el cliente de escritorio remoto de Windows
+    # Verificar que esté esperando conexión por el puerto configurado:
+      sudo lsof -i -P -n | grep LISTEN
+    # y probarlo conectarse desde otra PC con el cliente de escritorio remoto de Windows
 
   # VNC, para sesión gráfica de lo que esté en pantalla:
-    sudo apt  install x11vnc
-    # o 
-    sudo nala install x11vnc
-
-  # Configurar el password standard (queda en /etc/x11vnc.pass):
-    sudo x11vnc -storepasswd /etc/x11vnc.pass	# O en cualquier otro archivo, pero anotarlo
-    sudo chmod 744 /etc/x11vnc.pass
-  
-  # Arrancarlo en crontab de root (con systemd service es un rollo)
-    sudo crontab -e
-    @reboot /usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.pass -rfbport 4xxx5 -shared
-  
+    # https://docs.j7k6.org/x11vnc-debian-ubuntu-linux/
+      sudo apt  install x11vnc
+      # o 
+      sudo nala install x11vnc
+    # Configurar almacenar el password standard en /etc/x11vnc.passwd
+      # o en cualquier otro archivo accesible, pero anotarlo
+      sudo x11vnc -storepasswd /etc/x11vnc.passwd
+      sudo chmod 744 /etc/x11vnc.passwd
+    # Preparar el servicio:
+      sudo nano /lib/systemd/system/x11vnc.service
+      # con este contenido:
+        [Unit]
+          Description=Start x11vnc
+          After=multi-user.target
+        [Service]
+          Type=simple
+          ExecStart=/usr/bin/x11vnc -display :0 -auth /Discos/Local/.Xauthority -forever -loop -noxdamage -repeat -localhost -rfbauth /etc/x11vnc.passwd -rfbport 41015 -shared
+        [Install]
+          WantedBy=multi-user.target
+      # (apuntar el -auth /Discos/Local/.Xauthority a un archivo accesible al servicio, no dejarlo en el default "guess")
+    # Activar el servicio y arrancarlo:
+      sudo systemctl daemon-reload
+      sudo systemctl enable x11vnc.service
+      sudo systemctl start x11vnc.service
+    # Verificar que esté esperando conexión por el puerto configurado:
+      sudo lsof -i -P -n | grep LISTEN
+    # y probarlo conectarse desde otra PC con UltraVNC o similar
