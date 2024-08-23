@@ -32,6 +32,13 @@
   # Si se instalan varios, después se puede cambiar el default con:
     sudo dpkg-reconfigure lightdm
 
+# CONTROL DE CONTRASEÑAS:
+#  Si es una PC privada que no usa más nadie, se puede dejar en blanco la contraseña del "keyring"
+#   para evitar el fastidio de que cualquier programa que use contraseñas (p.e. un navegador) las esté pidiendo siempre
+#  Si ya habías ingresado una contraseña global del keyring, 
+#   cerrar todos los programas que usen contraseñas, eliminar el keyring y cuando vuelva a pedirla dejarla vacía.
+   mv ~/.local/share/keyrings ~/.local/share/keyrings.respaldo
+
 # Detener la pantalla gráfica local de inicio de sesión:
   sudo systemctl stop lightdm       # lxdm, sddm, gdm3, etc
 # Desactivar el arranque automático de la pantalla gráfica local de inicio de sesión (p.e. en un servidor):
