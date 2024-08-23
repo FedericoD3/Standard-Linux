@@ -35,14 +35,15 @@
 
 # FORMATEADORES DE INFORMACION DEL EQUIPO:
 # Informacion general:
-  sudo apt-get install neofetch
-  
+  wget https://github.com/fastfetch-cli/fastfetch/releases/download/2.21.3/fastfetch-linux-amd64.deb
+  sudo apt install ~/fastfetch-linux-amd64.deb
+  rm ~/fastfetch-linux-amd64.deb
 # Información del CPU:
   sudo apt install build-essential
   git clone https://github.com/Dr-Noob/cpufetch
   cd cpufetch
   make
-  sudo mv ~/cpufetch/cpufetch /usr/local/bin/
+  sudo mv ~/cpufetch/cpufetch /usr/bin/
 # Determinacion de rendimiento:  
 
 # Utilities Android:
