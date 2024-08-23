@@ -19,10 +19,10 @@
       sudo systemctl status xrdp
     # Probarlo desde otra PC con el cliente de escritorio remoto de Windows
 
-
-  sudo apt  install x11vnc
-  o 
-  sudo nala install x11vnc
+  # VNC, para sesión gráfica de lo que esté en pantalla:
+    sudo apt  install x11vnc
+    # o 
+    sudo nala install x11vnc
 
   # Configurar el password standard (queda en /etc/x11vnc.pass):
     sudo x11vnc -storepasswd /etc/x11vnc.pass	# O en cualquier otro archivo, pero anotarlo
