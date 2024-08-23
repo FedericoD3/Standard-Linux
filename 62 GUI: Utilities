@@ -24,6 +24,9 @@
     sudo nala install plasma-discover-backend-flatpak  # para KDE
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
+# Administrador de privilegios para programas instalados como Flatpack
+  Flatseal (instalar por el catálogo "Discover")
+
 # Acceso remoto (cliente)
   sudo nala install remmina
 
@@ -42,6 +45,7 @@
 
 # Visores de imagenes:
   XnView MP  (instalar por el catálogo "Discover")
+  # Y darle acceso con Flatseal a los directorios relevantes en el file system
 
 # Free42   Emulador de HP-42s
   sudo nala install free42-nologo
