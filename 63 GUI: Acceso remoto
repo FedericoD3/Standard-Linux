@@ -38,7 +38,7 @@
           After=multi-user.target
         [Service]
           Type=simple
-          ExecStart=/usr/bin/x11vnc -display :0 -auth /Discos/Local/.Xauthority -forever -loop -noxdamage -repeat -localhost -rfbauth /etc/x11vnc.passwd -rfbport 41015 -shared
+          ExecStart=/usr/bin/x11vnc -display :0 -auth /Discos/Local/.Xauthority -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.passwd -rfbport 41015 -shared
         [Install]
           WantedBy=multi-user.target
       # (apuntar el -auth /Discos/Local/.Xauthority a un archivo accesible al servicio, no dejarlo en el default "guess")
