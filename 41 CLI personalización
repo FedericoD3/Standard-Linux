@@ -1,53 +1,59 @@
 # ENTORNO
+  # Desactivar los defaults de terminales:
+    mv ~/.bashrc ~/.bashrc.orig
+    mv ~/.profile ~/.profile.orig
+    sudo mv /root/.bashrc /root/.bashrc.orig
+    sudo mv /root/.profile /root/.profile.orig
+    sudo mv /etc/profile /etc/profile.orig
+    sudo mv /etc/skel/.bashrc /etc/skel/.bashrc.orig
+    sudo mv /etc/skel/.profile /etc/skel/.profile.orig
+    sudo mv /etc/skel/.bash_logout /etc/skel/.bash_logout.orig
+    sudo mv /etc/motd /etc/motd.orig
+  # Configurar que se cargue siempre la configuracion común con login (cónsola física o remota):
+    sudo nano /etc/profile 
+      #!/bin/bash
+      # Si no es sesión interactiva, no hacer nada y salir
+      case $- in
+        *i*) ;;
+          *) return;;
+      esac
+      # Si es sesión interactiva, cargar la configuracion standard
+      # echo -e "\nSESION CON LOGIN (consola o remota): ejecutando /etc/profile"
+      source /Discos/Local/bashStd/.bashrc
+      return
+    # Configurar que se cargue siempre la configuracion común sin login (emulador de terminal en GUI):
+    sudo nano /etc/skel/.bashrc 
+      #!/bin/bash
+      # Si no es sesión interactiva, no hacer nada y salir
+      case $- in
+        *i*) ;;
+          *) return;;
+      esac
+      # Si es sesión interactiva, cargar la configuracion standard
+      # echo -e "\nSESION SIN LOGIN (emulador de terminal): ejecutando ~/.bashrc"
+      source /Discos/Local/bashStd/.bashrc
+      return
+  # Actualizar el .bashrc para el usuario actual (y a todos los que ya estén creados):
+    cp /etc/skel/.bashrc ~/.bashrc
+    sudo cp /etc/skel/.bashrc /root/.bashrc
+  # Crear el directorio para configuración standard de terminales:
+    sudo mkdir -p /Discos/Local/bashStd/motd.d
+  # Descargar los archivos de configuración personalizada:
+    wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/4mz2cdn2
+    wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/2cycovkw
+    wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/284jmpk2
+    wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2xkkhpuk
+    wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2a6h3elt
+    wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/27zb44l3
+    wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/276lkf2t
 
-# Desactivar los defaults de terminales:
-  mv ~/.bashrc ~/.bashrc.orig
-  mv ~/.profile ~/.profile.orig
-  sudo mv /root/.bashrc /root/.bashrc.orig
-  sudo mv /root/.profile /root/.profile.orig
-  sudo mv /etc/profile /etc/profile.orig
-  sudo mv /etc/skel/.bashrc /etc/skel/.bashrc.orig
-  sudo mv /etc/skel/.profile /etc/skel/.profile.orig
-  sudo mv /etc/skel/.bash_logout /etc/skel/.bash_logout.orig
-  sudo mv /etc/motd /etc/motd.orig
-
-# Configurar que se cargue siempre la configuracion común con login (cónsola física o remota):
-  sudo nano /etc/profile 
-    #!/bin/bash
-    # Si no es sesión interactiva, no hacer nada y salir
-    case $- in
-      *i*) ;;
-        *) return;;
-    esac
-    # Si es sesión interactiva, cargar la configuracion standard
-    # echo -e "\nSESION CON LOGIN (consola o remota): ejecutando /etc/profile"
-    source /Discos/Local/bashStd/.bashrc
-    return
-
-# Configurar que se cargue siempre la configuracion común sin login (emulador de terminal en GUI):
-  sudo nano /etc/skel/.bashrc 
-    #!/bin/bash
-    # Si no es sesión interactiva, no hacer nada y salir
-    case $- in
-      *i*) ;;
-        *) return;;
-    esac
-    # Si es sesión interactiva, cargar la configuracion standard
-    # echo -e "\nSESION SIN LOGIN (emulador de terminal): ejecutando ~/.bashrc"
-    source /Discos/Local/bashStd/.bashrc
-    return
-
-# Actualizar el .bashrc para el usuario actual (y a todos los que ya estén creados):
-  cp /etc/skel/.bashrc ~/.bashrc
-  sudo cp /etc/skel/.bashrc /root/.bashrc
-
-# Crear el directorio para configuración standard de terminales:
-  sudo mkdir -p /Discos/Local/bashStd/motd.d
-# Descargar los archivos de configuración personalizada:
-  wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/4mz2cdn2
-  wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/2cycovkw
-  wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/284jmpk2
-  wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2xkkhpuk
-  wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2a6h3elt
-  wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/27zb44l3
-  wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/276lkf2t
+# FONTS EXTRA:
+  # FiraCode:
+    wget https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip
+    sudo unzip Fira_Code_v6.2.zip -d /usr/share/fonts/Extra-FiraCode
+    rm Fira_Code_v6.2.zip
+  # VictorMono:
+    wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip
+    sudo unzip VictorMonoAll.zip -d /usr/share/fonts/Extra-VictorMono
+    rm VictorMonoAll.zip
+  
