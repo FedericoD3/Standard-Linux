@@ -1,7 +1,7 @@
-Asociar Shift + mousewheel al volumen (subir, bajar, mute/unmute)
-Asociar DNS por dominio (para que Zerotier sepa donde preguntar)
-Menues adicionales equivalentes a los "toolbar" de Windows
-Salida de audio frontal en Mazinger-X
-Manejador de clipboard
+       Asociar Shift + mousewheel al volumen (subir, bajar, mute/unmute)
+LISTO  Asociar DNS por dominio (para que Zerotier sepa donde preguntar)
+       Menues adicionales equivalentes a los "toolbar" de Windows
+LISTO  Salida de audio frontal en Mazinger-X
+       Manejador de clipboard
 
-Cambiar el MAC y refrescar IP (en FreshTomato)
+       Cambiar el MAC y refrescar IP (en FreshTomato)
