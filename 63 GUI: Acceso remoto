@@ -1,22 +1,10 @@
-# VNC para acceso remoto grafico a lo que esté en pantalla
-  RealVNC (no gratis)
-  Remmina (VNC + RDP)
-  TigerVNC
-  TightVNC
-  
-  sudo apt  install x11vnc
+# CLIENTE DE ACCESO REMOTO:
+# Remmina VNC+RDP para acceso remoto grafico a otro PC:
+  sudo apt install remmina
   o 
-  sudo nala install x11vnc
+  sudo nala install remmina
 
-  # Configurar el password standard alfica1 (queda en /etc/x11vnc.pass):
-    sudo x11vnc -storepasswd /etc/x11vnc.pass	# O en cualquier otro archivo, pero anotarlo
-    sudo chmod 744 /etc/x11vnc.pass
-  
-  # Arrancarlo en crontab de root (con systemd service es un rollo)
-    sudo crontab -e
-    @reboot /usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.pass -rfbport 4xxx5 -shared
-  
-
+# SERVIDORES DE ACCESO REMOTO:
 # XRDP para acceso remoto grafico a sesión virtual independiente
   https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/
 # Instalarlo:
@@ -30,6 +18,21 @@
 # Verificar que quedó habilitado:
   sudo systemctl status xrdp
 # Probarlo desde otra PC con el cliente de escritorio remoto de Windows
+
+
+  sudo apt  install x11vnc
+  o 
+  sudo nala install x11vnc
+
+  # Configurar el password standard alfica1 (queda en /etc/x11vnc.pass):
+    sudo x11vnc -storepasswd /etc/x11vnc.pass	# O en cualquier otro archivo, pero anotarlo
+    sudo chmod 744 /etc/x11vnc.pass
+  
+  # Arrancarlo en crontab de root (con systemd service es un rollo)
+    sudo crontab -e
+    @reboot /usr/bin/x11vnc -display :0 -auth guess -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.pass -rfbport 4xxx5 -shared
+  
+
 
 
 ####################################################################
