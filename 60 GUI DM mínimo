@@ -2,27 +2,17 @@
   XFCE (ligero, perfecto para servidores): 
     sudo apt install xfce4 --no-install-recommends              
     sudo apt install xfce4-goodies                              # Opcional 
-  ... y/o LXDE:
-    sudo apt install lxde-core --no-install-recommends          # 9,2 MB of additional disk space will be used
-  ... y/o LXQT:  
-    sudo apt install lxqt-core --no-install-recommends
   ... y/o CINNAMON (mas bonito, perfecto para escritorio):
     sudo apt install cinnamon --no-install-recommends
-  KDE-PLASMA (demasiado oconfigurable):
+# OTROS:
+  ... LXDE:
+    sudo apt install lxde-core --no-install-recommends          # 9,2 MB of additional disk space will be used
+  ... LXQT:  
+    sudo apt install lxqt-core --no-install-recommends
+  ... KDE-PLASMA (demasiado oconfigurable, un poco pesado):
   # https://gist.github.com/pedroarthur/4901a4e30c53ea619b947599740c5a50
     sudo apt install kde-plasma-desktop --no-install-recommends 
-    #                kde-plasma-desktop sddm qml-module-org-kde-kitemmodels kwin-x11 --no-install-recommends
-    sudo apt install xorg
-    sudo apt install systemsettings
-    sudo apt install plasma-discover
-    sudo apt install plasma-systemmonitor
-    sudo apt install kmenuedit
-    sudo apt install libqtspell-qt5-0
-    sudo apt install libqtspell-qt5-data
-    sudo apt install plasma-browser-integration
-    sudo apt install plasma-runners-addons
 
-    sudo apt purge konqueror* zutty*. do sudo apt autopurge     # Limpieza opcional (navegador y el terminal default)
   
   # INSTALAR UNO O MAS WINDOWS MANAGER (casi seguro que venga incluido en el DM):
     sudo apt-install xfwm4                                      #  9,2 MB of additional disk space will be used (obsoleto)
