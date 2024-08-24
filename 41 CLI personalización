@@ -62,5 +62,8 @@
     sudo mv 'alphabetized cassette tapes.ttf' /usr/share/fonts/Extra-Manuscritos/AlphabetizedCassetteTapes.ttf
   # IndieFlower (manuscrito)
     wget https://github.com/googlefonts/indieflower/blob/main/fonts/IndieFlower-Regular.ttf
-    sudo mv IndieFlower-Regular.ttf /usr/share/fonts/Extra-IndieFlower
+    sudo mv IndieFlower-Regular.ttf /usr/share/fonts/Extra-Manuscritos/
+  # QETonyFlores
+    wget https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault/QETonyFlores.ttf
+    sudo mv QETonyFlores.ttf /usr/share/fonts/Extra-Manuscritos/
   
