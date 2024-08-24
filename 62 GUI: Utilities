@@ -1,5 +1,12 @@
 # UTILITIES PARA LA INTERFAZ GRAFICA
 
+# Remapeo de teclas:
+  sudo nala install xte
+  sudo nala install xautomation
+  sudo nala install xbindkeys
+  xbindkeys --defaults > .config/.xbindkeysrc
+
+
 # Miscelaneos:
   sudo apt install gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "03 Estructura de directorios"
   sudo apt install gparted
