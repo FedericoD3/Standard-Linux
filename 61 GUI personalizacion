@@ -5,5 +5,11 @@
 #   y se piede eliminar el instalado al principio
 # Cerrar y reiniciar sesion
 
+# Keyring sin clave (inseguro pero aceptable en PC personal)
+#  La primera vez que algun programa maneje clave, la guardará en el keyring y pedirá clave global
+#  Dejarla vacía para que no la esté pidiendo cada vez que uno las use (mas seguro pero mas fastidioso)
+#  Si ya pusiste clave global al keyring, borrarlo. Primero cerrar todos los programas que manejen claves, y después
+   mv ~/.local/share/keyrings ~/.local/share/keyrings.viejo
+
 # Configurar el manejador de archivos Nemo para que muestre imagenes
 #  Edit > Preferences > Preview > Aumentar "Only files smaller than" (el default es 1MB)
