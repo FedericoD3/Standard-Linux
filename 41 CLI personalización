@@ -56,4 +56,11 @@
     wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip
     sudo unzip VictorMonoAll.zip -d /usr/share/fonts/Extra-VictorMono
     rm VictorMonoAll.zip
+  # wget https://www.1001fonts.com/download/alphabetized-cassette-tapes.zip
+    sudo mkdir /usr/share/fonts/Extra-Manuscritos
+    unzip /home/FedericoD3/alphabetized-cassette-tapes.zip
+    sudo mv 'alphabetized cassette tapes.ttf' /usr/share/fonts/Extra-Manuscritos/AlphabetizedCassetteTapes.ttf
+  # IndieFlower (manuscrito)
+    wget https://github.com/googlefonts/indieflower/blob/main/fonts/IndieFlower-Regular.ttf
+    sudo mv IndieFlower-Regular.ttf /usr/share/fonts/Extra-IndieFlower
   
