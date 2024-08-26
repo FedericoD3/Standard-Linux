@@ -23,6 +23,7 @@
 
   # VNC, para sesión gráfica de lo que esté en pantalla:
     # https://docs.j7k6.org/x11vnc-debian-ubuntu-linux/
+    # http://www.karlrunge.com/x11vnc/faq.html
       sudo apt  install -y x11vnc
       # o 
       sudo nala install -y x11vnc
