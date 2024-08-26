@@ -6,9 +6,9 @@
 
 # SERVIDORES DE ACCESO REMOTO:
   # RDP, para sesión gráfica simultánea independiente por usuario:
-    https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/
+  # https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/
     # Instalarlo:
-      sudo nala install xrdp
+      sudo nala install -y xrdp
     # Agregar xrdp a usuarios de ssl:
       sudo adduser xrdp ssl-cert
     # Configurar el puerto a uno no standard:
@@ -23,9 +23,9 @@
 
   # VNC, para sesión gráfica de lo que esté en pantalla:
     # https://docs.j7k6.org/x11vnc-debian-ubuntu-linux/
-      sudo apt  install x11vnc
+      sudo apt  install -y x11vnc
       # o 
-      sudo nala install x11vnc
+      sudo nala install -y x11vnc
     # Configurar almacenar el password standard en /etc/x11vnc.passwd
       # o en cualquier otro archivo accesible, pero anotarlo
       sudo x11vnc -storepasswd /etc/x11vnc.passwd
