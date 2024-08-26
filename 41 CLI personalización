@@ -59,7 +59,7 @@
   # alphabetized-cassette-tapes
     wget https://www.1001fonts.com/download/alphabetized-cassette-tapes.zip
     sudo mkdir /usr/share/fonts/Extra-Manuscritos
-    unzip /home/FedericoD3/alphabetized-cassette-tapes.zip
+    unzip alphabetized-cassette-tapes.zip
     sudo mv 'alphabetized cassette tapes.ttf' /usr/share/fonts/Extra-Manuscritos/AlphabetizedCassetteTapes.ttf
   # IndieFlower (manuscrito)
     wget https://github.com/googlefonts/indieflower/blob/main/fonts/IndieFlower-Regular.ttf
