@@ -38,14 +38,16 @@
           After=multi-user.target
         [Service]
           Type=simple
-          ExecStart=/usr/bin/x11vnc -display :0 -auth /Discos/Local/.Xauthority -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.passwd -rfbport 41015 -shared
+          ExecStart=/usr/bin/x11vnc -display :0 -auth /Discos/Local/.Xauthority -forever -loop -noxdamage -repeat -rfbauth /etc/x11vnc.passwd -rfbport 4***5 -shared
         [Install]
           WantedBy=multi-user.target
       # (apuntar el -auth /Discos/Local/.Xauthority a un archivo accesible al servicio, no dejarlo en el default "guess")
+      # (apuntar el -rfbport a un puerto unico de este IP ***. de la forma 4***5)
     # Activar el servicio y arrancarlo:
       sudo systemctl daemon-reload
       sudo systemctl enable x11vnc.service
-      sudo systemctl start x11vnc.service
+      sudo systemctl start  x11vnc.service
+      sudo systemctl status x11vnc.service
     # Verificar que esté esperando conexión por el puerto configurado:
       sudo lsof -i -P -n | grep LISTEN
     # y probarlo conectarse desde otra PC con UltraVNC o similar
