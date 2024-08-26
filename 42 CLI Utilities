@@ -11,6 +11,8 @@
 # fzf (FuZzy files, buscador de archivos)
   sudo nala install fzf
 
+  sudo nala install unzip
+
 # atuin (History mas versatil)
 # NUNCA PUDE 
   curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | bash 
