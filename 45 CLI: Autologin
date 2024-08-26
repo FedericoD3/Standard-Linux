@@ -1,12 +1,28 @@
-
-
-
-
-
-
 # Change the following line in /lib/systemd/system/getty@.service
 
 # Before
   ExecStart=-/sbin/agetty -o '-p -- \\u' --noclear %I $TERM
 # After
   ExecStart=-/sbin/agetty --noissue --autologin FulanoDeTal %I $TERM Type=idle
+
+##################################################3
+#NOTAS
+#cat /etc/systemd/system/getty@tty1.service.d/override.conf
+#: No such file or directory
+
+#ll /lib/systemd/system/getty.target.wants
+#cat /lib/systemd/system/getty-static.service
+
+#cat /usr/lib/systemd/system/getty@.service
+
+#sudo cp /usr/lib/systemd/system/getty@.service /etc/systemd/system/autologin@.service
+
+#sudo nano /usr/lib/systemd/system/getty@.service
+## ExecStart=-/sbin/agetty -o '-p -- \\u' --noclear - $TERM
+#  ExecStart=-/sbin/agetty --noissue --autologin UsuarioAuto %I $TERM Type=idle
+
+## sudo ln -s /etc/systemd/system/autologin@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
+
+#sudo nano /etc/systemd/system/getty.target.wants/getty@tty1.service
+## ExecStart=-/sbin/agetty -o '-p -- \\u' --noclear - $TERM
+#  ExecStart=-/sbin/agetty --noissue --autologin USUARIO %I $TERM Type=idle
