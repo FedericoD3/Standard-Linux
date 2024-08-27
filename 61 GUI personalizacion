@@ -2,7 +2,9 @@
 
 # Agregar teclado US-Intl:
 #  Menu > Preferences > Keyboard > Layouts > + > English (US, intl., with dead keys) o lo que tengas
-#   y se piede eliminar el instalado al principio
+#   y se puede eliminar el instalado al principio
+#  Menu > Preferences > IBus > Input method > Add > English (US, intl., with dead keys) o lo que tengas
+#   y se puede eliminar el instalado al principio
 # Cerrar y reiniciar sesion
 
 # Keyring sin clave (inseguro pero aceptable en PC personal)
@@ -15,4 +17,5 @@
 #  Edit > Preferences > Preview > Aumentar "Only files smaller than" (el default es 1MB)
 
 # Configurar la "esquina caliente" superior izquierda para mostrar todos los "workspaces"
-#  Inicio > 
+#  Inicio > Preferences > Hot corners
+
