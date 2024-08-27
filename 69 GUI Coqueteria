@@ -15,3 +15,8 @@
 #  Cinnamenu (es mucho mas configurable que el nativo de Cinnamon)
 #   Pestaña "appearance" > Eliminar el "Panel text" para que aparezca sólo el botón
 #                        > Cambiar el ícono a uno menos naranja, buscar aquí: https://iconduck.com/icons/111835/distributor-logo-debian
+
+# Paneles transparentes:
+#  Menu > Extensions > pestaña Download > Transparent panels    > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
+# Efecto gelatina en ventanas:
+#  Menu > Extensions > pestaña Download > Compiz Windows effect > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
