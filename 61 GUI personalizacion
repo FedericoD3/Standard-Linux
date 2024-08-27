@@ -13,3 +13,6 @@
 
 # Configurar el manejador de archivos Nemo para que muestre imagenes
 #  Edit > Preferences > Preview > Aumentar "Only files smaller than" (el default es 1MB)
+
+# Configurar la "esquina caliente" superior izquierda para mostrar todos los "workspaces"
+#  Inicio > 
