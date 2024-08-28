@@ -19,3 +19,8 @@
 # Configurar la "esquina caliente" superior izquierda para mostrar todos los "workspaces"
 #  Inicio > Preferences > Hot corners
 
+# Configurar el cambio entre "workspaces"
+#  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to left  > Shift + Ctrl + <
+#  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to right > Shift + Ctrl + >
+#  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to left  > Ctrl+<
+#  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to right > Ctrl+>
