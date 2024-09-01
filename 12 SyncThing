@@ -11,7 +11,7 @@
   sudo apt install syncthing
 
 # Editar el servicio para que atienda por el puerto que me convenga, agregando
-#   -gui-address="0.0.0.0:4xxx3"
+#   --gui-address="0.0.0.0:4xxx3"
 # a la línea de "ExecStart..."
   sudo nano /lib/systemd/system/syncthing@.service
   sudo systemctl daemon-reload
