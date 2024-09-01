@@ -18,11 +18,10 @@
 
 # https://www.linuxbabe.com/debian/install-syncthing
 # Enable syncthing to auto start at boot time by running the below command. 
-# Replace username with your actual username.
-  sudo systemctl enable syncthing@username.service
-
-  sudo systemctl start syncthing@username.service
-  systemctl status syncthing@username.service
+# Replace $USER with the desired user
+  sudo systemctl enable syncthing@$USER.service
+  sudo systemctl start syncthing@$USER.service
+  systemctl status syncthing@$USER.service
 
 2024-06-23 
 
