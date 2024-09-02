@@ -6,4 +6,4 @@ sudo nano /etc/sddm.conf
     Relogin=false
 
 # Las sesiones disponibles en el equipo se descubren haciendo:
-  ls -Al /usr/share/xsessions/
+  ls -l /usr/share/xsessions/
