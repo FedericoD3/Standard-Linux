@@ -1,5 +1,9 @@
 # Para que inicie sesión GUI automaticamente:
 sudo nano /etc/sddm.conf
-  [Autologin]
-  User=yourusername
-  Session=plasma
+   [Autologin]
+    User=ComoSeLlame
+    Session=cinnamon.desktop
+    Relogin=false
+
+# Las sesiones disponibles en el equipo se descubren haciendo:
+  ls -Al /usr/share/xsessions/
