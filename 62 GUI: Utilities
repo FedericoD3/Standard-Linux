@@ -41,7 +41,7 @@
   sudo nala install ksnip
   #  Menu > Preferences > Startup > agregar ksnip para que se active con PrtScn
   #    En Ksnip configurar 
-  #  Menu > Preferences > Keyboard > Screenshots > 
+  #  Menu > Preferences > Keyboard > System > Screenshots > 
   #   y borrar los hotkeys de captura de pantalla, para que los maneje ksnip
 
 # Administrador de Zips:
@@ -53,9 +53,6 @@
 # Visores de imagenes:
   XnView MP  (instalar por el catálogo "Discover")
   # Y darle acceso con Flatseal a los directorios relevantes en el file system
-
-# Free42   Emulador de HP-42s
-  sudo nala install free42-nologo
 
 # IPqalc   Calculadora de IPs
   sudo nala install ipqalc
