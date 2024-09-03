@@ -19,7 +19,17 @@
     nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
 
 # Opcional, ponerles nombres descriptivos:
-  nmcli connection modify 'Wired connection 1' con-name RJ45
+  nmcli connection modify <NombreConexDefault> con-name <NombreConexFacil>
+
+# Listar los dispositivos para ver cuales están managed y cuales no:
+  nmcli d
+# Configurar las interfaces managed o unmanaged según se requiera:
+  nmcli dev set <NombreIF> managed yes|no
+# Agregar a los manejados:
+  nmcli con add type ethernet con-name <NombreConexFacil> ifname <NombreIF>
+# Repetir con las demás interfaces y reiniciar NM:
+  sudo service NetworkManager restart
+# Editar los detalles con nmtui
 
 # Utilities para ayudar diagnosticos
   sudo apt install dnsutils
