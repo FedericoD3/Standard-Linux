@@ -19,14 +19,14 @@
     nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
 
 # Opcional, ponerles nombres descriptivos:
-  nmcli connection modify <NombreConexDefault> con-name <NombreConexFacil>
+  nmcli connection modify <ConexNombreDefault> con-name <ConexNombreFacil>
 
 # Listar los dispositivos para ver cuales están managed y cuales no:
   nmcli d
 # Configurar las interfaces managed o unmanaged según se requiera:
   nmcli dev set <NombreIF> managed yes|no
 # Agregar a los manejados:
-  nmcli con add type ethernet con-name <NombreConexFacil> ifname <NombreIF>
+  nmcli con add type ethernet con-name <ConexNombreFacil> ifname <NombreIF>
 # Repetir con las demás interfaces y reiniciar NM:
   sudo service NetworkManager restart
 # Si son VPN Zerotier quizás haya que salir y reconectarse a cada VPN
