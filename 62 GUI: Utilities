@@ -49,7 +49,7 @@
 
 # Block de notas:
   sudo nala install gedit  # Disk space required  28.6 MB 
-  sudo nala install kate   # Disk space required  180.9 MB 
+  sudo nala install kate   # Disk space required  180.9 MB (mas lento)
   sudo nala install geany  # Disk space required  13.4 MB
 
 # Visores de imagenes:
