@@ -29,6 +29,9 @@
   nmcli con add type ethernet con-name <NombreConexFacil> ifname <NombreIF>
 # Repetir con las demás interfaces y reiniciar NM:
   sudo service NetworkManager restart
+# Si son VPN Zerotier quizás haya que salir y reconectarse a cada VPN
+  sudo zerotier-cli leave 0123456789abcdf
+  sudo zerotier-cli join  0123456789abcdf
 # Editar los detalles con nmtui
 
 # Utilities para ayudar diagnosticos
