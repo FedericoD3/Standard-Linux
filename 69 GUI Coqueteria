@@ -11,12 +11,14 @@
 # Menu > System Settings > Preferences > Appearance > Themes > Applications > Adwaita-dark
 
 # Menu > System Settings > Preferences > Applets > Download 
-#  Weather
-#  Cinnamenu (es mucho mas configurable que el nativo de Cinnamon)
+#  Weather > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarlo
+#   y 
+#  Cinnamenu  > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarlo
 #   Pestaña "appearance" > Eliminar el "Panel text" para que aparezca sólo el botón
 #                        > Cambiar el ícono a uno menos naranja, buscar aquí: https://iconduck.com/icons/111835/distributor-logo-debian
 
 # Paneles transparentes:
-#  Menu > Extensions > pestaña Download > Transparent panels    > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
+#  Menu > System Settings > Preferences > Extensions > pestaña Download > Transparent panels    > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
+#   Configurarlo "Semi transparent"
 # Efecto gelatina en ventanas:
-#  Menu > Extensions > pestaña Download > Compiz Windows effect > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
+#  Menu > System Settings > Preferences > Extensions > pestaña Download > Compiz Windows effect > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
