@@ -6,7 +6,6 @@
   sudo nala install xbindkeys
   xbindkeys --defaults > .config/.xbindkeysrc
 
-
 # Miscelaneos:
   sudo apt install gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "03 Estructura de directorios"
   sudo apt install gparted
