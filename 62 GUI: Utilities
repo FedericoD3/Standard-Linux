@@ -50,6 +50,8 @@
   sudo nala install gedit  # Disk space required  28.6 MB 
   sudo nala install kate   # Disk space required  180.9 MB (mas lento)
   sudo nala install geany  # Disk space required  13.4 MB
+  # Agregar algún tema oscuro desde https://github.com/geany/geany-themes/releases
+  # al directorio ~/.config/geany/colorschemes y activarla via el menú View > Change color scheme
 
 # Visores de imagenes:
   XnView MP  (instalar por el catálogo "Discover")
