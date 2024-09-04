@@ -1,0 +1,6 @@
+cp ~/Dropbox /Directorio/en/otro/lado/Dropbox
+echo /Directorio/en/otro/lado/Dropbox ~/Dropbox bind bind | sudo tee -a /etc/fstab
+sudo mount ~/Dropbox
+
+"path": "/home/federico/Dropbox"
+"path": "/Discos/0500_Software/@SyncThings-central/Dropbox"
