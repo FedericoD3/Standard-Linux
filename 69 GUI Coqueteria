@@ -11,11 +11,13 @@
 # Menu > System Settings > Preferences > Appearance > Themes > Applications > Adwaita-dark
 
 # Menu > System Settings > Preferences > Applets > Download 
-#  Weather > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarlo
+#  Weather > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarle la ubicación y que sea en centígrados
 #   y 
-#  Cinnamenu  > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarlo
+#  Cinnamenu  > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarlo:
 #   Pestaña "appearance" > Eliminar el "Panel text" para que aparezca sólo el botón
-#                        > Cambiar el ícono a uno menos naranja, buscar aquí: https://iconduck.com/icons/111835/distributor-logo-debian
+#                        > Cambiar el ícono a uno menos naranja, por ejemplo: https://iconduck.com/icons/14037/debian
+#  Click-derecho en el panel inferior > [Panel edit mode] > Arrastrar el botón Cinnamenu hasta el extremo izquierdo > [Panel edit mode]
+#  Click-derecho en el botón de menu 
 
 # Paneles transparentes:
 #  Menu > System Settings > Preferences > Extensions > pestaña Download > Transparent panels    > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
