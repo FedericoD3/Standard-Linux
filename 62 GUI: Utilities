@@ -58,5 +58,8 @@
   XnView MP  (instalar por el catálogo "Discover")
   # Y darle acceso con Flatseal a los directorios relevantes en el file system
 
+# Calculadora (también para Windows?!)
+  sudo nala install -y qalculate-gtk
+
 # IPqalc   Calculadora de IPs
   sudo nala install ipqalc
