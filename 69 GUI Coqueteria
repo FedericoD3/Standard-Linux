@@ -14,10 +14,12 @@
 #  Weather > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarle la ubicación y que sea en centígrados
 #   y 
 #  Cinnamenu  > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarlo:
-#   Pestaña "appearance" > Eliminar el "Panel text" para que aparezca sólo el botón
-#                        > Cambiar el ícono a uno menos naranja, por ejemplo: https://iconduck.com/icons/14037/debian
+#   Pestaña Behaviour > Open menu on category > Last used
+#   Pestaña Behaviour > Enable autoscrolling > desmarcar
+#   Pestaña Appearance > Use custom Icon > marcar
+#   Pestaña Appearance > Panel icon > buscar uno en https://iconduck.com/icons/14037/debian
+#   Pestaña Appearance > Panel text > borrarlo
 #  Click-derecho en el panel inferior > [Panel edit mode] > Arrastrar el botón Cinnamenu hasta el extremo izquierdo > [Panel edit mode]
-#  Click-derecho en el botón de menu 
 
 # Paneles transparentes:
 #  Menu > System Settings > Preferences > Extensions > pestaña Download > Transparent panels    > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
