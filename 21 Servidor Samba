@@ -3,14 +3,15 @@
   sudo apt install smbclient
 # Personalizar la configuración:
   sudo nano /etc/samba/smb.conf
-# Modificando las lineas:
-  workgroup = FAMILIAR
-  netbios name = Servidor_de_la_casa
-  server string = Deposito de archivos
-# y agregar al final:
-  include = /etc/samba/Includes/0-DirComunes.conf
-  include = /etc/samba/Includes/2-%U.conf
-# Ctrl+s para salvar, Ctrl+x para salir
+  # Modificando las lineas:
+    workgroup = FAMILIAR
+    netbios name = Servidor_de_la_casa
+    server string = Deposito de archivos
+    name resolve order = lmhosts host wins bcast # y pasar lmhosts después de bcast
+  # y agregar al final:
+    include = /etc/samba/Includes/0-DirComunes.conf
+    include = /etc/samba/Includes/2-%U.conf
+  # Ctrl+s para salvar, Ctrl+x para salir
 # Crear el directorio de configuracion de carpetas y usuarios:
   sudo mkdir /etc/samba/Includes
 # Crear los archivos de configuracion general y especifico de cada usuario
