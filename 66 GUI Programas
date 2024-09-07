@@ -5,6 +5,9 @@ NotepadNext # Via el catálogo "Discover"
 # Visor de PDFs
   sudo nala install okular
 
+# Editor de audio
+  sudo nala install audacity
+
 # Office:
   sudo nala install libreoffice-calc --no-install-recommends
   sudo nala install libreoffice-writer --no-install-recommends
