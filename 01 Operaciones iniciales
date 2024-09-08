@@ -55,8 +55,3 @@
   sudo userdel comosellame
 
 
-# Actualizar repositorios y utilities:
-  sudo apt update
-  sudo apt dist-upgrade
-  sudo apt upgrade
-  sudo apt autoremove
