@@ -22,11 +22,3 @@
 
 # DES-seleccionar "Debian desktop environment" para que no instale ninguno con la cantidad de bloatware.
 # Seleccionar SSH server para poder seguir remoto desde un PC potencialmente más cómodo.
-#  Si no se selecciona SSH server, puede instalarse después con:
-     sudo apt update
-     sudo apt upgrade
-     sudo apt install openssh-server
-# Si hace falta cambiar el puerto standard 22 a otro, editarlo en:
-  sudo nano /etc/ssh/ssh_config
-# y reiniciarlo:
-  sudo systemctl restart sshd
