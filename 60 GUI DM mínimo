@@ -1,34 +1,34 @@
 # INSTALAR UNO O MAS DESKTOP MANAGER, sin programas extras (en orden de más ligero primero)
   XFCE (ligero, perfecto para servidores): 
-    sudo apt install xfce4 --no-install-recommends              
-    sudo apt install xfce4-goodies                              # Opcional 
+    sudo nala install xfce4 --no-install-recommends              
+    sudo nala install xfce4-goodies                              # Opcional 
   ... y/o CINNAMON (mas bonito, perfecto para escritorio):
-    sudo apt install cinnamon --no-install-recommends
+    sudo nala install cinnamon --no-install-recommends
 # OTROS:
   ... LXDE:
-    sudo apt install lxde-core --no-install-recommends          # 9,2 MB of additional disk space will be used
+    sudo nala install lxde-core --no-install-recommends          # 9,2 MB of additional disk space will be used
   ... LXQT:  
-    sudo apt install lxqt-core --no-install-recommends
+    sudo nala install lxqt-core --no-install-recommends
   ... KDE-PLASMA (demasiado oconfigurable, un poco pesado):
   # https://gist.github.com/pedroarthur/4901a4e30c53ea619b947599740c5a50
-    sudo apt install kde-plasma-desktop --no-install-recommends 
+    sudo nala install kde-plasma-desktop --no-install-recommends 
   
   # INSTALAR UNO O MAS WINDOWS MANAGER (en el improbable caso que no venga incluido en el DM):
-    sudo apt-install xfwm4                                      #  9,2 MB of additional disk space will be used (obsoleto)
-    sudo apt install openbox                                    #  9,2 MB of additional disk space will be used
-    sudo apt install fluxbox                                    # 27.2 MB of additional disk space will be used
-    sudo apt install IceWM                                      # 23.2 MB of additional disk space will be used
-    sudo apt install kwin-x11 --no-install-recommends           # 123 MB of additional disk space will be used.
-    sudo apt install kwin-wayland --no-install-recommends       # 130 MB of additional disk space will be used.
+    sudo nala install xfwm4                                      #  9,2 MB of additional disk space will be used (obsoleto)
+    sudo nala install openbox                                    #  9,2 MB of additional disk space will be used
+    sudo nala install fluxbox                                    # 27.2 MB of additional disk space will be used
+    sudo nala install IceWM                                      # 23.2 MB of additional disk space will be used
+    sudo nala install kwin-x11 --no-install-recommends           # 123 MB of additional disk space will be used.
+    sudo nala install kwin-wayland --no-install-recommends       # 130 MB of additional disk space will be used.
 
   # INSTALAR UNA O MAS PANTALLAS DE LOGIN:
-    sudo apt install lxdm --no-install-recommends
+    sudo nala install lxdm --no-install-recommends
     ... o
-    sudo apt install gdm3 --no-install-recommends
+    sudo nala install gdm3 --no-install-recommends
     ... o
-    sudo apt install lightdm --no-install-recommends
+    sudo nala install lightdm --no-install-recommends
     ... o
-    sudo apt install sddm --no-install-recommends
+    sudo nala install sddm --no-install-recommends
   # Si se instalan varios, después se puede cambiar el default con:
     sudo dpkg-reconfigure lightdm
 
