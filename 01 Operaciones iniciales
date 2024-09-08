@@ -7,7 +7,7 @@
 # Si hace falta cambiar el puerto standard 22 a otro, editarlo en:
 #   sudo nano /etc/ssh/ssh_config
 # y reiniciarlo:
-  sudo systemctl restart sshd
+  systemctl restart sshd
 
 # Usar el editor de texto para asegurarse que existan las fuentes online
   nano /etc/apt/sources.list
@@ -17,10 +17,12 @@
   deb http://security.debian.org/debian-security bookworm-security main contrib non-free-firmware non-free
 # (si están presentes, eliminar o comentar las fuentes inexistentes como el CD):
 # Ctrl+s para salvar, Ctrl+x para salir
-  sudo apt update
-  sudo apt upgrade
-# Instalar sudo (ausente si se eligió no instalar ninguna utility)
+# Actualizar repositorios y utilities:
   apt update
+  apt dist-upgrade
+  apt upgrade
+  apt autoremove
+# Instalar sudo (ausente si se eligió no instalar ninguna utility)
   apt install sudo
 
 # Ahora sí agregar tu usuario (vuelve a pedir la clave):
