@@ -1,7 +1,8 @@
 # INSTALAR UNO O MAS DESKTOP MANAGER, sin programas extras (en orden de más ligero primero)
   XFCE (ligero, perfecto para servidores): 
     sudo nala install xfce4 --no-install-recommends              
-    sudo nala install xfce4-goodies                              # Opcional 
+    sudo nala install xfce4-goodies                              # Opcional (muchos, y la mayoría de poco uso)
+                                                                 # Ver https://goodies.xfce.org/
   ... y/o CINNAMON (mas bonito, perfecto para escritorio):
     sudo nala install cinnamon --no-install-recommends
 # OTROS:
