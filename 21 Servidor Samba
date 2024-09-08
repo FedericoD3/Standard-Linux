@@ -1,13 +1,13 @@
 # Instalar SAMBA, el compartidor de archivos en red:
-  sudo apt install samba
-  sudo apt install smbclient
+  sudo nala install samba
+  sudo nala install smbclient
 # Personalizar la configuración:
   sudo nano /etc/samba/smb.conf
   # Modificando las lineas:
     workgroup = FAMILIAR
     netbios name = Servidor_de_la_casa
     server string = Deposito de archivos
-    name resolve order = lmhosts host wins bcast # y pasar lmhosts después de bcast
+    name resolve order = host wins bcast lmhost 
   # y agregar al final:
     include = /etc/samba/Includes/0-DirComunes.conf
     include = /etc/samba/Includes/2-%U.conf
@@ -40,4 +40,4 @@
   sudo smbpasswd -a OtroUsuario
 
 # Instalar el "Web Service Discovery Daemon", anunciador a la red de PCs Windows
-  sudo apt install wsdd
+  sudo nala install wsdd
