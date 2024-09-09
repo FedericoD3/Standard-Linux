@@ -1,3 +1,6 @@
+# NO SE SI ESTO ES PRACTICO
+# (sólo crea un symlink del directorio deseado a ~/Dropbox standard)
+
 cp ~/Dropbox /Directorio/en/otro/lado/Dropbox
 echo /Directorio/en/otro/lado/Dropbox ~/Dropbox bind bind | sudo tee -a /etc/fstab
 sudo mount ~/Dropbox
