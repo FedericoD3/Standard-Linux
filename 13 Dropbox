@@ -1,10 +1,10 @@
-# NO SE SI ESTO ES PRACTICO
-# (sólo crea un symlink del directorio deseado a ~/Dropbox standard)
-  cp ~/Dropbox /Directorio/en/otro/lado/Dropbox
-  echo /Directorio/en/otro/lado/Dropbox ~/Dropbox bind bind | sudo tee -a /etc/fstab
-  sudo mount ~/Dropbox
-  # "path": "/home/federico/Dropbox"
-  # "path": "/Discos/0500_Software/@SyncThings-central/Dropbox"
+###    # ALTERNATIVA NO SE SI PRACTICA:
+###    # (sólo crea un symlink del directorio deseado a ~/Dropbox standard)
+###      cp ~/Dropbox /Directorio/en/otro/lado/Dropbox
+###      echo /Directorio/en/otro/lado/Dropbox ~/Dropbox bind bind | sudo tee -a /etc/fstab
+###      sudo mount ~/Dropbox
+###      # "path": "/home/federico/Dropbox"
+###      # "path": "/Discos/0500_Software/@SyncThings-central/Dropbox"
 
 # https://github.com/joeroback/dropbox/tree/master
 # This assumes each user installed dropbox headless via the command line: https://www.dropbox.com/en/install?os=lnx 
