@@ -1,3 +1,5 @@
+# https://www.baeldung.com/linux/display-managers-install-uninstall
+
 # INSTALAR UNO O MAS DESKTOP MANAGER, sin programas extras (en orden de más ligero primero)
   XFCE (ligero, perfecto para servidores): 
     sudo nala install xfce4 --no-install-recommends              
