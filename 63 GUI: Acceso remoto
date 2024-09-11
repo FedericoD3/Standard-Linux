@@ -25,6 +25,7 @@
     # https://docs.j7k6.org/x11vnc-debian-ubuntu-linux/
     # http://www.karlrunge.com/x11vnc/faq.html
     # https://askubuntu.com/questions/1421961/x11vnc-systemd-service-failure
+    # https://gist.github.com/ricardoanguiano/7be79d650856ae4c7188
       sudo apt  install -y x11vnc
       # o 
       sudo nala install -y x11vnc
