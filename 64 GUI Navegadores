@@ -17,8 +17,9 @@
     Architectures: amd64
     Signed-By: /usr/share/keyrings/librewolf.gpg
     EOF
-sudo apt update
-sudo apt install librewolf -y
+  sudo apt update
+  sudo apt install librewolf -y
+# Mucha complicación: mejor instalando con Discovery / Software
 
 # A veces no funciona, y es más fácil instalarlo desde la app catálogo "Discover"
 # Para que no cierre sesión en páginas como Facebook:
