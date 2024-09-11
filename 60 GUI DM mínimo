@@ -27,6 +27,8 @@
 
   # Para ver cual(es) Desktop Manager(s) estan instalados:
     ls /usr/share/xsessions/
+  # Para ver cual es el default:
+    cat /etc/X11/default-display-manager
 
   # INSTALAR UNA O MAS PANTALLAS DE LOGIN:
     sudo nala install lxdm --no-install-recommends
