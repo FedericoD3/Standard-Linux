@@ -9,5 +9,6 @@ NotepadNext # Via el catálogo "Discover"
   sudo nala install audacity
 
 # Office:
-  sudo nala install libreoffice-calc --no-install-recommends
-  sudo nala install libreoffice-writer --no-install-recommends
+  sudo apt purge libreoffice                                    # Se liberarán 359 MB después de esta operación.
+  sudo nala install libreoffice-writer --no-install-recommends  # Se utilizarán 258 MB de espacio
+  sudo nala install libreoffice-calc --no-install-recommends    # Se utilizarán 34,3 MB de espacio 
