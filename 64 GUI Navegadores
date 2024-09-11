@@ -31,10 +31,13 @@ sudo apt install librewolf -y
   sudo apt install chromium
 
 # THORIUM
-  Descargar el paquede DEB desde:
-  https://github.com/Alex313031/Thorium/releases
-    (Preferible AVX2)
-    (Ver el CPU exacto con cat /proc/cpuinfo y googlear: AMD Ryzen 3 2200G soporta SSE4.2 y AVX2)
+  # Descargar el paquede DEB desde:
+  # https://github.com/Alex313031/Thorium/releases
+  #  Preferible AVX2
+  #  Ver el CPU exacto con cat /proc/cpuinfo y googlear (AMD Ryzen 3 2200G soporta SSE4.2 y AVX2)
+  #  Si no hay navegador descargarlo "a pie"
+  wget https://github.com/Alex313031/thorium/releases/download/M126.0.6478.231/thorium-browser_126.0.6478.231_AVX2.deb 
+  sudo nala install ./thorium-browser_126.0.6478.231_AVX2.deb   
 
 # Otros Navegadores ligeros:
    sudo apt install epiphany-browser     # 537 MB of additional disk space will be used.
