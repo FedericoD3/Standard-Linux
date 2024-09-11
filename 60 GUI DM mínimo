@@ -20,6 +20,7 @@
   # INSTALAR UNO O MAS WINDOWS MANAGER (en el improbable caso que no venga incluido en el DM):
     sudo nala install xfwm4                                      #  9,2 MB of additional disk space will be used
     sudo nala install openbox                                    #  9,2 MB of additional disk space will be used
+    sudo nala install lightdm                                    # 10.2 MB of additional disk space will be used
     sudo nala install fluxbox                                    # 27.2 MB of additional disk space will be used
     sudo nala install IceWM                                      # 23.2 MB of additional disk space will be used
     sudo nala install kwin-x11 --no-install-recommends           # 123 MB of additional disk space will be used
