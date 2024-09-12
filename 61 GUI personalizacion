@@ -24,3 +24,13 @@
 #  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to right > Shift + Ctrl + >
 #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to left  > Ctrl+<
 #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to right > Ctrl+>
+
+# FONTS adicionales 
+# https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
+    wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.tar.gz --directory-prefix=Downloads
+    tar -xzvf Hack-v3.003-ttf.tar.gz
+  # o
+    wget https://www.ffonts.net/Noto-Color-Emoji.font.zip --directory-prefix=Downloads
+    unzip Noto-Color-Emoji.font.zip
+  mv ~/DondeEsteElTTF/ComoSeLlame.ttf /usr/share/fonts/DondeSeClasifique/
+  fc-cache -f -v
