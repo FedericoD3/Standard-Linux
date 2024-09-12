@@ -32,6 +32,6 @@
   # o
     wget https://www.ffonts.net/Noto-Color-Emoji.font.zip --directory-prefix=Downloads
     unzip Noto-Color-Emoji.font.zip
-  mv ~/DondeEsteElTTF/ComoSeLlame.ttf /usr/share/fonts/DondeSeClasifique/
+  mv ~/DondeEsteCadaTTF/ComoSeLlame.ttf /usr/share/fonts/DondeSeClasifique/
   fc-cache -f -v
   # Borrar los tar.gz, zips descargados y sus descomprimidos
