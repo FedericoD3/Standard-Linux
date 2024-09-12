@@ -1,6 +1,13 @@
 #!/bin/bash
 # UTILITIES EXTRA PARA EL TERMINAL
 
+# Evitador de reseteos y apagados equivocados ( https://adrianroselli.com/wp-content/uploads/2024/02/switch-with-molly-guard.jpg ):
+  sudo nala install molly-guard
+# sudo reboot
+# W: molly-guard: SSH session detected!
+#  Please type in hostname of the machine to reboot: ^C
+#  Good thing I asked; I won't reboot EsteEquipo ...
+
 # Utilities de audio:
 #  paplay - Playback a WAV file via a PulseAudio sink.
 #  pacat - Cat raw audio data to a PulseAudio sink.
