@@ -64,3 +64,6 @@
 
 # IPqalc   Calculadora de IPs
   sudo nala install ipqalc
+
+# Lupa:
+  sudo nala install kmag
