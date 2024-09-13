@@ -19,11 +19,23 @@
 # Configurar la "esquina caliente" superior izquierda para mostrar todos los "workspaces"
 #  Inicio > Preferences > Hot corners
 
-# Configurar el cambio entre "workspaces"
-#  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to left  > Shift + Ctrl + <
-#  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to right > Shift + Ctrl + >
-#  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to left  > Ctrl+<
-#  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to right > Ctrl+>
+# Mapeo de teclas
+  # Con GUI:
+  #  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to left  > Shift + Ctrl + <
+  #  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to right > Shift + Ctrl + >
+  #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to left  > Ctrl+<
+  #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to right > Ctrl+>
+  # Con CLI:
+    dconf dump /org/cinnamon/desktop/keybindings/
+  # Para mapear mis gustos:
+    dconf read  /org/cinnamon/desktop/keybindings/wm/move-to-workspace-left
+    dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-right "['<Primary>period']"       # <Primary> es Ctrl
+    dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-left "['<Primary>comma']"
+    dconf write /org/cinnamon/desktop/keybindings/wm/move-to-workspace-left "['<Primary><Shift>less']"
+    dconf write /org/cinnamon/desktop/keybindings/wm/move-to-workspace-right "['<Primary><Shift>greater']"
+    dconf write /org/cinnamon/desktop/keybindings/media-keys/volume-down "['<Primary>Down']"
+    dconf write /org/cinnamon/desktop/keybindings/media-keys/volume-mute "['<Primary><Shift>Down']"
+    dconf write /org/cinnamon/desktop/keybindings/media-keys/volume-up "['<Primary>Up']"
 
 # FONTS adicionales 
 # https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
