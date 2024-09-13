@@ -43,6 +43,11 @@
   #    En Ksnip configurar 
   #  Menu > Preferences > Keyboard > System > Screenshots > 
   #   y borrar los hotkeys de captura de pantalla, para que los maneje ksnip
+  #   Rect Area:   Ctrl+Print
+  #   Last Rect:   Alt+Shift+Print
+  #   Full screen: Meta+Print (Todas las pantallas) (Meta es la tecla de Windows) 
+  #   Curr screen: Print (solo la pantalla con foco)
+  #   Active wind: Shift+Print
 
 # Administrador de Zips:
   sudo nala install xarchiver
