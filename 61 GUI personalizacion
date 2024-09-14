@@ -26,6 +26,7 @@
   #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to left  > Ctrl+<
   #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to right > Ctrl+>
   # Con CLI:
+  # Si hace falta, sudo nala install dconf
     dconf dump /org/cinnamon/desktop/keybindings/
   # Para mapear mis gustos:
     dconf read  /org/cinnamon/desktop/keybindings/wm/move-to-workspace-left
