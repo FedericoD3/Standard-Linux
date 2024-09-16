@@ -1,0 +1,13 @@
+# Crear el directorio donde se montará el del servidor:
+  mkdir -p /Ruta/al/Dir/Local
+  
+# Crear el archivo con el usuario y clave al servidor:
+  sudo nano /root/.config/Smb-ComoSeLlame
+    username=fulano
+    password=clave
+
+# Agregar el montaje al fstab local:
+  sudo nano /etc/fstab
+    //IP-del-servidor/DirCompartido /Ruta/al/Dir/Local cifs rw,vers=3.0,credentials=/root/.config/Smb-ComoSeLlame, dir_mode=0777,file_mode=0777,uid=1000,gid=9999
+    
+# Repetir para cada directorio compartido de cada servidor en la red
