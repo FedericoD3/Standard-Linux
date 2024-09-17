@@ -7,6 +7,7 @@
 # SERVIDORES DE ACCESO REMOTO:
   # RDP, para sesión gráfica simultánea independiente por usuario:
   # https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/
+  # https://archive.is/CXIvq
     # Instalarlo:
       sudo nala install -y xrdp
     # Agregar xrdp a usuarios de ssl:
