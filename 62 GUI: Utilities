@@ -72,3 +72,6 @@
 
 # Lupa:
   sudo nala install kmag
+
+# Comparador de directoriosL
+  sudo nala install meld
