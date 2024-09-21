@@ -1,44 +1,44 @@
 # UTILITIES PARA LA INTERFAZ GRAFICA
 
 # Remapeo de teclas:
-  sudo nala install xte
-  sudo nala install xautomation
-  sudo nala install xbindkeys
+  sudo nala install -y xte
+  sudo nala install -y xautomation
+  sudo nala install -y xbindkeys
   xbindkeys --defaults > .config/.xbindkeysrc
-  sudo nala install xdotool
+  sudo nala install -y xdotool
 
 # Miscelaneos:
-  sudo apt install gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "03 Estructura de directorios"
-  sudo apt install gparted
+  sudo apt install -y gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "03 Estructura de directorios"
+  sudo apt install -y gparted
 
 # Administrador de credenciales locales
-  sudo nala install seahorse
+  sudo nala install -y seahorse
 
 # Pipewire audio (mas moderno que Pulseaudio) https://linuxgenie.net/install-pipewire-debian-12/
-  sudo apt install pipewire-audio wireplumber pipewire-pulse pipewire-alsa libspa-0.2-bluetooth
+  sudo apt install -y pipewire-audio wireplumber pipewire-pulse pipewire-alsa libspa-0.2-bluetooth
   pipewire --version
   systemctl --user --now enable wireplumber.service
   wireplumber --version
   sudo reboot
 
 # Emulador de terminal menos basico que mlterm:
-  sudo nala install xfce4-terminal
+  sudo nala install -y xfce4-terminal
 
 # Catálogo de software:
-  sudo nala install gnome-software
-  sudo nala install flatpak
-    sudo nala install gnome-software-plugin-flatpak    # para Gnome
-    sudo nala install plasma-discover-backend-flatpak  # para KDE
+  sudo nala install -y gnome-software
+  sudo nala install -y flatpak
+    sudo nala install -y gnome-software-plugin-flatpak    # para Gnome
+    sudo nala install -y plasma-discover-backend-flatpak  # para KDE
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Administrador de privilegios para programas instalados como Flatpack
   Flatseal (instalar por el catálogo "Discover")
 
 # Acceso remoto (cliente)
-  sudo nala install remmina
+  sudo nala install -y remmina
 
 # Capturador de pantalla
-  sudo nala install ksnip
+  sudo nala install -y ksnip
   #  Menu > Preferences > Startup > agregar ksnip para que se active con PrtScn
   #    En Ksnip configurar 
   #  Menu > Preferences > Keyboard > System > Screenshots > 
@@ -50,12 +50,12 @@
   #   Active wind: Shift+Print
 
 # Administrador de Zips:
-  sudo nala install xarchiver
+  sudo nala install -y xarchiver
 
 # Block de notas:
-  sudo nala install gedit  # Disk space required  28.6 MB 
-  sudo nala install kate   # Disk space required  180.9 MB (carga muy lento)
-  sudo nala install geany  # Disk space required  13.4 MB
+  sudo nala install -y gedit  # Disk space required  28.6 MB 
+  sudo nala install -y kate   # Disk space required  180.9 MB (carga muy lento)
+  sudo nala install -y geany  # Disk space required  13.4 MB
   # Agregar algún tema oscuro desde https://github.com/geany/geany-themes/releases
   #  al directorio ~/.config/geany/colorschemes y activarla via el menú View > Change color scheme
   #  (a mí me gustan "Spyder dark" y "Kugel")
@@ -68,10 +68,10 @@
   sudo nala install -y qalculate-gtk
 
 # IPqalc   Calculadora de IPs
-  sudo nala install ipqalc
+  sudo nala install -y ipqalc
 
 # Lupa:
-  sudo nala install kmag
+  sudo nala install -y kmag
 
 # Comparador de directoriosL
-  sudo nala install meld
+  sudo nala install -y meld
