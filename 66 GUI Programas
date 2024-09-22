@@ -1,6 +1,14 @@
-VSCodium    # Via el catálogo "Discover"
-KeePassXC   # Via el catálogo "Discover"
-NotepadNext # Via el catálogo "Discover"
+# VSCodium (También via el catálogo "Discover" o "Software"):
+  wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
+  sudo add-apt-repository 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' 
+  sudo apt update && sudo apt upgrade
+  sudo nala install codium
+
+# KeePassXC (También via el catálogo "Discover" o "Software"):
+  sudo nala install keepassxc
+  sudo nala install webext-keepassxc-browser 
+
+# NotepadNext # Via el catálogo "Discover"
 
 # Visor de PDFs
   sudo nala install okular
