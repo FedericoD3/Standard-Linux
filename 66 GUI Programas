@@ -21,3 +21,8 @@
   sudo nala install libreoffice-writer --no-install-recommends  # Se utilizarán 258 MB de espacio
   sudo nala install libreoffice-calc --no-install-recommends    # Se utilizarán 34,3 MB de espacio 
   sudo apt install libreoffice-impress --no-install-recommends  # Se utilizarán 24,3 MB de espacio
+
+# Vysor (control android):
+  echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee /etc/apt/sources.list.d/vysor.list 
+  sudo nala update 
+  sudo nala install -y vysor
