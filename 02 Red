@@ -5,21 +5,25 @@
   # o
   sudo nala install network-manager
   # editar la configuración de ifconfig para que sólo maneje loopback:
-  sudo mv /etc/network/interfaces /etc/network/interfaces.manual
+  sudo mv /etc/network/interfaces /etc/network/interfaces.ORIG
   sudo nano /etc/network/interfaces
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
     # The loopback network interface
     auto lo
     iface lo inet loopback
-# Desactivar IPv6 si es red casera:
   # Identificar los nombres de las interfaces:
     nmcli connection show
-  # Asignar "disabled" a la propiedad "ipv6.method" de la interfaz deseada
-    nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
-
-# Opcional, ponerles nombres descriptivos:
-  nmcli connection modify <ConexNombreDefault> con-name <ConexNombreFacil>
+    # o
+    nmcli device
+  # OPCIONALES:
+    # Desactivar IPv6 si es red casera:
+      sudo nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
+    # Ponerles nombres descriptivos e IP fija (sobre todo si es servidor):
+      sudo nmcli connection modify <ConexNombreDefault> con-name <ConexNombreFacil>
+      sudo nmcli connection modify <ConexNombreFacil> ipv4.gateway <aaa.bbb.ccc.GGG>
+      sudo nmcli connection modify <ConexNombreFacil> ipv4.dns <aaa.bbb.ccc.DDD>
+      sudo nmcli connection modify <ConexNombreFacil> ipv4.addresses <aaa.bbb.ccc.III/24>
 
 # Listar los dispositivos para ver cuales están managed y cuales no:
   nmcli d
