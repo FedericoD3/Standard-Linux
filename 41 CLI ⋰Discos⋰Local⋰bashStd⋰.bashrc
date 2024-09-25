@@ -1,11 +1,12 @@
-# PS1 es el prompt de la sesion
-#  Si no existe (es Null) no es sesion interactiva en pantalla,
-#  no configurar mas nada de esta sesion
-  [ -z "$PS1" ] && return
+#!/bin/bash
+# Si no es sesión interactiva, no hacer nada y salir
+  case $- in
+    *i*) ;;
+    *) return;;
+  esac
 
 echo "######## EJECUTANDO /Discos/Local/bashStd/.bashrc"
-
-# echo  $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S')" ${0}" > ~/Arranque_bash.log
+echo  $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S')" ${0}" > ~/Arranque_bash.log
 
 # Para recargar ediciones a este archivo, ejecutar
 # source /Discos/Local/bashStd/.bashrc
