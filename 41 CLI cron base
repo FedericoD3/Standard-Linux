@@ -2,15 +2,16 @@
 
 # Desactivar el envio de email interno por cada cronjob
   MAILTO=""
+
 # Para que cron de cada usuario tenga las variables de entorno del usuario
 # averiguar el entorno con env|grep -i runt  
-  XDG_RUNTIME_DIR=/run/user/1001
+#  y preceder los comandos que lo necesiten con 
+#  XDG_RUNTIME_DIR=/run/user/1001
 
-# Agregar >> ~/.cronlog_$(date +%Y%m) 2>&1 al final de cada tarea para registrar su ejecución
-# .----------------- minute (0 - 59)
-# |  .-------------- hour (0 - 23)
-# |  |   .---------- day of month (1 - 31)
-# |  |   |   .------ month (1 - 12) OR jan,feb,mar,apr ...
-# |  |   |   |   .-- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
-# |  |   |   |   |
-# m  h  dom mon dow  command
+#  .----------------- minute (0 - 59)
+#  |  .-------------- hour (0 - 23)
+#  |  |   .---------- day of month (1 - 31)
+#  |  |   |   .------ month (1 - 12) OR jan,feb,mar,apr ...
+#  |  |   |   |   .-- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+#  |  |   |   |   |
+#  m  h  dom mon dow  command
