@@ -4,18 +4,20 @@
     *i*) ;;
     *) return;;
   esac
-
-echo "######## EJECUTANDO /Discos/Local/bashStd/.bashrc"
-echo  $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S')" ${0}" >> ~/Arranque_bash.log
+# Si es sesión interactiva, cargar la configuracion standard (y avisar y registrar)
+  echo "######## EJECUTANDO /Discos/Local/bashStd/.bashrc"
+  echo -e "\n######## $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S') " >> ~/Arranque_bash.log
 
 # Para recargar ediciones a este archivo, ejecutar
 # source /Discos/Local/bashStd/.bashrc
   echo "sleep 2 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
   sleep 2   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
 
-run-parts /Discos/Local/bashStd/motd.d
+# Mensajes iniciales:
+  run-parts /Discos/Local/bashStd/motd.d
+
   export PATH=$PATH:~/.local/bin
-  export PATH=$PATH:/usr/bin/android-tools
+  export PATH=$PATH:/Discos/Local/Scripts
 # export PATH=$PATH:CualquierOtroPathQueSeUse
 
 # Colores que usa eza para el listado de archivos: 
