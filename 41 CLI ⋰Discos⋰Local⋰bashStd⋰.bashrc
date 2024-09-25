@@ -5,8 +5,8 @@
     *) return;;
   esac
 # Si es sesión interactiva, cargar la configuracion standard (y avisar y registrar)
-  echo "######## EJECUTANDO /Discos/Local/bashStd/.bashrc"
   echo -e "\n######## $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S') " >> ~/Arranque_bash.log
+  echo "######## EJECUTANDO ${0}" | tee --append ~/Arranque_bash.log
 
 # Para recargar ediciones a este archivo, ejecutar
 # source /Discos/Local/bashStd/.bashrc
