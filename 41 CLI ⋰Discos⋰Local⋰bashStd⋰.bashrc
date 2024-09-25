@@ -6,7 +6,7 @@
   esac
 
 echo "######## EJECUTANDO /Discos/Local/bashStd/.bashrc"
-echo  $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S')" ${0}" > ~/Arranque_bash.log
+echo  $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S')" ${0}" >> ~/Arranque_bash.log
 
 # Para recargar ediciones a este archivo, ejecutar
 # source /Discos/Local/bashStd/.bashrc
