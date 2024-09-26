@@ -33,11 +33,11 @@
 
   # Crear un hardlink de la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) de usuarios ya existentes:
     rm .bashrc
-    sudo ln /Discos/Local/bashStd/.bashrc .bashrc
+    ln /Discos/Local/bashStd/.bashrc .bashrc
     # (repetir para cada usuario existente)
 
 # Crear un hardlink de la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) del usuario root:
-    rm /root/.bashrc
+    sudo rm /root/.bashrc
     sudo ln /Discos/Local/bashStd/.bashrc /root/.bashrc
 
 # FONTS EXTRA:
