@@ -49,7 +49,7 @@
     wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip
     sudo unzip VictorMonoAll.zip -d /usr/share/fonts/Extra-VictorMono
     rm VictorMonoAll.zip
-  # alphabetized-cassette-tapes
+  # alphabetized-cassette-tapes (manuscrito)
     wget https://www.1001fonts.com/download/alphabetized-cassette-tapes.zip
     sudo mkdir /usr/share/fonts/Extra-Manuscritos
     unzip alphabetized-cassette-tapes.zip
