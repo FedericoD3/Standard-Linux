@@ -34,6 +34,11 @@
 # tldr (Man pages resumido)
   sudo nala install -y tldr
 
+# Navegadores de archivos:
+  sudo nala install ranger
+  sudo nala install mc
+  sudo nala install ncdu
+
 # eza (Sustituto mejorado de ls)
   sudo mkdir -p /etc/apt/keyrings
   wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
