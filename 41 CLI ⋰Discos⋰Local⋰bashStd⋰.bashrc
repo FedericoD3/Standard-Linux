@@ -25,7 +25,12 @@
   IP=$(echo $IP | sed -e 's/^[[:space:]]*//')
 # ... para no confundir al 'cut' y que devuelva el campo correcto
   IP=$(echo $IP | cut -d ' ' -f 2)
-echo $IP -> $GW
+# Resolver un dominio y devolver solo el server:
+  NS=$(nslookup google.com | grep Server)
+# Tomar sólo el segundo campo:
+  NS=$(echo $NS | cut -d ' ' -f 2)
+# Informar acerca de la red:
+  echo -e "IP=$IP\nNS=$NS\nGW=$GW"
 
 # Mensajes iniciales:
   run-parts /Discos/Local/bashStd/motd.d
