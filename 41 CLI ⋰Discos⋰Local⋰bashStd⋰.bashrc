@@ -13,8 +13,21 @@
   echo "sleep 2 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
   sleep 2   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
 
+# Anunciar el IP
+# Buscar el IP de la ruta por defecto, seguramente 
+# en el mismo segmento de red que el IP principal de este host:
+  GW=$(ip route | grep default | cut -d ' ' -f 3)
+# Cortar el último byte para obtener el segmento de red:
+  IP=${GW%.*}
+# Listarr todos los IPs pero devolver solo el que está en este segmento
+  IP=$(ip a | grep $IP)
+# Eliminar los varios espacios al inicio ...
+  IP=$(echo $IP | sed -e 's/^[[:space:]]*//')
+# ... para no confundir al 'cut' y que devuelva el campo correcto
+  IP=$(echo $IP | cut -d ' ' -f 2)
+echo $IP -> $GW
+
 # Mensajes iniciales:
-  ip a | grep 'inet ' | grep -v 127.0.0.1
   run-parts /Discos/Local/bashStd/motd.d
 
   export PATH=$PATH:~/.local/bin
