@@ -14,7 +14,7 @@
   sleep 2   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
 
 # Mensajes iniciales:
-  ip a | grep inet | grep -v 127.0.0.1
+  ip a | grep 'inet ' | grep -v 127.0.0.1
   run-parts /Discos/Local/bashStd/motd.d
 
   export PATH=$PATH:~/.local/bin
