@@ -6,7 +6,7 @@ me=$me$( grep -E "model name" /proc/cpuinfo | cut -d ':' -f 2 | head -1 )", "
 me=$me$( awk  '/MemAvailable/ {printf( "%.2f\n", $2 / 1048576 )}' /proc/meminfo )
 me=$me"/"$( awk '/MemTotal/ {printf( "%.2f\n", $2 / 1048526 )}' /proc/meminfo )
 me=$me"GBRAM"
-echo -e $me
+echo " "$me
 
 Cfg=$(grep -E '^NAME' /etc/os-release | cut -d '=' -f 2)
 Cfg=$Cfg" "$(grep -E 'VERSION=' /etc/os-release | cut -d '=' -f 2)
