@@ -15,9 +15,15 @@
 # ... para no confundir al 'cut' y que devuelva el campo correcto
   IP=$(echo $IP | cut -d ' ' -f 2)
 
-# Resolver un dominio y devolver solo el server:
-  NS=$(nslookup google.com | grep Server)
-# Tomar sólo el segundo campo:
-  NS=$(echo $NS | cut -d ' ' -f 2)
+## Resolver un dominio y devolver solo el server:
+#  NS=$(nslookup google.com | grep Server)
+## Tomar sólo el segundo campo:
+#  NS=$(echo $NS | cut -d ' ' -f 2)
+
+# Parsear el nameserver:
+  NS=$(cat /etc/resolv.conf | grep -im 1 '^nameserver' | cut -d ' ' -f2)
+
 # Informar acerca de la red:
   echo -e " IP=$IP   NS=$NS   GW=$GW"
+
+
