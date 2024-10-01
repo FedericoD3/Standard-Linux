@@ -20,4 +20,4 @@
 # Tomar sólo el segundo campo:
   NS=$(echo $NS | cut -d ' ' -f 2)
 # Informar acerca de la red:
-  echo -e " IP= $IP \t NS= $NS \t GW= $GW"
+  echo -e " IP=$IP   NS=$NS   GW=$GW"
