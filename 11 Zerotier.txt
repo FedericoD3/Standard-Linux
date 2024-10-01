@@ -22,6 +22,7 @@
 # Opcional, ponerles nombres descriptivos:
   nmcli connection modify 'zt6ovzuv57' con-name ZT-Alfica
   nmcli connection modify 'ztfp6gdnkb' con-name ZT-ViejasDuran
+  nmcli connection modify 'ztklh2unun' con-name ZT-UnimatrixZero
   nmcli connection modify 'zth6rcb6jc' con-name ZT-Delray
 
 ################################################################
