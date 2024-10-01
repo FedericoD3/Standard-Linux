@@ -1,3 +1,5 @@
+#!/bin/bash
+
 alias vers='echo Version de Aliases de 2024-09-30 20.00'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
