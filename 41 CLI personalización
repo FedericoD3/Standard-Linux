@@ -17,6 +17,7 @@
     wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/2cycovkw
     wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/284jmpk2
     wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2xkkhpuk
+    wget --output-document=/Discos/Local/bashStd/motd.d/15-Specs      https://tinyurl.com/23y72h4z
     wget --output-document=/Discos/Local/bashStd/motd.d/20-IPs        https://tinyurl.com/2dksco7c
     wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2a6h3elt
     wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/27zb44l3
