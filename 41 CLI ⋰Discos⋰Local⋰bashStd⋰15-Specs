@@ -1,3 +1,5 @@
+#!/bin/bash
+
 me=$me" ("$( grep -E "model name" /proc/cpuinfo | cut -d ':' -f 2 | wc -l )"x"
 me=$me$( grep -E "model name" /proc/cpuinfo | cut -d ':' -f 2 | head -1 )", "
 
