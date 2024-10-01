@@ -13,25 +13,6 @@
   echo "sleep 2 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
   sleep 2   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
 
-# Anunciar el IP
-# Buscar el IP de la ruta por defecto, seguramente 
-# en el mismo segmento de red que el IP principal de este host:
-  GW=$(ip route | grep default | cut -d ' ' -f 3)
-# Cortar el último byte para obtener el segmento de red:
-  IP=${GW%.*}
-# Listarr todos los IPs pero devolver solo el que está en este segmento
-  IP=$(ip a | grep $IP)
-# Eliminar los varios espacios al inicio ...
-  IP=$(echo $IP | sed -e 's/^[[:space:]]*//')
-# ... para no confundir al 'cut' y que devuelva el campo correcto
-  IP=$(echo $IP | cut -d ' ' -f 2)
-# Resolver un dominio y devolver solo el server:
-  NS=$(nslookup google.com | grep Server)
-# Tomar sólo el segundo campo:
-  NS=$(echo $NS | cut -d ' ' -f 2)
-# Informar acerca de la red:
-  echo -e "IP=$IP\nNS=$NS\nGW=$GW"
-
 # Mensajes iniciales:
   run-parts /Discos/Local/bashStd/motd.d
 
