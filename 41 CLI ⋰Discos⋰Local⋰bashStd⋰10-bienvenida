@@ -10,19 +10,7 @@ userColor="30;48;5;67"
 Hoy="$(color $greetingsColor "⮞ $(LC_ALL=es_VE.utf8 date +"%A %d de %B de %Y, %H:%M:%S")")"
 echo -e "\n"$Hoy
 
-me=$(color $userColor " $(logname) ")
-me=$me$(color $greetingsColor ", bienvenido a ")
-me=$me$(color $ColorHost $(hostname))
-
-me=$me" ("$( grep -E "model name" /proc/cpuinfo | cut -d ':' -f 2 | wc -l )"x"
-me=$me$( grep -E "model name" /proc/cpuinfo | cut -d ':' -f 2 | head -1 )", "
-
-me=$me$( awk  '/MemAvailable/ {printf( "%.2f\n", $2 / 1048576 )}' /proc/meminfo )
-me=$me"/"$( awk '/MemTotal/ {printf( "%.2f\n", $2 / 1048526 )}' /proc/meminfo )
-me=$me"GBRAM)"
+me="Bienvenido a "
+me=$me$(color $ColorHost $(hostname))" "
+me=$me$(color $userColor " $(logname) ")
 echo -e $me
-
-Cfg=$(grep -E '^NAME' /etc/os-release | cut -d '=' -f 2)
-Cfg=$Cfg" "$(grep -E 'VERSION=' /etc/os-release | cut -d '=' -f 2)
-Cfg=$(echo $Cfg | sed 's/\"//g')
-echo "Ejecutando" $Cfg "desde "$(uptime -s)
