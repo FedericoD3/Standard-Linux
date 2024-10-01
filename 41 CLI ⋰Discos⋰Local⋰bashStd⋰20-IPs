@@ -1,4 +1,4 @@
-#!/bin/sh
+ #!/bin/bash
 
 # Anunciar el IP
 
@@ -20,6 +20,4 @@
 # Tomar sólo el segundo campo:
   NS=$(echo $NS | cut -d ' ' -f 2)
 # Informar acerca de la red:
-  echo " IP= $IP"
-  echo " NS= $NS"
-  echo " GW= $GW"
+  echo -e " IP= $IP \t NS= $NS \t GW= $GW"
