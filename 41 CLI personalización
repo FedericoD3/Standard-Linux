@@ -22,6 +22,7 @@
     wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2a6h3elt
     wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/27zb44l3
     wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/276lkf2t
+    sudo chmod +x /Discos/Local/bashStd/motd.d/*
 
   # Crear un hardlink de la configuración personalizada standard a la configuración común con login (cónsola física o remota ssh):
     sudo nano /etc/profile 
