@@ -12,8 +12,6 @@ sudo nano /usr/lib/systemd/system/getty@.service
 # ExecStart=-/sbin/agetty -o '-p -- \\u' --noclear - $TERM
   ExecStart=-/sbin/agetty --noissue --autologin UsuarioAuto %I $TERM Type=idle
 
-
-
 # sudo ln -s /etc/systemd/system/autologin@.service /etc/systemd/system/getty.target.wants/getty@tty1.service
 
 sudo nano /etc/systemd/system/getty.target.wants/getty@tty1.service
