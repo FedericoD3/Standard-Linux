@@ -34,17 +34,17 @@ alias hostsl='cat /etc/hosts | less'
     alias atos='ssh     -p 41022 Admin@atos.alfica.red'
     alias aramis='ssh   -p 41032 Admin@aramis.alfica.red'
     alias sistjefe='ssh -p 41112 Admin@sistjefe-pc.alfica.red'
-    alias sistaux='ssh  -p 22    Admin@sistaux-pc.alfica.red'
+    alias sistaux='ssh  -p    22 Admin@sistaux-pc.alfica.red'
     alias hermes='ssh   -p 42502 Admin@hermes.alfica.red'
   # UnimatrixZero
     alias ptb='ssh      -p 40012 federico@ptbarnum.unimatrixzero.red'
     alias pi01='ssh     -p 40062 federico@pi-01.unimatrixzero.red'
     alias hermes='ssh   -p 40102 federico@hermes.unimatrixzero.red'
-    alias mazinger='ssh -p 41012 FedericoD3@mazinger.unimatrixzero.red'
+    alias mazinger='ssh -p    22 FedericoD3@mazinger.unimatrixzero.red'
     alias hedy=='ssh    -p 42502 root@hedylamarr.unimatrixzero.red'
   # ViejasDuran
-    alias sdell='ssh    -p 40022 FedericoD3@servidordell.viejasduran.red'
-    alias pizw01='ssh   -p 40062 FedericoD3@pizw-01.viejasduran.red'
+    alias sdell='ssh    -p    22 FedericoD3@servidordell.viejasduran.red'
+    alias pizw01='ssh   -p    22 FedericoD3@pizw-01.viejasduran.red'
 
 fuentes () {
   echo "/etc/apt/sources.list:"
