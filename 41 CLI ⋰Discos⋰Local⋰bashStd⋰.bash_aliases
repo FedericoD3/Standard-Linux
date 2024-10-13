@@ -32,7 +32,7 @@ alias hostsl='cat /etc/hosts | less'
   # Alfica
     alias aramis='ssh   -p 41032 Admin@192.168.1.103'
     alias sistjefe='ssh -p 41112 Admin@192.168.1.111'
-    alias sistaux='ssh  -p 41122 Admin@192.168.1.112'
+    alias sistaux='ssh  -p 22    Admin@192.168.1.112'
   # UnimatrixZero
     alias ptb='ssh      -p 40012 federico@10.35.0.1'
     alias pi01='ssh     -p 40062 federico@10.35.0.6'
