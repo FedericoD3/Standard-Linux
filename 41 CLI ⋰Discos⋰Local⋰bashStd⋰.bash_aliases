@@ -28,6 +28,20 @@ alias servicios='echo '/etc/systemd/system/' && ls -Al /etc/systemd/system/ && e
 alias hostse='sudo nano /etc/hosts'
 alias hostsl='cat /etc/hosts | less'
 
+# Aliases de conexión remota:
+  # Alfica
+    alias aramis='ssh   -p 41032 Admin@192.168.1.103'
+    alias sistjefe='ssh -p 41112 Admin@192.168.1.111'
+    alias sistaux='ssh  -p 41122 Admin@192.168.1.112'
+  # UnimatrixZero
+    alias ptb='ssh      -p 40012 federico@10.35.0.1'
+    alias pi01='ssh     -p 40062 federico@10.35.0.6'
+    alias hermes='ssh   -p 40102 federico@10.35.0.10'
+    alias mazinger='ssh -p 41012 FedericoD3@10.35.0.101'
+  # ViejasDuran
+    alias sdell='ssh    -p 40022 FedericoD3@10.12.10.2'
+    alias pizw-01='ssh  -p 40062 FedericoD3@10.12.10.6'
+
 fuentes () {
   echo "/etc/apt/sources.list:"
   cat /etc/apt/sources.list | grep -v "^#" | grep -v "^$"
