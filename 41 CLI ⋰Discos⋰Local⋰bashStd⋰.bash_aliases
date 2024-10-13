@@ -30,9 +30,12 @@ alias hostsl='cat /etc/hosts | less'
 
 # Aliases de conexión remota:
   # Alfica
+    alias portos='ssh   -p 41012 root@192.168.1.101'
+    alias atos='ssh     -p 41022 Admin@192.168.1.102'
     alias aramis='ssh   -p 41032 Admin@192.168.1.103'
     alias sistjefe='ssh -p 41112 Admin@192.168.1.111'
     alias sistaux='ssh  -p 22    Admin@192.168.1.112'
+    alias hermes='ssh   -p 42502 Admin@192.168.1.250'
   # UnimatrixZero
     alias ptb='ssh      -p 40012 federico@10.35.0.1'
     alias pi01='ssh     -p 40062 federico@10.35.0.6'
