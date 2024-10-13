@@ -1,10 +1,10 @@
-
-# En el cliente:
+# Una vez en cada cliente:
   ssh-keygen
 # Aceptar el directorio default o apuntar a otro
 # Ingresar una clave de encriptación de la llave o dejarla en blanco
 
-# Copiar la llave al servidor:
+# Repetir para cada servidor:
+# Copiar la llave:
   ssh-copy-id -p 22 UsuarioRemoto@servidor.remoto.com 
 # Pedirá (por última vez a este cliente) la clave del usuario remoto:
 #  UsuarioRemoto@servidor.remoto.com's password: 
@@ -13,3 +13,4 @@
 
 # Verificar que el servidor remoto reconoce el cliente, si no pide clave iniciando sesión:
   ssh - p 22 UsuarioRemoto@servidor.remoto.com
+
