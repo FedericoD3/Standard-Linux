@@ -30,20 +30,21 @@ alias hostsl='cat /etc/hosts | less'
 
 # Aliases de conexión remota:
   # Alfica
-    alias portos='ssh   -p 41012 root@192.168.1.101'
-    alias atos='ssh     -p 41022 Admin@192.168.1.102'
-    alias aramis='ssh   -p 41032 Admin@192.168.1.103'
-    alias sistjefe='ssh -p 41112 Admin@192.168.1.111'
-    alias sistaux='ssh  -p 22    Admin@192.168.1.112'
-    alias hermes='ssh   -p 42502 Admin@192.168.1.250'
+    alias portos='ssh   -p 41012 root@portos.alfica.red'
+    alias atos='ssh     -p 41022 Admin@atos.alfica.red'
+    alias aramis='ssh   -p 41032 Admin@aramis.alfica.red'
+    alias sistjefe='ssh -p 41112 Admin@sistjefe-pc.alfica.red'
+    alias sistaux='ssh  -p 22    Admin@sistaux-pc.alfica.red'
+    alias hermes='ssh   -p 42502 Admin@hermes.alfica.red'
   # UnimatrixZero
-    alias ptb='ssh      -p 40012 federico@10.35.0.1'
-    alias pi01='ssh     -p 40062 federico@10.35.0.6'
-    alias hermes='ssh   -p 40102 federico@10.35.0.10'
-    alias mazinger='ssh -p 41012 FedericoD3@10.35.0.101'
+    alias ptb='ssh      -p 40012 federico@ptbarnum.unimatrixzero.red'
+    alias pi01='ssh     -p 40062 federico@pi-01.unimatrixzero.red'
+    alias hermes='ssh   -p 40102 federico@hermes.unimatrixzero.red'
+    alias mazinger='ssh -p 41012 FedericoD3@mazinger.unimatrixzero.red'
+    alias hedy=='ssh    -p 42502 root@hedylamarr.unimatrixzero.red'
   # ViejasDuran
-    alias sdell='ssh    -p 40022 FedericoD3@10.12.10.2'
-    alias pizw-01='ssh  -p 40062 FedericoD3@10.12.10.6'
+    alias sdell='ssh    -p 40022 FedericoD3@servidordell.viejasduran.red'
+    alias pizw01='ssh   -p 40062 FedericoD3@pizw-01.viejasduran.red'
 
 fuentes () {
   echo "/etc/apt/sources.list:"
