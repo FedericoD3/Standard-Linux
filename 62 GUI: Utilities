@@ -73,5 +73,8 @@
 # Lupa:
   sudo nala install -y kmag
 
-# Comparador de directoriosL
+# Comparador de directorios
   sudo nala install -y meld
+
+# Scanner de red
+  wget https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb
