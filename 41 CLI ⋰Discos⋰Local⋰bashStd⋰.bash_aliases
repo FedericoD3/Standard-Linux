@@ -40,7 +40,7 @@ alias hostsl="cat /etc/hosts | less"
     alias mazinger='ssh -p 41012 FedericoD3@mazinger.unimatrixzero.red'
   # ViejasDuran
     alias sdell='ssh    -p 40022 FedericoD3@servidordell.viejasduran.red'
-    alias pizw01='ssh   -p 40062 FedericoD3@pizw-01.viejasduran.red'
+    alias pizw01='ssh   -p    22 FedericoD3@pizw-01.viejasduran.red'
 
 fuentes () {
   echo "/etc/apt/sources.list:"
