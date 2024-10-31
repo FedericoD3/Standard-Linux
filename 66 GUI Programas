@@ -26,3 +26,14 @@
   echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee /etc/apt/sources.list.d/vysor.list 
   sudo nala update 
   sudo nala install -y vysor
+
+# FreeCAD:
+  sudo add-apt-repository ppa:freecad-maintainers/freecad-stable
+  sudo nala update
+  sudo nala install freecad
+
+# KiCAD:
+
+# ArduinoIDE:
+
+
