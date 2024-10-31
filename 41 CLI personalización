@@ -63,4 +63,8 @@
   # QETonyFlores
     wget https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault/QETonyFlores.ttf
     sudo mv QETonyFlores.ttf /usr/share/fonts/Extra-Manuscritos/
-  
+  # JetBrainsMono
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+    unzip JetBrainsMono.zip
+    sudo mkdir /usr/share/fonts/Extra-JetBrainsMonoNerd
+    sudo mv JetBrainsMonoNerdFont* /usr/share/fonts/Extra-JetBrainsMonoNerd
