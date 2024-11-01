@@ -68,3 +68,5 @@
     unzip JetBrainsMono.zip
     sudo mkdir /usr/share/fonts/Extra-JetBrainsMonoNerd
     sudo mv JetBrainsMonoNerdFont* /usr/share/fonts/Extra-JetBrainsMonoNerd
+
+
