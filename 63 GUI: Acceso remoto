@@ -4,6 +4,15 @@
   o 
   sudo nala install remmina
 
+# xfreerdp 
+  sudo nano /etc/apt/sources.list.d/freerdp.list
+    deb http://pub.freerdp.com/repositories/deb/bookworm/ freerdp-nightly main
+  wget -O - http://pub.freerdp.com/repositories/ADD6BF6D97CE5D8D.asc | sudo apt-key add -
+  sudo apt-get update
+  sudo nala install freerdp2-x11
+  # USO:
+    xfreerdp +clipboard +fonts /size:1800x960 /floatbar:show:always /dynamic-resolution /network:auto /cert-ignore /u:Admin /p:alf111ica /v:sistjefe-pc.alfica.red:41119 /bpp:15
+
 # SERVIDORES DE ACCESO REMOTO:
   # RDP, para sesión gráfica simultánea independiente por usuario:
   # https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/
