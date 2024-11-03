@@ -1,3 +1,9 @@
+# VSCodium (También via el catálogo "Discover" o "Software"):
+  wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
+  sudo add-apt-repository 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' 
+  sudo apt update && sudo apt upgrade
+  sudo nala install codium
+
 # KiCAD EDA
   sudo add-apt-repository ppa:kicad/kicad-8.0-releases
   sudo apt update
@@ -6,16 +12,21 @@
 # FreeCAD
 # Descargar el appimage desde:
   https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/weekly-builds
-#  al directorio ~/.local/share/applications/
-#  cambiarle el nombre a Freecad.desktop
+#  al directorio ~/.local/share/applications/Freecad.appimage
 #  y crear / verificar el ~/.local/share/applications/Freecad.desktop con:
-  [Desktop Entry]
-  Type=Application
-  Name=FreeCAD
-  Comment=Feature based Parametric Modeler
-  GenericName=CAD Application
-  Icon=~/.local/share/applications/Freecad.png
-  Exec=~/.local/share/applications/Freecad.AppImage
-  Terminal=false
-  Categories=Proyectos;
-  StartupNotify=true
+    [Desktop Entry]
+    Type=Application
+    Name=FreeCAD
+    Comment=Feature based Parametric Modeler
+    GenericName=CAD Application
+    Exec=~/.local/share/applications/Freecad.AppImage
+    Icon=~/.local/share/applications/Freecad.png
+    Terminal=false
+    Categories=Proyectos;
+    StartupNotify=true
+# O instalado en lugar de appimage:
+  sudo add-apt-repository ppa:freecad-maintainers/freecad-stable
+  sudo nala update
+  sudo nala install freecad
+
+# ArduinoIDE:
