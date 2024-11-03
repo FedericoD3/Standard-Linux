@@ -1,9 +1,3 @@
-# VSCodium (También via el catálogo "Discover" o "Software"):
-  wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo apt-key add -
-  sudo add-apt-repository 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' 
-  sudo apt update && sudo apt upgrade
-  sudo nala install codium
-
 # KeePassXC (También via el catálogo "Discover" o "Software"):
   sudo nala install keepassxc
   sudo nala install webext-keepassxc-browser 
@@ -26,14 +20,3 @@
   echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee /etc/apt/sources.list.d/vysor.list 
   sudo nala update 
   sudo nala install -y vysor
-
-# FreeCAD:
-  sudo add-apt-repository ppa:freecad-maintainers/freecad-stable
-  sudo nala update
-  sudo nala install freecad
-
-# KiCAD:
-
-# ArduinoIDE:
-
-
