@@ -1,0 +1,21 @@
+# KiCAD EDA
+  sudo add-apt-repository ppa:kicad/kicad-8.0-releases
+  sudo apt update
+  sudo apt install kicad
+
+# FreeCAD
+# Descargar el appimage desde:
+  https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/weekly-builds
+#  al directorio ~/.local/share/applications/
+#  cambiarle el nombre a Freecad.desktop
+#  y crear / verificar el ~/.local/share/applications/Freecad.desktop con:
+  [Desktop Entry]
+  Type=Application
+  Name=FreeCAD
+  Comment=Feature based Parametric Modeler
+  GenericName=CAD Application
+  Icon=~/.local/share/applications/Freecad.png
+  Exec=~/.local/share/applications/Freecad.AppImage
+  Terminal=false
+  Categories=Proyectos;
+  StartupNotify=true
