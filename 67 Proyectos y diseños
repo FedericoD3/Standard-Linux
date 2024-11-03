@@ -19,8 +19,8 @@
     Name=FreeCAD
     Comment=Feature based Parametric Modeler
     GenericName=CAD Application
-    Exec=~/.local/share/applications/Freecad.AppImage
-    Icon=~/.local/share/applications/Freecad.png
+    Exec="~/.local/share/applications/Freecad.AppImage"
+    Icon="~/.local/share/applications/Freecad.png"
     Terminal=false
     Categories=Proyectos;
     StartupNotify=true
