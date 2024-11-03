@@ -1,0 +1,18 @@
+#  Crear accesos a programas o comandos en  
+#    ~/.local/share/applications/CualquierNombre.desktop
+#   con este contenido mínimo:
+    [Desktop Entry]
+    Type=Application
+    Name=Nombre Visible
+    Comment=Descripción que aparecerá en el tooltip
+    GenericName=Nombre genérico. Duh.
+    Exec=/Donde/sea/que/esta/el/ejecutabe con parametros opcionales
+    Icon=/Donde/sea/que/esta/el/Icono.png
+    Terminal=false
+    Categories=SubMenuDelDE;
+    StartupNotify=true
+    
+# Verificar el archivo con
+  desktop-file-validate /donde/este/el/archivo.desktop
+
+#  https://specifications.freedesktop.org/desktop-entry-spec/latest/recognized-keys.html
