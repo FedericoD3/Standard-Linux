@@ -10,7 +10,7 @@
   sudo apt install kicad
 
 # FreeCAD
-# Descargar el appimage desde:
+# APPIMAGE, descargar desde:
   https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/weekly-builds
 #  al directorio ~/.local/share/applications/Freecad.appimage
 #  y crear / verificar el ~/.local/share/applications/Freecad.desktop con:
@@ -24,7 +24,9 @@
     Terminal=false
     Categories=Proyectos;
     StartupNotify=true
-# O instalado en lugar de appimage:
+# Verifica el archivo con
+  desktop-file-validate /donde/este/el/archivo.desktop
+# INSTALADO:
   sudo add-apt-repository ppa:freecad-maintainers/freecad-stable
   sudo nala update
   sudo nala install freecad
