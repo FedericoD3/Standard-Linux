@@ -41,7 +41,7 @@ alias hostsl="cat /etc/hosts | less"
   # ViejasDuran
     alias sdell='ssh    -p    22 FedericoD3@servidordell.viejasduran.red'
     alias pizw01='ssh   -p    22 FedericoD3@pizw-01.viejasduran.red'
-    alias wifiDF1='ssh  -p    22 root@DF-AP1.viejasduran.red'
+    alias wifiDF1='echo wifi(vd-DF1) & ssh  -p    22 root@DF-AP1.viejasduran.red'
 
 fuentes () {
   echo "/etc/apt/sources.list:"
