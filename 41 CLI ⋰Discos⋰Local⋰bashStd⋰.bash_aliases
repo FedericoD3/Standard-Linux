@@ -30,7 +30,7 @@ alias hostsl="cat /etc/hosts | less"
     alias portos='ssh   -p 41012 root@portos.alfica.red'
     alias atos='ssh     -p 41022 Admin@atos.alfica.red'
     alias aramis='ssh   -p 41032 Admin@aramis.alfica.red'
-    alias sistjefe='ssh -p 41112 Admin@sistjefe-pc.alfica.red'
+    alias sistjefe='ssh -p 22    Admin@sistjefe-pc.alfica.red'
     alias sistaux='ssh  -p 22    Admin@sistaux-pc.alfica.red'
     alias hermes='ssh   -p 42502 Admin@hermes.alfica.red'
   # UnimatrixZero
