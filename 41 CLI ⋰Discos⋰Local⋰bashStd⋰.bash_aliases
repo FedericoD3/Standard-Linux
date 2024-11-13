@@ -103,6 +103,16 @@ usuarios () {
   sudo pdbedit -Lv | grep "Unix username" | sed "s/Unix username://" | sort
 }
 
+Nuevou () {
+  echo Crear el usuario $1 con clave $2 del grupo $3
+  sudo useradd $1 --comment "($2)" --groups $3 --shell /bin/false --base-dir /Discos/Alfica/Usuarios --password $2
+  sudo mkdir /Discos/Alfica/Usuarios/$1
+  sudo chown -R nobody /Discos/Alfica/Usuarios/$1
+  sudo chgrp nogroup -R /Discos/Alfica/Usuarios/$1
+  sudo chmod 777 -R /Discos/Alfica/Usuarios/$1
+  echo -e "$2\n$2\n" | sudo smbpasswd -a "$1"
+}
+
 websrv () {
   curl -s -I "$1" | grep Server
 }
