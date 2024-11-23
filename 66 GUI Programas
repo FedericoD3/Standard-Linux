@@ -10,6 +10,10 @@
 # Editor de audio
   sudo nala install audacity
 
+# Editores de video:
+  sudo nala install handbrake
+  sudo nala install kdenlive
+
 # Office:
   sudo apt purge libreoffice                                    # Se liberarán 359 MB después de esta operación.
   sudo nala install libreoffice-writer --no-install-recommends  # Se utilizarán 258 MB de espacio
