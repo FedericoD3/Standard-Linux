@@ -1,0 +1,9 @@
+# Chequear que la virtualización de kernel esté activa:
+  sudo apt install cpu-checker -y
+  sudo kvm-ok
+# Debe contestar
+#  INFO: /dev/kvm exists
+#  KVM acceleration can be used
+
+# QEMU y utilities
+  sudo apt-get install libvirt-clients libvirt-daemon-system qemu-kvm bridge-utils dnsmasq
