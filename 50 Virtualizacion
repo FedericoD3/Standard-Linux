@@ -11,3 +11,7 @@
 # Agregar este usuario al grupo de virtualizadores
   sudo usermod -aG libvirt $(whoami)
   sudo usermod -aG kvm $(whoami)
+
+# Iniciar y dejar automático el daemon de virtualizacion
+  sudo systemctl start  libvirtd
+  sudo systemctl enable libvirtd
