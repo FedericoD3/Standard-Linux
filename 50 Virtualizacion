@@ -7,3 +7,7 @@
 
 # QEMU y utilities
   sudo apt-get install libvirt-clients libvirt-daemon-system qemu-kvm bridge-utils dnsmasq
+
+# Agregar este usuario al grupo de virtualizadores
+  sudo usermod -aG libvirt $(whoami)
+  sudo usermod -aG kvm $(whoami)
