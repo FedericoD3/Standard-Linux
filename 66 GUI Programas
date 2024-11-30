@@ -4,6 +4,9 @@
 
 # NotepadNext # Via el catálogo "Discover"
 
+# Historico de copiar-pegar:
+  sudo nala install copyq
+
 # Visor de PDFs
   sudo nala install okular
 
