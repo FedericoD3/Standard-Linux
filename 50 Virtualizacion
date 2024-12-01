@@ -15,3 +15,6 @@
 # Iniciar y dejar automático el daemon de virtualizacion
   sudo systemctl start  libvirtd
   sudo systemctl enable libvirtd
+
+# OPCIONAL: Instalar un GUI de administración de VMs:
+  sudo nala install aqemu
