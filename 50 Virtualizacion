@@ -6,7 +6,7 @@
 #  KVM acceleration can be used
 
 # QEMU y utilities
-  sudo apt-get install libvirt-clients libvirt-daemon-system qemu-kvm bridge-utils dnsmasq
+  sudo nala install libvirt-clients libvirt-daemon-system qemu-kvm bridge-utils dnsmasq virt-manager virtinst
 
 # Agregar este usuario al grupo de virtualizadores
   sudo usermod -aG libvirt $(whoami)
