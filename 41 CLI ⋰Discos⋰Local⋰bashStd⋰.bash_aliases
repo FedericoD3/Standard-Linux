@@ -33,6 +33,7 @@ alias hostsl="cat /etc/hosts | less"
     alias sistjefe='ssh -p 22    Admin@sistjefe-pc.alfica.red'
     alias sistaux='ssh  -p 22    Admin@sistaux-pc.alfica.red'
     alias hermes='ssh   -p 42502 Admin@hermes.alfica.red'
+    alias dvr0='ssh     -p 22    Admin@dvr0.alfica.red'
   # UnimatrixZero
     alias ptb='ssh      -p 40012 federico@ptbarnum.unimatrixzero.red'
     alias pi01='ssh     -p 40062 federico@pi-01.unimatrixzero.red'
