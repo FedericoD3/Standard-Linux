@@ -4,7 +4,7 @@
   # Nemo: Edit - Preferences - Display - Show the full path  
 
 # Ejecutar en cada cierre de sesión:
-  wmctrl -l -x > $HOME/.config/Ventanas.txt
+  wmctrl -lxG > $HOME/.config/Ventanas.txt
 
 # Ejecutar en cada inicio de sesión un script con este contenido:
   #!/bin/bash
