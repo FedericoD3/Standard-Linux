@@ -1,0 +1,40 @@
+# Asegurar que esté instalado wmctrl:
+  sudo nala install wmctrl
+# Configurar el file manager para que muestre la ruta completa en el título:
+  # Nemo: Edit - Preferences - Display - Show the full path  
+
+# Ejecutar en cada cierre de sesión:
+  wmctrl -l -x > $HOME/.config/Ventanas.txt
+
+
+#!/bin/bash
+# this depends on Nemo - Edit - Preferences - Display - Show the full path
+Ventanas="$HOME/.config/Ventanas.txt.txt"
+while read -r f1 f2 f3 f4 f5
+
+#  display fields of "wmctrl -l -x" using f1, f2, ...
+#  f1 is window number 0xnnnnnnnn
+#  f2 is workspace number 0,1,2,3 or -1 for "sticky" Desktop
+#  f3 is WM_CLASS (name of running process)
+#  f4 is hostname
+#  f5 is window title (catch all remaining characters)
+
+do
+#  echo "1=$f1 2=$f2 3=$f3 4=$f4 5=$f5" # (for debugging)
+  if [[ "$f3" == 'nemo.Nemo' ]]; then
+#   is this just Home ?
+    if [[ "$f5" == 'Home' ]]; then
+      nemo "$HOME" &
+#   is this smb or local directory ?
+    elif [[ "$f5" == *smb:* ]]; then
+      nemo "smb:${f5#*smb:}" & 
+    else
+#     slash is used as delimiter to find substring, so open
+#     browser at: / plus substring after first slash in f5
+      nemo "/${f5#*/}" & 
+    fi
+  fi
+done <"$file"
+# wipe the wmctrl.txt file so "old" windows don't get opened
+# if there is a normal reboot/shutdown through menu panel
+>"$file"
