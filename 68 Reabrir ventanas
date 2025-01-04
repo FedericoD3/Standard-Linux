@@ -3,8 +3,9 @@
 # Configurar el file manager para que muestre la ruta completa en el título:
   # Nemo: Edit - Preferences - Display - Show the full path  
 
-# Ejecutar en cada cierre de sesión:
-  wmctrl -lxG > $HOME/.config/Ventanas.txt
+# En cron recordar los directorios abiertos cada minuto 
+# (en cierre de sesión no sirve porque es después de cerrar el DM):
+  *  *   *   *   *   export DISPLAY=:0 && wmctrl -l -x | grep nemo.Nemo > $HOME/.config/Ventanas.txt
 
 # Ejecutar en cada inicio de sesión un script con este contenido:
   #!/bin/bash
