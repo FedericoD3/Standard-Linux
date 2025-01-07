@@ -27,13 +27,13 @@ alias hostsl="cat /etc/hosts | less"
 
 # Aliases de conexión remota:
   # Alfica
-    alias portos='ssh   -p 41012 root@portos.alfica.red'
-    alias atos='ssh     -p 41022 Admin@atos.alfica.red'
-    alias aramis='ssh   -p 41032 Admin@aramis.alfica.red'
-    alias sistjefe='ssh -p 22    Admin@sistjefe-pc.alfica.red'
-    alias sistaux='ssh  -p 22    Admin@sistaux-pc.alfica.red'
-    alias hermes='ssh   -p 42502 Admin@hermes.alfica.red'
-    alias dvr0='ssh     -p 22    Admin@dvr0.alfica.red'
+    alias portos='echo ssh -p 41012 root@portos.alfica.red      && ssh -p 41012 root@portos.alfica.red'
+    alias atos='echo ssh -p 41022 Admin@atos.alfica.red         && ssh -p 41022 Admin@atos.alfica.red'
+    alias aramis='echo ssh -p 41032 Admin@aramis.alfica.red     && ssh -p 41032 Admin@aramis.alfica.red'
+    alias sistjefe='echo ssh -p 22 Admin@sistjefe-pc.alfica.red && ssh -p 22 Admin@sistjefe-pc.alfica.red'
+    alias sistaux='echo ssh -p 22 Admin@sistaux-pc.alfica.red   && ssh -p 22 Admin@sistaux-pc.alfica.red'
+    alias hermes='echo ssh -p 22 Admin@hermes.alfica.red        && ssh -p 22 Admin@hermes.alfica.red'
+    alias dvr0='echo ssh -p 22 Admin@dvr0.alfica.red            && ssh -p 22 Admin@dvr0.alfica.red'
   # UnimatrixZero
     alias ptb='ssh      -p 40012 federico@ptbarnum.unimatrixzero.red'
     alias pi01='ssh     -p 40062 federico@pi-01.unimatrixzero.red'
