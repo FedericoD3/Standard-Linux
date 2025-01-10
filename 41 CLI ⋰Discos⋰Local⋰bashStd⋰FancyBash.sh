@@ -153,19 +153,31 @@ bash_prompt() {
         ## CONFIGURATION                                                          ##
         ## Choose your color combination here                                     ##
         ############################################################################
-        local FONT_COLOR_1=$WHITE
-        local BACKGROUND_1=$BLUE
-        local TEXTEFFECT_1=$BOLD
-
-        local FONT_COLOR_2=$WHITE
-        local BACKGROUND_2=$L_BLUE
-        local TEXTEFFECT_2=$BOLD
-
-        local FONT_COLOR_3=$D_GRAY
-        local BACKGROUND_3=$WHITE
-        local TEXTEFFECT_3=$BOLD
-
-        local PROMT_FORMAT=$BLUE_BOLD
+        if [[ $EUID -eq 0 ]]; then
+          # Si es root:
+          local FONT_COLOR_1=$WHITE
+          local BACKGROUND_1=$RED
+          local TEXTEFFECT_1=$BOLD
+          local FONT_COLOR_2=$WHITE
+          local BACKGROUND_2=$L_RED
+          local TEXTEFFECT_2=$BOLD
+          local FONT_COLOR_3=$D_GRAY
+          local BACKGROUND_3=$WHITE
+          local TEXTEFFECT_3=$BOLD
+          local PROMT_FORMAT=$BLUE_BOLD
+        else
+         # Si no es root:
+          local FONT_COLOR_1=$WHITE
+          local BACKGROUND_1=$BLUE
+          local TEXTEFFECT_1=$BOLD
+          local FONT_COLOR_2=$WHITE
+          local BACKGROUND_2=$L_BLUE
+          local TEXTEFFECT_2=$BOLD
+          local FONT_COLOR_3=$D_GRAY
+          local BACKGROUND_3=$WHITE
+          local TEXTEFFECT_3=$BOLD
+          local PROMT_FORMAT=$BLUE_BOLD
+        fi
 
         ############################################################################
         ## EXAMPLE CONFIGURATIONS                                                 ##
