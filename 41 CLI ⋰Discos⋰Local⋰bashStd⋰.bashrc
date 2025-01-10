@@ -12,9 +12,18 @@
 
 # Para recargar ediciones a este archivo, ejecutar
 #  source /Discos/Local/bashStd/.bashrc
-  echo "sleep 1 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
-  sleep 1   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
-  clear
+  if [ "$(ps -o comm= $PPID)" != "su" ]; then 
+    # Si es la sesión directa, dar chance a evitar error de configuracion
+    echo "sleep 1 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
+    sleep 1   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
+    clear
+    else
+    # Si es substitute user, refrescar los aliases para el usuario sustituto
+    source /Discos/Local/bashStd/.bash_aliases
+    # y re-colorear el prompt
+    source /Discos/Local/bashStd/FancyBash.sh
+    return
+  fi
 
 # Mensajes iniciales:
   run-parts /Discos/Local/bashStd/motd.d
