@@ -1,0 +1,228 @@
+Al instalar genera un password aleatorio, se cambia con
+  sudo pihole -a -p
+
+the web server user needs to be member of the "pihole" group for full functionality.
+
+http://pi.hole/admin 
+or 
+http://aaa.bbb.ccc.ddd/admin
+
+Determinar el usuario del webserver y el puerto:
+  sudo nano /etc/lighttpd/lighttpd.conf
+y ver que que dice la línea
+  server.groupname = 
+y editar el puerto en la línea
+  server.port = 
+
+agregar el usuario del webserver al grupo pihole 
+  sudo usermod -a -G pihole www-data
+
+y reiniciar el web server
+  sudo /etc/init.d/lighttpd restart
+
+AGREGAR HOSTS DE LA RED LOCAL:
+  sudo nano /etc/hosts
+CON WILDCARDS
+  sudo nano /etc/dnsmasq.d/99-serv-lan.conf 
+    address=/example.com/192.168.0.10 # Todo lo *.example.com apuntará a ese IP
+y reiniciar el DNS
+  sudo service pihole-FTL reload
+o
+  sudo pihole restartdns
+
+ACCESO DIRECTO A LA BASE DE DATOS:
+Si hace falta, 
+sudo apt install sqlite3
+ Conectarse a la base de datos:
+  sqlite3 /etc/pihole/pihole-FTL.db 	(sudo si se hará insert/update/delete)
+ Listar las tablas:
+  .tables
+ Listar los campos de una tabla
+  pragma table_info(NombreTabla);
+ Listar NNN consultas de un cliente:
+  SELECT * FROM queries WHERE client = '111.222.333.444' LIMIT NNN;
+ Listar NNN consultas de un cliente con la fecha legible: 
+  SELECT datetime(timestamp, 'unixepoch', 'localtime'), type, status, domain, client, forward FROM queries WHERE client = '111.222.333.444' order by timestamp desc LIMIT NNN;
+ Listar las consultas de un cliente en un rango de tiempo (+14400 es para mostrar el timestamp en HLV y no GMT):
+  SELECT DISTINCT datetime(timestamp+14400, 'unixepoch', 'localtime'), domain FROM queries WHERE client = '192.1.1.217' AND timestamp>1660867200 AND timestamp<1660953599;
+  Los timestamp en unix se calculan con: SELECT strftime('%s', '2022-08-19 12:34:56'); 
+ Borrar querys de un host (p.e. para limpiar el log antes de una prueba)
+  DELETE FROM queries WHERE client = '111.222.333.444';
+ Listar dominios consultados por un cliente:
+  SELECT DISTINCT domain FROM queries WHERE client = '1111.2222.3333.4444';
+ Borrar queries a un dominio sabido bloqueado pero frecuente:
+  DELETE   FROM queries WHERE domain='www.nwsvr1.com';
+ Desconectarse de la base de datos:
+  ctrl+d
+
+
+ACCESO DESDE EL SHELL:
+ sqlite3 /etc/pihole/pihole-FTL.db "SELECT ..."              		(sudo si se hará insert/update/delete)
+ sqlite3 /etc/pihole/pihole-FTL.db "pragma table_info(queries);"	(sudo si se hará insert/update/delete)
+
+Los records de dias anteriores están en /var/log
+  pihole.log
+  pihole.log.1
+  pihole.log.2.gz
+  pihole.log.3.gz
+etc
+
+$ sqlite3 /etc/pihole/pihole-FTL.db
+  SQLite version 3.27.2 2019-02-25 16:06:06
+  Enter ".help" for usage hints.
+  sqlite> .tables
+    aliasclient        
+	 ftl                
+	 network            
+	 queries
+	 counters           
+	 message            
+	 network_addresses
+  sqlite> pragma table_info(queries);
+	0|id|INTEGER|0||1
+	1|timestamp|INTEGER|1||0
+	2|type|INTEGER|1||0
+	3|status|INTEGER|1||0
+	4|domain|TEXT|1||0
+	5|client|TEXT|1||0
+	6|forward|TEXT|0||0
+	7|additional_info|TEXT|0||0
+sqlite> ^D
+pi pi-01 ~
+$
+
+Códigos de STATUS en la tabla queries:
+	0	Unknown	❔	Unknown status (not yet known)
+	1	Blocked	❌	Domain contained in gravity database
+	2	Allowed	✅	Forwarded
+	3	Allowed	✅	Known, replied to from cache
+	4	Blocked	❌	Domain matched by a regex blacklist filter
+	5	Blocked	❌	Domain contained in exact blacklist
+	6	Blocked	❌	By upstream server (known blocking page IP address)
+	7	Blocked	❌	By upstream server (0.0.0.0 or ::)
+	8	Blocked	❌	By upstream server (NXDOMAIN with RA bit unset)
+	9	Blocked	❌	Domain contained in gravity database
+	               Blocked during deep CNAME inspection
+	10	Blocked	❌	Domain matched by a regex blacklist filter
+	               Blocked during deep CNAME inspection
+	11	Blocked	❌	Domain contained in exact blacklist
+	               Blocked during deep CNAME inspection
+	12	Allowed	✅	Retried query
+	13	Allowed	✅	Retried but ignored query (this may happen during ongoing DNSSEC validation)
+	14	Allowed	✅	Already forwarded, not forwarding again
+
+VACIAR EL LOG HISTORICO:
+ sudo service pihole-FTL stop
+ sudo rm /etc/pihole/pihole-FTL.db
+ sudo service pihole-FTL start
+
+BLACKLIST:
+ .cloudlinks.cn
+ .videoipcamera.cn
+ .videoipcamera.com
+
+reconfig.sh pfsense:
+nano /conf/config.xml
+rm /tmp/config.cache
+
+DNS server(s)	
+192.1.1.103
+8.8.8.8
+8.8.4.4
+1.1.1.1
+1.0.0.1
+208.67.222.222
+208.67.220.220
+1.1.1.2
+1.0.0.2
+1.1.1.3
+1.0.0.3
+9.9.9.9
+149.112.112.112
+190.121.224.41
+190.121.224.42
+200.44.32.12
+200.44.32.13
+200.35.65.3
+200.35.65.4
+
+/etc/pihole/gravity.db 
+	TABLAS
+		adlist               
+		domainlist_by_group  
+		vw_gravity
+		adlist_by_group      
+		gravity              
+		vw_regex_blacklist
+		client               
+		group                
+		vw_regex_whitelist
+		client_by_group      
+		info                 
+		vw_whitelist
+		domain_audit         
+		vw_adlist
+		domainlist           
+		vw_blacklist
+	
+	TABLA domainlist_by_group
+		campos:
+			0|domainlist_id|INTEGER|1||1
+			1|group_id|INTEGER|1||2
+		datos:
+			2513|0
+			2514|0
+	TABLA group
+		campos:
+			0|id|INTEGER|0||1
+			1|enabled|BOOLEAN|1|1|0
+			2|name|TEXT|1||0
+			3|date_added|INTEGER|1|cast(strftime('%s', 'now') as int)|0
+			4|date_modified|INTEGER|1|cast(strftime('%s', 'now') as int)|0
+			5|description|TEXT|0||0
+		datos:
+			0|1|Default|1649787988|1649787988|
+			2|1|BloqPagOcio|1655480819|1655480819|Dominios de ocio a bloquear (facebook, youtube, etc)
+	TABLA domainlist
+		campos:
+			0|id|INTEGER|0||1
+			1|type|INTEGER|1|0|0
+			2|domain|TEXT|1||0
+			3|enabled|BOOLEAN|1|1|0
+			4|date_added|INTEGER|1|cast(strftime('%s', 'now') as int)|0
+			5|date_modified|INTEGER|1|cast(strftime('%s', 'now') as int)|0
+			6|comment|TEXT|0||0
+		datos:
+			2513|3|(.*|^)whatsapp.tv$|1|1655485201|1655485201|
+			2514|3|(.*|^)vix.com$|1|1655485201|1655485201|
+	VIEW vw_regex_blacklist
+		campos:
+			0|domain|TEXT|0||0
+			1|id|INTEGER|0||0
+			2|group_id|INTEGER|0||0
+		datos:
+			(.*|^)whatsapp.tv$|2513|0
+			(.*|^)vix.com$|2514|0
+
+sqlite> update domainlist_by_group set group_id=2 where domainlist_id=2513;
+sqlite> update domainlist_by_group set group_id=2 where domainlist_id=2514;
+
+Install The Web Interface On An Existing Pi-hole:
+# https://pi-hole.net/blog/2015/10/04/install-the-web-interface-on-an-existing-pi-hole/
+# Download and installthe web interface:
+  sudo wget https://github.com/jacobsalmela/AdminLTE/archive/master.zip -O ~/piholeweb.zip
+  sudo unzip ~/piholeweb.zip -d /donde/este/el/root/web/pihole
+# Make sure that dnsmasq can read the log file:
+  sudo touch /var/log/pihole.log
+  sudo chmod 644 /var/log/pihole.log
+  sudo chown dnsmasq:root /var/log/pihole.log
+# Modify /etc/lighttpd/lighttpd.conf:
+# Al final de /etc/lighttpd/lighttpd.conf:
+  include "/etc/lighttpd/pihole.redlocal.red.conf"
+# Generar el /etc/lighttpd/pihole.redlocal.red.conf con:
+  $HTTP["host"] =~ "pihole\.redlocal\.red" {
+            server.document-root = "/donde/este/el/root/web/pihole/"
+            accesslog.filename   = "/donde/este/el/root/web/pihole/pihole_access.log"
+  }
+# Reiniciar el servidor web:
+  sudo service lighttpd restart
