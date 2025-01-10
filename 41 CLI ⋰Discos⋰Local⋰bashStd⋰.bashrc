@@ -36,7 +36,6 @@
 
 # Avisar y registrar para debugging:
 # echo "Configuracion del command history" >> ~/Arranque_bash.log
-
 ########## CONFIGURACION DEL HISTORY ##########
 # Don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -56,7 +55,8 @@
   export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 ################################################
 
-echo "Definición de aliases en /Discos/Local/bashStd/.bash_aliases" >> ~/Arranque_bash.log
+# Avisar y registrar para debugging:
+# echo "Definición de aliases en /Discos/Local/bashStd/.bash_aliases" >> ~/Arranque_bash.log
 ########## DEFINICIONES DE ALIASES #############
 # Es mas ordenado poner los aliases en otro archivo
 #  Lo normal es ~/.bash_aliases, pero se puede poner en otro lado
