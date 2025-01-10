@@ -172,45 +172,45 @@ bash_prompt() {
         ## I use them for different hosts. Test them out ;)                       ##
         ############################################################################
         ## CONFIGURATION: BLUE-WHITE
-        if [ "$HOSTNAME" = dell ]; then
-                FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLUE; TEXTEFFECT_1=$BOLD
-                FONT_COLOR_2=$WHITE; BACKGROUND_2=$L_BLUE; TEXTEFFECT_2=$BOLD
-                FONT_COLOR_3=$D_GRAY; BACKGROUND_3=$WHITE; TEXTEFFECT_3=$BOLD
-                PROMT_FORMAT=$CYAN_BOLD
-        fi
+#        if [ "$HOSTNAME" = dell ]; then
+#                FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLUE; TEXTEFFECT_1=$BOLD
+#                FONT_COLOR_2=$WHITE; BACKGROUND_2=$L_BLUE; TEXTEFFECT_2=$BOLD
+#                FONT_COLOR_3=$D_GRAY; BACKGROUND_3=$WHITE; TEXTEFFECT_3=$BOLD
+#                PROMT_FORMAT=$CYAN_BOLD
+#        fi
         ## CONFIGURATION: BLACK-RED
-        if [ "$HOSTNAME" = giraff6 ]; then
-                FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
-                FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
-                FONT_COLOR_3=$WHITE; BACKGROUND_3=$RED; TEXTEFFECT_3=$BOLD
-                PROMT_FORMAT=$RED_BOLD
-        fi
+#        if [ "$HOSTNAME" = giraff6 ]; then
+#                FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
+#                FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
+#                FONT_COLOR_3=$WHITE; BACKGROUND_3=$RED; TEXTEFFECT_3=$BOLD
+#                PROMT_FORMAT=$RED_BOLD
+#        fi
         ## CONFIGURATION: RED-BLACK
         #FONT_COLOR_1=$WHITE; BACKGROUND_1=$RED; TEXTEFFECT_1=$BOLD
         #FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
         #FONT_COLOR_3=$WHITE; BACKGROUND_3=$BLACK; TEXTEFFECT_3=$BOLD
         #PROMT_FORMAT=$RED_BOLD
         ## CONFIGURATION: CYAN-BLUE
-        if [ "$HOSTNAME" = sharkoon ]; then
-                FONT_COLOR_1=$BLACK; BACKGROUND_1=$L_CYAN; TEXTEFFECT_1=$BOLD
-                FONT_COLOR_2=$WHITE; BACKGROUND_2=$L_BLUE; TEXTEFFECT_2=$BOLD
-                FONT_COLOR_3=$WHITE; BACKGROUND_3=$BLUE; TEXTEFFECT_3=$BOLD
-                PROMT_FORMAT=$CYAN_BOLD
-        fi
+ #       if [ "$HOSTNAME" = sharkoon ]; then
+ #               FONT_COLOR_1=$BLACK; BACKGROUND_1=$L_CYAN; TEXTEFFECT_1=$BOLD
+ #               FONT_COLOR_2=$WHITE; BACKGROUND_2=$L_BLUE; TEXTEFFECT_2=$BOLD
+ #               FONT_COLOR_3=$WHITE; BACKGROUND_3=$BLUE; TEXTEFFECT_3=$BOLD
+ #               PROMT_FORMAT=$CYAN_BOLD
+ #       fi
         ## CONFIGURATION: GRAY-SCALE
-        if [ "$HOSTNAME" = giraff ]; then
-                FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
-                FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
-                FONT_COLOR_3=$WHITE; BACKGROUND_3=$L_GRAY; TEXTEFFECT_3=$BOLD
-                PROMT_FORMAT=$BLACK_BOLD
-        fi
+ #       if [ "$HOSTNAME" = giraff ]; then
+ #               FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
+ #               FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
+ #               FONT_COLOR_3=$WHITE; BACKGROUND_3=$L_GRAY; TEXTEFFECT_3=$BOLD
+ #               PROMT_FORMAT=$BLACK_BOLD
+ #       fi
         ## CONFIGURATION: GRAY-CYAN
-        if [ "$HOSTNAME" = light ]; then
-                FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
-                FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
-                FONT_COLOR_3=$BLACK; BACKGROUND_3=$L_CYAN; TEXTEFFECT_3=$BOLD
-                PROMT_FORMAT=$CYAN_BOLD
-        fi
+ #       if [ "$HOSTNAME" = light ]; then
+ #               FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
+ #               FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
+ #               FONT_COLOR_3=$BLACK; BACKGROUND_3=$L_CYAN; TEXTEFFECT_3=$BOLD
+ #               PROMT_FORMAT=$CYAN_BOLD
+ #       fi
 
         ############################################################################
         ## TEXT FORMATING                                                         ##
