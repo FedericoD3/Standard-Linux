@@ -11,9 +11,10 @@
 # echo "######## EJECUTANDO ${0}" | tee --append ~/Arranque_bash.log
 
 # Para recargar ediciones a este archivo, ejecutar
-# source /Discos/Local/bashStd/.bashrc
-  echo "sleep 2 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
-  sleep 2   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
+#  source /Discos/Local/bashStd/.bashrc
+  echo "sleep 1 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
+  sleep 1   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
+  clear
 
 # Mensajes iniciales:
   run-parts /Discos/Local/bashStd/motd.d
