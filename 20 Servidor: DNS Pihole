@@ -64,3 +64,6 @@
 #  desmarcar los DNS activos a la izquierda
 #  Ingresar y activar un "Custom DNS" a la derecha, que apunte al puerto de unbound del IP local 127.0.0.1#5335
 #  Click en [Salvar] abajo al final. Ya el pihole no depende de Google, Cloudflare, Quad9 ni del ISP.
+
+# COMANDOS UTILES:
+
