@@ -34,6 +34,10 @@
   EZA=$EZA":nt=2;3"            # Tamaño mayor a 1 TB/TiB = gris cursiva
   export EZA_COLORS=$EZA
 
+# Avisar y registrar para debuggi   
+# echo "Decoracion del prompt con FancyBash" >> ~/Arranque_bash.log
+  source /Discos/Local/bashStd/FancyBash.sh
+
 # Avisar y registrar para debugging:
 # echo "Configuracion del command history" >> ~/Arranque_bash.log
 ########## CONFIGURACION DEL HISTORY ##########
@@ -70,9 +74,8 @@
 # Para que no tenga indents enormes
   tabs 2
 
-echo "Decoracion del prompt con FancyBash" >> ~/Arranque_bash.log
-source /Discos/Local/bashStd/FancyBash.sh
-return
+# Pasar al fin al terminal 
+  return
 
 
 
