@@ -7,7 +7,7 @@ ColorHost="1;33"
 greetingsColor="30;38;5;103"
 userColor="30;48;5;67"
 
-Hoy="$(color $greetingsColor "⮞ $(LC_ALL=es_VE.utf8 date +"%A %d de %B de %Y, %H:%M:%S")")"
+Hoy="$(color $greetingsColor "⮞ $(LC_ALL=es_VE.utf8 date +"%A %d de %B de %Y, %H:%M:%S")")\t"$(curl -s wttr.in/Maracay?format=2)
 echo -e "\n"$Hoy
 
 me="Bienvenido a "
