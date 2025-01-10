@@ -26,8 +26,8 @@ echo "Configuracion del command history" >> ~/Arranque_bash.log
   export HISTIGNORE="history:otrocomando:cualquierotro"
 # Store multi-line commands in one history entry:
   shopt -s cmdhist
-# append and reload the history after each command
-  PROMPT_COMMAND="history -a; history -n curl wttr.in/Maracay?format=2"
+# append and reload the history after each command 
+  PROMPT_COMMAND="history -a; history -n" 
 ################################################
 
 echo "Definición de aliases en /Discos/Local/bashStd/.bash_aliases" >> ~/Arranque_bash.log
@@ -93,8 +93,8 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-unset color_prompt force_color_prompt
 
+unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -104,6 +104,8 @@ xterm*|rxvt*)
 *)
     ;;
 esac
+
+PS1=$PS1 "/" $(curl wttr.in/Maracay?format=2)
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
