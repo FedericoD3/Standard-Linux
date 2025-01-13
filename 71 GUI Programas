@@ -27,3 +27,8 @@
   echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee /etc/apt/sources.list.d/vysor.list 
   sudo nala update 
   sudo nala install -y vysor
+
+# Reproductor de video mas ligero que VLC
+  sudo add-apt-repository ppa:rvm/smplayer 
+  sudo apt-get update 
+  sudo nala install smplayer smplayer-themes
