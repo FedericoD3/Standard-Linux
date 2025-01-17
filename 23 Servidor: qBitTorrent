@@ -2,7 +2,7 @@
   sudo apt install qbittorrent-nox
 # 
   sudo adduser --system --group qbittorrent-nox
-  sudo adduser your-username qbittorrent-nox
+  sudo adduser $USER qbittorrent-nox
   sudo nano /etc/systemd/system/qbittorrent-nox.service
 # Con el contenido:
   [Unit]
