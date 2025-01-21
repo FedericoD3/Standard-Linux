@@ -1,0 +1,20 @@
+  # Chequear que la virtualización de kernel esté activa:
+    sudo apt install cpu-checker -y
+    sudo kvm-ok
+  # Debe contestar
+  #  INFO: /dev/kvm exists
+  #  KVM acceleration can be used
+
+  # QEMU y utilities
+    sudo nala install libvirt-clients libvirt-daemon-system qemu-kvm bridge-utils dnsmasq virt-manager virtinst
+
+  # Agregar este usuario al grupo de virtualizadores
+    sudo usermod -aG libvirt $(whoami)
+    sudo usermod -aG kvm $(whoami)
+
+  # Iniciar y dejar automático el daemon de virtualizacion
+    sudo systemctl start  libvirtd
+    sudo systemctl enable libvirtd
+
+  # OPCIONAL: Instalar un GUI de administración de VMs:
+    sudo nala install aqemu
