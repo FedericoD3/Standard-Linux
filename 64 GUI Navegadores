@@ -37,7 +37,8 @@
   #  Preferible AVX2
   #  Ver el CPU exacto con cat /proc/cpuinfo y googlear (AMD Ryzen 3 2200G soporta SSE4.2 y AVX2)
   #  Si no hay navegador descargarlo "a pie"
-  wget https://github.com/Alex313031/thorium/releases/download/M126.0.6478.231/thorium-browser_126.0.6478.231_AVX2.deb 
+  # 2024-10-18:
+  wget https://github.com/Alex313031/thorium/releases/download/M128.0.6613.189/thorium-browser_128.0.6613.189_AVX2.deb  
   sudo nala install ./thorium-browser_126.0.6478.231_AVX2.deb   
 
 # Otros Navegadores ligeros:
