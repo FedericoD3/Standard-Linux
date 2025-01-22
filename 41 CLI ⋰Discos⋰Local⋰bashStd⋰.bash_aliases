@@ -12,7 +12,6 @@ alias ls='ls --color=auto'
 # --only-files
 alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && eza --icons=never --time-style=long-iso --absolute -BAl --total-size --level 2'
 alias ping='ping -c 4 $1'
-# alias pingmon='ping -D $1 | awk '{if(gsub(/\[|\]/, "", $1)) {$1= strftime("[%F %T]", $1); print} else print }''
 alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
 alias carpetas='smbclient -L $(hostname) -U "$1" '
@@ -44,6 +43,10 @@ alias hostsl="cat /etc/hosts | less"
     alias sdell='ssh    -p    22 FedericoD3@servidordell.viejasduran.red'
     alias pizw01='ssh   -p    22 FedericoD3@pizw-01.viejasduran.red'
     alias wifiDF1='ssh  -p    22 root@DF-AP1.viejasduran.red'
+
+pingmon () {
+  ping -D $1 | awk '{if(gsub(/\[|\]/, "", $1)) {$1= strftime("[%F %T]", $1); print} else print }'
+}
 
 fuentes () {
   echo "/etc/apt/sources.list:"
