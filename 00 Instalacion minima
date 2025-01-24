@@ -1,6 +1,6 @@
 # OJO SI VA A SER DUAL BOOT CON WINDOWS INSTALAR ESE PRIMERO
 #  porque la instalación de Windows sobreescribe grub y bootea automático
-                                    https://cdimage.debian.org/debian-cd/current/
+
 # Descargar el ISO instalador desde https://cdimage.debian.org/cdimage/release/current/
 #  o el ISO Live (sólo 64 bits)     https://cdimage.debian.org/cdimage/release/current-live/
 # Sstandard.iso sin GUI y después agregar lo que se haga falta (requiere tener coneión a internet)
