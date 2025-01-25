@@ -49,9 +49,7 @@
   sudo nala install dnstracer
   sudo nala install nmap
   sudo nala install net-tools
-  sudo nala install gvfs-backends     # Para que el administrador de archivos pueda ver la red
-
-
+  sudo nala install gvfs-backends     # Para que un posible administrador gráfico de archivos pueda ver la red
 
 
 # SI PREFIERES MANUAL CON IFCONFIG (p.e. para servidores que casi nunca cambian de IP):
@@ -103,4 +101,3 @@
 # Redirigir permanentemente un puerto entrante a otro donde escucha el servicio:
   sudo nano /etc/network/interfaces
   post-up iptables -t nat -A PREROUTING -d 192.1.1.99 -p tcp --dport 40990 -j REDIRECT --to-port 8006 || true
-  
