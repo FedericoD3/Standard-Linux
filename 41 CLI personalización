@@ -44,6 +44,8 @@
     sudo ln /Discos/Local/bashStd/.bashrc /root/.bashrc
 
 # FONTS EXTRA:
+  # Powerline (caracteres gráficos para coquetería del shell)
+    sudo apt install fonts-powerline
   # FiraCode:
     wget https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip
     sudo unzip Fira_Code_v6.2.zip -d /usr/share/fonts/Extra-FiraCode
