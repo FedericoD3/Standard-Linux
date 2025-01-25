@@ -37,9 +37,9 @@
   # Ctrl+s para salvar, Ctrl+x para salir
 
 # Agregar el usuario a los autorizados para ejecutar comandos super usuario:
-  sudo usermod -aG sudo nombreusuario
+    sudo usermod -aG sudo nombreusuario
   # También puede hacerse agregándolo al grupo sudo:
-  #  sudo adduser Admin sudo
+    sudo adduser Admin sudo
   # O editando el archivo sudoers:
     sudo chmod +w /etc/sudoers
     sudo nano /etc/sudoers
@@ -55,5 +55,3 @@
 # Si pidió clave y permitió la elevación de privilegios, 
 # se puede eliminar el usuario temporal original en minusculas:
   sudo userdel comosellame
-
-
