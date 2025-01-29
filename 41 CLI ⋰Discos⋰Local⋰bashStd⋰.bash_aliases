@@ -37,7 +37,7 @@ alias hostsl="cat /etc/hosts | less"
   # UnimatrixZero
     alias ptb='echo ssh FedericoD3@ptbarnum.unimatrixzero.red     && ssh FedericoD3@ptbarnum.unimatrixzero.red'
     alias mcp='echo ssh FedericoD3@mcp.unimatrixzero.red          && ssh FedericoD3@mcp.unimatrixzero.red'
-    alias pi01='ssh     -p 40062 federico@pi-01.unimatrixzero.red'
+    alias pi01='echo ssh FedericoD3@pi-01.unimatrixzero.red       && ssh FedericoD3@pi-01.unimatrixzero.red'
     alias hedy='ssh     -p 42502 root@hedylamarr.unimatrixzero.red'
     alias mazinger='ssh -p    22 FedericoD3@mazinger.unimatrixzero.red'
   # ViejasDuran
