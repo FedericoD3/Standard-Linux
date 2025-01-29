@@ -5,12 +5,15 @@
 
 # Repetir para cada servidor:
 # Copiar la llave:
-  ssh-copy-id -p 22 UsuarioRemoto@servidor.remoto.com 
+  ssh-copy-id UsuarioRemoto@servidorRemoto
 # Pedirá (por última vez a este cliente) la clave del usuario remoto:
 #  UsuarioRemoto@servidor.remoto.com's password: 
 # Mostrará los mensajes de saludo del servidor remoto, 
 #  y el mensaje "Number of key(s) added: 1"
 
 # Verificar que el servidor remoto reconoce el cliente, si no pide clave iniciando sesión:
-  ssh - p 22 UsuarioRemoto@servidor.remoto.com
+  ssh UsuarioRemoto@servidorRemoto
 
+# NOTA:
+#  Si /etc/ssh/ssh_config tiene configurado otro puerto que no sea el default 22,
+#  ssh-copy-id tratará de conectarse con el puerto no standard que esté configurado localmente
