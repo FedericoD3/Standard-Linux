@@ -43,7 +43,9 @@
       # o en cualquier otro archivo accesible, pero anotarlo
       sudo x11vnc -storepasswd /etc/x11vnc.passwd
       sudo chmod 744 /etc/x11vnc.passwd
-    # Preparar el servicio:
+    # Para ejecutarlo manualmente sólo cuando haga falta:
+      /usr/bin/x11vnc -display :0
+    # Para ejecutarlo siempre en el inicio como un servicio:
       sudo nano /lib/systemd/system/x11vnc.service
       # con este contenido:
         [Unit]
