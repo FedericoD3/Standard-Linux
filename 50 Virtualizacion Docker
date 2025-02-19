@@ -25,11 +25,11 @@
 # Administradores web para docker:
   # Portainer
     # Crear el almacenamiento para la base de datos de portainer:
-      docker volume create portainer_data
-      # Para resetear todo:
-        docker volume rm portainer_data
+        sudo docker volume create portainer_data
+      # NOTA: para resetear todo:
+      # docker volume rm portainer_data
     # Descargar la imagen y ejecutar el container con los defaults:
-      docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.21.5
+      sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
     # Chequear que arrancó y está accesible en esos puertos:
       docker ps
     # Conectarse a http://<IP>:8000 o a https://<IP>:9443
