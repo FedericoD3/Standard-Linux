@@ -18,9 +18,10 @@
   docker ps --all 	        # Listar containers activos e inactivos
   docker ps --quiet	        # Listar sólo los container_id
   docker stop nombre_container
-
-  docker rmi <image_id>	    # Eliminar una imagen, si no la está usando ningún container
   docker rm <containerId>	  # Eliminar un container
+  sudo docker images        # Listar imagenes ("plantillas")
+  docker rmi <image_id>	    # Eliminar una imagen, si no la está usando ningún container
+
 
 # Administradores web para docker:
   # Portainer
@@ -33,3 +34,6 @@
     # Chequear que arrancó y está accesible en esos puertos:
       docker ps
     # Conectarse a http://<IP>:8000 o a https://<IP>:9443
+    # Para resetear el password:
+      docker pull portainer/helper-reset-password
+      docker run --rm -v portainer_data:/data portainer/helper-reset-password
