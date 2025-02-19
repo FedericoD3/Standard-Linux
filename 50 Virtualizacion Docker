@@ -18,10 +18,6 @@
   sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   sudo docker run hello-world
 
-nano ~/AlgunDir/compose.yaml
-# 
-docker compose up -d
-
 # Comandos:
   docker ps       	        # Listar containers activos
   docker ps --all 	        # Listar containers activos e inactivos
