@@ -1,10 +1,5 @@
 # Desinstalar versiones previas potencialmente conflictogénicas:
-  sudo apt remove docker.io
-  sudo apt remove docker-doc 
-  sudo apt remove docker-compose
-  sudo apt remove podman-docker
-  sudo apt remove containerd
-  sudo apt remove runc
+  sudo apt remove docker.io docker-doc docker-compose podman-docker containerd runc
 
 # Instalar Docker:
   sudo apt update
