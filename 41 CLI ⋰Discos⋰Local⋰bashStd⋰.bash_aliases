@@ -32,7 +32,7 @@ alias hostsl="cat /etc/hosts | less"
     alias aramis='echo ssh -p 41032 Admin@aramis.alfica.red && ssh -p 41032 Admin@aramis.alfica.red'
     alias sistjefe='echo ssh Admin@sistjefe-pc.alfica.red   && ssh Admin@sistjefe-pc.alfica.red'
     alias sistaux='echo ssh Admin@sistaux-pc.alfica.red     && ssh Admin@sistaux-pc.alfica.red'
-    alias hermes='echo ssh Admin@hermes.alfica.red -p 42502 && ssh Admin@hermes.alfica.red -p 42502'
+    alias hermes='echo ssh Admin@hermes.alfica.red          && ssh Admin@hermes.alfica.red'
     alias dvr0='echo ssh Admin@dvr0.alfica.red              && ssh Admin@dvr0.alfica.red'
   # UnimatrixZero
     alias ptb='echo ssh FedericoD3@ptbarnum.unimatrixzero.red      && ssh FedericoD3@ptbarnum.unimatrixzero.red'
