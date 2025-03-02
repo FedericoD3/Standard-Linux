@@ -13,15 +13,15 @@
   # Crear el directorio para configuración standard de terminales:
     sudo mkdir -p /Discos/Local/bashStd/motd.d
   # Descargar de aquí los archivos de configuración personalizada:
-    wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/4mz2cdn2
-    wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/2cycovkw
-    wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/284jmpk2
-    wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2xkkhpuk
-    wget --output-document=/Discos/Local/bashStd/motd.d/15-Specs      https://tinyurl.com/23y72h4z
-    wget --output-document=/Discos/Local/bashStd/motd.d/20-IPs        https://tinyurl.com/2dksco7c
-    wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2a6h3elt
-    wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/27zb44l3
-    wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/276lkf2t
+    sudo wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/4mz2cdn2
+    sudo wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/2cycovkw
+    sudo wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/284jmpk2
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2xkkhpuk
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/15-Specs      https://tinyurl.com/23y72h4z
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/20-IPs        https://tinyurl.com/2dksco7c
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2a6h3elt
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/27zb44l3
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/276lkf2t
     sudo chmod +x /Discos/Local/bashStd/motd.d/*
 
   # Crear un hardlink de la configuración personalizada standard a la configuración común con login (cónsola física o remota ssh):
@@ -36,7 +36,7 @@
 
   # Crear un hardlink de la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) de usuarios ya existentes:
     rm .bashrc
-    ln /Discos/Local/bashStd/.bashrc .bashrc
+    sudo ln /Discos/Local/bashStd/.bashrc .bashrc
     # (repetir para cada usuario existente)
 
 # Crear un hardlink de la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) del usuario root:
