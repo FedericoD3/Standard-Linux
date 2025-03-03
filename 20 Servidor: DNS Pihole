@@ -22,6 +22,7 @@
     sudo apt install unbound
 #   Descargar los "root hints", los IPs de los servidores DNS base
     sudo wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+    # Conviene agrear el anterior en el cron de root, digamos cada semana
 #   Configurar unbound:
     sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
 #     Con este contenido:
