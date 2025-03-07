@@ -17,7 +17,7 @@ alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
 alias carpetas='smbclient -L $(hostname) -U "$1" '
 # alias puertos='sudo netstat -tulpn | grep LISTEN'
-  alias puertos='sudo lsof -i -P -n | grep LISTEN'
+  alias puertos='echo "sudo lsof -i -P -n | grep LISTEN" && sudo lsof -i -P -n | grep LISTEN'
 alias mkdir="mkdir -pv"
 alias hg='history | grep  "$@" '
 alias hn='history $1 '
