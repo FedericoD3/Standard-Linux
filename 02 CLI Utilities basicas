@@ -1,5 +1,7 @@
 #!/bin/bash
 # UTILITIES BASICAS PARA EL TERMINAL
+  apt-get update
+  apt-get upgrade -y
 
 # Instalar los comandos para descarga web
   sudo apt install curl wget
