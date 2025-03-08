@@ -1,5 +1,5 @@
   sudo apt install ntp curl
-  curl -sSL https://install.pi-hole.net | sudo bash
+  curl -sSL https://install.pi-hole.net | PIHOLE_SKIP_OS_CHECK=true sudo bash
 #  1 Continuar si el computador tiene IP estático o reservado, configurarlo en otro terminal si no es el caso
 #  2 Selecionar la interfaz por la que se atenderá DNS (la que mira a la red interna!)
 #  3 Aceptar la configuración actual de IP (del paso 1), configurarlo si no se ha hecho, o aceptar el "lo hago luego"
