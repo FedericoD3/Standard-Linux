@@ -10,11 +10,16 @@
   sudo nala update
   sudo nala install syncthing
 
-# Editar el servicio para que atienda por el puerto que me convenga, agregando
+# Editar el servicio para que atienda por el puerto que me convenga
+#  y que atienda cualquier equipo y no solo localhost 127.0.0.1
+#  agregando a la línea de "ExecStart...":
 #   --gui-address="0.0.0.0:4xxx3"
-# a la línea de "ExecStart..."
+#  o dejar el puerto default pero atender cualquier IP
+#   --gui-address="0.0.0.0:8384"
   sudo nano /lib/systemd/system/syncthing@.service
+#  y después de salvar el servicio:
   sudo systemctl daemon-reload
+  sudo systemctl restart syncthing@$USER.service
 
 # https://www.linuxbabe.com/debian/install-syncthing
 # Enable syncthing to auto start at boot time by running the below command. 
