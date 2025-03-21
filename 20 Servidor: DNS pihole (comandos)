@@ -35,6 +35,8 @@ Si hace falta,
 sudo apt install sqlite3
  Conectarse a la base de datos:
   sqlite3 /etc/pihole/pihole-FTL.db 	(sudo si se hará insert/update/delete)
+  # Pihole v6 viene con sqlite3 incluído como argumento del ejecutable:
+  pihole-FTL sqlite3 /etc/pihole/pihole-FTL.db
  Listar las tablas:
   .tables
  Listar los campos de una tabla
