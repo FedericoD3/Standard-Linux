@@ -28,7 +28,7 @@ alias hostsl="cat /etc/hosts | less"
 
 # Aliases de conexión remota:
   # Alfica
-    alias portos='echo ssh Admin@portos.alfica.red          && ssh root@portos.alfica.red'
+    alias portos='echo ssh Admin@portos.alfica.red          && ssh Admin@portos.alfica.red'
     alias atos='echo ssh -p 41022 Admin@atos.alfica.red     && ssh -p 41022 Admin@atos.alfica.red'
     alias aramis='echo ssh -p 41032 Admin@aramis.alfica.red && ssh -p 41032 Admin@aramis.alfica.red'
     alias sistjefe='echo ssh Admin@sistjefe-pc.alfica.red   && ssh Admin@sistjefe-pc.alfica.red'
