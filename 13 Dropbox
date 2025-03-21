@@ -1,3 +1,5 @@
+https://www.linuxbabe.com/ubuntu/install-dropbox-headless-ubuntu-server
+
 ###    # ALTERNATIVA NO SE SI PRACTICA:
 ###    # (sólo crea un symlink del directorio deseado a ~/Dropbox standard)
 ###      cp ~/Dropbox /Directorio/en/otro/lado/Dropbox
