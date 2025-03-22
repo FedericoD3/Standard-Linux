@@ -30,6 +30,11 @@ y reiniciar el DNS
 o
   sudo pihole restartdns
 
+sudo service pihole-FTL restart
+sudo pihole-FTL --config 
+sudo pihole-FTL --teleporter /dir/destino/ConfPihole_$(hostname)_$(date +%
+sudo pihole-FTL dhcp-discover 
+
 ACCESO DIRECTO A LA BASE DE DATOS:
 Si hace falta, 
 sudo apt install sqlite3
