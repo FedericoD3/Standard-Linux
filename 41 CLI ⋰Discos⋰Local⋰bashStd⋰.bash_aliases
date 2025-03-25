@@ -36,11 +36,11 @@ alias hostsl="cat /etc/hosts | less"
     alias hermes='echo ssh Admin@hermes.alfica.red          && ssh Admin@hermes.alfica.red'
     alias dvr0='echo ssh Admin@dvr0.alfica.red              && ssh Admin@dvr0.alfica.red'
   # UnimatrixZero
-    alias ptb='echo ssh FedericoD3@ptbarnum.unimatrixzero.red      && ssh FedericoD3@ptbarnum.unimatrixzero.red'
-    alias mcp='echo ssh FedericoD3@mcp.unimatrixzero.red           && ssh FedericoD3@mcp.unimatrixzero.red'
-    alias pi01='echo ssh FedericoD3@pi01.unimatrixzero.red         && ssh FedericoD3@pi01.unimatrixzero.red'
-    alias hedy='echo -p 42502 ssh root@hedylamarr.unimatrixzero.red         && ssh -p 42502 root@hedylamarr.unimatrixzero.red'
-    alias mazinger='echo ssh FedericoD3@mazinger.unimatrixzero.red && ssh FedericoD3@mazinger.unimatrixzero.red'
+    alias ptb='echo ssh FedericoD3@ptbarnum.unimatrixzero.red       && ssh FedericoD3@ptbarnum.unimatrixzero.red'
+    alias mcp='echo ssh FedericoD3@mcp.unimatrixzero.red            && ssh FedericoD3@mcp.unimatrixzero.red'
+    alias pi01='echo ssh FedericoD3@pi01.unimatrixzero.red          && ssh FedericoD3@pi01.unimatrixzero.red'
+    alias hedy='echo -p 42502 ssh root@hedylamarr.unimatrixzero.red && ssh -p 42502 root@hedylamarr.unimatrixzero.red'
+    alias mazinger='echo ssh FedericoD3@mazinger.unimatrixzero.red  && ssh FedericoD3@mazinger.unimatrixzero.red'
   # ViejasDuran
     alias sdell='ssh    -p    22 FedericoD3@servidordell.viejasduran.red'
     alias pizw01='ssh   -p    22 FedericoD3@pizw-01.viejasduran.red'
