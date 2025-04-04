@@ -28,13 +28,12 @@ alias hostsl="cat /etc/hosts | less"
 
 # Aliases de conexión remota:
   # Alfica
-    alias portos='echo ssh Admin@portos.alfica.red          && ssh Admin@portos.alfica.red'
-    alias atos='echo ssh -p 41022 Admin@atos.alfica.red     && ssh -p 41022 Admin@atos.alfica.red'
-    alias aramis='echo ssh -p 41032 Admin@aramis.alfica.red && ssh -p 41032 Admin@aramis.alfica.red'
-    alias sistjefe='echo ssh Admin@sistjefe-pc.alfica.red   && ssh Admin@sistjefe-pc.alfica.red'
-    alias sistaux='echo ssh Admin@sistaux-pc.alfica.red     && ssh Admin@sistaux-pc.alfica.red'
-    alias hermes='echo ssh Admin@hermes.alfica.red          && ssh Admin@hermes.alfica.red'
-    alias dvr0='echo ssh Admin@dvr0.alfica.red              && ssh Admin@dvr0.alfica.red'
+    alias portos='echo ssh root@portos.alfica.red          && ssh root@portos.alfica.red'
+    alias atos='echo ssh -p 41022 root@atos.alfica.red     && ssh -p 41022 root@atos.alfica.red'
+    alias aramis='echo ssh -p 41032 root@aramis.alfica.red && ssh -p 41032 root@aramis.alfica.red'
+    alias sistjefe='echo ssh root@sistjefe-pc.alfica.red   && ssh root@sistjefe-pc.alfica.red'
+    alias hermes='echo ssh root@hermes.alfica.red          && ssh root@hermes.alfica.red'
+    alias dvr0='echo ssh root@dvr0.alfica.red              && ssh root@dvr0.alfica.red'
   # UnimatrixZero
     alias ptb='echo ssh FedericoD3@ptbarnum.unimatrixzero.red       && ssh FedericoD3@ptbarnum.unimatrixzero.red'
     alias mcp='echo ssh FedericoD3@mcp.unimatrixzero.red            && ssh FedericoD3@mcp.unimatrixzero.red'
