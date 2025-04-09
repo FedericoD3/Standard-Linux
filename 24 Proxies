@@ -1,0 +1,13 @@
+##### TINYPROXY
+sudo apt update
+sudo apt upgrade
+sudo apt install tinyproxy nano
+sudo systemctl enable tinyproxy
+sudo nano /etc/tinyproxy/tinyproxy.conf
+  # Asignar 
+    Port 12345           # El que se desée
+    Bind 111.222.333.444 # El IP de la interfaz del host
+    Allow 10.0.0.0/8     # Permitir conexión de los IP de los clientes
+    ConnectPort 443      # Permitir este puerto
+    ConnectPort 563      # Permitir este puerto
+sudo service tinyproxy restart
