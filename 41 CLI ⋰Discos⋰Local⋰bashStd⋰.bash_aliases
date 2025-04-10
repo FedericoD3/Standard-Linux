@@ -41,9 +41,9 @@ alias hostsl="cat /etc/hosts | less"
     alias hedy='echo -p 42502 ssh root@hedylamarr.unimatrixzero.red && ssh -p 42502 root@hedylamarr.unimatrixzero.red'
     alias mazinger='echo ssh FedericoD3@mazinger.unimatrixzero.red  && ssh FedericoD3@mazinger.unimatrixzero.red'
   # ViejasDuran
-    alias sdell='ssh    -p    22 FedericoD3@servidordell.viejasduran.red'
-    alias pizw01='ssh   -p    22 FedericoD3@pizw-01.viejasduran.red'
-    alias wifiDF1='ssh  -p    22 root@DF-AP1.viejasduran.red'
+    alias sdell='echo ssh FedericoD3@servidordell.viejasduran.red && ssh FedericoD3@servidordell.viejasduran.red'
+    alias pizw01='echo ssh FedericoD3@pizw01.viejasduran.red      && ssh FedericoD3@pizw01.viejasduran.red'
+    alias wifiDF1='echo ssh root@DF-AP1.viejasduran.red           && ssh root@DF-AP1.viejasduran.red'
 
 pingmon () {
   ping -D $1 | awk '{if(gsub(/\[|\]/, "", $1)) {$1= strftime("[%F %T]", $1); print} else print }'
