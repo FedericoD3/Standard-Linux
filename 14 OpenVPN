@@ -1,0 +1,12 @@
+mkdir OpenVPN
+cd OpenVPN    
+
+# Configuracion para RiseUpVPN
+  wget https://github.com/BarbossHack/RiseupVPN-OpenVPN/raw/refs/heads/master/generate.sh
+  wget https://github.com/BarbossHack/RiseupVPN-OpenVPN/raw/refs/heads/master/riseup-ovpn.sample.conf
+  chmod +x generate.sh
+  ./generate.sh
+
+  curl ipinfo.io
+  sudo openvpn --config riseup-ovpn.conf
+  curl ipinfo.io
