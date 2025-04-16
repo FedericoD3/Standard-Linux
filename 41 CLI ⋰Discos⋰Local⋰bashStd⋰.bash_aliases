@@ -141,11 +141,13 @@ clave () {
 }
 
 espacio () {
-  lsblk
+  echo "lsblk"
+  lsblk 
   echo
-  df -k "$1"
-# df -h "$1"
-# du -d 1 -h "$1"
+  echo "df -k "$1
+  df -k $1
+# df -h $1
+# du -d 1 -h $1
 }
 
 tamdir () {
