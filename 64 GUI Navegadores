@@ -1,32 +1,17 @@
 # BRAVE
-  sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
-  echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-  sudo apt update
-  sudo apt install brave-browser
+  curl -fsS https://dl.brave.com/install.sh | sh
 
 # LIBREWOLF
-  sudo apt update 
-  sudo apt install -y wget gnupg lsb-release apt-transport-https ca-certificates
-  distro=$(if echo " una bookworm vanessa focal jammy bullseye vera uma " | grep -q " $(lsb_release -sc) "; then lsb_release -sc; else echo focal; fi)
-  wget -O- https://deb.librewolf.net/keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/librewolf.gpg
-  sudo tee /etc/apt/sources.list.d/librewolf.sources << EOF > /dev/null
-    Types: deb
-    URIs: https://deb.librewolf.net
-    Suites: $distro
-    Components: main
-    Architectures: amd64
-    Signed-By: /usr/share/keyrings/librewolf.gpg
-    EOF
+  sudo apt install extrepo -y
+  sudo extrepo enable librewolf
   sudo apt update
   sudo apt install librewolf -y
-# Mucha complicación: mejor instalando con Discovery / Software
-
-# A veces no funciona, y es más fácil instalarlo desde la app catálogo "Discover"
-# Para que no cierre sesión en páginas como Facebook:
-# Settings > passwords and security > desmarcar 
-  [ ] Delete cookies and site data when LibreWolf is closed
-# Y marcar:
-  [*] Ask to save passwords
+  # A veces no funciona, y es más fácil instalarlo desde la app catálogo "Discover"
+  # Para que no cierre sesión en páginas como Facebook:
+  # Settings > passwords and security > desmarcar 
+    [ ] Delete cookies and site data when LibreWolf is closed
+  # Y marcar:
+    [*] Ask to save passwords
 
 # CHROMIUM
   sudo apt install chromium
@@ -36,17 +21,11 @@
   # https://github.com/Alex313031/Thorium/releases
   #  Preferible AVX2
   #  Ver el CPU exacto con cat /proc/cpuinfo y googlear (AMD Ryzen 3 2200G soporta SSE4.2 y AVX2)
-  #  Si no hay navegador descargarlo "a pie"
-  # 2024-10-18:
-  wget -o thorium.deb https://github.com/Alex313031/thorium/releases/download/M128.0.6613.189/thorium-browser_128.0.6613.189_AVX2.deb  
-  sudo nala install thorium.deb
+  #  Si aun no hay navegador instalado, descargarlo "a pie" desde el terminal:
+    wget -o thorium.deb https://github.com/Alex313031/thorium/releases/download/M130.0.6723.174/thorium-browser_130.0.6723.174_AVX2.deb
+    sudo apt install thorium.deb
 
 # Otros Navegadores ligeros:
    sudo apt install epiphany-browser     # 537 MB of additional disk space will be used.
    sudo apt install falkon               # 407 MB of additional disk space will be used.
    sudo apt install midori               # 181 MB of additional disk space will be used.
-   sudo apt install chromium             # 268 MB of additional disk space will be used.
-   echo "deb [arch=amd64] http://deb.librewolf.net $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/librewolf.list
-    sudo wget http://deb.librewolf.net/keyring.gpg -O /etc/apt/trusted.gpg.d/librewolf.gpg
-    sudo apt update
-    sudo apt install librewolf            # 2,103 kB of additional disk space will be used.
