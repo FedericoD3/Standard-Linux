@@ -6,7 +6,10 @@
     sudo nala install xfce4 --no-install-recommends              
     sudo nala install xfce4-goodies                              # Opcional (muchos goodies y la mayoría de poco uso)
                                                                  # Ver https://goodies.xfce.org/
-  ... y/o CINNAMON (mas bonito, perfecto para escritorio):
+  # Debloat:
+    sudo apt purge atril xterm exfalso libreoffice* mpv parole ristretto vim xfburn xfce4-clipman* xfce4-clipman xsane
+
+... y/o CINNAMON (mas bonito, perfecto para escritorio):
     sudo nala install cinnamon --no-install-recommends
   --- y después algunas utilities
     sudo nala install -y blueman libcanberra-pulse notification-daemon
