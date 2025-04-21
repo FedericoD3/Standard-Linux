@@ -7,6 +7,8 @@ alias egrep='egrep --color=auto'
 alias ls='ls --color=auto'
 # alias ll='echo "-S size, -t time, -X extension" && ls -Al --time-style=long-iso'  
 
+alias listapaq='dpkg --list'
+
 # --sort SORT_FIELD
 # --only-dirs
 # --only-files
