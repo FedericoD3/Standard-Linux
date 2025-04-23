@@ -5,8 +5,8 @@
 # En uno de los fileservers pongo Dropbox headless para tener respaldos versionados "offsite"
 
 # Para "simular" el path relativo uso caracteres parecidos: 
-#  uso el caracter ≈ en lugar de ~ (home)
-#    y el caracter √ en lugar de / (separador de subdir)
+#  uso el caracter U+2248	≈ en lugar de ~ (home)
+#    y el caracter U+2571	╱ en lugar de / (separador de subdir)
 
 # Simlink del directorio central de archivos sincronizados 
 #  entre el punto de montaje donde se conecte al fileserver local
