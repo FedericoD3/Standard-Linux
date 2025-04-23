@@ -1,1 +1,16 @@
+# Uso Syncthing (https://syncthing.net/)
+# Sincronizo un directorio /Discos/Alguna/Ubicacion/@SyncCentral 
+#  entre los fileservers locales de cada sede (guarida, ancianato, empresa) 
+# Sincronizo los equipos de cada sede al @SyncCentral de cada red local
+# En uno de los fileservers pongo Dropbox headless para tener respaldos versionados "offsite"
 
+# Simlink del directorio central de archivos sincronizados 
+#  entre el punto de montaje donde se conecte al fileserver local
+#  a un directorio standarizado dentro del $HOME del usuario
+  ln -s /Discos/Red/PTBarnum/0500_Software/@SyncThings-central ~/Sync
+
+# Simlinks de los subdirectorios dentro del standarizado dentro del $HOME
+#  a las ubicaciones donde los programas esperan encontrarlos:
+  ln -s ~/Sync/Configs/Linux/~╱.config/gtk-3.0 ~/.config/gtk-3.0
+  ln -s ~/Sync/Configs/Linux/~╱.themes ~/.themes
+  ln -s ~/Sync/Configs/Linux/~╱.icons ~/.icons
