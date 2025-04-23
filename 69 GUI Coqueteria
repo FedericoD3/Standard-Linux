@@ -1,3 +1,10 @@
+# Simlink del directorio central de archivos sincronizados de donde los vea esta PC a la ubicación standard en el home:
+  ln -s /Discos/Red/PTBarnum/0500_Software/@SyncThings-central ~/Sync
+# Simlinks de directorios sincronizado de maquillaje de Xfce a las ubicaciones standard en el home:
+  ln -s ~/Sync/Configs/Linux/~╱.config/gtk-3.0 ~/.config/gtk-3.0
+  ln -s ~/Sync/Configs/Linux/~╱.themes ~/.themes
+  ln -s ~/Sync/Configs/Linux/~╱.icons ~/.icons
+
 # https://www.youtube.com/watch?v=i-OLnKjnWG0
 
 # Menu > System Settings > Panel
