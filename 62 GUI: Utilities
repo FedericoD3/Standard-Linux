@@ -61,6 +61,9 @@
   #  (a mí me gustan "Spyder dark" y "Kugel")
 
 # Visores de imagenes:
+  wget https://download.xnview.com/XnViewMP-linux-x64.deb
+  sudo dpkg --install XnViewMP-linux-x64.deb
+  rm XnViewMP-linux-x64.deb
   XnView MP  (instalar por el catálogo "Discover")
   # Y darle acceso con Flatseal a los directorios relevantes en el file system
 
