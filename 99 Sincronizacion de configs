@@ -4,20 +4,25 @@
 # Sincronizo los equipos de cada sede al @SyncCentral de cada red local
 # En uno de los fileservers pongo Dropbox headless para tener respaldos versionados "offsite"
 
-# Para "simular" el path relativo uso caracteres parecidos: 
-#  uso el caracter U+2248	≈ en lugar de ~ (home)
+# Para "simular" en el directorio central el path relativo real uso caracteres parecidos: 
+#  uso el caracter U+2248	≈ en lugar de ~ (home) 
 #    y el caracter U+2571	╱ en lugar de / (separador de subdir)
+#  Por ejemplo, un directorio que deba  estar  en  /home/MiUsuario/.local/share/vlc
+#   puede sincronizarse en /Discos/Alguna/Ubicacion/@SyncCentral/≈╱.local╱share╱vlc
+#   y ≈╱.local╱share╱vlc es todo UN nombre
 
 # Simlink del directorio central de archivos sincronizados 
 #  entre el punto de montaje donde se conecte al fileserver local
 #  a un directorio standarizado dentro del $HOME del usuario
   ln -s /Discos/Red/PTBarnum/0500_Software/@SyncThings-central ~/Sync
+#  así todos los usuarios ven sus configuraciones dentro de ~/Sync esté donde esté su fileserver local
+#  y los directorios donde los programas esperan sus configuraciones apuntan a esos dentro de ~/Sync
 
-# Simlinks de los subdirectorios dentro del standarizado dentro del $HOME
+# Simlinks de los subdirectorios dentro del standarizado
 #  a las ubicaciones donde los programas esperan encontrarlos:
-  ln -s ~/Sync/Configs/Linux/≈╱.config√gtk-3.0 ~/.config/gtk-3.0
-  ln -s ~/Sync/Configs/Linux/≈√.themes ~/.themes
-  ln -s ~/Sync/Configs/Linux/≈√.icons ~/.icons
+  ln -s ~/Sync/Configs/Linux/≈╱.config/gtk-3.0 ~/.config/gtk-3.0
+  ln -s ~/Sync/Configs/Linux/≈╱.themes         ~/.themes
+  ln -s ~/Sync/Configs/Linux/≈╱.icons          ~/.icons
 
-  ln -s ~/Sync/Configs/VSCodium/≈√.config√VSCodium ~/.config/VSCodium
-  ln -s ~/Sync/Configs/VSCodium/≈√.vscode-oss ~/.vscode-oss
+  ln -s ~/Sync/Configs/VSCodium/≈╱.config╱VSCodium ~/.config/VSCodium
+  ln -s ~/Sync/Configs/VSCodium/≈╱.vscode-oss      ~/.vscode-oss
