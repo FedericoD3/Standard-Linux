@@ -8,6 +8,9 @@
 #  Activar los iconos default (en mi caso, todos)
 #  Seleccionar "Show desktop icons on all monitors"
 
+# Componedor de capas de video (transparencia, flexibilidad, etc)
+  sudo nala install compiz
+
 # Menu > System Settings > Preferences > Appearance > Themes > Applications > Adwaita-dark
 
 # Menu > System Settings > Preferences > Applets > Download 
