@@ -13,7 +13,7 @@
   # Crear el directorio para configuración standard de terminales:
     sudo mkdir -p /Discos/Local/bashStd/motd.d
   # Descargar de aquí los archivos de configuración personalizada:
-    sudo wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/24c3kqge
+    sudo wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/28xe9mhp
     sudo wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/24c3kqge
     sudo wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2at2xmvy
     sudo wget --output-document=/Discos/Local/bashStd/motd.d/15-Specs      https://tinyurl.com/2dk86eyy
