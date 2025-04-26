@@ -20,6 +20,8 @@
 
 # Simlinks de los subdirectorios dentro del standarizado
 #  a las ubicaciones donde los programas esperan encontrarlos:
+  ln -s ~/Sync/Configs/Linux/≈╱Discos╱Local╱bashStd /Discos/Local/bashStd
+  ln -s ~/Sync/Configs/Linux/≈╱Discos╱Local╱Scripts /Discos/Local/Scripts  
   ln -s ~/Sync/Configs/Linux/≈╱.config/gtk-3.0 ~/.config/gtk-3.0
   ln -s ~/Sync/Configs/Linux/≈╱.config/picom   ~/.config/picom
   ln -s ~/Sync/Configs/Linux/≈╱.themes         ~/.themes
