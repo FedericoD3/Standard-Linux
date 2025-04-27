@@ -22,6 +22,7 @@
     sudo wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/25wl7q4w
     sudo wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/2bnjh8rm
     sudo wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/28dldqvf
+    sudo chmod +x /Discos/Local/bashStd/FancyBash.sh
     sudo chmod +x /Discos/Local/bashStd/motd.d/*
 
   # Crear un hardlink de la configuración personalizada standard a la configuración común con login (cónsola física o remota ssh):
