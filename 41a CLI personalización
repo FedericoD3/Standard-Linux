@@ -13,15 +13,15 @@
   # Crear el directorio para configuración standard de terminales:
     sudo mkdir -p /Discos/Local/bashStd/motd.d
   # Descargar de aquí los archivos de configuración personalizada:
-    sudo wget --output-document=/Discos/Local/bashStd/.bashrc              https://tinyurl.com/mtxwfhcv
-    sudo wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://tinyurl.com/24c3kqge
-    sudo wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://tinyurl.com/2at2xmvy
-    sudo wget --output-document=/Discos/Local/bashStd/motd.d/15-Specs      https://tinyurl.com/2dk86eyy
-    sudo wget --output-document=/Discos/Local/bashStd/motd.d/20-IPs        https://tinyurl.com/2d5f42ea
-    sudo wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://tinyurl.com/2afast3x
-    sudo wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://tinyurl.com/25wl7q4w
-    sudo wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://tinyurl.com/2bnjh8rm
-    sudo wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://tinyurl.com/28dldqvf
+    sudo wget --output-document=/Discos/Local/bashStd/.bashrc              https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41b_CLI_.bashrc
+    sudo wget --output-document=/Discos/Local/bashStd/.bash_aliases        https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41c_CLI_.bash_aliases
+    sudo wget --output-document=/Discos/Local/bashStd/FancyBash.sh         https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41d_CLI_FancyBash.sh
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/10-bienvenida https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41e_CLI_motd_10-bienvenida
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/15-Specs      https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41f_CLI_motd_15-Specs
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/20-IPs        https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41g_CLI_motd_20-IPs
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/30-updates    https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41h_CLI_motd_30-updates
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/50-fsck       https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41i_CLI_motd_50-fsck
+    sudo wget --output-document=/Discos/Local/bashStd/motd.d/60-reboot     https://github.com/FedericoD3/Standard-Linux/raw/refs/heads/main/41j_CLI_motd_60-reboot
     sudo chmod +x /Discos/Local/bashStd/FancyBash.sh
     sudo chmod +x /Discos/Local/bashStd/motd.d/*
 
