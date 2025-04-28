@@ -1,3 +1,4 @@
+
 #!/bin/bash
 # Si no es sesión interactiva, no hacer nada y salir
   case $- in
