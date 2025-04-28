@@ -29,3 +29,5 @@
 
   ln -s ~/Sync/Configs/VSCodium/≈╱.config╱VSCodium ~/.config/VSCodium
   ln -s ~/Sync/Configs/VSCodium/≈╱.vscode-oss      ~/.vscode-oss
+
+  ln -s ~/Sync/Configs/Linux/FreeCAD ~/.config/FreeCAD
