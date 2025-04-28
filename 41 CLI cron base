@@ -1,8 +1,8 @@
 # https://www.generateit.net/cron-job/
+# https://crontab.guru/
 
 # Desactivar el envio de email interno por cada cronjob
   MAILTO=""
-
 # Para que cron de cada usuario tenga sus variables de entorno. 
 #  averiguar su entorno con el comando env | grep -i runt  
 #  y preceder los comandos que lo necesiten con 
