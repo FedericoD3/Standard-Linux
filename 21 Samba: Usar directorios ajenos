@@ -1,3 +1,6 @@
+# Instalar los utilities de acceso a recursos de red:
+  sudo apt install gvfs-backends smbclient cifs-utils ntfs-utils
+
 # Crear el directorio donde se montará el del servidor:
   mkdir -p /Ruta/al/Dir/Local
   
