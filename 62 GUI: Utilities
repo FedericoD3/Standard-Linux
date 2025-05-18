@@ -48,11 +48,14 @@
   #   Full screen: Meta+Print (Todas las pantallas) (Meta es la tecla de Windows) 
   #   Curr screen: Print (solo la pantalla con foco)
   #   Active wind: Shift+Print
+  y/o
+  sudo nala install -y flameshot
 
 # Administrador de Zips:
   sudo nala install -y xarchiver
 
 # Block de notas:
+  sudo nala install notepadqq # El que más se parece a Notepad++
   sudo nala install -y gedit  # Disk space required  28.6 MB 
   sudo nala install -y kate   # Disk space required  180.9 MB (carga muy lento)
   sudo nala install -y geany  # Disk space required  13.4 MB
