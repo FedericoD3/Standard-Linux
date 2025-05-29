@@ -1,5 +1,7 @@
-
 #!/bin/bash
+
+Log=1
+
 # Si no es sesión interactiva, no hacer nada y salir
   case $- in
     *i*) ;;
@@ -7,49 +9,35 @@
   esac
 # Si es sesión interactiva, cargar la configuracion standard
 
-# Avisar y registrar para debugging:
-# echo -e "\n######## $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S') " >> ~/Arranque_bash.log
-# echo "######## EJECUTANDO ${0}" | tee --append ~/Arranque_bash.log
+if [ $Log -eq 1 ]; then echo -e "\nEjecutando /Discos/Local/bashStd" $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S') >> ~/Arranque_bash.log; fi
 
-# Para recargar ediciones a este archivo, ejecutar
-#  source /Discos/Local/bashStd/.bashrc
-  if [ "$(ps -o comm= $PPID)" != "su" ]; then 
-    # Si es la sesión directa, dar chance a evitar error de configuracion
-    echo "sleep 1 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
-    sleep 1   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
-    clear
-    else
-    # Si es substitute user, refrescar los aliases para el usuario sustituto
-    source /Discos/Local/bashStd/.bash_aliases
-    # y re-colorear el prompt
-    source /Discos/Local/bashStd/FancyBash.sh
-    return
-  fi
+if [ "$(ps -o comm= $PPID)" != "su" ]; then 
+  # Si es la sesión directa, dar chance a evitar error de configuracion
+  echo "sleep 1 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
+  sleep 1   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
+  clear
+  if [ $Log -eq 1 ]; then echo "Terminado retardo de seguridad" >> ~/Arranque_bash.log; fi
+  else
+  # Si es substitute user, refrescar los aliases para el usuario sustituto
+  source /Discos/Local/bashStd/.bash_aliases
+  # y re-colorear el prompt
+  source /Discos/Local/bashStd/FancyBash.sh
+  if [ $Log -eq 1 ]; then echo "Prompt redecorado y aliases recargados para $(whoami)" >> ~/Arranque_bash.log; fi
+  return
+fi
 
 # Mensajes iniciales:
   run-parts /Discos/Local/bashStd/motd.d
+  if [ $Log -eq 1 ]; then echo "Mostrados mensajes del dia" >> ~/Arranque_bash.log; fi
 
+  export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games  # Path de usuario standard
+  if [ $(id -u) -eq 0 ]; then export PATH=/usr/local/sbin:/usr/sbin:/sbin:$PATH; fi
+#  export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
   export PATH=$PATH:~/.local/bin
   export PATH=$PATH:/Discos/Local/Scripts
 # export PATH=$PATH:CualquierOtroPathQueSeUse
+  if [ $Log -eq 1 ]; then echo "Path asignado" >> ~/Arranque_bash.log; fi
 
-# Colores que usa eza para el listado de archivos: 
-  EZA="reset"                  # Resetear
-  EZA=$EZA":da=32"             # Directorios en azul
-  EZA=$EZA":*.txt=38;5;223"    # Archivos de texto en beige
-  EZA=$EZA":nb=2;3"            # Tamaño menor de 1KB = gris cursiva
-  EZA=$EZA":nk=2;3"            # Tamaño entre 1 KB/KiB y 1 MB/MiB = gris cursiva
-  EZA=$EZA":nm=2;3"            # Tamaño entre 1 MB/MiB y 1 GB/GiB = gris cursiva
-  EZA=$EZA":ng=2;3"            # Tamaño entre 1 GB/GiB y 1 TB/TiB = gris cursiva
-  EZA=$EZA":nt=2;3"            # Tamaño mayor a 1 TB/TiB = gris cursiva
-  export EZA_COLORS=$EZA
-
-# Avisar y registrar para debuggi   
-# echo "Decoracion del prompt con FancyBash" >> ~/Arranque_bash.log
-  source /Discos/Local/bashStd/FancyBash.sh
-
-# Avisar y registrar para debugging:
-# echo "Configuracion del command history" >> ~/Arranque_bash.log
 ########## CONFIGURACION DEL HISTORY ##########
 # Don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -68,9 +56,8 @@
 # append clear and reload the history after each command
   export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 ################################################
+  if [ $Log -eq 1 ]; then echo "Configurado historico de comandos" >> ~/Arranque_bash.log; fi
 
-# Avisar y registrar para debugging:
-# echo "Definición de aliases en /Discos/Local/bashStd/.bash_aliases" >> ~/Arranque_bash.log
 ########## DEFINICIONES DE ALIASES #############
 # Es mas ordenado poner los aliases en otro archivo
 #  Lo normal es ~/.bash_aliases, pero se puede poner en otro lado
@@ -80,34 +67,50 @@
 #  justamente para que de un error si no existe
 . /Discos/Local/bashStd/.bash_aliases
 ################################################
+  if [ $Log -eq 1 ]; then echo "Aliases asignados" >> ~/Arranque_bash.log; fi
 
 # Para que no tenga indents enormes
-  tabs 2
+  tabs 3
+  if [ $Log -eq 1 ]; then echo "Tabs en 3" >> ~/Arranque_bash.log; fi
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+  shopt -s checkwinsize
+  if [ $Log -eq 1 ]; then echo "Activada actualización de \$COLUMNS y \$LINES" >> ~/Arranque_bash.log; fi
+
+
+# Decorar el prompt:
+  source /Discos/Local/bashStd/FancyBash.sh
+  if [ $Log -eq 1 ]; then echo "Prompt decorado" >> ~/Arranque_bash.log; fi
+
+# Agregar la campanita para que avise al terminar comandos largos
+  xset b 25 1760 # Bell de 25mS y de 1760Hz
+  PS1=$PS1$(printf "\007\a\n")
+  if [ $Log -eq 1 ]; then echo "Agregada la campanita al prompt" >> ~/Arranque_bash.log; fi
+
+# Modificar el título de la ventana con el usuario y host
+  PS1=$PS1'\[\e]2;\u @ \H\a\]'
+  if [ $Log -eq 1 ]; then echo "Titulo de la ventana actualizado" >> ~/Arranque_bash.log; fi
 
 # Pasar al fin al terminal 
   return
 
-
-
-
-
-# Definir los colores de ls
-  . /Discos/Local/bashStd/colores.sh
+<<PorBorrar
+# Colores que usa eza para el listado de archivos: 
+  EZA="reset"                  # Resetear
+  EZA=$EZA":da=32"             # Directorios en azul
+  EZA=$EZA":*.txt=38;5;223"    # Archivos de texto en beige
+  EZA=$EZA":nb=2;3"            # Tamaño menor de 1KB = gris cursiva
+  EZA=$EZA":nk=2;3"            # Tamaño entre 1 KB/KiB y 1 MB/MiB = gris cursiva
+  EZA=$EZA":nm=2;3"            # Tamaño entre 1 MB/MiB y 1 GB/GiB = gris cursiva
+  EZA=$EZA":ng=2;3"            # Tamaño entre 1 GB/GiB y 1 TB/TiB = gris cursiva
+  EZA=$EZA":nt=2;3"            # Tamaño mayor a 1 TB/TiB = gris cursiva
+  export EZA_COLORS=$EZA
 
 # http://tldp.org/LDP/abs/html/comparison-ops.html
 #       [ -z "$algo" ]     True si $algo es Null (string de longitud cero)
 #       [ -n "$algo" ]     True si $algo es NO Null
 #       [ -r /algun/arch ] True si /algun/arch es un archivo legible (readable)
-
-
-# PS1 es el prompt de la sesion
-#  Si no existe (es Null) no es sesion interactiva en pantalla,
-#  no configurar mas nada de esta sesion
-  [ -z "$PS1" ] && return
-
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-  shopt -s checkwinsize
 
 ########## AGREGAR EL CHROOT AL PROMPT ##########
 # Si este shell esta dentro de un chroot (directorio raiz a partir de un sub-dir)
@@ -145,7 +148,6 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
-
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -192,5 +194,5 @@ fi
 # PS1=$'\u25B6\u2192\u263f\u2605'
 # PS1="$resetFormato$colorUser \u $colorHost $(printf "\u25B6") \h $colorPath \w $colorPrompt \n$"
   PS1="$resetFormato$colorUser \u $colorHost \h $colorPath \w $colorPrompt"
-# Agregar la campanita para que avise al terminar comandos largos
-PS1=$PS1$(printf "\007\a\n$ ")
+
+PorBorrar
