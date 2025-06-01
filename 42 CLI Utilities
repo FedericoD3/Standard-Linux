@@ -62,8 +62,8 @@
 # Determinacion de rendimiento:  
 
 # Utilities Android:
-  sudo nala install -y android-sdk-platform-tools-common
-  sudo nala install android-tools-adb
+  sudo nala install android-sdk-platform-tools-common
+  sudo nala install adb fastboot
   sudo cp /lib/udev/rules.d/51-android.rules /etc/udev/rules.d/
     #  wget --output-document=ADB.zip https://dl.google.com/android/repository/platform-tools-latest-linux.zip
     #  unzip ADB.zip
