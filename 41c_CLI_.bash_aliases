@@ -13,7 +13,7 @@ alias listapaq='dpkg --list --no-pager'
 # --only-dirs
 # --only-files
 # alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && eza --icons=never --time-style=long-iso --absolute -BAl --total-size --level 2'
-  alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && ls -Al --group-directories-first $1' 
+  alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && ls -Al --time-style=long-iso --group-directories-first $1' 
 alias ping='ping -c 4 $1'
 alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
@@ -57,7 +57,7 @@ fuentes () {
   echo ""
   ls -Al /etc/apt/sources.list.d/*.list
 }
- 
+
 rexe () {
   DIR=$1
   if [ -z "$DIR" ]; then DIR="$(pwd)"; fi
@@ -106,19 +106,9 @@ fetch () {
 usuarios () {
   echo LINUX:
   cat /etc/passwd
-  echo 
-  echo SAMBA: 
+  echo
+  echo SAMBA:
   sudo pdbedit -Lv | grep "Unix username" | sed "s/Unix username://" | sort
-}
-
-Nuevou () {
-  echo Crear el usuario $1 con clave $2 del grupo $3
-  sudo useradd $1 --comment "($2)" --groups $3 --shell /bin/false --base-dir /Discos/Alfica/Usuarios --password $2
-  sudo mkdir /Discos/Alfica/Usuarios/$1
-  sudo chown -R nobody /Discos/Alfica/Usuarios/$1
-  sudo chgrp nogroup -R /Discos/Alfica/Usuarios/$1
-  sudo chmod 777 -R /Discos/Alfica/Usuarios/$1
-  echo -e "$2\n$2\n" | sudo smbpasswd -a "$1"
 }
 
 websrv () {
@@ -172,22 +162,15 @@ dirs () {
   find "$base"/ -type d -maxdepth 1 | less
 }
 
+donde () {
+   echo "Aun no programo nada para 'find'"
+}
+
 actualizar () {
   sudo apt-get update
   sudo apt-get dist-upgrade
   sudo apt-get upgrade
   sudo apt-get autoremove
-}
-
-repi () {
-  sudo systemctl restart unbound
-  sleep 1s
-  sudo service pihole-FTL reload
-  sleep 1s
-  sudo pihole restartdns
-  sleep 1s
-  sudo systemctl status unbound
-  pihole status
 }
 
 red () {
@@ -203,3 +186,4 @@ red () {
 realias () {
   source /Discos/Local/bashStd/.bash_aliases
 }
+
