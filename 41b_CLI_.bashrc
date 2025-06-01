@@ -1,3 +1,4 @@
+  GNU nano 7.2                                                                /Discos/Local/bashStd/.bashrc                                                                         
 #!/bin/bash
 
 Log=1
@@ -50,7 +51,7 @@ fi
 # Time tag history
   export HISTTIMEFORMAT="%h%d %H:%M:%S "
 # Ignore Specific Commands
-  export HISTIGNORE="history:otrocomando:cualquierotro"
+  export HISTIGNORE="history:hg:hn:otrocomando:cualquierotro"
 # Store multi-line commands in one history entry:
   shopt -s cmdhist
 # append clear and reload the history after each command
@@ -78,11 +79,9 @@ fi
   shopt -s checkwinsize
   if [ $Log -eq 1 ]; then echo "Activada actualización de \$COLUMNS y \$LINES" >> ~/Arranque_bash.log; fi
 
-
 # Decorar el prompt:
   source /Discos/Local/bashStd/FancyBash.sh
   if [ $Log -eq 1 ]; then echo "Prompt decorado" >> ~/Arranque_bash.log; fi
-
 # Agregar la campanita para que avise al terminar comandos largos
   xset b 25 1760 # Bell de 25mS y de 1760Hz
   PS1=$PS1$(printf "\007\a\n")
@@ -94,6 +93,8 @@ fi
 
 # Pasar al fin al terminal 
   return
+
+
 
 <<PorBorrar
 # Colores que usa eza para el listado de archivos: 
