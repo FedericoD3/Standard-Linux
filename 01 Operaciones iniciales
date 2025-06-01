@@ -15,7 +15,7 @@
   deb http://deb.debian.org/debian bookworm main contrib non-free-firmware non-free
   deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware non-free
   deb http://security.debian.org/debian-security bookworm-security main contrib non-free-firmware non-free
-# (si están presentes, eliminar o comentar las fuentes inexistentes como el CD):
+# (si están presentes, eliminar o comentar las fuentes inexistentes como "deb cdrom..."):
 # Ctrl+s para salvar, Ctrl+x para salir
 # Actualizar repositorios y utilities:
   apt update
