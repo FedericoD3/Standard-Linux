@@ -21,11 +21,7 @@
 # fzf (FuZzy files, buscador de archivos)
   sudo nala install -y fzf
 
-# atuin (History mas versatil)
-# NUNCA PUDE 
-  curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | bash 
-
-# dust (analizador de ocupación de disco, mas informatica que du)
+# dust (analizador de ocupación de disco, mas informativo que du)
 # Requiere rust, no lo instalé por evitar bloat
 
 # bat (cat, pero con resaltado de sintaxis) (despues hay que usar batcat, agregado a los aliases)
@@ -36,17 +32,6 @@
 
 # Navegadores de archivos:
   sudo nala install ranger
-  sudo nala install mc
-  sudo nala install ncdu
-
-# eza (Sustituto mejorado de ls)
-  sudo mkdir -p /etc/apt/keyrings
-  wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-  echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
-  sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-  sudo apt update
-  sudo nala install -y eza
-# https://github.com/eza-community/eza/blob/main/man/eza_colors.5.md
 
 # FORMATEADORES DE INFORMACION DEL EQUIPO:
 # Informacion general:
