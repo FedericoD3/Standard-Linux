@@ -5,7 +5,7 @@
   sudo nala install wsdd
 
 # Personalizar la configuración:
-  sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.ORIG
+  sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.ORIG
   sudo nano /etc/samba/smb.conf
   # Modificando las lineas:
     workgroup = FAMILIAR
@@ -39,6 +39,10 @@
 # Ctrl+s para salvar, Ctrl+x para salir
   sudo nano /etc/samba/Includes/2-algunusuario.conf
   # Misma sintaxis
+
 # Agregar a Samba usuarios Linux:
   sudo smbpasswd -a AlgunUsuario
   sudo smbpasswd -a OtroUsuario
+
+# Reiniciar el servicio:
+  sudo systemctl restart smbd
