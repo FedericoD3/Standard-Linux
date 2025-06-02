@@ -1,6 +1,9 @@
 # Instalar SAMBA, el compartidor de archivos en red:
   sudo nala install samba
   sudo nala install smbclient
+# Instalar el "Web Service Discovery Daemon", anunciador a la red de PCs Windows
+  sudo nala install wsdd
+
 # Personalizar la configuración:
   sudo nano /etc/samba/smb.conf
   # Modificando las lineas:
@@ -38,6 +41,3 @@
 # Agregar a Samba usuarios Linux:
   sudo smbpasswd -a AlgunUsuario
   sudo smbpasswd -a OtroUsuario
-
-# Instalar el "Web Service Discovery Daemon", anunciador a la red de PCs Windows
-  sudo nala install wsdd
