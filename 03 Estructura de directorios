@@ -5,13 +5,21 @@
 
 # Crear un directorio en el que no se monte ninuna particion, 
 #  pero que exista en el disco raiz presente en todas las instalaciones
+#  para copiar ahí utilities, configuraciones y scripts comunes
   sudo mkdir /Discos/Local
 # Otros podran ser:
   sudo mkdir /Discos/SeagateGrande
   sudo mkdir /Discos/Portatil
   sudo mkdir /Discos/PendriveRojo
 # ... etc
-#  usando la utility "Disks" instalada segun "62 GUI Utilities"
+
+# Configurar el montaje al encender:
+#  "a pie" identificando cada disco con
+  ls -Al /dev/disk/by-uuid
+  sudo blkid
+#  y editando el /etc/fstab con líneas
+  /dev/disk/by-uuid/01234567-89AB-CDEF-0123-456789ABCDEF /Discos/SeagateGrande auto nosuid,nodev,nofail,x-gvfs-show 0 2
+#  O usando la utility "Disks" instalada segun "62 GUI Utilities"
 
 # Y darle acceso a todo:
   sudo chown -R nobody /Discos 
