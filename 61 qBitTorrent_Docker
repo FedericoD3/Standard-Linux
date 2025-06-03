@@ -6,41 +6,39 @@ mkdir -p ~/Docker/qbitt/config
 mv docker-qbittorrent-nox-main Docker/qbitt
 
 nano ~/Docker/qbitt/docker-stack.yml  
-  QBT_LEGAL_NOTICE=confirm      # Put confirm only if you had read the legal notice https://github.com/qbittorrent/qBittorrent/blob/56667e717b82c79433ecb8a5ff6cc2d7b315d773/src/app/main.cpp#L320-L323 
-  - 40011:8080/tcp              # Adecuar el mapeo de puertos de afuera:container
-  <your_path>/config         # Dir on your host to store qBittorrent configurations. Using relative path won't work.
-  <your_path>/downloads      # Dir on your host to store the downloaded files. Using relative path won't work.
-
-services:
-  qbittorrent-nox:
-    # for debugging
-    #cap_add:
-      #- SYS_PTRACE
-    container_name: 21-qBitTorrent-nox
-    environment:
-      #- PAGID=10000
-      #- PGID=1000
-      #- PUID=1000
-      - QBT_LEGAL_NOTICE=confirm
-      - QBT_WEBUI_PORT=8080
-      - TZ=America/Caracas
-      - UMASK=022
-    image: qbittorrentofficial/qbittorrent-nox:latest
-    ports:
-      # for bittorrent traffic
-      - 6881:6881/tcp
-      - 6881:6881/udp
-      # for WebUI
-      - 40011:8080/tcp
-    read_only: true
-    stop_grace_period: 30m
-    tmpfs:
-      - /tmp
-    tty: true
-    volumes:
-      - /home/FedericoD3/Docker/qbitt/config:/config
-      - /Discos/Local/downloads:/downloads
-
+  services:
+    qbittorrent-nox:
+      # for debugging
+      #cap_add:
+        #- SYS_PTRACE
+      container_name: 21-qBitTorrent-nox
+      environment:
+        #- PAGID=10000
+        #- PGID=1000
+        #- PUID=1000
+        # Put confirm only if you had read the legal notice
+        #   https://github.com/qbittorrent/qBittorrent/blob/56667e717b82c79433ecb8a5ff6cc2d7b315d773/src/app/main.cpp#L320-L323 
+        - QBT_LEGAL_NOTICE=confirm
+        # Usar un puerto que no tenga conflicto
+        - QBT_WEBUI_PORT=40011
+        - TZ=America/Caracas
+        - UMASK=022
+      image: qbittorrentofficial/qbittorrent-nox:latest
+      ports:
+        # Adecuar el mapeo de puertos de afuera:container
+        # for bittorrent traffic
+        - 6881:6881/tcp
+        - 6881:6881/udp
+        # for WebUI
+        - 40011:40011/tcp
+      read_only: true
+      stop_grace_period: 30m
+      tmpfs:
+        - /tmp
+      tty: true
+      volumes:
+        - /home/FedericoD3/Docker/qbitt/config:/config
+        - /Discos/Local/downloads:/downloads
 
 docker compose -f ~/Docker/qbitt/docker-stack.yml up -d
 # Para ver el password inicial:
