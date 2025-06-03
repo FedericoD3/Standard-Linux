@@ -32,8 +32,8 @@
     # Chequear que arrancó y está accesible en esos puertos:
       docker ps
     # Conectarse a http://<IP>:8000 o a https://<IP>:9443
-    # Para que mande al IP correctp desde los enlaces de cada container:
-      Menu Environments > Public IP field, IP del servidor > Update environment.
+    # Para que mande al IP correcto desde los enlaces de cada container:
+      Menu Environment-related > Environments > Local> Public IP field, IP del servidor > Update environment.
     # Para resetear el password:
       docker pull portainer/helper-reset-password
       docker run --rm -v portainer_data:/data portainer/helper-reset-password
