@@ -10,7 +10,7 @@
   sudo chmod a+r /etc/apt/keyrings/docker.asc
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   sudo apt update
-  sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
   sudo docker run hello-world
 
 # Comandos:
@@ -21,14 +21,14 @@
   docker rm <containerId>	  # Eliminar un container
   sudo docker images        # Listar imagenes ("plantillas")
   docker rmi <image_id>	    # Eliminar una imagen, si no la está usando ningún container
-
+  docker compose -f /Donde/Este/El/Arch/ComoSeLlame.yml up -d  # Componer container, activarlo y dejarlo en background
 
 # Administradores web para docker:
   # Portainer
     # Crear el almacenamiento para la base de datos de portainer:
       sudo docker volume create portainer_data
     # Descargar la imagen y ejecutar el container con los defaults:
-      sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+      sudo docker run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
     # Chequear que arrancó y está accesible en esos puertos:
       docker ps
     # Conectarse a http://<IP>:8000 o a https://<IP>:9443
