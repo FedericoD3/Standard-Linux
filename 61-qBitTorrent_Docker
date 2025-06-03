@@ -1,0 +1,5 @@
+wget https://github.com/qbittorrent/docker-qbittorrent-nox/archive/refs/heads/main.zip
+unzip main.zip
+mkdir -p $USER/Docker/qbitt/config
+mv docker-qbittorrent-nox-main Docker/qbitt
+nano Docker/qbitt/docker-stack.yml  # Y adecuar el mapeo de puertos de afuera:container
