@@ -11,4 +11,37 @@ nano ~/Docker/qbitt/docker-stack.yml
   <your_path>/config         # Dir on your host to store qBittorrent configurations. Using relative path won't work.
   <your_path>/downloads      # Dir on your host to store the downloaded files. Using relative path won't work.
 
+services:
+  qbittorrent-nox:
+    # for debugging
+    #cap_add:
+      #- SYS_PTRACE
+    container_name: 21-qBitTorrent-nox
+    environment:
+      #- PAGID=10000
+      #- PGID=1000
+      #- PUID=1000
+      - QBT_LEGAL_NOTICE=confirm
+      - QBT_WEBUI_PORT=8080
+      - TZ=America/Caracas
+      - UMASK=022
+    image: qbittorrentofficial/qbittorrent-nox:latest
+    ports:
+      # for bittorrent traffic
+      - 6881:6881/tcp
+      - 6881:6881/udp
+      # for WebUI
+      - 40011:8080/tcp
+    read_only: true
+    stop_grace_period: 30m
+    tmpfs:
+      - /tmp
+    tty: true
+    volumes:
+      - /home/FedericoD3/Docker/qbitt/config:/config
+      - /Discos/Local/downloads:/downloads
+
+
 docker compose -f ~/Docker/qbitt/docker-stack.yml up -d
+# Para ver el password inicial:
+  docker logs 21-qBitTorrent-nox
