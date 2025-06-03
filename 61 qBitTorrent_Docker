@@ -2,13 +2,13 @@ https://hub.docker.com/r/qbittorrentofficial/qbittorrent-nox
 
 wget https://github.com/qbittorrent/docker-qbittorrent-nox/archive/refs/heads/main.zip
 unzip main.zip
-mkdir -p $USER/Docker/qbitt/config
+mkdir -p ~/Docker/qbitt/config
 mv docker-qbittorrent-nox-main Docker/qbitt
 
-nano Docker/qbitt/docker-stack.yml  
+nano ~/Docker/qbitt/docker-stack.yml  
   QBT_LEGAL_NOTICE=confirm      # Put confirm only if you had read the legal notice https://github.com/qbittorrent/qBittorrent/blob/56667e717b82c79433ecb8a5ff6cc2d7b315d773/src/app/main.cpp#L320-L323 
   - 40011:8080/tcp              # Adecuar el mapeo de puertos de afuera:container
   <your_path>/config         # Dir on your host to store qBittorrent configurations. Using relative path won't work.
   <your_path>/downloads      # Dir on your host to store the downloaded files. Using relative path won't work.
 
-
+docker compose -f ~/Docker/qbitt/docker-stack.yml up -d
