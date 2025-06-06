@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# https://hub.docker.com/r/otherguy/dropbox/
+
+NombreCont="30-dropbox"
+docker run --detach -it --restart=always --name=$NombreCont \
+  --net="host" \
+  -e "TZ=$(readlink /etc/localtime | sed 's#^.*/zoneinfo/##')" \
+  -e "DROPBOX_UID=$(id -u)" \
+  -e "DROPBOX_GID=$(id -g)" \
+  -e "POLLING_INTERVAL=10" \
+  -v "/home/FedericoD3/Docker/Dropbox/config:/opt/dropbox/.dropbox" \
+  -v "/Discos/0500_Software/Dropbox:/opt/dropbox/Dropbox" \
+  otherguy/dropbox:latest
+
+docker exec -it $NombreCont gosu dropbox dropbox help
+
+docker exec -it 30-dropbox gosu dropbox dropbox start
