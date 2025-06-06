@@ -1,0 +1,22 @@
+# Crear Directorio para dockers y el YAML:
+mkdir -p ~/Docker/sonarr/config
+nano ~/Docker/sonarr/sonarr.yml
+    ---
+    services:
+      sonarr:
+        container_name: 22-sonarr
+        image: lscr.io/linuxserver/sonarr:latest
+        environment:
+          - TZ=America/Caracas
+          - PUID=2002
+          - PGID=2002
+        ports:
+          - 40012:8989
+        volumes:
+          - /home/FedericoD3/Docker/sonarr/config:/config
+    #      - /Discos/Local/DescargasQBT/Series:/tv         #optional
+    #      - /path/to/downloadclient-downloads:/downloads  #optional
+        restart: unless-stopped
+
+# Crear, arrangar y dejar en background el container:
+docker compose -f ~/Docker/sonarr/sonarr.yml up -d
