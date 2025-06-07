@@ -24,3 +24,4 @@ nano ~/Docker/sonarr/sonarr.yml
 docker compose -f ~/Docker/sonarr/sonarr.yml up -d
 
 # Opcional: Restaurar los respaldos de una instalación previa desde /var/lib/sonarr/Backups/
+# Precaución: quizás el puerto y los directorios en el respaldo no sean los configurados en el yml
