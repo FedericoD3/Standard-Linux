@@ -29,3 +29,4 @@ nano ~/Docker/radarr/sonarr.yml
 docker compose -f ~/Docker/radarr/radarr.yml up -d
 
 # Opcional: Restaurar los respaldos de una instalación previa desde /var/lib/radarr/Backups/
+# Precaución: quizás el puerto y los directorios en el respaldo no sean los configurados en el yml
