@@ -16,8 +16,8 @@ nano ~/Docker/sonarr/sonarr.yml
           - 40012:8989
         volumes:
           - /home/FedericoD3/Docker/sonarr/config:/config
-    #      - /Discos/Local/DescargasQBT/Series:/tv         #optional
-    #      - /path/to/downloadclient-downloads:/downloads  #optional
+          - /Discos/Local/DescargasQBT/Series:/tv         #optional
+          - /Discos/Local/DescargasQBT/Series:/downloads  #optional
         restart: unless-stopped
 
 # Crear, arrangar y dejar en background el container:
