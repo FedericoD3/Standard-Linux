@@ -28,4 +28,4 @@ nano ~/Docker/radarr/sonarr.yml
 # Crear, arrancar y dejar en background el container:
 docker compose -f ~/Docker/sonarr/sonarr.yml up -d
 
-Los respaldos están en /var/lib/radarr/Backups/
+# Opcional: Restaurar los respaldos de una instalación previa desde /var/lib/radarr/Backups/
