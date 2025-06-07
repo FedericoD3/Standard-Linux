@@ -1,0 +1,30 @@
+# https://www.simplehomelab.com/docker-media-server-2024/
+
+# Crear Directorio para dockers y el YAML:
+mkdir -p ~/Docker/radarr/config
+nano ~/Docker/radarr/sonarr.yml
+  services:
+    # Radarr - Movie management
+    radarr:
+      image: lscr.io/linuxserver/radarr:latest 
+      container_name: radarr
+      security_opt:
+        - no-new-privileges:true
+      restart: "no"
+      # profiles: ["media", "arrs", "all"]
+      networks:
+        - default
+      ports:
+        - "7878:7878"
+      volumes:
+        - $DOCKERDIR/appdata/radarr:/config
+        - $DATADIR/data/media/movies:/data/movies1
+        - $DATADIR/data2/media/movies:/data/movies2
+        - $DATADIR/downloads:/data/downloads 
+        - "/etc/localtime:/etc/localtime:ro"
+      environment:
+        TZ: $TZ
+        PUID: $PUID
+      
+# Crear, arrangar y dejar en background el container:
+docker compose -f ~/Docker/sonarr/sonarr.yml up -d
