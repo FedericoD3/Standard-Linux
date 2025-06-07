@@ -22,3 +22,5 @@ nano ~/Docker/sonarr/sonarr.yml
 
 # Crear, arrangar y dejar en background el container:
 docker compose -f ~/Docker/sonarr/sonarr.yml up -d
+
+# Opcional: Restaurar los respaldos de una instalación previa desde /var/lib/sonarr/Backups/
