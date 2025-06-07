@@ -1,3 +1,5 @@
+# https://www.simplehomelab.com/docker-media-server-2024/
+
 # Crear Directorio para dockers y el YAML:
 mkdir -p ~/Docker/sonarr/config
 nano ~/Docker/sonarr/sonarr.yml
