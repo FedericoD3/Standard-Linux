@@ -26,6 +26,6 @@ nano ~/Docker/radarr/sonarr.yml
         - "/etc/localtime:/etc/localtime:ro"
       
 # Crear, arrancar y dejar en background el container:
-docker compose -f ~/Docker/sonarr/sonarr.yml up -d
+docker compose -f ~/Docker/radarr/radarr.yml up -d
 
 # Opcional: Restaurar los respaldos de una instalación previa desde /var/lib/radarr/Backups/
