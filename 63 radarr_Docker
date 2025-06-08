@@ -24,7 +24,8 @@ nano ~/Docker/radarr/sonarr.yml
         - /Discos/Local/DescargasQBT/Peliculas:/data/movies2
         - /Discos/Local/DescargasQBT/Peliculas:/data/downloads 
         - "/etc/localtime:/etc/localtime:ro"
-      
+        restart: unless-stopped
+
 # Crear, arrancar y dejar en background el container:
 docker compose -f ~/Docker/radarr/radarr.yml up -d
 
