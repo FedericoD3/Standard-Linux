@@ -1,0 +1,14 @@
+# https://www.simplehomelab.com/docker-media-server-2024/
+# https://www.reddit.com/r/audiobookshelf/comments/186eo88/installing_wdocker/
+# https://www.audiobookshelf.org/docs/#docker-compose-install
+
+# Crear Directorio para dockers y el YAML:
+mkdir -p ~/Docker/AudioBookshelf/config
+nano ~/Docker/AudioBookshelf/AudioBookshelf.yml
+        restart: unless-stopped
+
+# Crear, arrancar y dejar en background el container:
+docker compose -f ~/Docker/radarr/radarr.yml up -d
+
+# Opcional: Restaurar los respaldos de una instalación previa desde /var/lib/radarr/Backups/
+# Precaución: quizás el puerto y los directorios en el respaldo no sean los configurados en el yml
