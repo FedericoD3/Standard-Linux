@@ -5,18 +5,19 @@ mkdir -p ~/Docker/Calibre
 nano /home/FedericoD3/Docker/Calibre/Calibre.yml
   services:
     calibre:
-      container_name: calibre
+      container_name: 25-calibre
       image: lscr.io/linuxserver/calibre:latest
       security_opt:
         - seccomp:unconfined #optional
       environment:
-        - PUID=1000
-        - PGID=1000
+        - PUID=1001
+        - PGID=1001
         - TZ=America/Caracas
         - PASSWORD= #optional
         - CLI_ARGS= #optional
       volumes:
-        - /Discos/0500_Misc/Biblioteca/e-Books:/config
+        - /Discos/0500_Misc/Biblioteca/e-Books/Calibre/config:/config
+        - /Discos/0500_Misc/Biblioteca/e-Books/LibrosPorAgregar:/LibrosPorAgregar
       ports:
         - 8080:8080
         - 8181:8181
