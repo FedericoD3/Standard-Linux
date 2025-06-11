@@ -3,7 +3,6 @@ mkdir -p ~/Docker/Calibre
 # https://hub.docker.com/r/linuxserver/calibre
 # https://www.reddit.com/r/Calibre/comments/b6ziwv/calibreserver_vs_calibreweb/
 nano /home/FedericoD3/Docker/Calibre/Calibre.yml
-  ---
   services:
     calibre:
       container_name: calibre
