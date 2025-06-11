@@ -6,20 +6,23 @@ nano /home/FedericoD3/Docker/Calibre/Calibre.yml
   ---
   services:
     calibre:
-      image: lscr.io/linuxserver/calibre:latest
       container_name: calibre
+      image: lscr.io/linuxserver/calibre:latest
       security_opt:
         - seccomp:unconfined #optional
       environment:
         - PUID=1000
         - PGID=1000
-        - TZ=Etc/UTC
+        - TZ=America/Caracas
         - PASSWORD= #optional
         - CLI_ARGS= #optional
       volumes:
-        - /path/to/calibre/config:/config
+        - /Discos/0500_Misc/Biblioteca/e-Books:/config
       ports:
         - 8080:8080
         - 8181:8181
         - 8081:8081
       restart: unless-stopped
+
+# Crear, arrancar y dejar en background el container:
+docker compose -f ~/Docker/Calibre/Calibre.yml up -d
