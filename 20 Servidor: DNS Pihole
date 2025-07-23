@@ -16,9 +16,11 @@
 #  9 Aceptar registro de queries
 # 10 Aceptar que registre y muestre todo
 # Al final tomr nota del password aleatorio, o asignar enseguida uno nuevo:
-  pihole -a -p
+  sudo pihole setpaswword xxxxxxxxx
 # Accesible en aaa.bbb.ccc.ddd/admin
-# Opcional por último, para no depender de Google, Comcast, OpenDNS, etc.
+
+<OPCIONAL>
+# para no depender de Google, Comcast, OpenDNS, etc.
 #   (https://www.youtube.com/watch?v=FnFtWsZ8IP0 -> https://docs.pi-hole.net/guides/dns/unbound/#setting-up-pi-hole-as-a-recursive-dns-server-solution)
 #   Instalar unbound:
     sudo apt install unbound
@@ -67,13 +69,11 @@
 #  desmarcar los DNS activos a la izquierda
 #  Ingresar y activar un "Custom DNS" a la derecha, que apunte al puerto de unbound del IP local 127.0.0.1#5335
 #  Click en [Salvar] abajo al final. Ya el pihole no depende de Google, Cloudflare, Quad9 ni del ISP.
+</OPCIONAL>
 
+
+##### DESDE AQUI ES PARA LA VERSION VIEJA #####
 # COMANDOS UTILES:
-Al instalar genera un password aleatorio, se cambia con
-  sudo pihole -a -p
-
-the web server user needs to be member of the "pihole" group for full functionality.
-
 http://pi.hole/admin 
 or 
 http://aaa.bbb.ccc.ddd/admin
