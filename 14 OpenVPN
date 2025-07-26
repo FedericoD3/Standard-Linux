@@ -1,5 +1,9 @@
-mkdir OpenVPN
-cd OpenVPN    
+# Asegurarse que esté instalado openvpn:
+  sudo nala install openvpn
+
+# Mantener el orden usando un directorio adhoc:
+  mkdir OpenVPN
+  cd OpenVPN    
 
 # Configuracion para RiseUpVPN
   wget https://github.com/BarbossHack/RiseupVPN-OpenVPN/raw/refs/heads/master/generate.sh
