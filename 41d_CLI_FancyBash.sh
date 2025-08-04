@@ -214,7 +214,7 @@ bash_prompt() {
  #               FONT_COLOR_1=$WHITE; BACKGROUND_1=$BLACK; TEXTEFFECT_1=$BOLD
  #               FONT_COLOR_2=$WHITE; BACKGROUND_2=$D_GRAY; TEXTEFFECT_2=$BOLD
  #               FONT_COLOR_3=$WHITE; BACKGROUND_3=$L_GRAY; TEXTEFFECT_3=$BOLD
- #               PROMT_FORMAT=$BLACK_BOLD
+  #               PROMT_FORMAT=$BLACK_BOLD
  #       fi
         ## CONFIGURATION: GRAY-CYAN
  #       if [ "$HOSTNAME" = light ]; then
@@ -307,8 +307,13 @@ bash_prompt() {
         ## BASH PROMT                                                             ##
         ## Generate promt and remove format from the rest                         ##
         ############################################################################
-        PS1="$TITLEBAR\n${PROMT_USER}${SEPARATOR_1}${PROMT_HOST}${SEPARATOR_2}${PROMT_PWD}${SEPARATOR_3}${PROMT_INPUT}"
-PS1="\n"$(lsb_release -s -d)$PS1        ## For terminal line coloring, leaving the rest standard
+# Agregar la campanita para que avise al terminar comandos largos
+  xset b 25 1760 # Bell de 25mS y de 1760Hz
+  PS1=$(printf "\007\a")
+  if [ $Log -eq 1 ]; then echo "Agregada la campanita al prompt" >> ~/Arranque_bash.log; fi
+
+        PS1=$PS1"$TITLEBAR\n${PROMT_USER}${SEPARATOR_1}${PROMT_HOST}${SEPARATOR_2}${PROMT_PWD}${SEPARATOR_3}${PROMT_INPUT}"
+        PS1="\n"$(lsb_release -s -d)$PS1        ## For terminal line coloring, leaving the rest standard
         none="$(tput sgr0)"
         trap 'echo -ne "${none}"' DEBUG
 }
