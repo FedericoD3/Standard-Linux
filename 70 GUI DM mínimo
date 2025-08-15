@@ -1,35 +1,24 @@
-# https://www.baeldung.com/linux/display-managers-install-uninstall
-# https://www.reddit.com/r/linux4noobs/comments/15dzhz6/comment/ju5m7r0/
-
-# INSTALAR UNO O MAS DESKTOP MANAGER, sin programas extras (en orden de más ligero primero)
+# INSTALAR UNO O MAS DESKTOP MANAGER
 # XFCE (ligero, perfecto para servidores): 
-    sudo nala install xfce4 --no-install-recommends
-    sudo nala install xfce4-goodies                              # Opcional (muchos goodies y la mayoría de poco uso)
+  sudo nala install xfce4
+  sudo nala install xfce4-goodies                              # Opcional (muchos goodies y la mayoría de poco uso)
                                                                  # Ver https://goodies.xfce.org/
-  # Debloat:
-    sudo apt purge atril xterm exfalso libreoffice* mpv parole ristretto vim xfburn xfce4-clipman* xfce4-clipman xsane
+# INSTALAR UNO O MAS WINDOWS MANAGER / PANTALLA DE LOGIN:
+  sudo nala install lightdm --no-install-recommends            # 10.2 MB of additional disk space will be used
 
-  ... y/o CINNAMON (mas bonito, más pesado, perfecto para refugiados de Windows):
-    sudo nala install cinnamon --no-install-recommends
-  --- y después algunas utilities
-    sudo nala install -y blueman libcanberra-pulse notification-daemon
-# OTROS:
-  ... LXDE:
-    sudo nala install lxde-core --no-install-recommends          # 9,2 MB of additional disk space will be used
-  ... LXQT:  
-    sudo nala install lxqt-core --no-install-recommends
-  ... KDE-PLASMA (demasiado configurable, vas a pasar mas tiempo ajustando decoración, y es un poco pesado):
-  # https://gist.github.com/pedroarthur/4901a4e30c53ea619b947599740c5a50
-    sudo nala install kde-plasma-desktop --no-install-recommends 
+# OTROS DM (mas ligeros/feos o bonitos/pesados):
+  sudo nala install cinnamon
+  sudo nala install lxde-core
+  sudo nala install lxqt-core
+  sudo nala install kde-plasma-desktop
   
-  # INSTALAR UNO O MAS WINDOWS MANAGER (en el improbable caso que no venga incluido en el DM):
-    sudo nala install xfwm4 --no-install-recommends              #  9,2 MB of additional disk space will be used
-    sudo nala install openbox --no-install-recommends            #  9,2 MB of additional disk space will be used
-    sudo nala install lightdm --no-install-recommends            # 10.2 MB of additional disk space will be used
-    sudo nala install fluxbox --no-install-recommends            # 27.2 MB of additional disk space will be used
-    sudo nala install IceWM --no-install-recommends              # 23.2 MB of additional disk space will be used
-    sudo nala install kwin-x11 --no-install-recommends           # 123 MB of additional disk space will be used
-    sudo nala install kwin-wayland --no-install-recommends       # 130 MB of additional disk space will be used
+# OTROS WM:
+  sudo nala install xfwm4 --no-install-recommends              #  9,2 MB of additional disk space will be used
+  sudo nala install openbox --no-install-recommends            #  9,2 MB of additional disk space will be used
+  sudo nala install fluxbox --no-install-recommends            # 27.2 MB of additional disk space will be used
+  sudo nala install IceWM --no-install-recommends              # 23.2 MB of additional disk space will be used
+  sudo nala install kwin-x11 --no-install-recommends           # 123 MB of additional disk space will be used
+  sudo nala install kwin-wayland --no-install-recommends       # 130 MB of additional disk space will be used
 
   # Para ver cual(es) Desktop Manager(s) estan instalados:
     ls /usr/share/xsessions/
@@ -78,5 +67,6 @@
   # por
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
   sudo update-grup
+
 
 
