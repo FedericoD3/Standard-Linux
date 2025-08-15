@@ -6,7 +6,7 @@
 
 # Grabar un pendrive usando Rufus (mas lento pero mas seguro) de https://rufus.ie/
 #  Balena Etcher (más rápido pero a veces no bootea) de https://etcher.balena.io/
-#  Ventoy (puede coexistir con otros ISOs)
+#  Ventoy (puede coexistir con otros ISOs) de https://www.ventoy.net/
 
 # Si el instalador se tranca configurando la red, probablemente sea que el router no asigna IPv6:
 #  1- Asegurar que el DHCP asigne IPv6, por ejemplo creando un hotspot con un celular moderno, o
@@ -22,3 +22,5 @@
 # DES-seleccionar "Debian desktop environment", "Gnome", "KDE", "Lxde", etc.,
 #  para que no instale ninguno con la cantidad de software.
 # Seleccionar SSH server para poder seguir remoto desde un PC potencialmente más cómodo.
+
+# Continuar la instalacion hasta que ofrezca reiniciar.
