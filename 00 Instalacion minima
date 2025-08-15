@@ -1,15 +1,14 @@
 # OJO SI VA A SER DUAL BOOT CON WINDOWS INSTALAR ESE PRIMERO
 #  porque la instalación de Windows sobreescribe grub y bootea automático
 
-# Descargar el ISO instalador desde https://cdimage.debian.org/cdimage/release/current/
-#  o el ISO Live (sólo 64 bits)     https://cdimage.debian.org/cdimage/release/current-live/
-# Sstandard.iso sin GUI y después agregar lo que se haga falta (requiere tener coneión a internet)
-#  o ya con GUI+apps cinnamon.iso, kde.iso, lxqt.iso, xfce.iso, etc
+# Descargar el ISO instalador mas reciente soportado por el hardware desde 
+  https://www.debian.org/releases/index.es.html
+
 # Grabar un pendrive usando Rufus (mas lento pero mas seguro) de https://rufus.ie/
 #  Balena Etcher (más rápido pero a veces no bootea) de https://etcher.balena.io/
 #  Ventoy (puede coexistir con otros ISOs)
 
-# Si el instalador se tranca configurando la red, probablemente sea incompatibilidad del DHCP con IPv6:
+# Si el instalador se tranca configurando la red, probablemente sea que el router no asigna IPv6:
 #  1- Asegurar que el DHCP asigne IPv6, por ejemplo creando un hotspot con un celular moderno, o
 #  2- Hacer innecesario el IPv6, presionando "e" en el menu de arranque grub:
       agregar "ipv6.ipv6_disable=1" despues del "quiet " al final de las opciones de arranque
@@ -20,5 +19,6 @@
 
 # Especificar el primer usuario además de root (desechable, debe ser en minusculas)
 
-# DES-seleccionar "Debian desktop environment" para que no instale ninguno con la cantidad de bloatware.
+# DES-seleccionar "Debian desktop environment", "Gnome", "KDE", "Lxde", etc.,
+#  para que no instale ninguno con la cantidad de software.
 # Seleccionar SSH server para poder seguir remoto desde un PC potencialmente más cómodo.
