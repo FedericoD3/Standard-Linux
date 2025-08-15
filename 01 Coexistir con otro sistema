@@ -48,7 +48,7 @@
   # o con:
     sudo grub-mkconfig -o /boot/grub/grub.cfg
 
-# OS usado en el booteo previo:
+# OS usado en el arranque mas reciente:
   sudo nano /etc/default/grub
   # comentar la linea GRUB_DEFAULT=LoQueTenga y cambiar por:
   # GRUB_DEFAULT=0
