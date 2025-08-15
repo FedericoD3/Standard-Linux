@@ -2,8 +2,8 @@
 # https://www.reddit.com/r/linux4noobs/comments/15dzhz6/comment/ju5m7r0/
 
 # INSTALAR UNO O MAS DESKTOP MANAGER, sin programas extras (en orden de más ligero primero)
-  XFCE (ligero, perfecto para servidores): 
-    sudo nala install xfce4 --no-install-recommends              
+# XFCE (ligero, perfecto para servidores): 
+    sudo nala install xfce4 --no-install-recommends
     sudo nala install xfce4-goodies                              # Opcional (muchos goodies y la mayoría de poco uso)
                                                                  # Ver https://goodies.xfce.org/
   # Debloat:
@@ -76,3 +76,4 @@
   # por
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
   sudo update-grup
+
