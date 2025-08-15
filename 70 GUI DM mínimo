@@ -9,7 +9,7 @@
   # Debloat:
     sudo apt purge atril xterm exfalso libreoffice* mpv parole ristretto vim xfburn xfce4-clipman* xfce4-clipman xsane
 
-... y/o CINNAMON (mas bonito, perfecto para escritorio):
+  ... y/o CINNAMON (mas bonito, más pesado, perfecto para refugiados de Windows):
     sudo nala install cinnamon --no-install-recommends
   --- y después algunas utilities
     sudo nala install -y blueman libcanberra-pulse notification-daemon
@@ -18,16 +18,16 @@
     sudo nala install lxde-core --no-install-recommends          # 9,2 MB of additional disk space will be used
   ... LXQT:  
     sudo nala install lxqt-core --no-install-recommends
-  ... KDE-PLASMA (demasiado oconfigurable, un poco pesado):
+  ... KDE-PLASMA (demasiado configurable, vas a pasar mas tiempo ajustando decoración, y es un poco pesado):
   # https://gist.github.com/pedroarthur/4901a4e30c53ea619b947599740c5a50
     sudo nala install kde-plasma-desktop --no-install-recommends 
   
   # INSTALAR UNO O MAS WINDOWS MANAGER (en el improbable caso que no venga incluido en el DM):
-    sudo nala install xfwm4                                      #  9,2 MB of additional disk space will be used
-    sudo nala install openbox                                    #  9,2 MB of additional disk space will be used
-    sudo nala install lightdm                                    # 10.2 MB of additional disk space will be used
-    sudo nala install fluxbox                                    # 27.2 MB of additional disk space will be used
-    sudo nala install IceWM                                      # 23.2 MB of additional disk space will be used
+    sudo nala install xfwm4 --no-install-recommends              #  9,2 MB of additional disk space will be used
+    sudo nala install openbox --no-install-recommends            #  9,2 MB of additional disk space will be used
+    sudo nala install lightdm --no-install-recommends            # 10.2 MB of additional disk space will be used
+    sudo nala install fluxbox --no-install-recommends            # 27.2 MB of additional disk space will be used
+    sudo nala install IceWM --no-install-recommends              # 23.2 MB of additional disk space will be used
     sudo nala install kwin-x11 --no-install-recommends           # 123 MB of additional disk space will be used
     sudo nala install kwin-wayland --no-install-recommends       # 130 MB of additional disk space will be used
 
@@ -46,6 +46,8 @@
     sudo nala install sddm --no-install-recommends
   # Si se instalan varios, después se puede cambiar el default con:
     sudo dpkg-reconfigure lightdm
+
+# Reiniciar para confirmar que inicia en pantalla gráfica
 
 # CONTROL DE CONTRASEÑAS:
 #  Si es una PC privada que no usa más nadie, se puede dejar en blanco la contraseña del "keyring"
@@ -76,4 +78,5 @@
   # por
   # GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
   sudo update-grup
+
 
