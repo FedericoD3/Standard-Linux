@@ -15,7 +15,7 @@
       y presionar Ctrl+X para continuar el arranque.
 
 # Si NO se especifica password para root, desactivará el usuario root y el primer usuario podrá hacer sudo
-# Si SI se especifica password para root,  activará   el usuario root y el primer usuario no podrá hacer sudo
+# Si SI se especifica password para root,  activará   el usuario root y el primer usuario no podrá hacer sudo (pero si su -)
 
 # Especificar el primer usuario además de root (desechable, debe ser en minusculas)
 
