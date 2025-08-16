@@ -1,9 +1,10 @@
-# Para que los puntos de montaje sean standard entre mis PCs,
+# En Linux los discos no son A: B:C: D: etc sino "puntos de montaje" debajo del directorio raiz "/"
+#  Para que los puntos de montaje sean standard entre mis PCs,
 #  conviene que todas las particiones que interesen se monten bajo /Discos
-#  y ese directorio tenga acceso libre para ser usado por cualquiera (salvo excepciones)
+#  y ese directorio tenga acceso libre para ser usado por cualquiera salvo excepciones que convengan
    sudo mkdir /Discos
 
-# Crear un directorio en el que no se monte ninuna particion, 
+# Crear un directorio en el que no se monte ninguna particion, 
 #  pero que exista en el disco raiz presente en todas las instalaciones
 #  para copiar ahí utilities, configuraciones y scripts comunes
   sudo mkdir /Discos/Local
