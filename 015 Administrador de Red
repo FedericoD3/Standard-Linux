@@ -12,7 +12,7 @@
       # The loopback network interface
       auto lo
       iface lo inet loopback
-  # Reiniciar los administradores de red,
+  # Reiniciar los administradores de red:
   # el primero para que suelte la red y el segundo para que la agarre:
     sudo systemctl restart networking
     sudo systemctl restart NetworkManager
@@ -21,16 +21,18 @@
     nmcli connection show
     # o
     nmcli device
+
   # OPCIONALES:
-    # Desactivar IPv6 si es red casera:
-      sudo nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
     # Ponerles nombres descriptivos e IP fija (sobre todo si es servidor):
       sudo nmcli connection modify <ConexNombreDefault> con-name <ConexNombreFacil>
       sudo nmcli connection modify <ConexNombreFacil> ipv4.gateway <aaa.bbb.ccc.GGG>
       sudo nmcli connection modify <ConexNombreFacil> ipv4.dns <aaa.bbb.ccc.DDD>
       sudo nmcli connection modify <ConexNombreFacil> ipv4.addresses <aaa.bbb.ccc.III/24>
+    # Desactivar IPv6 si es red casera:
+      sudo nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
 
-# Listar los dispositivos para ver cuales están managed y cuales no:
+# VARIOS:
+# Listar los dispositivos para ver cuales están administrados y cuales no:
   nmcli d
 # Configurar las interfaces managed o unmanaged según se requiera:
   nmcli dev set <NombreIF> managed yes|no
@@ -106,4 +108,5 @@
 # Redirigir permanentemente un puerto entrante a otro donde escucha el servicio:
   sudo nano /etc/network/interfaces
   post-up iptables -t nat -A PREROUTING -d 192.1.1.99 -p tcp --dport 40990 -j REDIRECT --to-port 8006 || true
+
 
