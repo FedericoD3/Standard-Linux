@@ -12,10 +12,10 @@
 # de aquí en adelante se puede usar "sudo apt ..." o "sudo nala ..." 
 
 # Confirmador de reseteos y apagados remotos ( https://adrianroselli.com/wp-content/uploads/2024/02/switch-with-molly-guard.jpg ):
-  sudo nala install molly-guard
+  sudo apt install molly-guard
 
 # Navegador de archivos:
-  sudo nala install ranger
+  sudo apt install ranger
 
 # Fonts:
   # Preparar un directorio ordenado para los fonts monoespaciados extra:
@@ -41,19 +41,19 @@
 #  pactl - Send a control command to a PulseAudio server.
 #  padsp - /dev/dsp wrapper to transparently support OSS applications.
 #  pax11publish - Store/retrieve PulseAudio default server/sink/source settings in the X11 root window.
-  sudo nala install pulseaudio-utils
+  sudo apt install pulseaudio-utils
 
 # fzf (FuZzy files, buscador de archivos)
-  sudo nala install -y fzf
+  sudo apt install -y fzf
 
 # dust (analizador de ocupación de disco, mas informativo que du)
-# Requiere rust, no lo instalé por evitar bloat
+  sudo apt install du-dust
 
 # bat (cat, pero con resaltado de sintaxis) (despues hay que usar batcat, agregado a los aliases)
-  sudo nala install -y bat
+  sudo apt install bat
 
-# tldr (Man pages resumido)
-  sudo nala install -y tldr
+# tldr (resumidor de manuales de comandos)
+  sudo apt install tldr
 
 # FORMATEADORES DE INFORMACION DEL EQUIPO:
 # Informacion general:
