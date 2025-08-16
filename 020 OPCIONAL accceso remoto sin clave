@@ -1,4 +1,5 @@
-# Si se va a ejecutar con frecuencia comandos desde la misma PC a la recién instalada
+# Si se va a ejecutar con frecuencia comandos desde 
+# este computador como cliente a otro computador como servidor,
 
 # Ejecutar en el computador cliente:
   ssh-keygen
