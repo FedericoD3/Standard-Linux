@@ -1,14 +1,16 @@
-#!/bin/bash
-# UTILITIES BASICAS PARA EL TERMINAL
-  apt-get update
-  apt-get upgrade -y
+# UTILITARIOS BASICOS
 
-# Utilitarios varios:
+# Asegurar que estén actualizadas las fuentes:
+  sudo apt update
+  sudo apt upgrade -y
+
+# Basicos:
   sudo apt install curl wget zip unzip
 
-# nala (front-end para apt)
+# nala Interfaz más informativa de apt para instalar paquetes
   curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
-  
+# de aquí en adelante se puede usar "sudo apt ..." o "sudo nala ..." 
+
 # Confirmador de reseteos y apagados remotos ( https://adrianroselli.com/wp-content/uploads/2024/02/switch-with-molly-guard.jpg ):
   sudo nala install molly-guard
 
@@ -24,11 +26,12 @@
     rm ~/Downloads/VictorMonoAll.zip
   # Refrescar el cache de fonts:
     fc-cache -f -v
-    
 
 # Multi terminal moderno, verstil y multiplataforma ( https://tabby.sh https://github.com/Eugeny/tabby ):
   wget https://github.com/Eugeny/tabby/releases/download/v1.0.225/tabby-1.0.225-linux-x64.deb -O ~/Downloads/Tabby.deb
   sudo apt install ~/Downloads/Tabby.deb
+  rm ~/Downloads/Tabby.deb
+# ahora se puede empezar a usar tabby en lugar de uxterm o lxterm o lo que haya traído la distro
 
 # Utilities de audio:
 #  paplay - Playback a WAV file via a PulseAudio sink.
