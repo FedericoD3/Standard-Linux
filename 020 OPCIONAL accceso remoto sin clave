@@ -1,9 +1,11 @@
-# Una vez en cada cliente:
+# Si se va a ejecutar con frecuencia comandos desde la misma PC a la recién instalada
+
+# Ejecutar en el computador cliente:
   ssh-keygen
 # Aceptar el directorio default o apuntar a otro
 # Ingresar una clave de encriptación de la llave o dejarla en blanco
 
-# Repetir para cada servidor:
+# Repetir para cada computador servidor:
 # Copiar la llave:
   ssh-copy-id UsuarioRemoto@servidorRemoto
 # Pedirá (por última vez a este cliente) la clave del usuario remoto:
