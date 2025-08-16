@@ -15,6 +15,16 @@
 # Navegador de archivos:
   sudo nala install ranger
 
+# Fonts:
+  # Preparar un directorio ordenado para los fonts monoespaciados extra:
+    sudo mkdir -p /usr/share/fonts/Extra/Monoesp
+  # Victor Mono:
+    wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip -O ~/Downloads/VictorMonoAll.zip
+    sudo unzip ~/Downloads/VictorMonoAll.zip -d /usr/share/fonts/Extra/Monoesp/VictorMono
+    rm ~/Downloads/VictorMonoAll.zip
+
+    
+
 # Multi terminal moderno, verstil y multiplataforma ( https://tabby.sh https://github.com/Eugeny/tabby ):
   wget https://github.com/Eugeny/tabby/releases/download/v1.0.225/tabby-1.0.225-linux-x64.deb -O ~/Downloads/Tabby.deb
   sudo apt install ~/Downloads/Tabby.deb
