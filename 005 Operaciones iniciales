@@ -13,6 +13,10 @@
 # Ctrl+s para salva y Ctrl+x para salir
 # Reiniciar el servicio:
   systemctl restart sshd
+# Ver cual es el IP que agarró:
+  ip a
+# Ahora se puede continuar remoto desde otro computador potencialmente más cómodo:
+  ssh usuariotemp@111.222.333.444 (el IP recién determinado)
 
 # Asegurarse que existan las fuentes online (si 
   nano /etc/apt/sources.list
@@ -66,3 +70,4 @@
 # Si pidió clave y permitió la elevación de privilegios, ya se puede 
 # eliminar el usuario temporal original que obligó todo en minusculas:
   sudo userdel comosellamara
+
