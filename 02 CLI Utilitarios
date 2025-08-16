@@ -22,7 +22,8 @@
     wget https://rubjo.github.io/victor-mono/VictorMonoAll.zip -O ~/Downloads/VictorMonoAll.zip
     sudo unzip ~/Downloads/VictorMonoAll.zip -d /usr/share/fonts/Extra/Monoesp/VictorMono
     rm ~/Downloads/VictorMonoAll.zip
-
+  # Refrescar el cache de fonts:
+    fc-cache -f -v
     
 
 # Multi terminal moderno, verstil y multiplataforma ( https://tabby.sh https://github.com/Eugeny/tabby ):
