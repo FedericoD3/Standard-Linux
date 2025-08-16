@@ -1,0 +1,68 @@
+# Después de iniciar sesión por primera vez como el usuario temporal, preparar la instalación de paquetes
+# Hacerse root hasta salir (más cómodo):
+  su -
+# o hacerse root por 5 minutos (más seguro):
+  sudo su
+# según se activó o no root durante la instalación
+
+# Si no se seleccionó SSH server durante la instalación, hacerlo ahora con:
+  apt install openssh-server
+# Si hace falta cambiar el puerto standard 22 a otro (por ejemplo para disimularlo online), 
+# editar la línea "# Port 22" por "Port 12345" en la configuración:
+  nano /etc/ssh/ssh_config
+# Ctrl+s para salva y Ctrl+x para salir
+# Reiniciar el servicio:
+  systemctl restart sshd
+
+# Asegurarse que existan las fuentes online (si 
+  nano /etc/apt/sources.list
+  # Debe contener líneas especificando el servidor de descargas {version}: bookworm=12, trixie=13 como:
+    deb http://deb.debian.org/debian {version} main contrib non-free-firmware non-free
+    deb http://deb.debian.org/debian {version}-updates main contrib non-free-firmware non-free
+    deb http://security.debian.org/debian-security {version}-security main contrib non-free-firmware non-free
+  # Y estar comentadas con "#" las fuentes inexistentes como "deb cdrom...":
+# Ctrl+s para salvar, Ctrl+x para salir
+
+# Actualizar repositorios y utilities:
+  apt update
+  apt dist-upgrade
+  apt upgrade
+  apt autoremove
+
+# Instalar sudo, mas seguro que "su -" porque se desactiva después de 5 minutos sin usar
+  apt install sudo
+
+# Ahora sí agregar tu usuario real (com mayusculas pero sin espacios ni signos, p.e. JuanPerez2):
+  adduser --allow-bad-names MiNombreComoEs
+# nombre real, clave, y daatos opcionales.
+
+# Para que --allow-bad-names sea permanente, 
+#  editar la configuración de usuarios nuevos para permitir mayúsculas.
+#  Yo lo hago por compatibilidad con los usuarios Windows en la empresa,
+#  y para que sea evidente la diferencia con usuaros default linux todo en minuscula.
+   nano /etc/adduser.conf
+#  y agregar al final
+   NAME_REGEX="[A-Z,a-z,0-9,_,-]"
+#  Ctrl+s para salvar, Ctrl+x para salir
+
+# Agregar el usuario a los autorizados para ejecutar comandos administrativos:
+    sudo usermod -aG sudo nombreusuario
+# También puede hacerse agregándolo al grupo sudo:
+  sudo adduser Admin sudo
+  # O editando el archivo sudoers:
+    sudo chmod +w /etc/sudoers
+    sudo nano /etc/sudoers
+    # Agregar el usuario al final:
+      ComoSeLlame     ALL=(ALL:ALL) ALL
+      MiNombreComoEs  ALL=(ALL:ALL) ALL
+      OtroAsomao      ALL=(ALL:ALL) ALL
+    # Ctrl+s para salvar, Ctrl+x para salir
+
+# Cerrar sesión del usuario original creado en la instalación.
+  exit
+# Iniciar en el usuario personalizado.
+# Verificar que puede ser root, elevando a root un comando inofensivo:
+  sudo ls
+# Si pidió clave y permitió la elevación de privilegios, ya se puede 
+# eliminar el usuario temporal original que obligó todo en minusculas:
+  sudo userdel comosellamara
