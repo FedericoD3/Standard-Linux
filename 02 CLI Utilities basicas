@@ -3,10 +3,9 @@
   apt-get update
   apt-get upgrade -y
 
-# Instalar los comandos para descarga web
-  sudo apt install curl wget
+# Utilitarios varios:
+  sudo apt install curl wget zip unzip
 
 # nala (front-end para apt)
   curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
   
-  sudo nala install zip unzip
