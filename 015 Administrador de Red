@@ -2,16 +2,21 @@
 
 # Instalar NetworkManager, mas moderno que ifconfig y mas cómodo que netplan:
   sudo apt  install network-manager
-  # o
-  sudo nala install network-manager
-  # editar la configuración de ifconfig para que sólo maneje loopback:
-  sudo mv /etc/network/interfaces /etc/network/interfaces.ORIG
-  sudo nano /etc/network/interfaces
-    # This file describes the network interfaces available on your system
-    # and how to activate them. For more information, see interfaces(5).
-    # The loopback network interface
-    auto lo
-    iface lo inet loopback
+
+  # Editar la configuración de ifconfig / netplan 
+  # para que sólo maneje loopback y deje las demas a NetworkManager:
+    sudo mv /etc/network/interfaces /etc/network/interfaces.ORIG
+    sudo nano /etc/network/interfaces
+      # This file describes the network interfaces available on your system
+      # and how to activate them. For more information, see interfaces(5).
+      # The loopback network interface
+      auto lo
+      iface lo inet loopback
+  # Reiniciar los administradores de red,
+  # el primero para que suelte la red y el segundo para que la agarre:
+    sudo systemctl restart networking
+    sudo systemctl restart NetworkManager
+
   # Identificar los nombres de las interfaces:
     nmcli connection show
     # o
@@ -101,3 +106,4 @@
 # Redirigir permanentemente un puerto entrante a otro donde escucha el servicio:
   sudo nano /etc/network/interfaces
   post-up iptables -t nat -A PREROUTING -d 192.1.1.99 -p tcp --dport 40990 -j REDIRECT --to-port 8006 || true
+
