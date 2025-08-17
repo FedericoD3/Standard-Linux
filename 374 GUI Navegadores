@@ -1,6 +1,18 @@
 # BRAVE
   curl -fsS https://dl.brave.com/install.sh | sh
 
+# CHROMIUM
+  sudo apt install chromium
+
+# THORIUM
+  # Descargar el paquede DEB desde https://github.com/Alex313031/Thorium/releases
+  #  Preferible AVX2
+  #  Ver el CPU exacto con cat /proc/cpuinfo y googlear (AMD Ryzen 3 2200G soporta SSE4.2 y AVX2)
+  #  Si aun no hay navegador instalado, descargarlo "a pie" desde el terminal:
+    wget https://github.com/Alex313031/thorium/releases/download/M130.0.6723.174/thorium-browser_130.0.6723.174_AVX2.deb -O ~/thorium.deb
+    sudo apt install ~/thorium.deb
+    rm thorium.deb
+
 # LIBREWOLF
   sudo apt install extrepo -y
   sudo extrepo enable librewolf
@@ -12,18 +24,6 @@
     [ ] Delete cookies and site data when LibreWolf is closed
   # Y marcar:
     [*] Ask to save passwords
-
-# CHROMIUM
-  sudo apt install chromium
-
-# THORIUM
-  # Descargar el paquede DEB desde:
-  # https://github.com/Alex313031/Thorium/releases
-  #  Preferible AVX2
-  #  Ver el CPU exacto con cat /proc/cpuinfo y googlear (AMD Ryzen 3 2200G soporta SSE4.2 y AVX2)
-  #  Si aun no hay navegador instalado, descargarlo "a pie" desde el terminal:
-    wget -o thorium.deb https://github.com/Alex313031/thorium/releases/download/M130.0.6723.174/thorium-browser_130.0.6723.174_AVX2.deb
-    sudo apt install thorium.deb
 
 # Otros Navegadores ligeros:
    sudo apt install epiphany-browser     # 537 MB of additional disk space will be used.
