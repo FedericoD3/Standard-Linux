@@ -2,6 +2,8 @@
 # si siempre la usa la misma persona,
 # y quienes puedan usarla son de confianza:
 
+https://forums.debian.net/viewtopic.php?t=158820
+
 # Instrucciones para lightdm-greeter:
 # o ( https://unix.stackexchange.com/questions/302400/auto-login-on-xfce-in-jessie )
     sudo dpkg-reconfigure lightdm
