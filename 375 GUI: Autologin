@@ -14,5 +14,5 @@
        autologin-user-timeout=0
        autologin-session=xfce
 
-# Para la ltima lnea, las sesiones disponibles en el equipo se descubren haciendo:
+# Para la ultima lnea, las sesiones disponibles en el equipo se descubren haciendo:
   ls -l /usr/share/xsessions/
