@@ -2,19 +2,13 @@
 # si siempre la usa la misma persona,
 # y quienes puedan usarla son de confianza:
 
-https://forums.debian.net/viewtopic.php?t=158820
-
-# Instrucciones para lightdm-greeter:
-# o ( https://unix.stackexchange.com/questions/302400/auto-login-on-xfce-in-jessie )
-    sudo dpkg-reconfigure lightdm
-    sudo groupadd -r autologin
-    sudo gpasswd -a $USER autologin
-    sudo nano /etc/lightdm/lightdm.conf
-    # Y añadir al final la configuracion para el usuario actual
-      [SeatDefaults]
-       autologin-user=$USER
-       autologin-user-timeout=0
-       autologin-session=xfce
-
-# Para la ultima lnea, las sesiones disponibles en el equipo se descubren haciendo:
-  ls -l /usr/share/xsessions/
+# Instrucciones para lightdm-greeter (Cinnamon, Mate, XFCE, LXDE):
+#  https://forums.debian.net/viewtopic.php?t=158820
+   sudo nano /etc/lightdm/lightdm.conf
+   # Buscar debajo de [Seat:*] las líneas 
+     #autologin-user=
+   # Des-comentarla y escribir el usuario a auto-loguear
+     #autologin-user-timeout=
+   # Des-comentarla y escribir la cantidad de segundos para auto-loguear
+   # Ctrl+s para salvar, Ctrl+x para salir
+   # Reiniciar para verificar.
