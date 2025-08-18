@@ -14,16 +14,16 @@
     rm thorium.deb
 
 # LIBREWOLF
-  sudo apt install extrepo -y
+  sudo apt install extrepo
   sudo extrepo enable librewolf
   sudo apt update
-  sudo apt install librewolf -y
+  sudo apt install librewolf
   # A veces no funciona, y es más fácil instalarlo desde la app catálogo "Discover"
   # Para que no cierre sesión en páginas como Facebook:
-  # Settings > passwords and security > desmarcar 
-    [ ] Delete cookies and site data when LibreWolf is closed
-  # Y marcar:
-    [*] Ask to save passwords
+    # Settings > passwords and security > desmarcar 
+      [ ] Delete cookies and site data when LibreWolf is closed
+    # Y marcar:
+      [*] Ask to save passwords
 
 # Otros Navegadores ligeros:
    sudo apt install epiphany-browser     # 537 MB of additional disk space will be used.
