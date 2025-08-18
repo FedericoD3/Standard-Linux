@@ -32,3 +32,27 @@
 
 # La interfaz de control está en http://IP-del-computador:8384
 # Configurar Y NO OLVIDAR la contraseña!
+
+####################################################################
+##### SINCRONIZACION Y MAPEO MIO DE MIS DIRECTORIOS MIOS DE MI #####
+####################################################################
+# Desde la interfaz de control de SyncThing en el computador que hace de "master"
+#  compartir con este computador nuevo:
+  -> /Discos/Resto/Sync
+  -> /Discos/Resto/FondosDePantalla
+  -> /Discos/Resto/Pantallazos
+  -> /Discos/Resto/PortableApps
+# ( /Discos/Resto es el punto de montaje del disco duro auxiliar )
+# Enlazar los directorios abultados a los directorios en el disco auxiliar (para ahorrar espacio en el principal):
+  ln -s /Discos/Resto/Downloads Downloads 
+  ln -s /Discos/Resto/Dropbox   Dropbox
+  ln -s /Discos/Resto/Videos    Videos
+# Enlazar mis configuraciones a los directorios correspondientes sincronizados:
+  ln -s /Discos/Resto/Sync/Configs/Linux/≈╱Discos╱Local╱bashStd /Discos/Local/bashStd
+  ln -s /Discos/Resto/Sync/Configs/Linux/≈╱Discos╱Local╱Scripts /Discos/Local/Scripts
+  ln -s /Discos/Resto/Sync/Configs/Linux/≈╱.themes        .themes
+  ln -s /Discos/Resto/Sync/Configs/VSCodium/≈╱.vscode-oss .vscode-oss
+  
+
+
+  
