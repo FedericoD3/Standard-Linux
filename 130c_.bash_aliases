@@ -1,20 +1,13 @@
 #!/bin/bash
 
-alias vers='echo Version de Aliases de 2024-09-30 20.00'
+alias vers='echo Version de Aliases de 2025-08-18 17:30'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ls='ls --color=auto'
-# alias ll='echo "-S size, -t time, -X extension" && ls -Al --time-style=long-iso'  
-
-alias listapaq='dpkg --list --no-pager'
-
-# --sort SORT_FIELD
-# --only-dirs
-# --only-files
-# alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && eza --icons=never --time-style=long-iso --absolute -BAl --total-size --level 2'
-  alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && ls -Al --time-style=long-iso --group-directories-first $1' 
+alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && ls -Al --time-style=long-iso --group-directories-first $1' 
 alias ping='ping -c 4 $1'
+
 alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
 alias carpetas='smbclient -L $(hostname) -U "$1" '
@@ -58,6 +51,9 @@ fuentes () {
   ls -Al /etc/apt/sources.list.d/*.list
 }
 
+alias listapaq='dpkg --list --no-pager'
+
+# Convertir ejecutable por cualquiera todos los .sh en el directorio especificado:
 rexe () {
   DIR=$1
   if [ -z "$DIR" ]; then DIR="$(pwd)"; fi
