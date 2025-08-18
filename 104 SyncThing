@@ -52,6 +52,8 @@
   ln -s /Discos/Resto/Sync/Configs/Linux/≈╱Discos╱Local╱Scripts /Discos/Local/Scripts
   ln -s /Discos/Resto/Sync/Configs/Linux/≈╱.themes        .themes
   ln -s /Discos/Resto/Sync/Configs/VSCodium/≈╱.vscode-oss .vscode-oss
+  ln -s /Discos/Resto/Sync/Configs/Linux/≈╱.config/tabby/config.yaml .config/tabby/config.yaml 
   
   
+
 
