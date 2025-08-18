@@ -8,6 +8,7 @@
 # Configuracion para RiseUpVPN
   wget https://github.com/BarbossHack/RiseupVPN-OpenVPN/raw/refs/heads/master/generate.sh
   wget https://github.com/BarbossHack/RiseupVPN-OpenVPN/raw/refs/heads/master/riseup-ovpn.sample.conf
+  sudo apt install jq curl iproute2
   chmod +x generate.sh
   ./generate.sh
 
