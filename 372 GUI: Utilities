@@ -8,8 +8,8 @@
   sudo nala install -y xdotool
 
 # Miscelaneos:
-  sudo apt install -y gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "03 Estructura de directorios"
-  sudo apt install -y gparted
+  sudo apt install -y gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "020 Estandarizacion de directorios"
+  sudo apt install -y gparted               # Para crear, redimensionar, mover o eliminar particiones
 
 # Administrador de credenciales locales
   sudo nala install -y seahorse
