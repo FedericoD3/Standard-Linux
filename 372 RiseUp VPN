@@ -1,0 +1,3 @@
+# INTERFAZ GRAFICA DEL VPN RISE-UP PARA PODER CONECTARSE A PAGINAS BLOQUEADAS PARA VENEZUELA
+#  También puede usarse como comando de texto según 110 OpenVPN
+  sudo apt install riseup-vpn
