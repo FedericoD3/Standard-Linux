@@ -18,5 +18,5 @@
   ssh UsuarioRemoto@servidorRemoto
 
 # NOTA:
-#  Si /etc/ssh/ssh_config tiene configurado otro puerto que no sea el default 22,
+#  Si /etc/ssh/ssh_config del computador a conectarse tiene configurado otro puerto que no sea el default 22,
 #  ssh-copy-id tratará de conectarse con el puerto no standard que esté configurado localmente
