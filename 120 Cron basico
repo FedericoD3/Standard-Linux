@@ -5,6 +5,7 @@
 # Ejecutar el editor de crontab (la primera vez pedirá con cual editor, yo prefiero nano)
   crontab -e
 # Borrar el encabezado y sustituirlo por esto:
+
   # Desactivar el envio de email interno por cada cronjob
     MAILTO=""
   # Para que cron de cada usuario tenga sus variables de entorno. 
@@ -21,3 +22,5 @@
   #  |   |   |   |   .-- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
   #  |   |   |   |   |
   #  m   h  dom mon dow  command
+
+# Ctrl+s para salvar, Ctrl+x para salir
