@@ -76,26 +76,27 @@ fetch () {
       echo fastfetch
       fastfetch
     else
-    # Ejecutar neofetch si existe:
-    if which neofetch
-      then
-        echo neofetch
-        neofetch
-      else echo "No esta instalado ni neofetch ni fastfetch"
-      fi
+      echo "Primero instala fastfetch:"
+      echo "sudo apt install fastfetch"
   fi
   # Ejecutar cpufetch si existe:
   if which cpufetch
     then
       echo "cpufetch -s retro --logo-short --full-cpu-name --accurate-pp:"
             cpufetch -s retro --logo-short --full-cpu-name --accurate-pp
+    else
+      echo "Primero instala cpufetch:"
+      echo "sudo apt install cpufetch"
   fi
   # Ejecutar sysbench si existe:
   if which sysbench
     then
-    echo "sysbench cpu run | grep "events per second\|Prime" | grep -v -e '^$':"
-          sysbench cpu run | grep "events per second\|Prime" | grep -v -e '^$'
-    echo "************************************************************"
+      echo "sysbench cpu run | grep "events per second\|Prime" | grep -v -e '^$':"
+            sysbench cpu run | grep "events per second\|Prime" | grep -v -e '^$'
+      echo "************************************************************"
+    else
+      echo "Primero instala sysbench:"
+      echo "sudo apt install sysbench"
   fi
 }
 
