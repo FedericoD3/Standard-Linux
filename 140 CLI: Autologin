@@ -1,3 +1,5 @@
+#!bash
+
 cat /etc/systemd/system/getty@tty1.service.d/override.conf
 : No such file or directory
 
