@@ -1,7 +1,9 @@
-# Usando rsync
-#  Instalarlo si hace falta
-#  sudo apt install rsync
-# RESPALDAR AL **OTRO** DISCO LOS ARCHIVOS MODIFICADOS DESDE EL ULTIMO RESPALDO:
+# REPLICADOR DE ARCHIVOS DE UN DIRECTORIO A OTRO 
+# Instalar rsync
+  sudo apt install rsync
+
+# RESPALDAR A **OTRO** DISCO LOS ARCHIVOS MODIFICADOS DESDE EL ULTIMO RESPALDO:
+#  (no tiene sentido respaldar al mismo disco)
 # Respaldar y enviar el resultado del comando a un LOG cuyo nombre es la fecha en que se ejecuto
 # -r recurse into directories
 # -t preserve modification times
@@ -9,5 +11,7 @@
 # -H preserve hard links
 # -i itemize changes (output a change-summary for all updates)
 # -s no space-splitting; only wildcard special-chars
+
   rsync -r -t -l -H -i -s /Ruta/Al/Dir/Origen/ /Ruta/Al/Dir/Destino/ > /Ruta/Al/Registro/Respaldo_del_$(date +"%Y-%m-%d-%H%M").log
-# Agregar el comando anterior al cron de root, a una hora que nadie este usando el servidor
+
+# Agregar el comando anterior al programador de tareas cron, a una hora que nadie este usando el computador
