@@ -34,15 +34,15 @@
       source /Discos/Local/bashStd/.bashrc
       return
 
-  # Crear la configuración personalizada standard sin login (emulador de terminal en GUI) para usuarios futuros:
-    sudo ln /Discos/Local/bashStd/.bashrc /etc/skel/.bashrc
+  # Enlazar la configuración personalizada standard sin login (emulador de terminal en GUI) para usuarios futuros:
+    sudo ln -s /Discos/Local/bashStd/.bashrc /etc/skel/.bashrc
 
-  # Crear un hardlink de la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) de usuarios ya existentes:
-    sudo ln /Discos/Local/bashStd/.bashrc .bashrc
+  # Enlazar la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) de usuarios ya existentes:
+    sudo ln -s /Discos/Local/bashStd/.bashrc .bashrc
     # (repetir para cada usuario existente)
 
 # Crear un hardlink de la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) del usuario root:
-    sudo ln /Discos/Local/bashStd/.bashrc /root/.bashrc
+    sudo ln -s /Discos/Local/bashStd/.bashrc /root/.bashrc
 
 # FONTS LEGIBLES EXTRA:
   # Powerline (caracteres gráficos para coquetería del shell)
@@ -74,3 +74,4 @@
 
   # Reconstruir el cache después de instalar fonts:
     fc-cache -f -v
+
