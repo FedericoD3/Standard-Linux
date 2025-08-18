@@ -11,6 +11,7 @@
   chmod +x generate.sh
   ./generate.sh
 
+# Verificar:
   curl ipinfo.io
   sudo openvpn --config riseup-ovpn.conf
   curl ipinfo.io
