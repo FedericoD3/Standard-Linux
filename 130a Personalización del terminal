@@ -74,6 +74,3 @@
 
   # Reconstruir el cache después de instalar fonts:
     fc-cache -f -v
-
-
-
