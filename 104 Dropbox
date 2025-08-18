@@ -1,38 +1,11 @@
+# SINCRONIZADOR DE ARCHIVOS A LA NUBE
+#  Ventaja: los archivos quedan en otro lugar, inmune a accidentes caseros
+#  Desventaja: el plan gratis de Dropbox es sólo 2GB
+
+# Mi enfoque:
+#  Duplicar los archivos convenientes de cada computador al servidor personal
+#  y duplicar a Dropbox sólo los archivos necesarios del servidor personal
+
 https://www.linuxbabe.com/ubuntu/install-dropbox-headless-ubuntu-server
 
-###    # ALTERNATIVA NO SE SI PRACTICA:
-###    # (sólo crea un symlink del directorio deseado a ~/Dropbox standard)
-###      cp ~/Dropbox /Directorio/en/otro/lado/Dropbox
-###      echo /Directorio/en/otro/lado/Dropbox ~/Dropbox bind bind | sudo tee -a /etc/fstab
-###      sudo mount ~/Dropbox
-###      # "path": "/home/federico/Dropbox"
-###      # "path": "/Discos/0500_Software/@SyncThings-central/Dropbox"
-
-# https://github.com/joeroback/dropbox/tree/master
-# This assumes each user installed dropbox headless via the command line: https://www.dropbox.com/en/install?os=lnx 
-#  and has setup his/her account such that running dropboxd manually works.
-
-# Lo anterior crea el directorio ~/Dropbox.
-# Si se quiere crear en otro lado, hay que instalarlo via GUI y mover el directorio con la interfaz grafica de Dropbox
-
-# Crear el archivo del servicio: Place the dropbox@.service file into /etc/systemd/system
-sudo nano /lib/systemd/system/dropbox@.service
-[Unit]
- Description=Dropbox as a system service
- After=local-fs.target network.target
-[Service]
- Type=simple
- ExecStart=/usr/bin/env "/home/%i/.dropbox-dist/dropboxd"
- Restart=on-failure
- RestartSec=1
- User=%i
-[Install]
- WantedBy=multi-user.target
-
-# Recargar los servicios:
-  sudo systemctl daemon-reload
-# Habilitar el servicio para el usuario:
-  sudo systemctl enable dropbox@<USUARIO>
-# Arrancar el servicio sin esperar a reiniciar el servidor:
-  sudo systemctl start  dropbox@<USUARIO>
-  sudo systemctl status dropbox@<USUARIO>
+# PENDIENTE POR ANOTAR LA INSTALACION PARA PC DE ESCRITORIO
