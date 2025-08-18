@@ -1,3 +1,5 @@
+# VPN ENTRANTE PARA CONECTARSE DESDE INTERNET
+
 # https://docs.zerotier.com/getting-started/getting-started
 
 # INSTALAR
@@ -68,3 +70,4 @@
   sudo iptables -A FORWARD -i $RedLocal -o $RedZT -m state --state RELATED,ESTABLISHED -j ACCEPT
   sudo iptables -A FORWARD -i $RedZT -o $RedLocal -j ACCEPT
   sudo apt install iptables-persistent
+
