@@ -1,4 +1,3 @@
-  GNU nano 7.2                                                                /Discos/Local/bashStd/.bashrc                                                                         
 #!/bin/bash
 
 Log=1
