@@ -2,3 +2,5 @@
 1xx = Servicios opcionales para todos los usos
 2xx = Programas para linea de comandos (servidor)
 3xx = Programas para interfaz grafica (PC/laptop)
+
+9xx = Deprecados, ya no los uso pero no quise borrar las notas
