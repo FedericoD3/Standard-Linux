@@ -10,8 +10,8 @@
   echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
 # Update and install syncthing:
-  sudo nala update
-  sudo nala install syncthing
+  sudo apt update
+  sudo apt install syncthing
 
 # Editar el servicio para que atienda por el puerto que me convenga
 #  y que atienda cualquier equipo y no solo localhost 127.0.0.1
@@ -22,7 +22,6 @@
   sudo nano /lib/systemd/system/syncthing@.service
 #  y después de salvar el servicio:
   sudo systemctl daemon-reload
-  sudo systemctl restart syncthing@$USER.service
 
 # https://www.linuxbabe.com/debian/install-syncthing
 # Enable syncthing to auto start at boot time by running the below command. 
@@ -31,3 +30,5 @@
   sudo systemctl start syncthing@$USER.service
   systemctl status syncthing@$USER.service
 
+# La interfaz de control está en http://IP-del-computador:8384
+# Configurar Y NO OLVIDAR la contraseña!
