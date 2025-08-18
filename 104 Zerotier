@@ -22,33 +22,10 @@
   zerotier-cli listnetworks
 
 # Opcional, ponerles nombres descriptivos:
-  nmcli connection modify 'zt6ovzuv57' con-name ZT-Alfica
-  nmcli connection modify 'ztfp6gdnkb' con-name ZT-ViejasDuran
-  nmcli connection modify 'ztklh2unun' con-name ZT-UnimatrixZero
-  nmcli connection modify 'zth6rcb6jc' con-name ZT-Delray
+  nmcli connection modify 'zt01234567' con-name ZT-Casa
+  nmcli connection modify 'zt89abcdef' con-name ZT-Empresa
+  nmcli connection modify 'zt98765432' con-name ZT-CasaDePlaya
 
-################################################################
-##### INTENTANDO QUE CADA ZT TENGA SU DNS
-# Aparentemente con NetworkManager y /etc/resolv.conf no sirve direccionar el DNS según dominio
-#  así que hay que agregar los servidores DNS de cada dominio de ZeroTier
-#  en la configuración de dnsmasq en el DNS pihole de la LAN:
-  sudo nano /etc/dnsmasq.d/10-DNSsZeroTier.conf
-    server=/alfica.red/192.168.1.103
-    server=/viejasduran.red/192.168.1.6
-#   (y que el pihole esté agregado a esos ZT, claro)
-# y reiniciar el servicio
-  sudo systemctl restart unbound
-  sudo service pihole-FTL reload
-  sudo pihole restartdns
-
-# No resultaron:
-#  sudo nano /etc/NetworkManager/system-connections/ # El archivo de la conexión que haga falta
-#  sudo nmcli connection modify ZT-Alfica ipv4.method "auto"
-#  sudo nmcli connection modify ZT-Alfica ipv4.dns "192.168.1.103"
-#  sudo nmcli connection modify ZT-Alfica ipv4.dns-search "alfica.red" 
-#  sudo nmcli device reapply zt6ovzuv57
-#  sudo nmcli con reload
-################################################################
 
 # EN CASO QUE ESTE EQUIPO VAYA A ACTUAR COMO ROUTER ENTRE ZEROTIER Y EL RESTO DE LA RED
   Add a managed route to the ZeroTier network (at my.zerotier.com)
@@ -70,4 +47,5 @@
   sudo iptables -A FORWARD -i $RedLocal -o $RedZT -m state --state RELATED,ESTABLISHED -j ACCEPT
   sudo iptables -A FORWARD -i $RedZT -o $RedLocal -j ACCEPT
   sudo apt install iptables-persistent
+
 
