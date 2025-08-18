@@ -13,6 +13,7 @@
     sudo mv /etc/skel/.bash_logout /etc/skel/.bash_logout.orig
     sudo mv /etc/motd /etc/motd.orig
 
+  ## SI NO SE TRAJERON SINCRONIZADOS DESDE UN COMPUTADOR MAESTRO, TRAERLOS DESDE ESTE GITHUB ##
   # Crear el directorio para configuración standard de terminales:
     sudo mkdir -p /Discos/Local/bashStd/motd.d
   # Descargar de aquí los archivos de configuración personalizada:
@@ -74,4 +75,5 @@
 
   # Reconstruir el cache después de instalar fonts:
     fc-cache -f -v
+
 
