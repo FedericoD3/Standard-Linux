@@ -1,3 +1,5 @@
+# SINCRONIZADOR DE ARCHIVOS ENTRE COMPUTADORAS
+
 # https://apt.syncthing.net/
 
 # Add the release PGP keys:
@@ -28,3 +30,4 @@
   sudo systemctl enable syncthing@$USER.service
   sudo systemctl start syncthing@$USER.service
   systemctl status syncthing@$USER.service
+
