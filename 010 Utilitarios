@@ -53,13 +53,15 @@
   sudo apt install bat
 
 # tldr (resumidor de manuales de comandos)
-  sudo apt install tldr
+  sudo apt install tldr-py
 
 # FORMATEADORES DE INFORMACION DEL EQUIPO:
 # Informacion general:
   sudo apt install fastfetch
 # Información del CPU:
   sudo apt install cpufetch
+# Rendimiento del CPU
+  sudo apt install sysbench
 
 # Utilities Android:
   sudo apt install android-sdk-platform-tools-common
