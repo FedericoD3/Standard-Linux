@@ -1,14 +1,20 @@
 # https://www.youtube.com/watch?v=i-OLnKjnWG0
 
-# Menu > System Settings > Panel
-#  Seleccionar Äuto hide panel"
+# Menu > Settings > Panel
+#  Seleccionar "Auto hide panel" = Always
 #  Reducir la altura de la barra de 40 a 24
 
-# Menu > System Settings > Desktop
+# Menu > Settings > Desktop
 #  Activar los iconos default (en mi caso, todos)
 #  Seleccionar "Show desktop icons on all monitors"
 
-# Componedor de capas de video (transparencia, flexibilidad, etc)
+# Compositor de pantalla (transparencia, difuminado, sombras)
+  sudo apt install picom picom-conf
+
+
+
+
+# Compositor de pantalla (transparencia, difuminado, sombras) ¿ABANDONADO?
   sudo nala install compiz
 
 # Menu > System Settings > Preferences > Appearance > Themes > Applications > Adwaita-dark
