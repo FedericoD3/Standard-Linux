@@ -53,7 +53,10 @@
   ln -s /Discos/Resto/Sync/Configs/Linux/≈╱.themes        .themes
   ln -s /Discos/Resto/Sync/Configs/VSCodium/≈╱.vscode-oss .vscode-oss
   ln -s /Discos/Resto/Sync/Configs/Linux/≈╱.config/tabby/config.yaml .config/tabby/config.yaml 
+  ln -s /Discos/Resto/Sync/Configs/Linux/≈╱.config/remmina .config/remmina
+  ln -s /Discos/Resto/Dropbox/Configs/VNC/remmina .local/share/remmina
   
   
+
 
 
