@@ -1,9 +1,16 @@
 # DESINSTALAR PROGRAMAS DEFAULT QUE NO USO E INSTALAR PROGRAMAS QUE SI USO
 
 # Desinstalar los programas que el DM instala por defecto y no uso:
-  sudo apt purge atril xterm firefox* libreoffice* exfalso* parole xfburn xfce4-terminal* xsane
+  sudo apt purge atril xterm firefox* libreoffice* exfalso* parole xfburn xfce4-terminal* xsane kdeconn* 
   sudo apt autoremove
 
+# AngryIP (scanner de red)
+  wget https://github.com/angryip/ipscan/releases/download/3.9.2/ipscan_3.9.2_amd64.deb -O angryip.deb
+  sudo apt install ./angryip.deb
+  rm angryip.deb
+
+# Emulador de DOS (útil para juegos viejos o programas de PLCs)
+  sudo apt install dosbox*
 
 # KeePassXC (También via el catálogo "Discover" o "Software"):
   sudo apt install keepassxc
