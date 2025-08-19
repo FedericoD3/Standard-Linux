@@ -1,5 +1,5 @@
 # Desinstalar los programas que el DM instala por defecto y no uso:
-  sudo apt purge atril xterm firefox* libreoffice* exfalso*
+  sudo apt purge atril xterm firefox* libreoffice* exfalso* parole xfburn xfce4-terminal* xsane
   sudo apt autoremove
 
 # KeePassXC (También via el catálogo "Discover" o "Software"):
