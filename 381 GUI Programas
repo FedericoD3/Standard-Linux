@@ -3,37 +3,42 @@
   sudo apt autoremove
 
 # KeePassXC (También via el catálogo "Discover" o "Software"):
-  sudo nala install keepassxc
-  sudo nala install webext-keepassxc-browser 
+  sudo apt install keepassxc
+  sudo apt install webext-keepassxc-browser 
 
 # NotepadNext # Via el catálogo "Discover"
   sudo apt install mousepad
 
 # Historico de copiar-pegar:
-  sudo nala install copyq
+  sudo apt install copyq
 
 # Visor de PDFs
-  sudo nala install okular
+  sudo apt install okular
 
 # Editor de audio
-  sudo nala install audacity
+  sudo apt install audacity
 
 # Editores de video:
-  sudo nala install handbrake
-  sudo nala install kdenlive
+  sudo apt install handbrake
+  sudo apt install kdenlive
 
 # Office:
   sudo apt purge libreoffice                                    # Se liberarán 359 MB después de esta operación.
-  sudo nala install libreoffice-writer --no-install-recommends  # Se utilizarán 258 MB de espacio
-  sudo nala install libreoffice-calc --no-install-recommends    # Se utilizarán 34,3 MB de espacio 
+  sudo apt install libreoffice-writer --no-install-recommends   # Se utilizarán 258 MB de espacio
+  sudo apt install libreoffice-calc --no-install-recommends     # Se utilizarán 34,3 MB de espacio 
   sudo apt install libreoffice-impress --no-install-recommends  # Se utilizarán 24,3 MB de espacio
 
-# Vysor (control android):
+# ScrCpy (control android) https://github.com/Genymobile/scrcpy/tree/master:
+  wget https://github.com/Genymobile/scrcpy/releases/download/v3.3.1/scrcpy-linux-x86_64-v3.3.1.tar.gz -O Downloads/scrcpy.tar.gz
+  tar -xvf Downloads/scrcpy.tar.gz
+  # Crear en donde convenga el acceso directo a ~/scrcpy-linux-x86_64-v3.3.1/scrcpy
+# Vysor (control android, pero versión gratis limitada)
   echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee /etc/apt/sources.list.d/vysor.list 
-  sudo nala update 
-  sudo nala install -y vysor
+  sudo apt update 
+  sudo apt install -y vysor
+
 
 # Reproductor de video mas ligero que VLC
   sudo add-apt-repository ppa:rvm/smplayer 
   sudo apt-get update 
-  sudo nala install smplayer smplayer-themes
+  sudo apt install smplayer smplayer-themes
