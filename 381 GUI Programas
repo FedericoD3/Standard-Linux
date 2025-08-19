@@ -1,8 +1,13 @@
+# Desinstalar los programas que el DM instala por defecto y no uso:
+  sudo apt purge atril xterm firefox* libreoffice* exfalso*
+  sudo apt autoremove
+
 # KeePassXC (También via el catálogo "Discover" o "Software"):
   sudo nala install keepassxc
   sudo nala install webext-keepassxc-browser 
 
 # NotepadNext # Via el catálogo "Discover"
+  sudo apt install mousepad
 
 # Historico de copiar-pegar:
   sudo nala install copyq
