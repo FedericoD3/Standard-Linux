@@ -1,6 +1,6 @@
 sudo wget https://github.com/9001/copyparty/releases/latest/download/copyparty-sfx.py -O /usr/local/bin/copyparty-sfx.py
 sudo wget https://raw.githubusercontent.com/9001/copyparty/refs/heads/hovudstraum/contrib/systemd/copyparty.service -O /etc/systemd/system/copyparty.service
-sudo wget https://github.com/9001/copyparty/raw/refs/heads/hovudstraum/contrib/systemd/copyparty.conf /etc/copyparty.conf
+sudo wget https://github.com/9001/copyparty/raw/refs/heads/hovudstraum/contrib/systemd/copyparty.conf -O /etc/copyparty.conf
 
 sudo nano /etc/copyparty.conf
   [global]
@@ -21,3 +21,4 @@ sudo useradd -r -s /sbin/nologin -m -d /var/lib/copyparty copyparty
 sudo systemctl daemon-reload 
 sudo systemctl enable copyparty
 sudo systemctl start copyparty
+sudo systemctl status copyparty
