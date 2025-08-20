@@ -16,11 +16,11 @@
 
 # Configurar el montaje al encender:
 #  MANUALMENTE, identificando cada disco con
-  ls -Al /dev/disk/by-uuid
-  sudo blkid
-#  y editando el /etc/fstab con líneas
-  /dev/disk/by-uuid/01234567-89AB-CDEF-0123-456789ABCDEF /Discos/SeagateGrande auto nosuid,nodev,nofail,x-gvfs-show 0 2
-#  GRAFICAMENTE, con la utility "Disks" instalada segun "62 GUI Utilities"
+    ls -Al /dev/disk/by-uuid
+    sudo blkid
+    #  y editando el /etc/fstab con líneas
+    /dev/disk/by-uuid/01234567-89AB-CDEF-0123-456789ABCDEF /Discos/SeagateGrande auto nosuid,nodev,nofail,x-gvfs-show 0 2
+#  GRAFICAMENTE, con la utility "Disks" instalada con los utilitarios para interfaz gráfica
 
 # Y darle acceso a todo:
   sudo chown -R nobody /Discos 
