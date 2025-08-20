@@ -5,7 +5,7 @@
 
 # Instalar OpenJRE porque el Java oficial de Oracle está bloqueado para Venezuela:
   sudo apt update
-  sudo apt install openjdk-17-jr
+  sudo apt install openjdk-17-jre
 
 # Ver cual es la versión mas reciente de signal-cli y descargarla desde https://github.com/AsamK/signal-cli/releases/
   wget https://github.com/AsamK/signal-cli/releases/download/v0.13.18/signal-cli-0.13.18-Linux-native.tar.gz
