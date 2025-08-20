@@ -18,4 +18,6 @@ sudo nano /etc/copyparty.conf
       grid
 
 sudo useradd -r -s /sbin/nologin -m -d /var/lib/copyparty copyparty
-sudo systemctl daemon-reload && systemctl enable --now copyparty
+sudo systemctl daemon-reload 
+systemctl enable copyparty
+systemctl start copyparty
