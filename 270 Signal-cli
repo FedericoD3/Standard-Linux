@@ -1,11 +1,14 @@
+#### INCOMPLETA / PENDIENTE ####
 # MENSAJERIA SIGNAL POR COMANDOS
-# útil para reportar statuses
+# Util para reportar statuses
+# Requiere una linea telefonica para registrarlo
 
 # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal
 
-# Instalar pre-requisito de java (OpenJRE porque el Java oficial de Oracle está bloqueado para Venezuela):
+# Instalar pre-requisito de java:
   sudo apt update
-  sudo apt install openjdk-17-jre
+  sudo apt install default-jre
+  # (Usar el mirror de Debian porque el Java oficial de Oracle está bloqueado para Venezuela)
 
 # Instalar el cliente de Signal:
   # Ver versión mas reciente de signal-cli en https://github.com/AsamK/signal-cli/releases/ y asignarla a una variable
