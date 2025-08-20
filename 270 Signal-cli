@@ -7,8 +7,7 @@
   sudo apt update
   sudo apt install openjdk-17-jre
 
-# Ver cual es la versión mas reciente de signal-cli y descargarla desde https://github.com/AsamK/signal-cli/releases/
-  wget https://github.com/AsamK/signal-cli/releases/download/v0.13.18/signal-cli-0.13.18-Linux-native.tar.gz
-  o 
-  wget https://github.com/AsamK/signal-cli/releases/download/v0.13.18/signal-cli-0.13.18.tar.gz
- sudo tar xf signal-cli-"${VERSION}".tar.gz -C ~/SignalCli
+# Ver versión mas reciente de signal-cli en https://github.com/AsamK/signal-cli/releases/ y asignarla a una variable
+  VERSION=0.13.18
+  wget https://github.com/AsamK/signal-cli/releases/download/v"${VERSION}"/signal-cli-"${VERSION}".tar.gz
+  sudo tar xf signal-cli-"${VERSION}".tar.gz -C ~/SignalCli
