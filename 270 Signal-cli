@@ -1,4 +1,7 @@
-https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal
+# MENSAJERIA SIGNAL POR COMANDOS
+# útil para reportar statuses
+
+# https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal
 
 # Instalar OpenJRE porque el Java oficial de Oracle está bloqueado para Venezuela:
   sudo apt update
