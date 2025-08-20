@@ -1,8 +1,22 @@
+# OPCIONAL: DECORACION ("RICING")
 # https://www.youtube.com/watch?v=i-OLnKjnWG0
 
+# Sustituir el menu default estilo Windows <7 por uno mas moderno estilo Windows >10
+  sudo apt install xfce4-whiskermenu-plugin
+
 # Menu > Settings > Panel
+#  Seleccionar "Panel 2", probablemente el panelcito estrecho estilo MacOS abajo, y click en la X roja para eliminarlo
+#  Seleccionar "Panel 1", barra de tareas común pero arriba estilo Ubuntu, desmarcar "Lock panel" y arrastrarlo hasta el borde inferior
 #  Seleccionar "Auto hide panel" = Always
 #  Reducir la altura de la barra de 40 a 24
+#  Sustituir xfce4-menu por whiskermenu:
+#   Click en la pestaña "Items"
+#   Click en [+ Add] (abajo), buscar "Whiskermenu", click [+ Add], click [X close]
+#   Whiskermenu aparece de último (al extremo derecho de la barra), seleccionarlo en la lista de items y moverlo al principio con [^]
+#   Click en [=] (a la derecha de [X Remove]) y configurar Whiskermenu al gusto. Tambien accesible desde click-derecho > Propiedades en el menu inicio mismo
+#    yo cambio a estilo íconos (tipo Windows 10), el ícono de ratoncito por uno a mi gusto, marco "Position categories on the left"
+#   Selecionar "Applications menu" (el menú standard de Xfce estilo Windows 7), y clickear [X Remove] para eliminarlo
+
 
 # Menu > Settings > Desktop
 #  Activar los iconos default (en mi caso, todos)
@@ -10,28 +24,3 @@
 
 # Compositor de pantalla (transparencia, difuminado, sombras)
   sudo apt install picom picom-conf
-
-
-
-
-# Compositor de pantalla (transparencia, difuminado, sombras) ¿ABANDONADO?
-  sudo nala install compiz
-
-# Menu > System Settings > Preferences > Appearance > Themes > Applications > Adwaita-dark
-
-# Menu > System Settings > Preferences > Applets > Download 
-#  Weather > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarle la ubicación y que sea en centígrados
-#   y 
-#  Cinnamenu  > ▼ (aparece en el lado derecho del panel inferior) > click derecho y configurarlo:
-#   Pestaña Behaviour > Open menu on category > Last used
-#   Pestaña Behaviour > Enable autoscrolling > desmarcar
-#   Pestaña Appearance > Use custom Icon > marcar
-#   Pestaña Appearance > Panel icon > buscar uno en https://iconduck.com/icons/14037/debian
-#   Pestaña Appearance > Panel text > borrarlo
-#  Click-derecho en el panel inferior > [Panel edit mode] > Arrastrar el botón Cinnamenu hasta el extremo izquierdo > [Panel edit mode]
-
-# Paneles transparentes:
-#  Menu > System Settings > Preferences > Extensions > pestaña Download > Transparent panels    > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
-#   Configurarlo "Semi transparent"
-# Efecto gelatina en ventanas:
-#  Menu > System Settings > Preferences > Extensions > pestaña Download > Compiz Windows effect > ▼ > pestaña Manage > seleccionar la extensión > botón [+]
