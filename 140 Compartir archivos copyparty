@@ -1,0 +1,22 @@
+
+wget https://github.com/9001/copyparty/releases/latest/download/copyparty-sfx.py -O /usr/local/bin/copyparty-sfx.py
+wget https://raw.githubusercontent.com/9001/copyparty/refs/heads/hovudstraum/contrib/systemd/copyparty.service -O /etc/systemd/system/copyparty.service
+wget https://github.com/9001/copyparty/raw/refs/heads/hovudstraum/contrib/systemd/copyparty.conf /etc/copyparty.conf
+
+useradd -r -s /sbin/nologin -m -d /var/lib/copyparty copyparty
+systemctl daemon-reload && systemctl enable --now copyparty
+
+/etc/copyparty.conf
+[global]
+  i: 0.0.0.0
+[accounts]
+  user: password
+  Admin: alf103ica
+[/]
+# /var/lib/copyparty-jail
+  /Discos
+  accs:
+    r: *
+    rwdma: user
+  flags:
+    grid
