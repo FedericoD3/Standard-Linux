@@ -3,11 +3,18 @@
 
 # https://github.com/AsamK/signal-cli/wiki/Provide-native-lib-for-libsignal
 
-# Instalar OpenJRE porque el Java oficial de Oracle está bloqueado para Venezuela:
+# Instalar pre-requisito de java (OpenJRE porque el Java oficial de Oracle está bloqueado para Venezuela):
   sudo apt update
   sudo apt install openjdk-17-jre
 
-# Ver versión mas reciente de signal-cli en https://github.com/AsamK/signal-cli/releases/ y asignarla a una variable
-  VERSION=0.13.18
-  wget https://github.com/AsamK/signal-cli/releases/download/v"${VERSION}"/signal-cli-"${VERSION}".tar.gz
-  sudo tar xf signal-cli-"${VERSION}".tar.gz -C ~/SignalCli
+# Instalar el cliente de Signal:
+  # Ver versión mas reciente de signal-cli en https://github.com/AsamK/signal-cli/releases/ y asignarla a una variable
+    VERSION=0.13.18
+  # Descargar el cliente comprimido
+  wget https://github.com/AsamK/signal-cli/releases/download/v"${VERSION}"/signal-cli-"${VERSION}".tar.gz 
+  sudo tar xf signal-cli-"${VERSION}".tar.gz -C /opt
+  sudo ln -sf /opt/signal-cli-"${VERSION}"/bin/signal-cli /usr/local/bin/
+
+# Registrar el cliente con el # de celular donde está
+  NumTel=+584121234567
+  signal-cli -a $NumTel register
