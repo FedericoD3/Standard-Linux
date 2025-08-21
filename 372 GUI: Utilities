@@ -1,5 +1,10 @@
 # UTILITIES PARA LA INTERFAZ GRAFICA
 
+# Visor de imágenes multiplataforma (sirve en Windows)
+  wget https://www.xnview.com/download.php?file=XnViewMP-linux-x64.deb -O XnViewMP-linux-x64.deb
+  sudo apt install ./XnViewMP-linux-x64.deb
+  rm XnViewMP-linux-x64.deb
+
 # Remapeo de teclas:
   sudo nala install -y xte
   sudo nala install -y xautomation
