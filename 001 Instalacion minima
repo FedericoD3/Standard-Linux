@@ -1,5 +1,5 @@
-# OJO SI VA A SER DUAL BOOT CON WINDOWS INSTALAR ESE PRIMERO
-#  porque la instalación de Windows sobreescribe grub y bootea automático
+# OJO SI VA A SER DUAL BOOT CON WINDOWS INSTALAR WINDOWS PRIMERO Y LINUX DESPUES
+#  porque la instalación de Windows sobreescribe el gestor de arranque y bootea automático
 
 # Descargar el ISO instalador mas reciente soportado por el hardware desde 
   https://www.debian.org/releases/index.es.html
