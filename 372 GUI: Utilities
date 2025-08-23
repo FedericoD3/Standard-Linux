@@ -5,19 +5,22 @@
   sudo apt install ./XnViewMP-linux-x64.deb
   rm XnViewMP-linux-x64.deb
 
+# Block de notas similar a Notepad++ (mejor que Mousepad, similar a notepad)
+  sudo apt install notepadqq 
+
 # Remapeo de teclas:
-  sudo nala install -y xte
-  sudo nala install -y xautomation
-  sudo nala install -y xbindkeys
+  sudo apt install -y xte
+  sudo apt install -y xautomation
+  sudo apt install -y xbindkeys
   xbindkeys --defaults > .config/.xbindkeysrc
-  sudo nala install -y xdotool
+  sudo apt install -y xdotool
 
 # Miscelaneos:
   sudo apt install -y gnome-disk-utility    # Para manejar los puntos de montaje de las particiones, segun preparados en "020 Estandarizacion de directorios"
   sudo apt install -y gparted               # Para crear, redimensionar, mover o eliminar particiones
 
 # Administrador de credenciales locales
-  sudo nala install -y seahorse
+  sudo apt install -y seahorse
 
 # Pipewire audio (mas moderno que Pulseaudio) https://linuxgenie.net/install-pipewire-debian-12/
   sudo apt install -y pipewire-audio wireplumber pipewire-pulse pipewire-alsa libspa-0.2-bluetooth
@@ -27,23 +30,23 @@
   sudo reboot
 
 # Emulador de terminal menos basico que mlterm:
-  sudo nala install -y xfce4-terminal
+  sudo apt install -y xfce4-terminal
 
 # Catálogo de software:
-  sudo nala install -y gnome-software
-  sudo nala install -y flatpak
-    sudo nala install -y gnome-software-plugin-flatpak    # para Gnome
-    sudo nala install -y plasma-discover-backend-flatpak  # para KDE
+  sudo apt install -y gnome-software
+  sudo apt install -y flatpak
+    sudo apt install -y gnome-software-plugin-flatpak    # para Gnome
+    sudo apt install -y plasma-discover-backend-flatpak  # para KDE
   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Administrador de privilegios para programas instalados como Flatpack
   Flatseal (instalar por el catálogo "Discover")
 
 # Acceso remoto (cliente)
-  sudo nala install -y remmina
+  sudo apt install -y remmina
 
 # Capturador de pantalla
-  sudo nala install -y ksnip
+  sudo apt install -y ksnip
   #  Menu > Options > Settings > Saver > Capture save location:
   #  ~/Pantallazos/$(date +%Y-%m)/$(date +%Y%m%d-%H%M%S).png
   #  para que las guarde en directorios por mes.
@@ -58,16 +61,7 @@
   #   Active wind: Shift+Print
 
 # Administrador de Zips:
-  sudo nala install -y xarchiver
-
-# Block de notas:
-  sudo nala install notepadqq # El que más se parece a Notepad++
-  sudo nala install -y gedit  # Disk space required  28.6 MB 
-  sudo nala install -y kate   # Disk space required  180.9 MB (carga muy lento)
-  sudo nala install -y geany  # Disk space required  13.4 MB
-  # Agregar algún tema oscuro desde https://github.com/geany/geany-themes/releases
-  #  al directorio ~/.config/geany/colorschemes y activarla via el menú View > Change color scheme
-  #  (a mí me gustan "Spyder dark" y "Kugel")
+  sudo apt install -y xarchiver
 
 # Visores de imagenes:
   wget https://download.xnview.com/XnViewMP-linux-x64.deb
@@ -77,16 +71,16 @@
   # Y darle acceso con Flatseal a los directorios relevantes en el file system
 
 # Calculadora (también para Windows?!)
-  sudo nala install -y qalculate-gtk
+  sudo apt install -y qalculate-gtk
 
 # IPqalc   Calculadora de IPs
-  sudo nala install -y ipqalc
+  sudo apt install -y ipqalc
 
 # Lupa:
-  sudo nala install -y kmag
+  sudo apt install -y kmag
 
 # Comparador de directorios
-  sudo nala install -y meld
+  sudo apt install -y meld
 
 # Scanner de red
   wget https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb
