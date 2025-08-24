@@ -32,6 +32,9 @@
   sudo apt install handbrake
   sudo apt install kdenlive
 
+# Retocador de imagenes
+  sudo apt install gimp
+
 # Office:
   sudo apt purge libreoffice                                    # Se liberarán 359 MB después de esta operación.
   sudo apt install libreoffice-writer --no-install-recommends   # Se utilizarán 258 MB de espacio
