@@ -21,22 +21,21 @@
 
 # Mapeo de teclas
   # Con GUI:
-  #  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to left  > Shift + Ctrl + <
-  #  Inicio > Preferences > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to right > Shift + Ctrl + >
-  #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to left  > Ctrl+<
-  #  Inicio > Preferences > Keyboard > Shortcut > Workspaces > Switch to right > Ctrl+>
+  #  Inicio > Preferences/Settings > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to left  > Shift + Ctrl + <
+  #  Inicio > Preferences/Settings > Keyboard > Shortcut > Windows > Inter-workspace > Move Windows to right > Shift + Ctrl + >
+  #  Inicio > Preferences/Settings > Keyboard > Shortcut > Workspaces > Switch to left  > Ctrl+<
+  #  Inicio > Preferences/Settings > Keyboard > Shortcut > Workspaces > Switch to right > Ctrl+>
   # Con CLI:
-  # Si hace falta, sudo nala install dconf
-    dconf dump /org/cinnamon/desktop/keybindings/
-  # Para mapear mis gustos:
-    dconf read  /org/cinnamon/desktop/keybindings/wm/move-to-workspace-left
-    dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-right "['<Primary>period']"       # <Primary> es Ctrl
-    dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-left "['<Primary>comma']"
-    dconf write /org/cinnamon/desktop/keybindings/wm/move-to-workspace-left "['<Primary><Shift>less']"
-    dconf write /org/cinnamon/desktop/keybindings/wm/move-to-workspace-right "['<Primary><Shift>greater']"
-    dconf write /org/cinnamon/desktop/keybindings/media-keys/volume-down "['<Primary>Down']"
-    dconf write /org/cinnamon/desktop/keybindings/media-keys/volume-mute "['<Primary><Shift>Down']"
-    dconf write /org/cinnamon/desktop/keybindings/media-keys/volume-up "['<Primary>Up']"
+    # Listar canales
+      xfconf-query -l
+    # Listar propiedades del canal xfce4-desktop
+      xfconf-query -c xfce4-desktop -l
+    # Listar propiedades del canal xfce4-desktop y sus valores
+      xfconf-query -c xfce4-desktop -l -v
+    # Listar valor actual de la propiedad /desktop-icons/icon-size del canal xfce4-desktop
+      xfconf-query -c xfce4-desktop -p /desktop-icons/icon-size
+    # Asignar valor nuevo a la propiedad /desktop-icons/icon-size del canal xfce4-desktop
+      xfconf-query -c xfce4-desktop -p /desktop-icons/icon-size -s 32
 
 # FONTS adicionales 
 # https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
