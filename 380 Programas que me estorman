@@ -1,0 +1,5 @@
+# DESINSTALAR PROGRAMAS DEFAULT QUE NO USO Y MUCHAS VECES SE INSTALAN CON LA INTERFAZ GRAFICA
+
+# Desinstalar los programas que el DM instala por defecto y no uso:
+  sudo apt purge atril xterm firefox* libreoffice* exfalso* parole xfburn xfce4-terminal* xsane kdeconn* 
+  sudo apt autoremove
