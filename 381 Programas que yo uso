@@ -1,5 +1,10 @@
 # INSTALAR PROGRAMAS A LOS QUE **YO** ESTOY ACOSTUMBRADO
 
+# Google Earth
+  wget https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb -O GEP.deb
+  sudo apt install ./GEP.deb
+  rm GEP.deb
+
 # AngryIP (scanner de red)
   wget https://github.com/angryip/ipscan/releases/download/3.9.2/ipscan_3.9.2_amd64.deb -O angryip.deb
   sudo apt install ./angryip.deb
