@@ -37,7 +37,7 @@
   sudo apt install -y flatpak
     sudo apt install -y gnome-software-plugin-flatpak    # para Gnome
     sudo apt install -y plasma-discover-backend-flatpak  # para KDE
-  flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Administrador de privilegios para programas instalados como Flatpack
   Flatseal (instalar por el catálogo "Discover")
