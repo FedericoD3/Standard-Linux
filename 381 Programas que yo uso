@@ -1,6 +1,6 @@
 # INSTALAR PROGRAMAS A LOS QUE **YO** ESTOY ACOSTUMBRADO
 
-# Google Earth
+# Google Earth (https://www.google.com/earth/about/versions/)
   wget https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb -O GEP.deb
   sudo apt install ./GEP.deb
   rm GEP.deb
