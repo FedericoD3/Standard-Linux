@@ -4,10 +4,11 @@
   sudo apt update && sudo apt upgrade
   sudo nala install codium
 
-# KiCAD EDA
-  sudo add-apt-repository ppa:kicad/kicad-8.0-releases
-  sudo apt update
+# KiCAD EDA más completo
   sudo apt install kicad
+
+# Fritzing EDA mas básico, pictórico
+  sudo apt install fritzing
 
 # FreeCAD
 # APPIMAGE:
