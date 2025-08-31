@@ -44,6 +44,12 @@
 #  pax11publish - Store/retrieve PulseAudio default server/sink/source settings in the X11 root window.
   sudo apt install pulseaudio-utils
 
+# Utilidades de video:
+  # https://www.mankier.com/package/v4l-utils
+  sudo apt install v4l-utils
+  # Procesador de imagen, video y audio por línea de comando
+  sudo apt install ffmpeg
+
 # fzf (FuZzy files, buscador de archivos)
   sudo apt install -y fzf
 
