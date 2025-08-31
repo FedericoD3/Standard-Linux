@@ -21,25 +21,6 @@ alias servicios='echo "/etc/systemd/system/" && ls -Al /etc/systemd/system/ && e
 alias hostse='sudo nano /etc/hosts'
 alias hostsl="cat /etc/hosts | less"
 
-# Aliases de conexión remota:
-  # Alfica
-    alias portos='echo ssh root@portos.alfica.red          && ssh root@portos.alfica.red'
-    alias atos='echo ssh -p 41022 root@atos.alfica.red     && ssh -p 41022 root@atos.alfica.red'
-    alias aramis='echo ssh -p 41032 root@aramis.alfica.red && ssh -p 41032 root@aramis.alfica.red'
-    alias sistjefe='echo ssh root@sistjefe-pc.alfica.red   && ssh root@sistjefe-pc.alfica.red'
-    alias hermes='echo ssh root@hermes.alfica.red          && ssh root@hermes.alfica.red'
-    alias dvr0='echo ssh root@dvr0.alfica.red              && ssh root@dvr0.alfica.red'
-  # UnimatrixZero
-    alias ptb='echo ssh FedericoD3@ptbarnum.unimatrixzero.red       && ssh FedericoD3@ptbarnum.unimatrixzero.red'
-    alias mcp='echo ssh FedericoD3@mcp.unimatrixzero.red            && ssh FedericoD3@mcp.unimatrixzero.red'
-    alias pi01='echo ssh FedericoD3@pi01.unimatrixzero.red          && ssh FedericoD3@pi01.unimatrixzero.red'
-    alias hedy='echo -p 42502 ssh root@hedylamarr.unimatrixzero.red && ssh -p 42502 root@hedylamarr.unimatrixzero.red'
-    alias mazinger='echo ssh FedericoD3@mazinger.unimatrixzero.red  && ssh FedericoD3@mazinger.unimatrixzero.red'
-  # ViejasDuran
-    alias sdell='echo ssh FedericoD3@servidordell.viejasduran.red && ssh FedericoD3@servidordell.viejasduran.red'
-    alias pizw01='echo ssh FedericoD3@pizw01.viejasduran.red      && ssh FedericoD3@pizw01.viejasduran.red'
-    alias wifiDF1='echo ssh root@DF-AP1.viejasduran.red           && ssh root@DF-AP1.viejasduran.red'
-
 pingmon () {
   ping -D $1 | awk '{if(gsub(/\[|\]/, "", $1)) {$1= strftime("[%F %T]", $1); print} else print }'
 }
