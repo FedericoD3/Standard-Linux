@@ -7,6 +7,7 @@ alias egrep='egrep --color=auto'
 alias ls='ls --color=auto'
 alias ll='echo "--tree, --sort SORT_FIELD, --only-dirs, --only-files"  && ls -Al --time-style=long-iso --group-directories-first $1' 
 alias ping='ping -c 4 $1'
+alias cat='batcat --paging=never'
 
 alias ssaver='sudo setterm --blank 1 --powerdown 2'
 
