@@ -1,5 +1,11 @@
 # UTILITIES PARA LA INTERFAZ GRAFICA
 
+# Administrador de procesos:
+  sudo apt install xfce4-taskmanager
+
+# Editor de menu inicio:
+  sudo apt install menulibre
+
 # Visor de imágenes multiplataforma (sirve en Windows)
   wget https://www.xnview.com/download.php?file=XnViewMP-linux-x64.deb -O XnViewMP-linux-x64.deb
   sudo apt install ./XnViewMP-linux-x64.deb
@@ -29,8 +35,10 @@
   wireplumber --version
   sudo reboot
 
-# Emulador de terminal menos basico que mlterm:
-  sudo apt install -y xfce4-terminal
+# Emulador de terminal menos basico que mlterm y uxterm:
+  sudo apt install xfce4-terminal
+# Emulador de terminal más completo que xfce4-terminal:
+  sudo apt install tabby-terminal
 
 # Catálogo de software:
   sudo apt install -y gnome-software
@@ -84,3 +92,9 @@
 
 # Scanner de red
   wget https://github.com/angryip/ipscan/releases/download/3.9.1/ipscan_3.9.1_amd64.deb
+
+# Compartidor de archivos por red:
+  # Buscar la versión ma reciente en https://github.com/localsend/localsend/releases. A Septiembre 2025:
+    wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb -O Localsend.deb
+    sudo apt install ./Localsend.deb
+    rm Localsend.deb
