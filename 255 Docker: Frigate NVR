@@ -1,8 +1,11 @@
+# GRABADOR DE CCTV FRIGATE
+# https://docs.frigate.video/frigate/installation#docker
+
 # Crear el directorio para archivos de este container:
   mkdir -p ~/Docker/Frigate
 
 # Crear el archivo de composición del container:
-  nano Docker/Frigate/frigate-compose.yml
+  nano ~/Docker/Frigate/frigate-compose.yml
   # Con el contenido:
     services:
       frigate:
@@ -38,3 +41,27 @@
           - "8555:8555/udp" # WebRTC over udp
         environment:
           FRIGATE_RTSP_PASSWORD: "ClaveBienArrecha"
+
+# Armar, arrancar y pasar a background el container:
+  sudo docker compose --file ~/Docker/Frigate/frigate-compose.yml up -d
+
+# Editar la configuración de Frigate según las fuentes de video disponibles
+#  en ~/Docker/Frigate/config/config.yaml o via http://IP-del-equipo:5000/config (mejor, porque tiene validación de sintaxis)
+#  Por ejemplo:
+mqtt:
+  enabled: False
+cameras:
+  Camara_01_Jardin:
+    enabled: True
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.1.201:554/rtsp  # <----- El URL que corresponda a la cámara IP que estés usando
+          roles:
+            - detect
+  Camara_02_Zaguan:
+    enabled: True
+    ffmpeg:
+      inputs:
+        - path: /dev/video0                    # <----- El /dev que corresponda a la webcam que estés usando
+          roles:
+            - detect
