@@ -48,20 +48,26 @@
 # Editar la configuración de Frigate según las fuentes de video disponibles
 #  en ~/Docker/Frigate/config/config.yaml o via http://IP-del-equipo:5000/config (mejor, porque tiene validación de sintaxis)
 #  Por ejemplo:
-mqtt:
-  enabled: False
-cameras:
-  Camara_01_Jardin:
-    enabled: True
-    ffmpeg:
-      inputs:
-        - path: rtsp://192.168.1.201:554/rtsp  # <----- El URL que corresponda a la cámara IP que estés usando
-          roles:
-            - detect
-  Camara_02_Zaguan:
-    enabled: True
-    ffmpeg:
-      inputs:
-        - path: /dev/video0                    # <----- El /dev que corresponda a la webcam que estés usando
-          roles:
-            - detect
+   mqtt:
+     enabled: False
+   cameras:
+     Camara_01_Jardin:
+       enabled: True
+       ffmpeg:
+         inputs:
+           - path: rtsp://192.168.1.201:554/rtsp  # <----- El URL que corresponda a la cámara IP que estés usando
+             roles:
+               - detect
+     Camara_02_Zaguan:
+       enabled: True
+       ffmpeg:
+         inputs:
+           - path: /dev/video0                    # <----- El /dev que corresponda a la webcam que estés usando
+             roles:
+               - detect
+       detect:
+         enabled: false # <---- disable detection until you have a working camera feed
+         width: 1280    # Si se omite, Frigate lo mide
+         height: 720    # Pero puede ser conveniente para escalar el video 
+   detect:
+     enabled: true
