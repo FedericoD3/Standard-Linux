@@ -1,0 +1,40 @@
+# Crear el directorio para archivos de este container:
+  mkdir -p ~/Docker/Frigate
+
+# Crear el archivo de composición del container:
+  nano Docker/Frigate/frigate-compose.yml
+  # Con el contenido:
+    services:
+      frigate:
+        container_name: 50-DVR_Frigate
+        privileged: false # true # this may not be necessary for all setups
+        restart: unless-stopped
+        stop_grace_period: 30s # allow enough time to shut down the various services
+        image: ghcr.io/blakeblackshear/frigate:stable
+        shm_size: "512mb" # update for your cameras based on calculation above
+        devices:
+          # https://coral.ai/docs/m2/get-started/#2a-on-linux
+    #      - /dev/bus/usb:/dev/bus/usb              # Comunicar al container un acelerador I.A. USB Coral
+    #      - /dev/apex_0:/dev/apex_0                # Comunicar al container un acelerador I.A. PCIe Coral 
+          - /dev/dri/renderD128:/dev/dri/renderD128 # Comunicar al container el GPU intel común (modificar segun el hardware)
+          # Comunicar al container los videos v4l que existan (webcams, digitalizadoras)
+          - /dev/video0:/dev/video0
+          - /dev/video1:/dev/video1
+          - /dev/video2:/dev/video2
+          - /dev/video3:/dev/video3
+        volumes:
+          - /home/FedericoD3/Docker/Frigate/config:/config  # Mapear el directorio de configuracion fuera del container
+          - /Discos/0320_WD/DVR/Clips:/media/frigate        # Mapear el directorio de grabaciones fuera del container
+          - /etc/localtime:/etc/localtime:ro
+          - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+            target: /tmp/cache
+            tmpfs:
+              size: 1000000000
+        ports:
+          - "8971:8971"
+          - "5000:5000" # Internal unauthenticated access. Expose carefully.
+          - "8554:8554" # RTSP feeds
+          - "8555:8555/tcp" # WebRTC over tcp
+          - "8555:8555/udp" # WebRTC over udp
+        environment:
+          FRIGATE_RTSP_PASSWORD: "ClaveBienArrecha"
