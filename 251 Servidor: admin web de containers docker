@@ -2,12 +2,13 @@
 # Descargar el script instalador de casaOS y pasárselo al shell
   curl -fsSL https://get.casaos.io | sudo bash
 # La interfaz web es accesible por http://aaa.bbb.ccc.ddd:89 
-
 # Desinstalación, si no interesa:
   casaos-uninstall
 	
 # PORTAINER
-  docker stop 10-portainer
-  docker  rm  10-portainer
+  docker volume create portainer_data # Sólo la primera vez para que los datos sean persistentes
+  docker stop 10-portainer            # Detenerlo para actualizarlo
+  docker  rm  10-portainer            # Eliminarlo para actualizarlo
   sudo docker run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
 
