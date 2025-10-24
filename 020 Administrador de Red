@@ -30,7 +30,7 @@
       sudo nmcli connection modify <ConexNombreFacil> ipv4.addresses <aaa.bbb.ccc.III/24>
       sudo nmcli connection modify <ConexNombreFacil> ipv4.gateway <aaa.bbb.ccc.GGG>
       sudo nmcli connection modify <ConexNombreFacil> ipv4.dns <aaa.bbb.ccc.DDD>
-    # Desactivar IPv6 si es red casera:
+    # Desactivar IPv6 si no hace falta IP público:
       sudo nmcli connection modify "ComoseLlameLaInterfaz" ipv6.method "disabled"
 
 # VARIOS:
@@ -66,7 +66,7 @@
   sudo systemctl stop NetworkManager
   sudo systemctl disable NetworkManager
 
-# Desactivar IPv6 si es red casera:
+# Desactivar IPv6 si no hace falta IP público:
   sudo echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
   sudo sysctl -p
 
@@ -110,6 +110,7 @@
 # Redirigir permanentemente un puerto entrante a otro donde escucha el servicio:
   sudo nano /etc/network/interfaces
   post-up iptables -t nat -A PREROUTING -d 192.1.1.99 -p tcp --dport 40990 -j REDIRECT --to-port 8006 || true
+
 
 
 
