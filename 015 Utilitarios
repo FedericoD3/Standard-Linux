@@ -15,6 +15,11 @@
 # Confirmador de reseteos y apagados remotos ( https://adrianroselli.com/wp-content/uploads/2024/02/switch-with-molly-guard.jpg ):
   sudo apt install molly-guard
 
+# Cronometrador de procesos:
+  apt install hyperfine
+  # Uso: hyperfine --runs 1 <comando>
+  #      hyperfine --min-runs 5 --max-runs 10 <comando>
+
 # Navegador de archivos:
   sudo apt install ranger
 
