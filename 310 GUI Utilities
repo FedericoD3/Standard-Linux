@@ -100,3 +100,6 @@
     wget https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-linux-x86-64.deb -O Localsend.deb
     sudo apt install ./Localsend.deb
     rm Localsend.deb
+
+# Examinadores de hardware:
+  sudo apt install hardinfo hardinfo2 hwinfo
