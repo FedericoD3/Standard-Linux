@@ -17,6 +17,8 @@
   # Agregarse uno mismo al grupo docker:
   sudo usermod -aG docker ${USER}
   # Repetir el anterior para todos los usuarios requeridos
+  #  Cerrar la sesión y volver a iniciar sesión para que recargue los grupos con el nuevo 
+  #  (o usar newgrp docker para crear una sub-sesión nueva)
   # Verificar que funciona:
   sudo docker run hello-world
 
