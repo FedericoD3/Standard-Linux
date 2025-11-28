@@ -40,13 +40,14 @@
 # FONTS adicionales 
 # https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
 # https://github.com/tonsky/FiraCode/wiki/Linux-instructions#manual-installation
-    wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.tar.gz --directory-prefix=Downloads
-    tar -xzvf Hack-v3.003-ttf.tar.gz
-  # o
-    wget https://www.ffonts.net/Noto-Color-Emoji.font.zip --directory-prefix=Downloads
-    unzip Noto-Color-Emoji.font.zip
-  mv ~/DondeEsteCadaTTF/ComoSeLlame.ttf /usr/share/fonts/DondeSeClasifique/
-  fc-cache -f -v
-  # Borrar los tar.gz, zips descargados y sus descomprimidos
+# https://www.nerdfonts.com/#home
 
+URL=https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2
+
+URL=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/VictorMono.zip && Dest=Extras/Mono/VictorMono
+  curl --fail --location --show-error ${URL} --output OtroFont.zip
+  sudo mkdir -p /usr/share/fonts/$Dest
+  sudo unzip -o -q -d /usr/share/fonts/$Dest OtroFont.zip
+  rm OtroFont.zip
+  fc-cache -f
 
