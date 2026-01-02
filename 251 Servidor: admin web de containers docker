@@ -6,9 +6,17 @@
   casaos-uninstall
 	
 # PORTAINER
-  docker volume create portainer_data # Sólo la primera vez para que los datos sean persistentes
-  docker stop 10-portainer            # Detenerlo para actualizarlo
-  docker  rm  10-portainer            # Eliminarlo para actualizarlo
-  sudo docker run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+  # Sólo la primera vez para que los datos sean persistentes
+    docker volume create portainer_data 
+  # Si ya existía y lo que se quiere es actualizarlo:
+    docker stop 10-portainer            # Detenerlo
+    docker  rm  10-portainer            # Eiminarlo
+  # Determinar el "image id" de la imagen base:
+    docker image ls
+  # Eliminar la imagen base para que descargue la mas reciente:
+    docker image rm <ID determinado arriba>
+  # (re) instanciar el container:
+    sudo docker run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
 
 
