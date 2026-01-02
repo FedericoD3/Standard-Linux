@@ -39,6 +39,9 @@
   rm ~/Downloads/Tabby.deb
 # ahora se puede empezar a usar tabby en lugar de uxterm o lxterm o lo que haya traído la distro
 
+# Librería de ejecución de Appimages:
+  sudo apt install libfuse2
+
 # Utilities de audio:
 #  paplay - Playback a WAV file via a PulseAudio sink.
 #  pacat - Cat raw audio data to a PulseAudio sink.
