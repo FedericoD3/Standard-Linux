@@ -4,7 +4,7 @@
 # Sincronizo los equipos de cada sede al @SyncCentral de cada red local
 # En uno de los fileservers pongo Dropbox headless para tener respaldos versionados "offsite"
 
-# Para "simular" en el directorio central el path relativo real uso caracteres parecidos a los reservados para path: 
+# Uso caracteres parecidos a los reservados para path para representar el path relativo real en el directorio base sincronizado: 
 #  uso el caracter U+2248	≈ en lugar de ~ (home) 
 #    y el caracter U+222B	∫ en lugar de / (separador de subdirectorios)
 #  Por ejemplo, un directorio que deba  estar  en  /home/MiUsuario∫.local/share/vlc
@@ -31,4 +31,20 @@
 
   ln -s ~/Sync/Configs/Linux/FreeCAD ~/.config/FreeCAD
 
+# Enlazar los directorios de sincronización al $HOME:
+  ln -s /Discos/Resto/Sync Sync
+  ln -s /Discos/Resto/Dropbox Dropbox
+
+# KDE Remote Desctop Client
+  find -name krdc*
+   .local/share/krdc/bookmarks.xml
+   .local/share/kxmlgui5/krdc
+   .config/krdcrc
+  mv    ~/.local/share/krdc/bookmarks.xml ~/Sync/Configs/Linux/≈∫.local/share/krdc/bookmarks.xml
+  ln -s ~/Sync/Configs/Linux/≈∫.local/share/krdc/bookmarks.xml ~/.local/share/krdc/bookmarks.xml
+  mv    ~/.config/krdcrc ~/Sync/Configs/Linux/≈∫.config/krdcrc
+  ln -s ~/Sync/Configs/Linux/≈∫.config/krdcrc ~/.config/krdcrc
+
+mv .local/share/kxmlgui5/krdc/krdcui.rc      Sync/≈∫.local/share/kxmlgui5/krdc/krdcui.rc
+.config/krdcrc
 
