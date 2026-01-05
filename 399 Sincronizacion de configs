@@ -21,10 +21,10 @@
 
 # Simlinks de los subdirectorios dentro del standarizado
 #  a las ubicaciones donde los programas esperan encontrarlos:
-  ln -s ~/Sync/Configs/Linux/≈∫.config/gtk-3.0 ~/.config/gtk-3.0
-  ln -s ~/Sync/Configs/Linux/≈∫.config/picom   ~/.config/picom
-  ln -s ~/Sync/Configs/Linux/≈∫.themes         ~/.themes
-  ln -s ~/Sync/Configs/Linux/≈∫.icons          ~/.icons
+  ln -s ~/Sync/Configs/Linux/≈∫.config/gtk-3.0    ~/.config/gtk-3.0
+  ln -s ~/Sync/Configs/Linux/≈∫.config/picom.conf ~/.config/picom.conf
+  ln -s ~/Sync/Configs/Linux/≈∫.themes            ~/.themes
+  ln -s ~/Sync/Configs/Linux/≈∫.icons             ~/.icons
 
   ln -s ~/Sync/Configs/VSCodium/≈∫.config∫VSCodium ~/.config/VSCodium
   ln -s ~/Sync/Configs/VSCodium/≈∫.vscode-oss      ~/.vscode-oss
@@ -47,4 +47,5 @@
 
 mv .local/share/kxmlgui5/krdc/krdcui.rc      Sync/≈∫.local/share/kxmlgui5/krdc/krdcui.rc
 .config/krdcrc
+
 
