@@ -21,17 +21,18 @@
 
 # Simlinks de los subdirectorios dentro del standarizado
 #  a las ubicaciones donde los programas esperan encontrarlos:
-  ln -s ~/Sync/Configs/Linux/≈∫.config/gtk-3.0     ~/.config/gtk-3.0
-  ln -s ~/Sync/Configs/Linux/≈∫.config/picom.conf  ~/.config/picom.conf
-  ln -s ~/Sync/Configs/Linux/≈∫.themes             ~/.themes
-  ln -s ~/Sync/Configs/Linux/≈∫.icons              ~/.icons
+  ln -s ~/Sync/Configs/Linux/≈∫.config/gtk-3.0           ~/.config/gtk-3.0
+  ln -s ~/Sync/Configs/Linux/≈∫.config/picom.conf        ~/.config/picom.conf
+  ln -s ~/Sync/Configs/Linux/≈∫.themes                   ~/.themes
+  ln -s ~/Sync/Configs/Linux/≈∫.icons                    ~/.icons
 
-  ln -s ~/Sync/Configs/Linux/≈∫.config/smplayer    ~/.config/smplayer
+  ln -s ~/Sync/Configs/Linux/≈∫.config/smplayer          ~/.config/smplayer
+  ln -s ~/Sync/Configs/Linux/≈∫.config/tabby/config.yaml ~/.config/tabby/config.yaml
 
-  ln -s ~/Sync/Configs/VSCodium/≈∫.config∫VSCodium ~/.config/VSCodium
-  ln -s ~/Sync/Configs/VSCodium/≈∫.vscode-oss      ~/.vscode-oss
+  ln -s ~/Sync/Configs/VSCodium/≈∫.config∫VSCodium       ~/.config/VSCodium
+  ln -s ~/Sync/Configs/VSCodium/≈∫.vscode-oss            ~/.vscode-oss
 
-  ln -s ~/Sync/Configs/Linux/FreeCAD               ~/.config/FreeCAD
+  ln -s ~/Sync/Configs/Linux/FreeCAD                     ~/.config/FreeCAD
 
 # Enlazar los directorios de sincronización al $HOME:
   ln -s /Discos/Resto/Sync Sync
@@ -44,4 +45,5 @@
   # Enlazar los archivos sincronizados a las ubicaciones standard:
     ln -s ~/Sync/Configs/Linux/≈∫.local/share/krdc/bookmarks.xml ~/.local/share/krdc/bookmarks.xml
     ln -s ~/Sync/Configs/Linux/≈∫.config/krdcrc ~/.config/krdcrc
+
 
