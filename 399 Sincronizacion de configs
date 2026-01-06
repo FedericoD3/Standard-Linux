@@ -36,16 +36,9 @@
   ln -s /Discos/Resto/Dropbox Dropbox
 
 # KDE Remote Desctop Client
-  find -name krdc*
-   .local/share/krdc/bookmarks.xml
-   .local/share/kxmlgui5/krdc
-   .config/krdcrc
-  mv    ~/.local/share/krdc/bookmarks.xml ~/Sync/Configs/Linux/≈∫.local/share/krdc/bookmarks.xml
-  ln -s ~/Sync/Configs/Linux/≈∫.local/share/krdc/bookmarks.xml ~/.local/share/krdc/bookmarks.xml
-  mv    ~/.config/krdcrc ~/Sync/Configs/Linux/≈∫.config/krdcrc
-  ln -s ~/Sync/Configs/Linux/≈∫.config/krdcrc ~/.config/krdcrc
-
-mv .local/share/kxmlgui5/krdc/krdcui.rc      Sync/≈∫.local/share/kxmlgui5/krdc/krdcui.rc
-.config/krdcrc
-
-
+  # Eliminar los archivos locales no sincronizados:
+    rm .local/share/krdc/bookmarks.xml
+    rm .config/krdcrc
+  # Enlazar los archivos sincronizados a las ubicaciones standard:
+    ln -s ~/Sync/Configs/Linux/≈∫.local/share/krdc/bookmarks.xml ~/.local/share/krdc/bookmarks.xml
+    ln -s ~/Sync/Configs/Linux/≈∫.config/krdcrc ~/.config/krdcrc
