@@ -19,13 +19,20 @@
 #  así todos los usuarios ven sus configuraciones dentro de ~/Sync esté donde esté su fileserver local
 #  y los directorios donde los programas esperan sus configuraciones apuntan a esos dentro de ~/Sync
 
-# Simlinks de los subdirectorios dentro del standarizado
-#  a las ubicaciones donde los programas esperan encontrarlos: 
-  rm -r ~/.config/xfce4/panel && ln -s ~/Sync/Configs/Linux/≈∫.config/xfce4/panel ~/.config/xfce4/panel
-  ln -s ~/Sync/Configs/Linux/≈∫.config/gtk-3.0           ~/.config/gtk-3.0
-  ln -s ~/Sync/Configs/Linux/≈∫.config/picom.conf        ~/.config/picom.conf
-  ln -s ~/Sync/Configs/Linux/≈∫.themes                   ~/.themes
-  ln -s ~/Sync/Configs/Linux/≈∫.icons                    ~/.icons
+# Eliminar las configuraciones locales standard y sustituirlas
+# por los simlinks correspondientes en el directorio sincronizado:
+  # Xfce4:
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml                && ln -s ~/Sync/Configs/Linux/≈∫.config/xfconf∫xfce-perchannel-xml/keyboards.xml                ~/.config/xfce4/xfconf/xfce-perchannel-xml/keyboards.xml
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml && ln -s ~/Sync/Configs/Linux/≈∫.config/xfconf∫xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml              && ln -s ~/Sync/Configs/Linux/≈∫.config/xfconf∫xfce-perchannel-xml/xfce4-panel.xml              ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml      && ln -s ~/Sync/Configs/Linux/≈∫.config/xfconf∫xfce-perchannel-xml/xfce4-power-manager.xml      ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml                    && ln -s ~/Sync/Configs/Linux/≈∫.config/xfconf∫xfce-perchannel-xml/xfwm4.xml                    ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfwm4.xml
+    rm ~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml                && ln -s ~/Sync/Configs/Linux/≈∫.config/xfconf∫xfce-perchannel-xml/xsettings.xml                ~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+    rm -r ~/.config/xfce4/panel                                                && ln -s ~/Sync/Configs/Linux/≈∫.config/xfce4/panel                                             ~/.config/xfce4/panel
+    rm -r ~/.config/gtk-3.0                                                    && ln -s ~/Sync/Configs/Linux/≈∫.config/gtk-3.0                                                 ~/.config/gtk-3.0
+    rm    ~/.config/picom.conf                                                 && ln -s ~/Sync/Configs/Linux/≈∫.config/picom.conf                                              ~/.config/picom.conf
+    rm -r ~/.themes                                                            && ln -s ~/Sync/Configs/Linux/≈∫.themes                                                         ~/.themes
+    rm -r ~/.icons                                                             && ln -s ~/Sync/Configs/Linux/≈∫.icons                                                          ~/.icons
 
   ln -s ~/Sync/Configs/Linux/≈∫.config/smplayer          ~/.config/smplayer
   ln -s ~/Sync/Configs/Linux/≈∫.config/tabby/config.yaml ~/.config/tabby/config.yaml
@@ -46,6 +53,7 @@
   # Enlazar los archivos sincronizados a las ubicaciones standard:
     ln -s ~/Sync/Configs/Linux/≈∫.local/share/krdc/bookmarks.xml ~/.local/share/krdc/bookmarks.xml
     ln -s ~/Sync/Configs/Linux/≈∫.config/krdcrc ~/.config/krdcrc
+
 
 
 
