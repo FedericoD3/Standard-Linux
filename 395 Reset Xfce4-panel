@@ -5,3 +5,19 @@
   rm -rf ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
 # Reiniciar el panel, que regenera la configuración default:
    xfce4-panel &
+
+# Listar los parámetros configurables:
+  xfconf-query -c xfce4-panel --list
+
+# Dejar sólo el panel 1 (estilo Windows 10) y eliminar el panel 2 (estilo Windows 11):
+  xfconf-query -c xfce4-panel -p /panels -t int -s 1 -a
+
+  xfconf-query -c xfce4-panel -p /panels/dark-mode -s true
+  xfconf-query -c xfce4-panel -p /panels/panel-1/autohide-behavior -s 2
+  xfconf-query -c xfce4-panel -p /panels/panel-1/enter-opacity -s 70
+  xfconf-query -c xfce4-panel -p /panels/panel-1/leave-opacity -s 70
+  
+
+
+# Reiniciar el panel:
+  xfce4-panel -r
