@@ -62,7 +62,7 @@
 # RIP (borrador de archivos con cementerio resucitable)
   wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz
   tar -xf ./rip-Linux-x86_64-musl.tar.gz
-  mv ~/rip ~/.local/bin
+  mv ~/rip /usr/bin
   rm ./rip-Linux-x86_64-musl.tar.gz
   alias rm=rip
 
