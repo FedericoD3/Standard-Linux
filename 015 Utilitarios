@@ -20,6 +20,12 @@
   # Uso: hyperfine --runs 1 <comando>
   #      hyperfine --min-runs 5 --max-runs 10 <comando>
 
+# Mejora de ps:
+  sudo apt install procs
+
+# Mejora de du
+  sudo apt install duf
+
 # Navegador de archivos:
   sudo apt install ranger
 
