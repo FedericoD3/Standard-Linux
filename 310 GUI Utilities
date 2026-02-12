@@ -13,6 +13,9 @@
   sudo apt install ./XnViewMP-linux-x64.deb
   rm XnViewMP-linux-x64.deb
 
+# Visor de PDF, eBooks, etc:
+  sudo apt install okular
+
 # Block de notas similar a Notepad++ (mejor que Mousepad, similar a notepad)
   sudo apt install notepadqq 
 
