@@ -6,6 +6,10 @@
   v4l2-ctl --device /dev/video0 --list-ctrls
   v4l2-ctl --device /dev/video0 --get-ctrl brightness
   v4l2-ctl --device /dev/video0 --set-ctrl brightness=128
+# Instalación de ffmpeg (puede que haga falta DENTRO del container):
+  sudo apt update && sudo apt upgrade -y
+  sudo apt install ffmpeg -y
+  ffmpeg -version
 
 # Crear el directorio para archivos de este container:
   mkdir -p ~/Docker/Frigate
