@@ -1,5 +1,10 @@
 # GRABADOR DE CCTV FRIGATE
 # https://docs.frigate.video/frigate/installation#docker
+# Utiles para webcams USB v4l2:
+  sudo apt install v4l-utils
+  v4l2-ctl --list-devices
+  v4l2-ctl -d /dev/video0 --list-ctrls
+  v4l2-ctl -c brightness=128
 
 # Crear el directorio para archivos de este container:
   mkdir -p ~/Docker/Frigate
