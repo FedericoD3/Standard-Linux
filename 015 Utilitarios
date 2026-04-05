@@ -1,8 +1,7 @@
 # UTILITARIOS BASICOS
 
 # Asegurar que estén actualizadas las fuentes:
-  sudo apt update
-  sudo apt upgrade -y
+  sudo apt update && sudo apt upgrade -y
 
 # Basicos:
   sudo apt install curl wget zip unzip
@@ -28,6 +27,22 @@
 
 # Navegador de archivos:
   sudo apt install ranger
+
+# Alterador de imagenes por comandos de texto scripteable:
+  # sudo apt install imagemagick instala la version del repositorio, potencialmente obsoleta
+  # Tomado de https://www.tecmint.com/install-imagemagick-on-debian-ubuntu/
+    sudo apt update && sudo apt upgrade -y                   # Actualizar los origenes
+    sudo apt install libpng-dev                              # Asegurarse que esté instalada la libreria para PNG
+    sudo apt install build-essential                         # Archivos accesorios para compilar
+    wget https://imagemagick.org/archive/ImageMagick.tar.gz  # Descargar las fuentes
+    tar xvzf ImageMagick.tar.gz                              # Descomprimir las fuentes
+    cd ImageMagick-7.1.2-18                                  # Entrar en el directorio de las fuentes
+    ./configure                                              # Preparar la configuracion para compilar en este equipo
+    make                                                     # Compilar!
+    sudo make install                                        # Instalar el recien compilado
+    sudo ldconfig /usr/local/lib                             # Linkear las librerias nuevas
+    magick -version                                          # Verificar que se instalo
+    magick -list format | grep PNG                           # Asegurarse que soporta el formato que necesito    
 
 # Fonts:
   # Preparar un directorio ordenado para los fonts monoespaciados extra:
