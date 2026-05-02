@@ -52,7 +52,7 @@
 # Agregar el usuario a los autorizados para ejecutar comandos administrativos:
     sudo usermod -aG sudo nombreusuario
 # También puede hacerse agregándolo al grupo sudo:
-  sudo adduser Admin sudo
+  sudo adduser nombreusuario sudo
   # O editando el archivo sudoers:
     sudo chmod +w /etc/sudoers
     sudo nano /etc/sudoers
