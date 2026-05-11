@@ -46,6 +46,21 @@
     sudo ln -s /Discos/Local/bashStd/.bashrc /root/.bashrc
 
 # FONTS LEGIBLES EXTRA:
+  # ZedMono:
+    wget --output-file=FontNuevo.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
+    # Para todos los usuarios:
+      DirDest=/usr/share/fonts/Extra/Mono/ZedMono
+      sudo mkdir -p $DirDest
+      sudo unzip ~/FontNuevo.zip -d $DirDest
+      sudo fc-cache -rv
+    # Para este usuario solamente (p.e. si no es sudoer):
+      DirDest=/usr/share/fonts/Extra/Mono/ZedMono
+      mkdir -p $DirDest
+      unzip ~/FontNuevo.zip -d $DirDest
+      fc-cache -rv
+    rm ~/FontNuevo.zip
+    
+
   # Powerline (caracteres gráficos para coquetería del shell)
     sudo apt install fonts-powerline
   # FiraCode:
