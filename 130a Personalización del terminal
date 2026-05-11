@@ -47,7 +47,7 @@
 
 # FONTS LEGIBLES EXTRA:
   # ZedMono:
-    wget --output-file=FontNuevo.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
+    wget --output-document=FontNuevo.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
     # Para todos los usuarios:
       DirDest=/usr/share/fonts/Extra/Mono/ZedMono
       sudo mkdir -p $DirDest
