@@ -48,19 +48,27 @@
 # FONTS EXTRA:
   # ZedMono:
     URL=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
-    wget --output-document=FontNuevo.zip $URL
-    # Para todos los usuarios:
-      DirDest=/usr/share/fonts/Extra/Mono/ZedMono
-      sudo mkdir -p $DirDest
-      sudo unzip ~/FontNuevo.zip -d $DirDest
-      sudo fc-cache -rv
-    # Para este usuario solamente (p.e. si no es sudoer):
-      DirDest=/usr/share/fonts/Extra/Mono/ZedMono
-      mkdir -p $DirDest
-      unzip ~/FontNuevo.zip -d $DirDest
-      fc-cache -rv
-    rm ~/FontNuevo.zip
-    
+  # VictorMono:
+    URL=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/VictorMono.zip
+
+    # Para cada font:
+      FontNuevo=$(basename $URL) 
+      FontNuevo=${FontNuevo%.*}
+      wget --output-document=FontNuevo.zip $URL
+      # Para todos los usuarios:
+        DirDest=/usr/share/fonts/Extra/$FontNuevo
+        sudo mkdir -p $DirDest
+        sudo unzip ~/FontNuevo.zip -d $DirDest
+        sudo fc-cache -rv
+      # Para este usuario solamente (p.e. si no es sudoer):
+        DirDest=local/share/fonts/$FontNuevo
+        mkdir -p $DirDest
+        unzip ~/FontNuevo.zip -d $DirDest
+        fc-cache -rv
+
+  rm ~/FontNuevo.zip
+
+
 
   # Powerline (caracteres gráficos para coquetería del shell)
     sudo apt install fonts-powerline
