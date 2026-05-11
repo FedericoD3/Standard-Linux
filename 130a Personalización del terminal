@@ -45,9 +45,10 @@
 # Crear un hardlink de la configuración personalizada standard a la configuración común sin login (emulador de terminal en GUI) del usuario root:
     sudo ln -s /Discos/Local/bashStd/.bashrc /root/.bashrc
 
-# FONTS LEGIBLES EXTRA:
+# FONTS EXTRA:
   # ZedMono:
-    wget --output-document=FontNuevo.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
+    URL=https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/ZedMono.zip
+    wget --output-document=FontNuevo.zip $URL
     # Para todos los usuarios:
       DirDest=/usr/share/fonts/Extra/Mono/ZedMono
       sudo mkdir -p $DirDest
@@ -91,6 +92,3 @@
 
   # Reconstruir el cache después de instalar fonts:
     fc-cache -f -v
-
-
-
