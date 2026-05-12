@@ -1,0 +1,61 @@
+# UTILITARIOS BASICOS
+
+# Asegurar que estén actualizadas las fuentes:
+  sudo apt update && sudo apt upgrade -y
+
+# Basicos:
+  sudo apt install curl wget zip unzip
+
+# nala 
+# (interfaz más informativa de apt para instalar paquetes)
+  curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
+# de aquí en adelante se puede usar "sudo apt ..." o "sudo nala ..." 
+
+# Confirmador de reseteos y apagados remotos ( https://adrianroselli.com/wp-content/uploads/2024/02/switch-with-molly-guard.jpg ):
+  sudo apt install molly-guard
+
+# Cronometrador de procesos:
+  apt install hyperfine
+  # Uso: hyperfine --runs 1 <comando>
+  #      hyperfine --min-runs 5 --max-runs 10 <comando>
+
+# Mejora de ps:
+  sudo apt install procs
+
+# Mejora de du
+  sudo apt install duf
+
+# Navegador de archivos:
+  sudo apt install ranger
+
+# RIP (borrador de archivos con cementerio resucitable)
+  wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz
+  tar -xf ./rip-Linux-x86_64-musl.tar.gz
+  sudo mv ~/rip /usr/bin
+  rm ./rip-Linux-x86_64-musl.tar.gz
+  alias rm=rip
+
+# fzf (FuZzy files, buscador de archivos)
+  sudo apt install -y fzf
+
+# dust (analizador de ocupación de disco, mas informativo que du)
+  sudo apt install du-dust
+
+# bat (cat, pero con resaltado de sintaxis) (despues hay que usar batcat, agregado a los aliases)
+  sudo apt install bat
+
+# tldr (resumidor de manuales de comandos)
+  sudo apt install tldr-py
+
+# FORMATEADORES DE INFORMACION DEL EQUIPO:
+# Informacion general:
+  sudo apt install fastfetch
+# Información del CPU:
+  sudo apt install cpufetch
+# Rendimiento del CPU
+  sudo apt install sysbench
+
+# Utilities Android:
+  sudo apt install android-sdk-platform-tools-common
+  sudo apt install adb fastboot
+  sudo cp /lib/udev/rules.d/51-android.rules /etc/udev/rules.d/
