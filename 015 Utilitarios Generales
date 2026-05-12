@@ -22,8 +22,9 @@
 # Mejora de ps:
   sudo apt install procs
 
-# Mejora de du
+# Mejora de du (analizadores de ocupación de disco, mas informativo)
   sudo apt install duf
+  sudo apt install du-dust
 
 # Navegador de archivos:
   sudo apt install ranger
@@ -37,9 +38,6 @@
 
 # fzf (FuZzy files, buscador de archivos)
   sudo apt install -y fzf
-
-# dust (analizador de ocupación de disco, mas informativo que du)
-  sudo apt install du-dust
 
 # bat (cat, pero con resaltado de sintaxis) (despues hay que usar batcat, agregado a los aliases)
   sudo apt install bat
@@ -55,7 +53,3 @@
 # Rendimiento del CPU
   sudo apt install sysbench
 
-# Utilities Android:
-  sudo apt install android-sdk-platform-tools-common
-  sudo apt install adb fastboot
-  sudo cp /lib/udev/rules.d/51-android.rules /etc/udev/rules.d/
