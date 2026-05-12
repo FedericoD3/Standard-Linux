@@ -24,12 +24,6 @@
   # Refrescar el cache de fonts:
     fc-cache -f -v
 
-# Multi terminal moderno, verstil y multiplataforma ( https://tabby.sh https://github.com/Eugeny/tabby ):
-  wget https://github.com/Eugeny/tabby/releases/download/v1.0.225/tabby-1.0.225-linux-x64.deb -O ~/Downloads/Tabby.deb
-  sudo apt install ~/Downloads/Tabby.deb
-  rm ~/Downloads/Tabby.deb
-# ahora se puede empezar a usar tabby en lugar de uxterm o lxterm o lo que haya traído la distro
-
 # Librería de ejecución de Appimages:
   sudo apt install libfuse2
 
@@ -49,3 +43,8 @@
   sudo apt install v4l-utils
   # Procesador de imagen, video y audio por línea de comando
   sudo apt install ffmpeg
+
+# Utilities Android:
+  sudo apt install android-sdk-platform-tools-common
+  sudo apt install adb fastboot
+  sudo cp /lib/udev/rules.d/51-android.rules /etc/udev/rules.d/
