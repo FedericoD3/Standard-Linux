@@ -27,6 +27,9 @@
   sudo apt install du-dust
   sudo apt gdu
 
+# Listador de archivos por nombre, mas sencillo / menos versátil que find:
+  sudo apt install fd-find
+
 # Navegador de archivos:
   sudo apt install ranger
 
@@ -43,11 +46,11 @@
 # Generador de arbol de directorios:
   sudo apt install tree 
 
-# Impresor de contenido de archivos mas informativo que el tradicional cat (despues hay que usar batcat, agregado a los aliases):
+# Impresor de contenido de archivos mas informativo que el tradicional cat (el ejecutable se llama batcat):
   sudo apt install bat
 
 # tldr (resumidor de manuales de comandos)
-  sudo apt install tldr-py
+  sudo apt install tldr
 
 # FORMATEADORES DE INFORMACION DEL EQUIPO:
 # Informacion general:
@@ -56,4 +59,6 @@
   sudo apt install cpufetch
 # Rendimiento del CPU
   sudo apt install sysbench
+# Informacion en vivo:
+  sudo apt install btop
 
