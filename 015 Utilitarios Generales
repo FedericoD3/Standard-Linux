@@ -30,8 +30,9 @@
 # Listador de archivos por nombre, mas sencillo / menos versátil que find:
   sudo apt install fd-find
 
-# Navegador de archivos:
+# Navegadores de archivos:
   sudo apt install ranger
+  sudo apt install mc
 
 # RIP (borrador de archivos con cementerio resucitable)
   wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz
