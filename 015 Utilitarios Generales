@@ -19,12 +19,13 @@
   # Uso: hyperfine --runs 1 <comando>
   #      hyperfine --min-runs 5 --max-runs 10 <comando>
 
-# Mejora de ps:
+# Listador de procesos mas informativo que el tradicional ps:
   sudo apt install procs
 
 # Mejora de du (analizadores de ocupación de disco, mas informativo)
   sudo apt install duf
   sudo apt install du-dust
+  sudo apt gdu
 
 # Navegador de archivos:
   sudo apt install ranger
@@ -38,6 +39,9 @@
 
 # fzf (FuZzy files, buscador de archivos)
   sudo apt install -y fzf
+
+# Generador de arbol de directorios:
+  sudo apt install tree 
 
 # bat (cat, pero con resaltado de sintaxis) (despues hay que usar batcat, agregado a los aliases)
   sudo apt install bat
