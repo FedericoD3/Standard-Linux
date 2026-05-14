@@ -6,7 +6,7 @@
 # Basicos:
   sudo apt install curl wget zip unzip
 
-# nala 
+# manejador de paquetes mas informativo que el tradicional apt: 
 # (interfaz más informativa de apt para instalar paquetes)
   curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
 # de aquí en adelante se puede usar "sudo apt ..." o "sudo nala ..." 
@@ -15,14 +15,14 @@
   sudo apt install molly-guard
 
 # Cronometrador de procesos:
-  apt install hyperfine
+  sudo apt install hyperfine
   # Uso: hyperfine --runs 1 <comando>
   #      hyperfine --min-runs 5 --max-runs 10 <comando>
 
 # Listador de procesos mas informativo que el tradicional ps:
   sudo apt install procs
 
-# Mejora de du (analizadores de ocupación de disco, mas informativo)
+# Analizadores de ocupación de disco por directorio, mas informativo que el tradicional du:
   sudo apt install duf
   sudo apt install du-dust
   sudo apt gdu
@@ -43,7 +43,7 @@
 # Generador de arbol de directorios:
   sudo apt install tree 
 
-# bat (cat, pero con resaltado de sintaxis) (despues hay que usar batcat, agregado a los aliases)
+# Impresor de contenido de archivos mas informativo que el tradicional cat (despues hay que usar batcat, agregado a los aliases):
   sudo apt install bat
 
 # tldr (resumidor de manuales de comandos)
