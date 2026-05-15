@@ -6,8 +6,8 @@
   sudo apt install podman crun podman-compose
   podman --version
 # Activar el socket de comunicacion interna:
-  systemctl enable --now podman.socket
-  systemctl    status    podman.socket
+  sudo systemctl enable --now podman.socket
+  sudo systemctl    status    podman.socket
 
 # Agregar los registries de imagenes para containers:
   sudo nano /etc/containers/registries.conf
