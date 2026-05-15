@@ -1,0 +1,12 @@
+# Asegurarse que estén actualizados repositorios y paquetes:
+  sudo apt-get update 
+  sudo apt upgrade
+
+# Instalar podman y confirmarlo:
+  sudo apt install podman
+  podman --version
+
+# Preparar el directorio para archivos de containers
+  mkdir $HOME/Containers
+
+# P
