@@ -8,8 +8,16 @@
   systemctl enable --now podman.socket
   systemctl    status    podman.socket
 
+# Agregar los registries de imagenes para containers:
+  sudo nano /etc/containers/registries.conf
+    [registries.search]
+    registries = ['quay.io', 'docker.io', 'ghcr.io']
+  # Ctrl s Ctrl x
+# Verificar que lee los registries buscando alguna imagen común:
+  podman search portainer
+
 # Preparar el directorio para archivos de containers
-  mkdir $HOME/Containers
+  mkdir $HOME/Contenedores # /Discos/Bulk/Contenedores, o cualquier otro directorio pero mantenerlos ordenados
 
 # Administradores web:
 # PORTAINER
