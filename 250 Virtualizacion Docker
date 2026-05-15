@@ -1,9 +1,13 @@
+# Asegurarse que estén actualizados repositorios y paquetes:
+  sudo apt-get update 
+  sudo apt upgrade
+
 # https://docs.docker.com/engine/install/debian/
 
 # Desinstalar versiones previas potencialmente conflictogénicas:
   sudo apt remove docker.io docker-doc docker-compose podman-docker containerd runc
 
-# Instalar Docker:
+# Instalar Docker y verificarlo:
   sudo apt-get update
   sudo apt-get install ca-certificates curl
   sudo install -m 0755 -d /etc/apt/keyrings
