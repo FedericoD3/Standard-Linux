@@ -34,7 +34,7 @@
       # Eliminar la imagen base para que descargue la mas reciente:
         docker image rm <ID determinado arriba>
   # Chequear que arrancó y está accesible en esos puertos:
-    docker ps
+    podman ps
   # Conectarse a http://<IP>:8000 o a https://<IP>:9443
   # NOTAS:
     # Para que mande al IP correcto desde los enlaces de cada container:
