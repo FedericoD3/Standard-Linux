@@ -3,7 +3,7 @@
   sudo apt upgrade
 
 # Instalar podman y verificarlo:
-  sudo apt install podman crun
+  sudo apt install podman crun podman-compose
   podman --version
   systemctl enable --now podman.socket
   systemctl    status    podman.socket
