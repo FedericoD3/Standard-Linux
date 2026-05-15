@@ -17,9 +17,6 @@
 # Verificar que lee los registries buscando alguna imagen común:
   podman search portainer
 
-# Preparar el directorio para archivos de containers
-  mkdir $HOME/Contenedores # /Discos/Bulk/Contenedores, o cualquier otro directorio pero mantenerlos ordenados
-
 # Administradores web:
 # PORTAINER
   # Sólo la primera vez para que los datos sean persistentes
