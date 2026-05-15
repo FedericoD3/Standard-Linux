@@ -5,6 +5,8 @@
 # Instalar podman y confirmarlo:
   sudo apt install podman
   podman --version
+  systemctl enable --now podman.socket
+  systemctl    status    podman.socket
 
 # Preparar el directorio para archivos de containers
   mkdir $HOME/Containers
