@@ -5,6 +5,7 @@
 # Instalar podman y verificarlo:
   sudo apt install podman crun podman-compose
   podman --version
+# Activar el socket de comunicacion interna:
   systemctl enable --now podman.socket
   systemctl    status    podman.socket
 
