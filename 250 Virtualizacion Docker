@@ -32,7 +32,7 @@
   docker rmi <image_id>	    # Eliminar una imagen, si no la está usando ningún container
   docker compose -f /Donde/Este/El/Arch/ComoSeLlame.yml up -d  # Componer container, activarlo y dejarlo en background
 
-# Administradores web para docker:
+# Administradores web:
 # PORTAINER
   # Sólo la primera vez para que los datos sean persistentes
     docker volume create portainer_data 
