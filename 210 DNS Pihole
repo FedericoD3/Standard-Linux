@@ -1,5 +1,6 @@
 ##### EN CONTAINER (más limpio) #####
 # https://docs.pi-hole.net/docker/?h=docker
+# https://discourse.pi-hole.net/t/beginner-friendly-security-oriented-setup-rootless-podman-running-pi-hole-and-unbound-using-reverse-proxy-via-caddy-with-socket/75623
 
 # Crear el directorio para los archivos del container:
   mkdir -p $HOME/Containers/pihole
