@@ -6,8 +6,13 @@
   sudo apt install podman crun podman-compose
   podman --version
 # Activar el socket de comunicacion interna:
-  sudo systemctl enable --now podman.socket
-  sudo systemctl    status    podman.socket
+  # Para root:
+    sudo systemctl enable --now podman.socket  
+    sudo systemctl    status    podman.socket
+  # O para el usuario (más seguro, más limitado):
+    systemctl --user enable --now podman.socket
+    sudo loginctl enable-linger $USER                 # Para que el proceso permanezca sin que el usuario tenga sesión abierta
+
 # Activar el auto-arranque de podman:
   sudo systemctl enable --now podman-restart.service
   sudo systemctl    status    podman-restart.service
