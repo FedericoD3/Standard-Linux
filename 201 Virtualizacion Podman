@@ -25,14 +25,14 @@
   # Sólo la primera vez para que los datos sean persistentes
     podman volume create portainer_data 
   # (re) instanciar el container con la imagen mas reciente:
-    podman run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always --privileged --volume /run/podman/podman.sock:/var/run/docker.sock --volume portainer_data:/data portainer/portainer-ce:lts
+    podman run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always --privileged --volume /run/podman/podman.sock:/var/run/podman.sock --volume portainer_data:/data portainer/portainer-ce:lts
     # Si ya existía y lo que se quiere es actualizarlo:
-      docker stop 10-portainer            # Detenerlo
-      docker  rm  10-portainer            # Eiminarlo
+      podman stop 10-portainer            # Detenerlo
+      podman  rm  10-portainer            # Eiminarlo
       # Determinar el "image id" de la imagen base:
-        docker image ls
+        podman image ls
       # Eliminar la imagen base para que descargue la mas reciente:
-        docker image rm <ID determinado arriba>
+        podman image rm <ID determinado arriba>
   # Chequear que arrancó y está accesible en esos puertos:
     podman ps
   # Conectarse a http://<IP>:8000 o a https://<IP>:9443
@@ -40,8 +40,8 @@
     # Para que mande al IP correcto desde los enlaces de cada container:
       Menu Environment-related > Environments > Local> Public IP field, IP del servidor > Update environment.
     # Para resetear el password:
-      docker pull portainer/helper-reset-password
-      docker run --rm -v portainer_data:/data portainer/helper-reset-password
+      podman pull portainer/helper-reset-password
+      podman run --rm -v portainer_data:/data portainer/helper-reset-password
     # Para resetear todo:
-      docker stop 10-portainer            # Detenerlo
-      docker volume rm portainer_data     # Eliminar sus datos
+      podman stop 10-portainer            # Detenerlo
+      podman volume rm portainer_data     # Eliminar sus datos
