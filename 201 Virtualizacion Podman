@@ -30,7 +30,10 @@
     # Sólo la primera vez para que los datos sean persistentes
       podman volume create portainer_data 
     # (re) instanciar el container con la imagen mas reciente:
-      podman run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always --privileged --volume /run/podman/podman.sock:/var/run/podman.sock --volume portainer_data:/data portainer/portainer-ce:lts
+      # Como usuario (limitado, mas seguro):
+             podman run --detach -p 9444:9443 --name 10-portainer --restart=always --security-opt label=disable  --volume /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock:Z --volume portainer_data:/data:Z docker.io/portainer/portainer-ce
+      # Como root:
+        sudo podman run --detach -p 9443:9443 --name 10-portainer --restart=always --privileged                  --volume /run/podman/podman.sock:/var/run/podman.sock --volume portainer_data:/data portainer/portainer-ce:lts
       # Si ya existía y lo que se quiere es actualizarlo:
         podman stop 10-portainer            # Detenerlo
         podman  rm  10-portainer            # Eiminarlo
