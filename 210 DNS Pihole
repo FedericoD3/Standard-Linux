@@ -46,6 +46,13 @@
             - SYS_NICE
           restart: unless-stopped 
 
+# IMPORTANTE: PERMITIR QUE EL USUARIO CONTROLE EL PUERTO 53 DNS (normalmente solo se puede > 1024)
+  # Crear un script de habilitación. 99- para que ejecute de ultimo.
+    sudo nano /etc/sysctl.d/99-Puerto53.conf
+      net.ipv4.ip_unprivileged_port_start=53
+      kernel.unprivileged_userns_clone = 1
+  # Y recargarlo (o reiniciar):
+    sudo sysctl --system
 
 sudo apt install ntp curl
   curl -sSL https://install.pi-hole.net > instalador-pihole.sh
