@@ -2,6 +2,14 @@
 # https://docs.pi-hole.net/docker/?h=docker
 # https://discourse.pi-hole.net/t/beginner-friendly-security-oriented-setup-rootless-podman-running-pi-hole-and-unbound-using-reverse-proxy-via-caddy-with-socket/75623
 
+# IMPORTANTE: PERMITIR QUE EL USUARIO CONTROLE EL PUERTO 53 DNS (normalmente solo se puede > 1024)
+  # Crear un script de habilitación. 99- para que ejecute de ultimo.
+    sudo nano /etc/sysctl.d/99-Puerto53.conf
+      net.ipv4.ip_unprivileged_port_start=53
+      kernel.unprivileged_userns_clone = 1
+  # Y recargarlo (o reiniciar):
+    sudo sysctl --system
+
 # Crear el directorio para los archivos del container:
   mkdir -p $HOME/Containers/pihole
 # Crear el yaml:
@@ -46,13 +54,17 @@
             - SYS_NICE
           restart: unless-stopped 
 
-# IMPORTANTE: PERMITIR QUE EL USUARIO CONTROLE EL PUERTO 53 DNS (normalmente solo se puede > 1024)
-  # Crear un script de habilitación. 99- para que ejecute de ultimo.
-    sudo nano /etc/sysctl.d/99-Puerto53.conf
-      net.ipv4.ip_unprivileged_port_start=53
-      kernel.unprivileged_userns_clone = 1
-  # Y recargarlo (o reiniciar):
-    sudo sysctl --system
+docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 80:80/tcp -p 443:443/tcp -e TZ=Europe/London -e FTLCONF_webserver_api_password="correct horse battery staple" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+
+
+
+
+
+
+
+
+
+
 
 sudo apt install ntp curl
   curl -sSL https://install.pi-hole.net > instalador-pihole.sh
