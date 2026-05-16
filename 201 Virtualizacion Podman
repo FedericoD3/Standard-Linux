@@ -8,6 +8,9 @@
 # Activar el socket de comunicacion interna:
   sudo systemctl enable --now podman.socket
   sudo systemctl    status    podman.socket
+# Activar el auto-arranque de podman:
+  sudo systemctl enable --now podman-restart.service
+  sudo systemctl    status    podman-restart.service
 
 # Agregar los registries de imagenes para containers:
   sudo nano /etc/containers/registries.conf
