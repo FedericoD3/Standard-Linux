@@ -27,6 +27,7 @@
 
 # Administradores web:
   # PORTAINER
+  # https://blog.while-true-do.io/podman-portainer/
     # Sólo la primera vez para que los datos sean persistentes
       podman volume create portainer_data 
     # (re) instanciar el container con la imagen mas reciente:
