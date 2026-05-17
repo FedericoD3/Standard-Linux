@@ -26,7 +26,7 @@
   podman search portainer
 
 ## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD:
-   # Generar el service:
+   # Después de crear y probar un container, hay que generar su service:
      podman generate systemd --new --name NombreContainer > NombreContainer.service
    # Moverlo a los servicios del usuario:
      mv ~/Containers/Portainer/10-portainer.service ~/.config/systemd/user/
