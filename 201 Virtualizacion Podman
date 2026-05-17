@@ -25,6 +25,19 @@
 # Verificar que lee los registries buscando alguna imagen común:
   podman search portainer
 
+## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD:
+   # Generar el service:
+     podman generate systemd --new --name NombreContainer > NombreContainer.service
+   # Moverlo a los servicios del usuario:
+     mv ~/Containers/Portainer/10-portainer.service ~/.config/systemd/user/
+   # Activarlo
+     # como usuario:
+       systemctl --user daemon-reload
+       systemctl --user enable --now NombreContainer.service
+     # como root:
+       sudo systemctl daemon-reload
+       sudo systemctl enable --now NombreContainer.service
+
 # Administradores web:
   # PORTAINER
   # https://blog.while-true-do.io/podman-portainer/
