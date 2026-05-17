@@ -10,53 +10,59 @@
   # Y recargarlo (o reiniciar):
     sudo sysctl --system
 
-# Crear el directorio para los archivos del container:
-  mkdir -p $HOME/Containers/pihole
-# Crear el yaml:
-  nano $HOME/Containers/pihole/pihole.yml
-  # Con este contenido:
-      services:
-        pihole:
-          container_name: pihole
-          image: pihole/pihole:latest
-          ports:
-            # DNS Ports
-            - "53:53/tcp"
-            - "53:53/udp"
-            # Default HTTP Port 
-            - "80:80/tcp"     ###### USAR "OTROPUERTO:80"  PARA QUE NO INTERFIERA CON EL PUERTO HTTP NORMAL
-            # Default HTTPs Port. FTL will generate a self-signed certificate
-            - "443:443/tcp"   ###### USAR "OTROPUERTO:443" PARA QUE NO INTERFIERA CON EL PUERTO HTTPS NORMAL
-            # DESCOMENTAR LA SIGUIENTE LINEA SI EL PIHOLE SERA TAMBIEN DHCP:
-            #- "67:67/udp"
-            # DESCOMENTAR LA SIGUIENTE LINEA SI EL PIHOLE SERA TAMBIEN NTP:
-            #- "123:123/udp"
-          environment:
-            # SUSTITUIR LA ZONA HORARIA ADECUADA, TOMADA DE:
-            # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-            TZ: 'Etc/UTC'
-            # DESCOMENTAR LA SIGUIENTE LINEA SI NO SE QUIERE QUE GENERE EL PASSWORD INICIAL ALEATORIO:
-            # FTLCONF_webserver_api_password: 'algunpassword'
-            # SI SE USA LA RED DEFAULT DOCKER/PODMAN 'bridge' SE DEBE USAR ESCUCHA MODO 'ALL'
-            FTLCONF_dns_listeningMode: 'ALL'
-          volumes:
-            # ESPACIO PARA LA PERSISTENCIA DE BASES DE DATOS Y CONFIGURACIONES:
-            - './etc-pihole:/etc/pihole'
-            # DESCOMENTAR LA SIGUIENTE LINEA PARA SI SI SE TIENE CONFIGURACION ESPECIAL PARA dnsmasq QUE SE DESEA MANTENER: 
-            #- './etc-dnsmasq.d:/etc/dnsmasq.d'
-          cap_add:
-            # See https://docs.pi-hole.net/docker/configuration/#note-on-capabilities
-            # REQUERIDO SI EL PIHOLE SERA DHCP, DE LO CONTRARIO NO SE NECESITA:
-            - NET_ADMIN
-            # Required if you are using Pi-hole as your NTP client to be able to set the host's system time
-            - SYS_TIME
-            # Optional, if Pi-hole should get some more processing time
-            - SYS_NICE
+# Activacion con compose (más laborioso, pero es más dificil de modificar y regenerar)::
+  # Crear el directorio para los archivos del container:
+    mkdir -p $HOME/Containers/pihole
+  # Crear el yaml:
+    nano $HOME/Containers/pihole/pihole.yml
+    # Con este contenido:
+        services:
+          pihole:
+            container_name: pihole
+            image: pihole/pihole:latest
+            ports:
+              # DNS Ports
+              - "53:53/tcp"
+              - "53:53/udp"
+              # Default HTTP Port 
+              - "50018:80/tcp"     ###### USAR "OTROPUERTO:80"  PARA QUE NO INTERFIERA CON EL PUERTO HTTP NORMAL
+              # Default HTTPs Port. FTL will generate a self-signed certificate
+              - "50013:443/tcp"    ###### USAR "OTROPUERTO:443" PARA QUE NO INTERFIERA CON EL PUERTO HTTPS NORMAL
+              # DESCOMENTAR LA SIGUIENTE LINEA SI EL PIHOLE SERA TAMBIEN DHCP:
+              #- "67:67/udp"
+              # DESCOMENTAR LA SIGUIENTE LINEA SI EL PIHOLE SERA TAMBIEN NTP:
+              #- "123:123/udp"
+            environment:
+              # SUSTITUIR LA ZONA HORARIA ADECUADA, TOMADA DE:
+              # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+              TZ: 'Etc/UTC'
+              # DESCOMENTAR LA SIGUIENTE LINEA SI NO SE QUIERE QUE GENERE EL PASSWORD INICIAL ALEATORIO:
+              # FTLCONF_webserver_api_password: 'algunpassword'
+              # SI SE USA LA RED DEFAULT DOCKER/PODMAN 'bridge' SE DEBE USAR ESCUCHA MODO 'ALL'
+              FTLCONF_dns_listeningMode: 'ALL'
+            volumes:
+              # ESPACIO PARA LA PERSISTENCIA DE BASES DE DATOS Y CONFIGURACIONES:
+              - './etc-pihole:/etc/pihole'
+              # DESCOMENTAR LA SIGUIENTE LINEA PARA SI SI SE TIENE CONFIGURACION ESPECIAL PARA dnsmasq QUE SE DESEA MANTENER: 
+              #- './etc-dnsmasq.d:/etc/dnsmasq.d'
+            cap_add:
+              # See https://docs.pi-hole.net/docker/configuration/#note-on-capabilities
+              # REQUERIDO SI EL PIHOLE SERA DHCP, DE LO CONTRARIO NO SE NECESITA:
+              - NET_ADMIN
+              # Required if you are using Pi-hole as your NTP client to be able to set the host's system time
+              - SYS_TIME
+              # Optional, if Pi-hole should get some more processing time
+              - SYS_NICE
           restart: unless-stopped 
+    # Salvarlo y salir: 
+      Ctrl S Ctrl X
+  # Compilarlo y activarlo:
+    docker compose --file $HOME/Containers/pihole/pihole.yml up --detach
+    podman compose --file $HOME/Containers/pihole/pihole.yml up --detach
 
-docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 80:80/tcp -p 443:443/tcp -e TZ=Europe/London -e FTLCONF_webserver_api_password="correct horse battery staple" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
-
-
+  # Activacion con run (más rápido, pero es más dificil de modificar y regenerar):
+    docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 50018:80/tcp -p 50013:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+    podman run --name pihole -p 53:53/tcp -p 53:53/udp -p 50018:80/tcp -p 50013:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
 
 
 
