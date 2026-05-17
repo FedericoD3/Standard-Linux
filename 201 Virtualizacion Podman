@@ -2,6 +2,8 @@
   sudo apt-get update 
   sudo apt upgrade
 
+# https://docs.portainer.io/start/install-ce/server/podman/linux
+
 # Instalar podman y verificarlo:
   sudo apt install podman crun podman-compose
   podman --version
