@@ -25,9 +25,9 @@
               - "53:53/tcp"
               - "53:53/udp"
               # Default HTTP Port 
-              - "50018:80/tcp"     ###### USAR "OTROPUERTO:80"  PARA QUE NO INTERFIERA CON EL PUERTO HTTP NORMAL
+              - "99998:80/tcp"     ###### USAR "OTROPUERTO:80"  PARA QUE NO INTERFIERA CON EL PUERTO HTTP NORMAL
               # Default HTTPs Port. FTL will generate a self-signed certificate
-              - "50013:443/tcp"    ###### USAR "OTROPUERTO:443" PARA QUE NO INTERFIERA CON EL PUERTO HTTPS NORMAL
+              - "99993:443/tcp"    ###### USAR "OTROPUERTO:443" PARA QUE NO INTERFIERA CON EL PUERTO HTTPS NORMAL
               # DESCOMENTAR LA SIGUIENTE LINEA SI EL PIHOLE SERA TAMBIEN DHCP:
               #- "67:67/udp"
               # DESCOMENTAR LA SIGUIENTE LINEA SI EL PIHOLE SERA TAMBIEN NTP:
@@ -61,8 +61,8 @@
     podman compose --file $HOME/Containers/pihole/pihole.yml up --detach
 
   # Activacion con run (más rápido, pero es más dificil de modificar y regenerar):
-    docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 50018:80/tcp -p 50013:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
-    podman run --name pihole -p 53:53/tcp -p 53:53/udp -p 50018:80/tcp -p 50013:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+    docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 99998:80/tcp -p 99993:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+    podman run --name pihole -p 53:53/tcp -p 53:53/udp -p 99998:80/tcp -p 99993:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
 
 
 
