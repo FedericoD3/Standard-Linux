@@ -16,6 +16,7 @@
     sudo loginctl enable-linger $USER                 # Para que el proceso permanezca sin que el usuario tenga sesión abierta
 
 # Activar el auto-arranque de podman:
+  # https://linuxhandbook.com/courses/podman/autostart-podman-containers/
   sudo systemctl enable --now podman-restart.service
   sudo systemctl    status    podman-restart.service
 
