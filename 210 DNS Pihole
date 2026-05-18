@@ -54,6 +54,8 @@
 	      - SYS_TIME
 	      # OPCIONAL PARA QUE EL PIHOLE TENGA MAS PRIORIDAD DE PROCESAMIENTO
 	      - SYS_NICE
+        # PARA QUE REGISTRE EL IP DE LOS CLIENTE Y NO EL INTERNO DE DOCKER/PODMAN
+        network_mode: host
 	    restart: unless-stopped
 	##########################################
     # Salvarlo y salir: 
@@ -65,6 +67,8 @@
   # Activacion con run (más rápido, pero es más dificil de modificar y regenerar):
     docker run --name 20-pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
     podman run --name 20-pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+
+    podman run --name 20-pihole --network=host -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
 
    # Después de crear y probar el container, hay que generar su service si debe arrancar automatico:
      NombCont=20-pihole
