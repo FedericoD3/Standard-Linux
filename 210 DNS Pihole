@@ -63,8 +63,8 @@
     podman compose --file $HOME/Containers/pihole/pihole.yml up --detach
 
   # Activacion con run (más rápido, pero es más dificil de modificar y regenerar):
-    docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 99998:80/tcp -p 99993:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
-    podman run --name pihole -p 53:53/tcp -p 53:53/udp -p 99998:80/tcp -p 99993:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+    docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+    podman run --name pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
 
 
 
