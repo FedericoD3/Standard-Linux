@@ -21,6 +21,6 @@
 
 # DES-seleccionar "Debian desktop environment", "Gnome", "KDE", "Lxde", etc.,
 #  para que no instale ninguno con la cantidad de software.
-# Seleccionar SSH server para poder seguir remoto desde un PC potencialmente más cómodo.
+# Dejar seleccionados "Standard system utilities" y SSH server para poder seguir remoto desde un PC potencialmente más cómodo.
 
 # Continuar la instalacion hasta que ofrezca reiniciar.
