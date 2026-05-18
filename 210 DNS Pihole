@@ -63,10 +63,21 @@
     podman compose --file $HOME/Containers/pihole/pihole.yml up --detach
 
   # Activacion con run (más rápido, pero es más dificil de modificar y regenerar):
-    docker run --name pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
-    podman run --name pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+    docker run --name 20-pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
+    podman run --name 20-pihole -p 53:53/tcp -p 53:53/udp -p 50208:80/tcp -p 50203:443/tcp -e TZ=Etc/UTC -e FTLCONF_webserver_api_password="algunpassword" -e FTLCONF_dns_listeningMode=all -v ./etc-pihole:/etc/pihole -v ./etc-dnsmasq.d:/etc/dnsmasq.d --cap-add NET_ADMIN --restart unless-stopped pihole/pihole:latest
 
-
+   # Después de crear y probar el container, hay que generar su service si debe arrancar automatico:
+     NombCont=20-pihole
+     podman generate systemd --new --name $NombCont > ~/Containers/Portainer/$NombCont.service
+   # Moverlo a los servicios del usuario:
+     mv ~/Containers/Portainer/$NombCont.service ~/.config/systemd/user/
+   # Activarlo
+     # como usuario:
+       systemctl --user daemon-reload
+       systemctl --user enable --now $NombCont.service
+     # como root:
+       sudo systemctl daemon-reload
+       sudo systemctl enable --now $NombCont.service
 
 
 
