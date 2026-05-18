@@ -70,7 +70,7 @@
      NombCont=20-pihole
      podman generate systemd --new --name $NombCont > $NombCont.service
    # Moverlo a los servicios del usuario:
-     mv$NombCont.service ~/.config/systemd/user/
+     mv $NombCont.service ~/.config/systemd/user/
    # Activarlo
      # como usuario:
        systemctl --user daemon-reload
