@@ -41,6 +41,9 @@
        sudo systemctl daemon-reload
        sudo systemctl enable --now NombreContainer.service
 
+# Para entrar en el shell de un container:
+  podman exec -it NombreDelContainer> /bin/bash
+
 # Administradores web:
   # PORTAINER
   # https://blog.while-true-do.io/podman-portainer/
