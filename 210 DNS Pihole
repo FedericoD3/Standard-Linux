@@ -24,6 +24,7 @@
 	    image: pihole/pihole:latest
 	    ports:
 	      # DNS Ports
+          # IGNORADOS SI SE USA network_mode: host
 	      - "53:53/tcp"
 	      - "53:53/udp"
 	      # PUBLICAR EL PUERTO HTTP  INTERNO A OTRO PUERTO EXTERNO PARA NO INTERFERIR CON EL HTTP  STANDARD QUE PUEDA HABER
