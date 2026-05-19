@@ -1,5 +1,9 @@
 # UTILITIES PARA LA INTERFAZ GRAFICA
 
+  sudo apt install xfce4-goodies                              # Opcional (muchos goodies y la mayoría de poco uso). 
+                                                              #  Ver https://goodies.xfce.org/ y https://archlinux.org/groups/x86_64/xfce4-goodies/
+  sudo apt install mousepad thunar-archive-plugin thunar-media-tags-plugin xfce4-battery-plugin 
+
 # Administrador de procesos:
   sudo apt install xfce4-taskmanager
 
