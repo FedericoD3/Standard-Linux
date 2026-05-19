@@ -4,7 +4,7 @@
   sudo apt update && sudo apt upgrade -y
 
 # TODO JUNTO:
-# sudo apt install curl wget zip unzip molly-guard hyperfine procs duf du-dust gdu rsync fd-find ranger mc fzf tree bat tldr fastfetch cpufetch sysbench btop
+# sudo apt install curl wget zip unzip molly-guard hyperfine procs duf du-dust gdu rsync fd-find ranger mc fzf tree bat tealdeer fastfetch cpufetch sysbench btop
 
 # DE UNO EN UNO:
 
@@ -47,7 +47,7 @@
   sudo apt install bat
 
 # tldr (resumidor de manuales de comandos)
-  sudo apt install tldr
+  sudo apt install tealdeer
 
 # FORMATEADORES DE INFORMACION DEL EQUIPO:
 # Informacion general:
