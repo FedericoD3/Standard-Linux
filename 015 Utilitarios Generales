@@ -3,13 +3,13 @@
 # Asegurar que estén actualizadas las fuentes:
   sudo apt update && sudo apt upgrade -y
 
+# TODO JUNTO:
+# sudo apt install curl wget zip unzip molly-guard hyperfine procs duf du-dust gdu rsync fd-find ranger mc fzf tree bat tldr fastfetch cpufetch sysbench btop
+
+# DE UNO EN UNO:
+
 # Basicos:
   sudo apt install curl wget zip unzip
-
-# manejador de paquetes mas informativo que el tradicional apt: 
-# (interfaz más informativa de apt para instalar paquetes)
-  curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
-# de aquí en adelante se puede usar "sudo apt ..." o "sudo nala ..." 
 
 # Confirmador de reseteos y apagados remotos ( https://adrianroselli.com/wp-content/uploads/2024/02/switch-with-molly-guard.jpg ):
   sudo apt install molly-guard
@@ -37,18 +37,11 @@
   sudo apt install ranger
   sudo apt install mc
 
-# RIP (borrador de archivos con cementerio resucitable)
-  wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz
-  tar -xf ./rip-Linux-x86_64-musl.tar.gz
-  sudo mv ~/rip /usr/bin
-  rm ./rip-Linux-x86_64-musl.tar.gz
-  alias rm=rip
-
 # fzf (FuZzy files, buscador de archivos)
   sudo apt install -y fzf
 
 # Generador de arbol de directorios:
-  sudo apt install  
+  sudo apt install tree
 
 # Impresor de contenido de archivos mas informativo que el tradicional cat (el ejecutable se llama batcat):
   sudo apt install bat
@@ -66,3 +59,13 @@
 # Informacion en vivo:
   sudo apt install btop
 
+# RIP (borrador de archivos con cementerio resucitable)
+  wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz
+  tar -xf ./rip-Linux-x86_64-musl.tar.gz
+  sudo mv ~/rip /usr/bin
+  rm ./rip-Linux-x86_64-musl.tar.gz
+  alias rm=rip
+
+# Manejador de paquetes mas informativo que el tradicional apt: 
+  curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
+# de aquí en adelante se puede usar "sudo apt ..." o "sudo nala ..." 
