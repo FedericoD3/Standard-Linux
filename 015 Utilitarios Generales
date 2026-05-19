@@ -27,6 +27,9 @@
   sudo apt install du-dust
   sudo apt gdu
 
+# Sincronizador de archivos (para respaldos scripteables)
+  sudo apt install rsync
+
 # Listador de archivos por nombre, mas sencillo / menos versátil que find:
   sudo apt install fd-find
 
@@ -45,7 +48,7 @@
   sudo apt install -y fzf
 
 # Generador de arbol de directorios:
-  sudo apt install tree 
+  sudo apt install  
 
 # Impresor de contenido de archivos mas informativo que el tradicional cat (el ejecutable se llama batcat):
   sudo apt install bat
