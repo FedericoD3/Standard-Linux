@@ -4,7 +4,8 @@
   sudo apt update && sudo apt upgrade -y
 
 # TODO JUNTO:
-# sudo apt install curl wget zip unzip molly-guard hyperfine procs duf du-dust gdu rsync fd-find ranger mc fzf tree bat tealdeer fastfetch cpufetch sysbench btop
+# sudo apt install curl wget zip unzip molly-guard hyperfine duf gdu rsync fd-find ranger mc fzf tree bat tealdeer cpufetch sysbench btop
+# sudo apt install procs fastfetch du-dust
 
 # DE UNO EN UNO:
 
