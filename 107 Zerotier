@@ -20,7 +20,7 @@
   sudo zerotier-cli join 0123456789abcdef
 
 # VERIFICAR CONEXION
-  zerotier-cli listnetworks
+  sudo zerotier-cli listnetworks
 
 # Opcional, ponerles nombres descriptivos:
   nmcli connection modify 'zt01234567' con-name ZT-Casa
