@@ -25,8 +25,12 @@
 
 # Analizadores de ocupación de disco por directorio, mas informativo que el tradicional du:
   sudo apt install duf
-  sudo apt install du-dust
   sudo apt gdu
+  sudo apt install du-dust
+  # Si no encuentra este último:
+    wget https://github.com/bootandy/dust/releases/download/v1.2.4/du-dust_1.2.4-1_amd64.deb -O du-dust.deb
+    sudo apt install ./du-dust.deb
+    rm ./du-dust.deb
 
 # Sincronizador de archivos (para respaldos scripteables)
   sudo apt install rsync
@@ -61,11 +65,18 @@
   sudo apt install btop
 
 # RIP (borrador de archivos con cementerio resucitable)
-  wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz
-  tar -xf ./rip-Linux-x86_64-musl.tar.gz
+  wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz -O rip.tar.gz
+  tar -xf ./rip.tar.gz
   sudo mv ~/rip /usr/bin
-  rm ./rip-Linux-x86_64-musl.tar.gz
+  rm ./rip.tar.gz
   alias rm=rip
+
+# procs (listador de procesos mejor formateado que el nativo ps)
+  wget https://github.com/dalance/procs/releases/download/v0.14.11/procs-v0.14.11-x86_64-linux.zip -O procs.zip
+  unzip ./procs.zip
+  sudo mv ~/procs /usr/bin
+  rm ./procs.zip
+  alias ps=procs
 
 # Manejador de paquetes mas informativo que el tradicional apt: 
   curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
