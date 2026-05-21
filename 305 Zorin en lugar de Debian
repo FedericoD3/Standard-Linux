@@ -1,0 +1,18 @@
+# SI SE INSTALA ZORIN LITE (XFCE) MAS ACTUALIZADO EN LUGAR DE DEBIAN (XFCE) MAS ESTABLE:
+# Zorin es basado en Ubuntu y viene con el propietario "snaps": ELIMINARLO
+  # Listar los programas instalados por snap (ninguno, si Zorin está recién instalado) y desinstalarlos:
+    snap list
+    sudo apt --purge <cada-una-de-las-apps>
+  # Eliminar el demonio snap: 
+    sudo apt remove --purge snapd
+  # Marcarlo como bloqueado par que no se reinstale en un update:
+    sudo apt-mark hold snapd
+  # Eliminar los directorios que contengan configuraciones de snap: 
+    sudo rm -rf /var/cache/snapd/
+    rm -fr ~/snap (y el $HOME/snap de cada usuario)
+  # Buscar si hay mas archivos relacionados y eliminarlos a criterio:  
+    sudo find / -type d -name snap
+  # Eliminar las dependencias huérfanas:
+    sudo apt autoremove
+  # Como se eliminó el snap store, quizas sea conveniente instalar el Gnome store:
+    sudo apt install gnome-software --no-install-recommends
