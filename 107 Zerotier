@@ -4,6 +4,7 @@
 
 # INSTALAR
   curl -s https://install.zerotier.com | sudo bash
+  # Si no reconoce el distro (p.e. Zorin) cambiarlo temporalmente a su base (p.e. Ubuntu) en /etc/os-release
   # O mas seguro:
   curl -s 'https://raw.githubusercontent.com/zerotier/ZeroTierOne/master/doc/contact%40zerotier.com.gpg' | gpg --import && if z=$(curl -s 'https://install.zerotier.com/' | gpg); then echo "$z" | sudo bash; fi
 
