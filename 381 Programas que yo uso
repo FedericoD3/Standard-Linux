@@ -1,19 +1,12 @@
 # INSTALAR PROGRAMAS A LOS QUE **YO** ESTOY ACOSTUMBRADO
 
+# Todo junto:
+  sudo apt install keepassxc webext-keepassxc-browser mousepad copyq okular audacity easyefects handbrake kdenlive gimp smplayer smplayer-themes smtube
+
 # Emulador de terminal + ssh + serial Tabby:
   wget https://github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-linux-x64.deb -O tabby.deb
   sudo apt install ./tabby.deb
   rm ./tabby.deb
-
-# Google Earth (https://www.google.com/earth/about/versions/)
-  wget https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb -O GEP.deb
-  sudo apt install ./GEP.deb
-  rm GEP.deb
-
-# AngryIP (scanner de red)
-  wget https://github.com/angryip/ipscan/releases/download/3.9.2/ipscan_3.9.2_amd64.deb -O angryip.deb
-  sudo apt install ./angryip.deb
-  rm angryip.deb
 
 # Emulador de DOS (útil para juegos viejos o programas de PLCs)
   sudo apt install dosbox*
@@ -34,9 +27,15 @@
 # Editor de audio
   sudo apt install audacity
 
+# Ecualizador de audio:
+  sudo apt install easyefects
+
 # Editores de video:
   sudo apt install handbrake
   sudo apt install kdenlive
+
+# Reproductor de video mas ligero que VLC
+  sudo apt install smplayer smplayer-themes smtube
 
 # Retocador de imagenes
   sudo apt install gimp
@@ -51,10 +50,18 @@
   wget https://github.com/Genymobile/scrcpy/releases/download/v3.3.1/scrcpy-linux-x86_64-v3.3.1.tar.gz -O Downloads/scrcpy.tar.gz
   tar -xvf Downloads/scrcpy.tar.gz
   # Crear en donde convenga el acceso directo a ~/scrcpy-linux-x86_64-v3.3.1/scrcpy
+
 # Vysor (control android, pero versión gratis limitada)
   echo 'deb [arch=amd64, trusted=yes] https://nuts.vysor.io/apt ./' | sudo tee /etc/apt/sources.list.d/vysor.list 
   sudo apt update 
   sudo apt install -y vysor
 
-# Reproductor de video mas ligero que VLC
-  sudo apt install smplayer smplayer-themes smtube
+# Google Earth (https://www.google.com/earth/about/versions/)
+  wget https://dl.google.com/dl/earth/client/current/google-earth-pro-stable_current_amd64.deb -O GEP.deb
+  sudo apt install ./GEP.deb
+  rm GEP.deb
+
+# AngryIP (scanner de red)
+  wget https://github.com/angryip/ipscan/releases/download/3.9.2/ipscan_3.9.2_amd64.deb -O angryip.deb
+  sudo apt install ./angryip.deb
+  rm angryip.deb
