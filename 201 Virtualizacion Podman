@@ -30,16 +30,17 @@
 
 ## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD:
    # Después de crear y probar un container, hay que generar su service:
-     podman generate systemd --new --name NombreContainer > ~/Containers/Portainer/NombreContainer.service
+     NombCont=10-Portainer
+     podman generate systemd --new --name $NombCont > ~/Containers/$NombCont/NombreContainer.service
    # Moverlo a los servicios del usuario:
-     mv ~/Containers/Portainer/NombreContainer.service ~/.config/systemd/user/
+     mv ~/Containers/$NombCont/$NombCont.service ~/.config/systemd/user/
    # Activarlo
      # como usuario:
        systemctl --user daemon-reload
-       systemctl --user enable --now NombreContainer.service
+       systemctl --user enable --now $NombCont.service
      # como root:
        sudo systemctl daemon-reload
-       sudo systemctl enable --now NombreContainer.service
+       sudo systemctl enable --now $NombCont.service
 
 # Para entrar en el shell de un container:
   podman exec -it NombreDelContainer> /bin/bash
