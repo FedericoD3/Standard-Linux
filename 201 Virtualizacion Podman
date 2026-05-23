@@ -33,7 +33,7 @@
      # Asignar el nombre del container a una variable para no tener que repetirlo:
        NombCont=10-Portainer
      # Asegurarse que exista el directorio con los apuntes de este container:
-       mkdir -P ~/Containers/$NombCont/
+       mkdir -p ~/Containers/$NombCont/
      # Hacer que podman genere el service en ese directorio:
        podman generate systemd --new --name $NombCont > ~/Containers/$NombCont/NombreContainer.service
    # Copiarlo a los servicios del usuario (no moverlo, para conservar esta copia):
