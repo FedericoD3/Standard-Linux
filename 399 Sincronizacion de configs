@@ -14,8 +14,9 @@
 # Simlink del directorio central de archivos sincronizados 
 #  entre el punto de montaje donde esté la sincronización (disco local o directorio de red)
 #  a un directorio standarizado dentro del $HOME del usuario
-  ln -s /Donde/Esta/Realmente/Sync ~/Sync  
-  ln -s /Donde/Esta/Realmente/Dropbox ~/Dropbox
+# Enlazar los directorios de sincronización al $HOME, para que lo demás esté standarizado:
+  ln -s /Directorio/Donde/Realmente/Este/Sync    ~/Sync
+  ln -s /Directorio/Donde/Realmente/Este/Dropbox ~/Dropbox
 #  así todos los usuarios ven sus configuraciones dentro de ~/Sync esté donde esté su fileserver local
 #  y los directorios donde los programas esperan sus configuraciones apuntan a esos dentro de ~/Sync
 
@@ -34,17 +35,13 @@
     rm -r ~/.themes                                                            && ln -s ~/Sync/Configs/Linux/≈∫.themes                                                         ~/.themes
     rm -r ~/.icons                                                             && ln -s ~/Sync/Configs/Linux/≈∫.icons                                                          ~/.icons
 
-  ln -s ~/Sync/Configs/Linux/≈∫.config/smplayer          ~/.config/smplayer
-  ln -s ~/Sync/Configs/Linux/≈∫.config/tabby/config.yaml ~/.config/tabby/config.yaml
+  rm -r ~/.config/smplayer         && ln -s ~/Sync/Configs/Linux/≈∫.config/smplayer          ~/.config/smplayer
+  rm ~/.config/tabby/config.yaml   && ln -s ~/Sync/Configs/Linux/≈∫.config/tabby/config.yaml ~/.config/tabby/config.yaml
 
   ln -s ~/Sync/Configs/VSCodium/≈∫.config∫VSCodium       ~/.config/VSCodium
   ln -s ~/Sync/Configs/VSCodium/≈∫.vscode-oss            ~/.vscode-oss
 
   ln -s ~/Sync/Configs/Linux/FreeCAD                     ~/.config/FreeCAD
-
-# Enlazar los directorios de sincronización al $HOME:
-  ln -s /Discos/Resto/Sync Sync
-  ln -s /Discos/Resto/Dropbox Dropbox
 
 # KDE Remote Desctop Client
   # Eliminar los archivos locales no sincronizados y enlazar los archivos sincronizados a las ubicaciones standard:
