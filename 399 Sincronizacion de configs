@@ -39,7 +39,7 @@
   rm    ~/.config/tabby/config.yaml   && ln -s ~/Sync/Configs/Linux/≈∫.config/tabby/config.yaml ~/.config/tabby/config.yaml
 
   rm -r ~/.config/VSCodium && ln -s ~/Sync/Configs/VSCodium/≈∫.config∫VSCodium       ~/.config/VSCodium
-  ln -r ~/.vscode-oss      && -s ~/Sync/Configs/VSCodium/≈∫.vscode-oss            ~/.vscode-oss
+  rm -r ~/.vscode-oss      && ln -s ~/Sync/Configs/VSCodium/≈∫.vscode-oss            ~/.vscode-oss
 
   ln -s ~/Sync/Configs/Linux/FreeCAD                     ~/.config/FreeCAD
 
