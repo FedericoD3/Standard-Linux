@@ -43,7 +43,7 @@
      User=NOMBRE_DEL_USUARIO  # Verlo con echo $USER
      Group=GRUPO_DEL_USUARIO  # El primero en id -G -n 
     [Install]
-     WantedBy=multi-user.target
+     WantedBy=default.target
   # Salvarlo y activarlo como usuario:
       systemctl --user daemon-reload
       systemctl --user enable --now NOMBRE_DEL_CONTAINER.service
