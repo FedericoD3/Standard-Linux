@@ -28,23 +28,25 @@
 # Verificar que lee los registries buscando alguna imagen común:
   podman search portainer
 
-## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD:
-   # Después de crear y probar un container, hay que generar su service:
-     # Asignar el nombre del container a una variable para no tener que repetirlo:
-       NombCont=10-Portainer
-     # Asegurarse que exista el directorio con los apuntes de este container:
-       mkdir -p ~/Containers/$NombCont/
-     # Hacer que podman genere el service en ese directorio:
-       podman generate systemd --new --name $NombCont > ~/Containers/$NombCont/NombreContainer.service
-   # Copiarlo a los servicios del usuario (no moverlo, para conservar esta copia):
-       cp ~/Containers/$NombCont/$NombCont.service ~/.config/systemd/user/
-   # Activarlo
-     # como usuario:
-       systemctl --user daemon-reload
-       systemctl --user enable --now $NombCont.service
-     # como root:
-       sudo systemctl daemon-reload
-       sudo systemctl enable --now $NombCont.service
+## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD
+#  Se puede generar el service con 
+   podman generate systemd --new --name NOMBRE_DEL_CONTAINER
+#  pero es muy complejo cubriendo todas las opciones, mejor escribir el .service manualmente:
+  nano .config/systemd/user/NOMBRE_DEL_CONTAINER.service
+  # con este contenido mínimo:
+    [Unit]
+     Description=NOMBRE_DEL_CONTAINER
+     After=network.target
+    [Service]
+     ExecStart=podman start NOMBRE_DEL_CONTAINER 
+     Restart=always
+     User=NOMBRE_DEL_USUARIO  # Verlo con echo $USER
+     Group=GRUPO_DEL_USUARIO  # El primero en id -G -n 
+    [Install]
+     WantedBy=multi-user.target
+  # Salvarlo y activarlo como usuario:
+      systemctl --user daemon-reload
+      systemctl --user enable --now NOMBRE_DEL_CONTAINER.service
 
 # Para entrar en el shell de un container:
   podman exec -it NombreDelContainer> /bin/bash
