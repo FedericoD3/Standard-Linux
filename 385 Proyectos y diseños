@@ -4,6 +4,11 @@
   sudo apt update
   sudo apt upgrade
 
+# CudaText (sustituto de Notepad++ de Windows):
+  wget https://sourceforge.net/projects/cudatext/files/release/1.234.3.1/cudatext_1.234.3.1-1_gtk3_amd64.deb/download -O cudatext.deb
+  sudo apt install ./cudatext.deb
+  rm ./cudatext.deb
+
 # VSCodium (También via el catálogo "Discover" o "Software"):
   wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
   echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
