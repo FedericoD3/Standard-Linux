@@ -8,6 +8,11 @@
   sudo apt install ./tabby.deb
   rm ./tabby.deb
 
+# Proton authenticator https://proton.me/authenticator
+  wget https://proton.me/download/authenticator/linux/ProtonAuthenticator_1.1.5_amd64.deb -O PA.deb
+  sudo apt install ./PA.deb
+  rm ./PA.deb
+
 # Emulador de DOS (útil para juegos viejos o programas de PLCs)
   sudo apt install dosbox*
 
