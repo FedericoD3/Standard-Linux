@@ -9,6 +9,11 @@
   rm ./tabby.deb
   # Enlazar a la configuración sincronizada mía:
     ln ~/Sync/Configs/Linux/≈∫.config/tabby/config.yaml /home/FedericoD3/.config/tabby/config.yaml
+  # Configurar que sea KeePassXC y no gnome-keyring el manejador de claves del sistema:
+    killall gnome-keyring-daemon
+    sudo chmod -x /usr/bin/gnome-keyring*
+    # En KeyPassXC Tools > Settings > Secret Service Integration (a la izquierda), 
+    #  y marcar "Enable KeePassXC Freedesktop.org integration"
 
 # Emulador de DOS (útil para juegos viejos o programas de PLCs)
   sudo apt install dosbox*
