@@ -7,11 +7,8 @@
   wget https://github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-linux-x64.deb -O tabby.deb
   sudo apt install ./tabby.deb
   rm ./tabby.deb
-
-# Proton authenticator https://proton.me/authenticator
-  wget https://proton.me/download/authenticator/linux/ProtonAuthenticator_1.1.5_amd64.deb -O PA.deb
-  sudo apt install ./PA.deb
-  rm ./PA.deb
+  # Enlazar a la configuración sincronizada mía:
+    ln ~/Sync/Configs/Linux/≈∫.config/tabby/config.yaml /home/FedericoD3/.config/tabby/config.yaml
 
 # Emulador de DOS (útil para juegos viejos o programas de PLCs)
   sudo apt install dosbox*
@@ -19,6 +16,13 @@
 # KeePassXC (También via el catálogo "Discover" o "Software"):
   sudo apt install keepassxc
   sudo apt install webext-keepassxc-browser 
+  # Enlazar a la configuración sincronizada mía:
+    ln Sync/Configs/Linux/≈∫.config/keepassxc/keepassxc.ini ~/.config/keepassxc/keepassxc.ini
+  
+# Proton authenticator https://proton.me/authenticator
+  wget https://proton.me/download/authenticator/linux/ProtonAuthenticator_1.1.5_amd64.deb -O PA.deb
+  sudo apt install ./PA.deb
+  rm ./PA.deb
 
 # NotepadNext # Via el catálogo "Discover"
   sudo apt install mousepad
