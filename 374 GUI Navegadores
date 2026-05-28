@@ -10,6 +10,11 @@
 # CHROMIUM
   sudo apt install chromium
 
+# UNGOOGLED CHROMIUM:
+  flatpak install flathub io.github.ungoogled_software.ungoogled_chromium
+  # Crear el launcher con:
+    flatpak run io.github.ungoogled_software.ungoogled_chromium
+
 # THORIUM
   # Descargar el paquede DEB desde https://github.com/Alex313031/Thorium/releases
   #  Preferible AVX2
