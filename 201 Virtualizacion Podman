@@ -29,22 +29,26 @@
   podman search portainer
 
 ## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD
-#  Se puede generar el service con 
-   podman generate systemd --new --name NOMBRE_DEL_CONTAINER
-#  pero es muy complejo cubriendo todas las opciones, mejor escribir el .service manualmente:
-  nano .config/systemd/user/NOMBRE_DEL_CONTAINER.service
-  # con este contenido mínimo:
-    [Unit]
-     Description=NOMBRE_DEL_CONTAINER
-     After=network.target
-    [Service]
-     ExecStart=podman start NOMBRE_DEL_CONTAINER 
-     Restart=always
-     User=NOMBRE_DEL_USUARIO  # Verlo con echo $USER
-     Group=GRUPO_DEL_USUARIO  # El primero en id -G -n 
-    [Install]
-     WantedBy=default.target
-  # Salvarlo y activarlo como usuario:
+  #  Se puede generar el service con 
+      CONT=<NombreDelContainer,p.e.,jellyfin>
+      mv  ~/.config/systemd/user/$CONT.service  ~/.config/systemd/user/$CONT.service.no
+      podman generate systemd --name $CONT > ~/$CONT.service
+      nano ~/$CONT.service # (limpiarlo)
+      mv ~/$CONT.service ~/.config/systemd/user/$CONT.service
+      systemctl --user daemon-reload
+      systemctl --user enable $CONT.service
+  # o también escribir el .service manualmente:
+    nano .config/systemd/user/NOMBRE_DEL_CONTAINER.service
+    # con este contenido mínimo:
+      [Unit]
+       Description=NOMBRE_DEL_CONTAINER
+       After=network.target
+      [Service]
+       ExecStart=podman start NOMBRE_DEL_CONTAINER 
+       Restart=always
+      [Install]
+       WantedBy=default.target
+    # Salvarlo y activarlo como usuario:
       systemctl --user daemon-reload
       systemctl --user enable --now NOMBRE_DEL_CONTAINER.service
 
