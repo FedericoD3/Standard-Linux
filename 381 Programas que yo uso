@@ -22,7 +22,21 @@
   sudo apt install keepassxc
   sudo apt install webext-keepassxc-browser 
   # Enlazar a la configuración sincronizada mía:
-    ln Sync/Configs/Linux/≈∫.config/keepassxc/keepassxc.ini ~/.config/keepassxc/keepassxc.ini
+    ln ~/Sync/Configs/Linux/≈∫.config/keepassxc/keepassxc.ini ~/.config/keepassxc/keepassxc.ini
+  # OPCIONAL: Usar Keypass como "keyring" (https://github.com/keepassxreboot/keepassxc/issues/11342):
+    # Desabilitar y detener el "secret service server":
+      sudo systemctl --global disable gnome-keyring-daemon.service
+      sudo systemctl --global disable gnome-keyring-daemon.socket
+      systemctl --user disable gnome-keyring-daemon.service
+      systemctl --user disable gnome-keyring-daemon.socket
+      echo "X-XFCE-Autostart-Override=false" >> ~/.config/autostart/gnome-keyring-secrets.desktop
+      echo "Hidden=true" >> ~/.config/autostart/gnome-keyring-secrets.desktop
+      sudo sed -i 's/^[^#].*pam_gnome_keyring.so/# disable gnome-keyring-daemon:\n#    &/' /etc/pam.d/*
+      sudo mv /usr/share/dbus-1/services/org.freedesktop.secrets.service /usr/share/dbus-1/services/org.freedesktop.secrets.service.disabled
+      pkill gnome-keyring*
+    # Habilitar KeePassXC como secret service server
+    #  Menu Tools > Settings (arriba) > Secret Service Integration (izquierda) > marcar "Enable KeePassXC"
+    #  Por seguridad se puede definir que solo tenga acceso a una base de datos de claves diferente de la principal
   
 # Proton authenticator https://proton.me/authenticator
   wget https://proton.me/download/authenticator/linux/ProtonAuthenticator_1.1.5_amd64.deb -O PA.deb
