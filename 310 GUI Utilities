@@ -61,14 +61,16 @@
 
 # Acceso remoto (cliente)
   sudo apt install -y remmina
+  # Enlazar mis cionexiones Remmina del directorio sincronizado:
+    ln -s ~/Sync/Configs/Linux/≈∫.config/remmina ~/.config/remmina
 
 # Capturador de pantalla
   sudo apt install -y ksnip
   #  Menu > Options > Settings > Saver > Capture save location:
-  #  ~/Pantallazos/$(date +%Y-%m)/$(date +%Y%m%d-%H%M%S).png
+  #  ~/Pictures/Pantallazos/$(date +%Y-%m)/$(date +%Y%m%d-%H%M%S).png
   #  para que las guarde en directorios por mes.
   # Si quieres que las capturas aparezcan en ~/Pantallazos pero que realmente estén en un disco para "bulto":
-    ln -s /Discos/Resto/Sync/Pantallazos/$HOSTNAME ~/Pantallazos
+    ln -s /Directorio/Que/Convenga ~/Pictures/Pantallazos
   #  Menu > Options > Settings > Hotkeys
   #   Marcar "Enable global hotkeys"
   #   Rect Area:   Ctrl+Print
