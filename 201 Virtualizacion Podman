@@ -30,8 +30,7 @@
 
 ## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD
   #  Se puede generar el service con 
-      CONT=<NombreDelContainer,p.e.,jellyfin>
-      mv  ~/.config/systemd/user/$CONT.service  ~/.config/systemd/user/$CONT.service.no
+      CONT=<NombreDelContainer,p.e.,nginx>
       podman generate systemd --name $CONT > ~/$CONT.service
       nano ~/$CONT.service # (limpiarlo)
       mv ~/$CONT.service ~/.config/systemd/user/$CONT.service
