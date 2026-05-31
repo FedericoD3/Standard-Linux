@@ -75,6 +75,9 @@
   rm ./rip.tar.gz
   alias rm=rip
 
+# Monitor de eventos de dispositivos de entrada:
+  sudo apt install evtest
+
 # procs (listador de procesos mejor formateado que el nativo ps)
   wget https://github.com/dalance/procs/releases/download/v0.14.11/procs-v0.14.11-x86_64-linux.zip -O procs.zip
   unzip ./procs.zip
