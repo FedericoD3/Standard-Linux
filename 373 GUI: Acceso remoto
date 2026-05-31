@@ -3,6 +3,9 @@
   sudo apt install remmina
   o 
   sudo nala install remmina
+  # Sincronizar mis definiciones de conexiones:
+    \rm -r /home/FedericoD3/.config/remmina
+    ln -s ~/Sync/Configs/Linux/≈∫.config/remmina /home/FedericoD3/.config/remmina
 
 # xfreerdp 
   sudo nano /etc/apt/sources.list.d/freerdp.list
