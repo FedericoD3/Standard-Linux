@@ -71,3 +71,13 @@
 # eliminar el usuario temporal original que obligó todo en minusculas:
   sudo userdel comosellamara
 
+# UTIL: Autorizar a un grupo de usuarios a que reduzca la "amabilidad" de los procesos (incremente la prioridad):
+  # Si se trata de iniciar un programa con amabilidad reducida / prioridad aumentada
+    nice -n -20 AlgunPrograma &
+  # Será negado porque en principio solo root puede aumentar la prioridad:
+    cannot set niceness: Permission denied
+  # A menos que se especifique que el grupo del usuario puede hacerlo sin ser root
+    sudo nano /etc/security/limits.conf
+  # y agregar la línea:
+    @NombreDelGrupo - nice -20
+  # Salvar y reiniciar sesión
