@@ -1,5 +1,6 @@
 # Monitor / administrador de reglas de iptables:
 # https://github.com/1randomdev/iptables-web-ui/pkgs/container/iptables-web-ui
+# Requiere tener instalado iptables-persistent (sudo apt install ...)
 
 # Docker / podman CLI:
   docker run -d --name=iptables-web-ui \
