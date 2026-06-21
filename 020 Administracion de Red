@@ -1,5 +1,9 @@
 # https://www.reddit.com/r/debian/comments/152a5jo/so_what_network_manager_does_debian_12_use/
 
+# Monitor de red (útil para debug):
+  sudo apt install tcpdump
+  # sudo tcpdump -i eth0 | grep Termino-De-Interes
+
 # Instalar NetworkManager, mas moderno que ifconfig y mas cómodo que netplan:
   sudo apt  install network-manager
 
