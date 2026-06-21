@@ -32,3 +32,7 @@
   sudo nala install freecad
 
 # ArduinoIDE:
+  # Crear el acceso directo del menú a ~/Sync/PortApps/Linux/ArduinoIDE/arduino-ide.AppImage
+  # y los enlaces a configuración y librerías:
+    ln -s ~/Sync/PortApps/Linux/ArduinoIDE/≈∫.arduino15 ~/.arduino15
+    ln -s ~/Sync/PortApps/Linux/ArduinoIDE/≈∫.arduinoIDE ~/.arduinoIDE
