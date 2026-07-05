@@ -35,14 +35,16 @@
 #  pactl - Send a control command to a PulseAudio server.
 #  padsp - /dev/dsp wrapper to transparently support OSS applications.
 #  pax11publish - Store/retrieve PulseAudio default server/sink/source settings in the X11 root window.
-  sudo apt install pulseaudio-utils
+   sudo apt install pulseaudio-utils
 
 # Utilidades de video:
   # https://manpages.debian.org/trixie/v4l-utils/v4l2-ctl.1.en.html
   # https://www.mankier.com/package/v4l-utils
-  sudo apt install v4l-utils
+    sudo apt install v4l-utils
   # Procesador de imagen, video y audio por línea de comando
-  sudo apt install ffmpeg
+    sudo apt install ffmpeg
+  # Editor de MKVs
+    sudo apt install mkvtoolnix mkvtoolnix-gui
 
 # Utilities Android:
   sudo apt install android-sdk-platform-tools-common
