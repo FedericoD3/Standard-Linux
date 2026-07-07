@@ -12,9 +12,14 @@
   sudo apt install chromium
 
 # UNGOOGLED CHROMIUM:
-  flatpak install flathub io.github.ungoogled_software.ungoogled_chromium
-  # Crear el launcher con:
+  # Con flatpak:
+    flatpak install flathub io.github.ungoogled_software.ungoogled_chromium
+    # y el launcher debe tener:
     flatpak run io.github.ungoogled_software.ungoogled_chromium
+  # O instalación normal:
+    wget -O UC.deb https://mxrepo.com/mx/repo/pool/main/u/ungoogled-chromium/ungoogled-chromium_149.0.7827.196-1mx25_amd64.deb
+    sudo apt install ./UC.deb
+    rm UC.deb
 
 # THORIUM
   # Descargar el paquede DEB desde https://github.com/Alex313031/Thorium/releases
