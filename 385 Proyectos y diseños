@@ -36,3 +36,5 @@
   # y los enlaces a configuración y librerías:
     ln -s ~/Sync/PortApps/Linux/ArduinoIDE/≈∫.arduino15 ~/.arduino15
     ln -s ~/Sync/PortApps/Linux/ArduinoIDE/≈∫.arduinoIDE ~/.arduinoIDE
+  # Hay que darle al usuario acceso a los puertos seriales para comunicarse:
+    sudo usermod -a -G dialout $USER
