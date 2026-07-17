@@ -31,9 +31,8 @@
 ## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD
   #  Se puede generar el service con 
       CONT=<NombreDelContainer,p.e.,nginx>
-      podman generate systemd --name $CONT > ~/$CONT.service
-      nano ~/$CONT.service # (limpiarlo)
-      mv ~/$CONT.service ~/.config/systemd/user/$CONT.service
+      podman generate systemd --name $CONT > ~/.config/systemd/user/$CONT.service
+      nano ~/.config/systemd/user/$CONT.service # (verificarlo y limpiarlo o corregirlo si hace falta)
       systemctl --user daemon-reload
       systemctl --user enable $CONT.service
   # o también escribir el .service manualmente:
@@ -41,10 +40,14 @@
     # con este contenido mínimo:
       [Unit]
        Description=NOMBRE_DEL_CONTAINER
-       After=network.target
+       Wants=network-online.target
+       After=network-online.target
+       RequiresMountsFor=/run/user/1001/containers
       [Service]
-       ExecStart=podman start NOMBRE_DEL_CONTAINER 
-       Restart=always
+       Environment=PODMAN_SYSTEMD_UNIT=%n
+       ExecStart=/usr/bin/podman start NOMBRE_DEL_CONTAINER 
+       ExecStop=/usr/bin/podman stop -t 10 NOMBRE_DEL_CONTAINER
+       Type=forking
       [Install]
        WantedBy=default.target
     # Salvarlo y activarlo como usuario:
