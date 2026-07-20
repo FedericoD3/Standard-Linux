@@ -1,3 +1,6 @@
+# Ventaja sobre Podman: los containers arrancan automáticamente porque tiene un demonio en background
+# Desventaja con Podman: el demonio se ejecuta con privilegios root
+
 # Asegurarse que estén actualizados repositorios y paquetes:
   sudo apt-get update 
   sudo apt upgrade
