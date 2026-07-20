@@ -1,3 +1,6 @@
+# Ventaja sobre Docker: no tiene demonio en background con privilegios de root
+# Desventaja con Docker: requiere crear un user service para activar cada container
+
 # Asegurarse que estén actualizados repositorios y paquetes:
   sudo apt-get update 
   sudo apt upgrade
