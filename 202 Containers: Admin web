@@ -27,8 +27,34 @@
       podman volume rm portainer_data     # Eliminar sus datos
 
 # DOCKHAND . . . https://dockhand.pro/
-  # Compose:
-    
+  # Con Docker compose:
+    nano Dockhand.yml
+      services:
+        dockhand:
+          image: fnsys/dockhand:latest
+          container_name: dockhand
+          restart: unless-stopped
+          ports:
+            - 3000:3000
+          volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - dockhand_data:/app/data
+      volumes:
+        dockhand_data:/app/data
+    Ctrl+s Ctrl+x
+
+  # Podman compose: nano Dockhand.yml
+    services:
+      dockhand:
+        image: fnsys/dockhand:latest
+        container_name: 10-Dockhand
+        restart: unless-stopped
+        ports:
+          - 3000:3000
+        volumes:
+          - /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock
+          - dockhand_data:/app/data
+
   # Run:
     docker run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest
     podman run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest
