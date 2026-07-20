@@ -32,7 +32,7 @@
       services:
         dockhand:
           image: fnsys/dockhand:latest
-          container_name: dockhand
+          container_name: 10-Dockhand
           restart: unless-stopped
           ports:
             - 3000:3000
@@ -42,12 +42,15 @@
       volumes:
         dockhand_data:/app/data
     Ctrl+s Ctrl+x
+    docker compose --file ~/En/Algun/Directorio/Dockhand.yml up -d
+  # Con docker run:
+    docker run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest    
   # Con podman compose:
     nano ~/En/Algun/Directorio/Dockhand.yml
       services:
         dockhand:
           image: fnsys/dockhand:latest
-          container_name: dockhand
+          container_name: 10-Dockhand
           restart: unless-stopped
           ports:
             - 3000:3000
@@ -57,19 +60,6 @@
       volumes:
         dockhand_data:/app/data
     Ctrl+s Ctrl+x
-
-  # Podman compose: nano Dockhand.yml
-    services:
-      dockhand:
-        image: fnsys/dockhand:latest
-        container_name: 10-Dockhand
-        restart: unless-stopped
-        ports:
-          - 3000:3000
-        volumes:
-          - /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock
-          - dockhand_data:/app/data
-
-  # Run:
-    docker run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest
+    podman compose --file ~/En/Algun/Directorio/Dockhand.yml up -d
+  # Con podman run:
     podman run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest
