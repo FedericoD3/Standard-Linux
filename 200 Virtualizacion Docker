@@ -35,29 +35,3 @@
   sudo docker images        # Listar imagenes ("plantillas")
   docker rmi <image_id>	    # Eliminar una imagen, si no la está usando ningún container
   docker compose -f /Donde/Este/El/Arch/ComoSeLlame.yml up -d  # Componer container, activarlo y dejarlo en background
-
-# Administradores web:
-# PORTAINER
-  # Sólo la primera vez para que los datos sean persistentes
-    docker volume create portainer_data 
-  # (re) instanciar el container con la imagen mas reciente:
-    sudo docker run -d -p 8000:8000 -p 9443:9443 --name 10-portainer --restart=always --privileged -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
-    # Si ya existía y lo que se quiere es actualizarlo:
-      docker stop 10-portainer            # Detenerlo
-      docker  rm  10-portainer            # Eiminarlo
-      # Determinar el "image id" de la imagen base:
-        docker image ls
-      # Eliminar la imagen base para que descargue la mas reciente:
-        docker image rm <ID determinado arriba>
-  # Chequear que arrancó y está accesible en esos puertos:
-    docker ps
-  # Conectarse a http://<IP>:8000 o a https://<IP>:9443
-  # NOTAS:
-    # Para que mande al IP correcto desde los enlaces de cada container:
-      Menu Environment-related > Environments > Local> Public IP field, IP del servidor > Update environment.
-    # Para resetear el password:
-      docker pull portainer/helper-reset-password
-      docker run --rm -v portainer_data:/data portainer/helper-reset-password
-    # Para resetear todo:
-      docker stop 10-portainer            # Detenerlo
-      docker volume rm portainer_data     # Eliminar sus datos
