@@ -40,7 +40,7 @@
             - /var/run/docker.sock:/var/run/docker.sock
             - dockhand_data:/app/data
       volumes:
-        dockhand_data:/app/data
+        dockhand_data:
     Ctrl+s Ctrl+x
     docker compose --file ~/En/Algun/Directorio/Dockhand.yml up -d
   # Con docker run:
@@ -58,7 +58,7 @@
             - /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock
             - dockhand_data:/app/data
       volumes:
-        dockhand_data:/app/data
+        dockhand_data:
     Ctrl+s Ctrl+x
     podman compose --file ~/En/Algun/Directorio/Dockhand.yml up -d
   # Con podman run:
