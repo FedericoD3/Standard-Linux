@@ -68,3 +68,15 @@
     podman run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest
   # Después de instalado, configurarlo en http://<IP-del-host>:3000
     Settings (izq) > Environments (arriba) > [Add] (der) > Connection type: Unix socket > /run/user/$(id -u)/podman/podman.sock > [Test] > [Add] > Containers (izq)
+  # Recordar que podman requiere crear el servicio de usuario para que se ejecute al bootear:
+    # Parametrizar:
+      CONT=10-Dockhand
+    # Crear el servicio:
+      podman generate systemd --name $CONT > ~/.config/systemd/user/$CONT.service
+    # Revisarlo:
+      nano ~/.config/systemd/user/$CONT.service 
+    # Reconocer el servicio nuevo:
+      systemctl --user daemon-reload
+    # Activar e iniciar el servicio nuevo:
+      systemctl --user enable --now $CONT.service
+    
