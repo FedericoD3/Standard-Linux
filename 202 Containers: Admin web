@@ -46,8 +46,8 @@
   # Con docker run:
     docker run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /var/run/docker.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest    
   # Después de instalado, configurarlo en http://<IP-del-host>:3000
-    Settings (izq) > Environments (arriba) > [Add] (der) > Connection type: Unix socket > /ver/run/docker.sock > [Test] > [Add]
-
+    Settings (izq) > Environments (arriba) > [Add] (der) > Name {arbitrario} Connection type: Unix socket > /ver/run/docker.sock > [Test] > [Add] > Containers (izq)
+    
   # Con podman compose:
     nano ~/En/Algun/Directorio/Dockhand.yml
       services:
@@ -67,4 +67,4 @@
   # Con podman run:
     podman run -d --name 10-Dockhand --restart unless-stopped -p 3000:3000 -v /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock -v dockhand_data:/app/data fnsys/dockhand:latest
   # Después de instalado, configurarlo en http://<IP-del-host>:3000
-    Settings (izq) > Environments (arriba) > [Add] (der) > Connection type: Unix socket > /run/user/$(id -u)/podman/podman.sock > [Test] > [Add]
+    Settings (izq) > Environments (arriba) > [Add] (der) > Connection type: Unix socket > /run/user/$(id -u)/podman/podman.sock > [Test] > [Add] > Containers (izq)
