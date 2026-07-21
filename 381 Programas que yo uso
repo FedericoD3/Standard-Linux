@@ -1,7 +1,7 @@
 # INSTALAR PROGRAMAS A LOS QUE **YO** ESTOY ACOSTUMBRADO
 
 # Todo junto:
-  sudo apt install keepassxc webext-keepassxc-browser mousepad copyq okular audacity easyeffects handbrake kdenlive gimp smplayer smplayer-themes smtube
+  sudo apt install keepassxc webext-keepassxc-browser mousepad copyq okular audacity easyeffects handbrake kdenlive gimp smplayer smplayer-themes smtube ksnip kmag
 
 # Emulador de terminal + ssh + serial Tabby:
   wget https://github.com/Eugeny/tabby/releases/download/v1.0.234/tabby-1.0.234-linux-x64.deb -O tabby.deb
@@ -67,6 +67,12 @@
 
 # Retocador de imagenes
   sudo apt install gimp
+
+# Capturador de imagenes
+  sudo apt install ksnip
+
+# Lupa
+  sudo apt install kmag
 
 # Office:
   sudo apt purge libreoffice                                    # Se liberarán 359 MB después de esta operación.
