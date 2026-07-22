@@ -26,7 +26,7 @@
 # Analizadores de ocupación de disco por directorio, mas informativo que el tradicional du:
   sudo apt install duf
   sudo apt gdu
-  sudo apt install du-dust
+  sudo apt install du-dust     # El binario a ejecutar es solo dust
   # Si no encuentra este último:
     wget https://github.com/bootandy/dust/releases/download/v1.2.4/du-dust_1.2.4-1_amd64.deb -O du-dust.deb
     sudo apt install ./du-dust.deb
