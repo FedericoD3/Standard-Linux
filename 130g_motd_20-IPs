@@ -25,5 +25,3 @@
 
 # Informar acerca de la red:
   echo -e " IP=$IP   NS=$NS   GW=$GW"
-
-
