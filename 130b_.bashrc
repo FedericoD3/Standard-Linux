@@ -2,19 +2,19 @@
 
 Log=0
 
-# Si no es sesi  n interactiva, no hacer nada y salir
+# Si no es sesión interactiva, no hacer nada y salir
   case $- in
     *i*) ;;
     *) return;;
   esac
-# Si es sesi  n interactiva, cargar la configuracion standard
+# Si es sesión interactiva, cargar la configuracion standard
 
 if [ $Log -eq 1 ]; then echo -e "\nEjecutando /Discos/Local/bashStd" $(TZ=":America/Caracas" date +'%Y-%m-%d_%H%M%S') >> ~/Arranque_bash.log; fi
 
 if [ "$(ps -o comm= $PPID)" != "su" ]; then 
-  # Si es la sesi  n directa, dar chance a evitar error de configuracion
-  echo "sleep 1 (para dar chance de hacer Ctrl+C si hay alg  n error fatal mas abajo)"
-  sleep 1   # Para dar chance de hacer Ctrl+C si hay alg  n error fatal mas abajo.
+  # Si es la sesión directa, dar chance a evitar error de configuracion
+  echo "sleep 1 (para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo)"
+  sleep 1   # Para dar chance de hacer Ctrl+C si hay algún error fatal mas abajo.
   # clear
   if [ $Log -eq 1 ]; then echo "Terminado retardo de seguridad" >> ~/Arranque_bash.log; fi
   else
@@ -52,7 +52,6 @@ fi
 ################################################
   if [ $Log -eq 1 ]; then echo "Aliases asignados" >> ~/Arranque_bash.log; fi
 
-
 # Para que no tenga indents enormes
   tabs 3
   if [ $Log -eq 1 ]; then echo "Tabs en 3" >> ~/Arranque_bash.log; fi
@@ -60,13 +59,13 @@ fi
 # check the window size after each command and, 
 # if necessary, update the values of LINES and COLUMNS.
   shopt -s checkwinsize
-  if [ $Log -eq 1 ]; then echo "Activada actualizaci  n de \$COLUMNS y \$LINES" >> ~/Arranque_bash.log; fi
+  if [ $Log -eq 1 ]; then echo "Activada actualización de \$COLUMNS y \$LINES" >> ~/Arranque_bash.log; fi
 
 # Decorar el prompt:
   source /Discos/Local/bashStd/FancyBash.sh
   if [ $Log -eq 1 ]; then echo "Prompt decorado" >> ~/Arranque_bash.log; fi
 
-# Modificar el t  tulo de la ventana con el usuario y host
+# Modificar el título de la ventana con el usuario y host
   PS1=$PS1'\[\e]2;\u @ \H\a\]'
   if [ $Log -eq 1 ]; then echo "Titulo de la ventana actualizado" >> ~/Arranque_bash.log; fi
 
@@ -92,9 +91,3 @@ fi
 
 # Pasar al fin al terminal
   return
-
-
-
-
-
-
