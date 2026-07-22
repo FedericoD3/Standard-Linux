@@ -3,16 +3,16 @@
 function color (){
   echo "\e[$1m$2\e[0m"
 }
+
 ColorHost="1;33"
 greetingsColor="30;38;5;103"
 userColor="30;48;5;67"
 
 # Leer el clima de un archivo requiere tener el archivo actualizado con un cron cada pocos minutos:
-#   10  *   *   *   *   curl wttr.in/Maracay?format=2 --silent --output .clima
-Hoy="$(color $greetingsColor "⮞ $(LC_ALL=es_VE.utf8 date +"%A %d de %B de %Y, %H:%M:%S")")\t"$(cat .clima)
+#   10  *   *   *   *   curl wttr.in/Maracay?format=2 --silent --output /tmp/.clima
+
+Hoy="$(color $greetingsColor "⮞ $(LC_ALL=es_VE.utf8 date +"%A %d de %B de %Y, %H:%M:%S")")\t"$(cat /tmp/.clima)
 echo -e "\n"$Hoy
 
-me="Bienvenido a "
-me=$me$(color $ColorHost $(hostname))" "
-me=$me$(color $userColor " $(logname) ")
+me="$(color $userColor) $(whoami) conectado a $(color $ColorHost $(hostname))"
 echo -e $me
