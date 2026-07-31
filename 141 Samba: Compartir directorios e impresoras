@@ -41,9 +41,12 @@
   sudo nano /etc/samba/Includes/2-algunusuario.conf
   # Misma sintaxis
 
-# Agregar a Samba usuarios Linux:
+# Agregar a Samba usuarios ya en Linux:
   sudo smbpasswd -a AlgunUsuario
   sudo smbpasswd -a OtroUsuario
+
+# Listar usuarios ya en samba:
+  pdbedit -w -L
 
 # Reiniciar el servicio:
   sudo systemctl restart smbd
