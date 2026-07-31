@@ -1,5 +1,6 @@
 # Instalar SAMBA, el compartidor de archivos en red:
   sudo nala install samba
+# Instalar el cliente de texto de samba (util para verificar)
   sudo nala install smbclient
 # Instalar el "Web Service Discovery Daemon", anunciador a la red de PCs Windows
   sudo nala install wsdd
