@@ -31,7 +31,7 @@
 
   # Crear la configuración personalizada standard con login (cónsola física o remota ssh) para usuarios futuros:
     sudo nano /etc/profile 
-      #!/bin/bash
+      #!/usr/bin/env bash
       source /Discos/Local/bashStd/.bashrc
       return
 
