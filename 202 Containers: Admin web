@@ -37,7 +37,8 @@
           ports:
             - 3000:3000
           volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
+          # - /var/run/docker.sock:/var/run/docker.sock                    # Para correr en docker como root
+            - /run/user/$(id -u)/podman/podman.sock:/var/run/docker.sock   # Para correr en podman como usuario
             - dockhand_data:/app/data
       volumes:
         dockhand_data:
