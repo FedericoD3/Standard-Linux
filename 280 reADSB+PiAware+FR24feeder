@@ -1,0 +1,59 @@
+# READSB para comunicarse con el SDR y decodificar el stream 1090
+services:
+  readsb:
+    image: ghcr.io/sdr-enthusiasts/docker-readsb-protobuf:latest
+    container_name: 30-reADSB
+    hostname: 30-reADSB
+    devices:
+      - /dev/bus/usb:/dev/bus/usb
+    ports:
+      - 40060:8080
+      - 30005:30005
+    environment:
+      - TZ=America/Caracas
+      - READSB_DCFILTER=true
+      - READSB_DEVICE_TYPE=rtlsdr
+      - READSB_FIX=true
+      - READSB_GAIN=autogain
+      - READSB_LAT=10.2353
+      - READSB_LON=-67.3129
+      - READSB_MODEAC=true
+      - READSB_RX_LOCATION_ACCURACY=2
+      - READSB_STATS_RANGE=true
+      - READSB_NET_ENABLE=true
+    volumes:
+      - ./30-reADSB/readsbpb_rrd:/run/collectd
+      - ./30-reADSB/readsbpb_autogain:/run/autogain
+      - /proc/diskstats:/proc/diskstats:ro
+    tmpfs:
+      - /run/readsb:size=64M
+      - /var/log:size=32M
+
+  # PiAware reporta a Flight Aware
+  piaware:
+    image: ghcr.io/sdr-enthusiasts/docker-piaware:latest
+    container_name: 31-PiAware
+    ports:
+      - 40061:8080
+    environment:
+      - BEASTHOST=30-reADSB
+      - MLAT_RESULTS_BEASTHOST=30-reADSB
+      - MLAT_RESULTS_BEASTPORT=31004
+      - TZ=America/Caracas
+      - FEEDER_ID=e577f419-9b1e-4c79-b3da-922b1cd95619
+    tmpfs:
+      - /run:exec,size=64M
+      - /var/log
+
+  # FR24 reporta a Flight Radar 24
+  fr24feed:
+    image: ghcr.io/sdr-enthusiasts/docker-flightradar24:latest
+    container_name: 32-FR24
+    ports:
+      - 40062:8754
+    environment:
+      - BEASTHOST=30-reADSB
+      - FR24KEY=5febb98bcd62d644
+      - MLAT=yes
+      - BIND_INTERFACE=0.0.0.0
+    dns_search: . # prevents rare connection issues related to a bug in docker and fr24feed
