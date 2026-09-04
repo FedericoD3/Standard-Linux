@@ -24,6 +24,11 @@
   # Refrescar el cache de fonts:
     fc-cache -f -v
 
+# Para generar htapasswd:
+  sudo apt install  apache2-utils
+  # P.e. para AdGuardCfg.yml:
+    htpasswd -B -C 10 -n -b 'Usuario' 'Password'
+
 # Librería de ejecución de Appimages:
   sudo apt install libfuse2
 
