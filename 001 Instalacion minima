@@ -2,7 +2,8 @@
 #  porque la instalación de Windows sobreescribe el gestor de arranque y bootea automático
 
 # Descargar el ISO instalador mas reciente soportado por el hardware desde 
-  https://www.debian.org/releases/index.es.html
+  https://www.debian.org/distrib/index.es.html
+  https://www.debian.org/distrib/
 
 # Grabar un pendrive usando Rufus (mas lento pero mas seguro) de https://rufus.ie/
 #  Balena Etcher (más rápido pero a veces no bootea) de https://etcher.balena.io/
