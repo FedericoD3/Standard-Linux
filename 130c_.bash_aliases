@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 alias vers='echo Version de Aliases de 2026-05-24 17:30'
 # alias grep='grep --color=auto --invert-match "^$" '
