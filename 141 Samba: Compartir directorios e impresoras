@@ -4,45 +4,67 @@
   sudo apt install smbclient
 # Instalar el "Web Service Discovery Daemon", anunciador a la red de PCs Windows
   sudo apt install wsdd2 
+  sudo systemctl enable wsdd2
+  sudo systemctl start wsdd2
+# Librerias de acceso a archivos en red:
   sudo apt install gvfs-backends
 
 # Personalizar la configuración:
   sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.ORIG
   sudo nano /etc/samba/smb.conf
-  # Modificando las lineas:
-    workgroup = FAMILIAR
-    netbios name = Servidor_de_la_casa
-    server string = Deposito de archivos
-    name resolve order = host wins bcast lmhost 
-  # y agregar al final:
-    include = /etc/samba/Includes/0-DirComunes.conf
-    include = /etc/samba/Includes/2-%U.conf
-  # Ctrl+s para salvar, Ctrl+x para salir
-# Crear el directorio de configuracion de carpetas y usuarios:
-  sudo mkdir /etc/samba/Includes
-# Crear los archivos de configuracion general y especifico de cada usuario
-  sudo nano /etc/samba/Includes/0-DirComunes.conf
-  # Directorio publico lectura escritura para todos:
-  [Libre]
-    comment = Carpeta comun para todos
-    path = /Dir/A/Compartir
-    public = yes
-    writeable = yes
-    Browseable = yes
-    guest ok = yes
-  # Directorio publico solo lectura para todos:
-  [Protegido]
-    comment = Carpeta comun para todos (solo lectura)
-    path = /Otro/Dir/Compartido
-    public = yes
-    guest ok = yes
-    writeable = No
-    Browseable = yes
-# Ctrl+s para salvar, Ctrl+x para salir
-  sudo nano /etc/samba/Includes/2-algunusuario.conf
-  # Misma sintaxis
+# Con este contenido:
+#####################################################################
+#####################################################################
 
-# Agregar a Samba usuarios ya en Linux:
+[global]
+# Parametros de identificacion en la red :
+  workgroup = RedFamiliar
+  netbios name = NombreDelServidor
+  server string = Servidor de archivos  
+# Accesos desde la red:
+  hosts allow = 127.0.0.1 AAA.BBB.CCC.0/24
+  hosts deny = XXX.YYY.ZZZ.0/24
+# Registro de actividad de cada cliente:
+  log file = /var/log/samba/%M.log
+  max log size = 1000
+  logging = file
+# Accion cuando Samba se congela, p.e. email al admin:
+  panic action = /usr/share/samba/panic-action %d
+# Authenticacion:
+   server role = standalone server
+   obey pam restrictions = yes
+;   unix password sync = yes
+;   passwd program = /usr/bin/passwd %u
+;   passwd chat = *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n *password\supdated\ssuccessfully* .
+# This boolean controls whether PAM will be used for password changes
+# when requested by an SMB client instead of the program listed in
+# 'passwd program'. The default is 'no'.
+   pam password change = yes
+# Permitir conexiones anonimas (p.e. visitas):
+   map to guest = bad user
+############ Misc ############
+  usershare allow guests = yes
+#======================= Share Definitions =======================
+#[homes]
+#   comment = Home Directory of %U (%u)
+#   browseable = no
+#   read only = no
+#   create mask = 0700
+#   directory mask = 0700
+#   valid users = %S
+# Archivos con la configuracion de directorios compartidos comunes, individuales, departamental$
+  include = /etc/samba/Includes/0-DirComunes.conf
+  include = /etc/samba/Includes/%U.conf
+
+#####################################################################
+#####################################################################
+# Ctrl+s para salvar, Ctrl+x para salir
+
+# Configuracion por cada usuario:
+  sudo nano /etc/samba/Includes/nombreusuarioconf
+  # Misma sintaxis que "[homes]" arriba
+
+# Agregar a Samba usuarios que ya existan en Linux:
   sudo smbpasswd -a AlgunUsuario
   sudo smbpasswd -a OtroUsuario
 
