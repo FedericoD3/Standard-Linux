@@ -9,6 +9,9 @@
 # Librerias de acceso a archivos en red:
   sudo apt install gvfs-backends
 
+# TODO JUNTO:
+  sudo apt install samba smbclient wsdd2 gvfs-backends
+
 # Personalizar la configuración:
   sudo mv /etc/samba/smb.conf /etc/samba/smb.conf.ORIG
   sudo nano /etc/samba/smb.conf
