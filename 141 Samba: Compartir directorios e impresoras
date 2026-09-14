@@ -71,8 +71,11 @@
   sudo smbpasswd -a AlgunUsuario
   sudo smbpasswd -a OtroUsuario
 
-# Listar usuarios ya en samba:
-  pdbedit -w -L
-
-# Reiniciar el servicio:
+# Habilitar e iniciar los servicios:
+  sudo systemctl enable  smbd
   sudo systemctl restart smbd
+  sudo systemctl enable  wsdd2.service
+  sudo systemctl restart wsdd2.service
+
+# Listar usuarios ya en samba:
+  sudo pdbedit -w -L
