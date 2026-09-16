@@ -4,13 +4,16 @@
   sudo apt update && sudo apt upgrade -y
 
 # TODO JUNTO:
-# sudo apt install curl wget zip unzip molly-guard hyperfine duf gdu rsync fd-find ranger mc fzf tree bat tealdeer cpufetch sysbench btop
+# sudo apt install curl wget zip unzip ntfs-3g molly-guard hyperfine duf gdu rsync fd-find ranger mc fzf tree bat tealdeer cpufetch sysbench btop
 # sudo apt install procs fastfetch du-dust
 
 # DE UNO EN UNO:
 
 # Basicos:
   sudo apt install curl wget zip unzip
+
+# Driver para leer discos formateados en NTFS:
+  sudo apt install ntfs-3g
 
 # Confirmador de reseteos y apagados remotos ( https://adrianroselli.com/wp-content/uploads/2024/02/switch-with-molly-guard.jpg ):
   sudo apt install molly-guard
