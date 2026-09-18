@@ -31,6 +31,15 @@
 # Verificar que lee los registries buscando alguna imagen común:
   podman search portainer
 
+## NOTA Como podman no se ejecuta bajo root, requiere permiso especial para manejar puertos debajo de 1024:
+   # Crear un script de habilitación. 99- para que ejecute de ultimo.
+     sudo nano /etc/sysctl.d/99-PuertosBajos.conf
+       net.ipv4.ip_unprivileged_port_start=53
+       kernel.unprivileged_userns_clone = 1
+   # Y recargarlo (o reiniciar):
+     sudo sysctl --system
+
+
 ## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD
   #  Se puede generar el service con 
       CONT=<NombreDelContainer,p.e.,nginx>
