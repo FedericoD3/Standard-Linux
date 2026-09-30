@@ -1,0 +1,16 @@
+# Crear un directorio para tener ahí los archivos relacionados:
+  mkdir $HOME/go2rtc
+
+# Descargar el 'latest release' de https://github.com/AlexxIT/go2rtc/
+  curl -O $HOME/go2rtc https://github.com/AlexxIT/go2rtc/releases/download/v1.9.14/go2rtc_linux_amd64
+# Hacerlo ejecutable:
+  chmod +x $HOME/go2rtc
+
+# Instalar Video For Linux para determinar fuentes locales de video:
+  sudo apt install v4l-utils
+
+  ll /dev/v4l/by-id
+  ll /dev/v4l/by-path
+  ll /dev/vid*
+  
+  nano $HOME/go2rtc/go2rtc_$(hostname).yml
