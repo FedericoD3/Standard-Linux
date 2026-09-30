@@ -40,13 +40,13 @@
      sudo sysctl --system
 
 
-## NOTA: PODMAN NO INICIA LOS CONTAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD
+## NOTA: PODMAN NO INICIA LOS SERVAINERS AUTOMATICAMENTE COMO DOCKER SINO DESDE SYSTEMD
   #  Se puede generar el service con 
-      CONT=<NombreDelContainer,p.e.,nginx>
-      podman generate systemd --name $CONT > ~/.config/systemd/user/$CONT.service
-      nano ~/.config/systemd/user/$CONT.service # (verificarlo y limpiarlo o corregirlo si hace falta)
+      SERV=<NombreDelSERVainer,p.e.,nginx>
+      podman generate systemd --name $SERV > ~/.config/systemd/user/$SERV.service
+      nano ~/.config/systemd/user/$SERV.service # (verificarlo y limpiarlo o corregirlo si hace falta)
       systemctl --user daemon-reload
-      systemctl --user enable $CONT.service
+      systemctl --user enable $SERV.service
   # o también escribir el .service manualmente:
     nano .config/systemd/user/NOMBRE_DEL_CONTAINER.service
     # con este contenido mínimo:
