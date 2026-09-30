@@ -12,5 +12,9 @@
   ll /dev/v4l/by-id
   ll /dev/v4l/by-path
   ll /dev/vid*
-  
+# Determinar controles de video0:
+  sudo v4l2-ctl -d /dev/video0 --list-ctrls
+# Ajustar un parametro de video0:
+  sudo v4l2-ctl -c gain=255
+
   nano $HOME/go2rtc/go2rtc_$(hostname).yml
