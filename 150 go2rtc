@@ -17,4 +17,26 @@
 # Ajustar un parametro de video0:
   sudo v4l2-ctl -c gain=255
 
-  nano $HOME/go2rtc/go2rtc_$(hostname).yml
+# Crear una configuración vacia:
+  touch $HOME/go2rtc/go2rtc_$(hostname).yml
+# Ejecutar el streamer:
+  $HOME/go2rtc/go2rtc --config $HOME/go2rtc/go2rtc_$(hostname).yml 
+
+# Usar esta página para determinar las fuentes de video disponibles:
+  http://localhos:1984/add.html
+# Usar esta página para agregar las fuentes de video determinadas previamente:
+  http://localhos:1984/config.html
+  streams:
+    Camara001:
+      - StringDeterminadoEnAdd.Html
+# Click en [Save & restart]
+# Usar esta página para ver los streams en el navegador:
+  http://localhos:1984/
+
+# Después que funcione al gusto, terminar el proceso go2rtc, 
+#  crear el .service en $HOME/.config/systemd/user/go2rtc.service
+#  y activarlo con:
+  systemctl --user daemon-reload
+  systemctl --user enable --now go2rtc.service
+
+
