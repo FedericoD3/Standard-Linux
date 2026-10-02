@@ -17,7 +17,7 @@
   sudo zerotier-cli info
 
 # AGREGARLO A LA RED EN https://my.zerotier.com/
-  sudo zerotier-cli join 0123456789abcdef
+  sudo zerotier-cli join 0123456789abcdef      # UZ VD S3:08752e18b18c5ef1
 
 # VERIFICAR CONEXION
   sudo zerotier-cli listnetworks
