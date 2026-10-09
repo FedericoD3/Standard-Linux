@@ -4,7 +4,7 @@
   sudo apt update && sudo apt upgrade -y
 
 # TODO JUNTO:
-# sudo apt install curl wget zip unzip ntfs-3g molly-guard hyperfine duf gdu rsync fd-find ranger mc fzf tree bat tealdeer cpufetch sysbench btop
+# sudo apt install curl wget zip unzip ntfs-3g molly-guard hyperfine duf gdu rsync fd-find ranger mc fzf tree bat tealdeer cpufetch sysbench btop kdiskmark
 # sudo apt install procs fastfetch du-dust
 
 # DE UNO EN UNO:
@@ -70,6 +70,9 @@
   sudo apt install sysbench
 # Informacion en vivo:
   sudo apt install btop
+
+# Medidor de velocidad de discos:
+  sudo apt install kdiskmark
 
 # RIP (borrador de archivos con cementerio resucitable)
   wget https://github.com/MilesCranmer/rip2/releases/download/v0.9.6/rip-Linux-x86_64-musl.tar.gz -O rip.tar.gz
