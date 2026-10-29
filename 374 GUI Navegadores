@@ -34,6 +34,8 @@
   curl -fsSL https://download.opensuse.org/repositories/isv:/BrowserWorks/Debian_13/Release.key | gpg --dearmor | sudo tee /usr/share/keyrings/waterfox.gpg > /dev/null
   echo 'deb [signed-by=/usr/share/keyrings/waterfox.gpg] https://download.opensuse.org/repositories/isv:/BrowserWorks/Debian_13/ /' | sudo tee /etc/apt/sources.list.d/waterfox.list
   sudo apt update && sudo apt install waterfox
+  # Si da problemas con dependencias, irse por la via de flatpack:
+  flatpak install flathub net.waterfox.waterfox
 
 # LIBREWOLF (Firefox pre-configurado rígido, y le funcionan las extensiones en Android y Windows) 
   sudo apt update
