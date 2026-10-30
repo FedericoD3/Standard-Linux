@@ -3,22 +3,35 @@
   crontab -e
 # Borrar el encabezado y sustituirlo por esto:
 
-   #  https://www.generateit.net/cron-job/
-   #  https://crontab.guru/
-   #
-   # Desactivar el envio de email interno por cada cronjob
-     MAILTO=""
-   #
-   # Agregar 
-   #   >> $HOME/.cron 2>&1 
-   # al final de cada tarea para registrar su ejecución
-   #
-   #  .----------------- minute (0 - 59)
-   #  |   .-------------- hour (0 - 23)
-   #  |   |   .---------- day of month (1 - 31)
-   #  |   |   |   .------ month (1 - 12) OR jan,feb,mar,apr ...
-   #  |   |   |   |   .-- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
-   #  |   |   |   |   |
-   #  m   h  dom mon dow  command
+#  https://www.generateit.net/cron-job/
+#  https://crontab.guru/
+#
+# Environment disponible a cron:
+#  $LANGUAGE
+#  $HOME
+#  $LOGNAME
+#  $PATH
+#  $LANG
+#  $SHELL
+#  $PWD
+#
+# Desactivar el envio de email interno por cada cronjob
+  MAILTO=""
+#
+# Agregar 
+#   >> $HOME/.cron 2>&1 
+# al final de cada tarea para registrar su ejecución
+#
+#  .----------------- minute (0 - 59)
+#  |   .-------------- hour (0 - 23)
+#  |   |   .---------- day of month (1 - 31)
+#  |   |   |   .------ month (1 - 12) OR jan,feb,mar,apr ...
+#  |   |   |   |   .-- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+#  |   |   |   |   |
+#  m   h  dom mon dow  command
+
+# Actualizacion semanal a media tarde de los sabados (crontab de root)
+  0  15   *   *   6   apt update && apt dist-upgrade -y && apt upgrade -y && apt autoremove -y
+
 
 # Ctrl+s para salvar, Ctrl+x para salir
